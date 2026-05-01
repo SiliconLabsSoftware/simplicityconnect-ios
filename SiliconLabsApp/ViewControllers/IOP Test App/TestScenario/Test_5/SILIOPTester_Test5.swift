@@ -9,8 +9,8 @@
 import Foundation
 
 class SILIOPTester_Test5 : SILTestScenario {
-    var scenarioName: String = "IOP Test OTA update with ACK"
-    var scenarioDescription: String = "Update user application via OTA with ACK."
+    var scenarioName: String = "OTA-DFU with ACK"
+    var scenarioDescription: String = "Over-the-air Device Firmware Update with acknowledgment."
 
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
     var privTestResults: [SILTestResult] = [SILTestResult]()

@@ -10,8 +10,8 @@ import Foundation
 
 class SILIOPTester_Test3: SILTestScenario {
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
-    var scenarioName: String = "Central discovers the GATT"
-    var scenarioDescription: String = "Central discovers the GATT database from peripheral."
+    var scenarioName: String = "GATT Discovery"
+    var scenarioDescription: String = "Discover the GATT database."
     
     var privTestResults: [SILTestResult] = [SILTestResult]()
     var tests: [SILTestCase] = [SILTestCase]()

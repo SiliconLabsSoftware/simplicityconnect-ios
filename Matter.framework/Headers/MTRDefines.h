@@ -34,7 +34,7 @@
  * The usual API / ABI stability guarantees DO NOT APPLY to provisional features.
  */
 #ifndef MTR_ENABLE_PROVISIONAL
-#define MTR_ENABLE_PROVISIONAL 0
+#define MTR_ENABLE_PROVISIONAL 1
 #endif
 
 /**

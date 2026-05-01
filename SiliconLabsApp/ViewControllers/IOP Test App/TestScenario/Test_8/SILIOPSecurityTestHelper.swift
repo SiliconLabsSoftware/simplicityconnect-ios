@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreBluetooth
 
 class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
     struct SecurityTestResult {
@@ -38,6 +39,8 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
     private let NotifyTest = "0x000400" //Added
 
     var testResult: SILObservable<SecurityTestResult?> = SILObservable(initialValue: nil)
+    /// True while the system pairing / passkey UI may be shown; drives scenario row spinner via test case observer.
+    var awaitingBluetoothPairing: SILObservable<Bool> = SILObservable(initialValue: false)
     
     init(testedCharacteristic: CBUUID, initialValue: String, exceptedValue: String) {
         self.iopTestPhase3TestedCharacteristicUUID = testedCharacteristic
@@ -54,26 +57,28 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
     }
     
     func performTestCase() {
+        awaitingBluetoothPairing.value = false
+        
         guard iopCentralManager.bluetoothState else {
-            self.testResult.value = SecurityTestResult(passed: false, description: "Bluetooth disabled!")
+            self.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Bluetooth disabled!"))
             IOPLog().iopLogSwiftFunction(message: "Bluetooth disabled!")
             return
         }
         
         guard let _ = discoveredPeripheral else {
-            self.testResult.value = SecurityTestResult(passed: false, description: "Discovered peripheral is nil.")
+            self.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Discovered peripheral is nil."))
             IOPLog().iopLogSwiftFunction(message: "Discovered peripheral is nil.")
             return
         }
         
         guard let _ = peripheral else {
-            self.testResult.value = SecurityTestResult(passed: false, description: "Peripheral is nil.")
+            self.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Peripheral is nil."))
             IOPLog().iopLogSwiftFunction(message: "Peripheral is nil.")
             return
         }
         
         guard let _ = peripheralDelegate else {
-            self.testResult.value = SecurityTestResult(passed: false, description: "Peripheral delegate is nil.")
+            self.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Peripheral delegate is nil."))
             IOPLog().iopLogSwiftFunction(message: "Peripheral delegate is nil.")
             return
         }
@@ -82,13 +87,44 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
         setupPeripheralDelegateSubscription()
                 
         guard let iopTestPhase3Service = self.peripheral.services?.first(where: { service in service.uuid == iopTestPhase3Service }) else {
-            self.testResult.value = SecurityTestResult(passed: false, description: "Service Test Phase 3 didn't found.")
+            self.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Service Test Phase 3 didn't found."))
             IOPLog().iopLogSwiftFunction(message: "Service Test Phase 3 didn't found.")
 
             return
         }
         
         peripheralDelegate.discoverCharacteristics(characteristics: [iopTestPhase3TestedCharacteristicUUID, iopTestPhase3Control], for: iopTestPhase3Service)
+    }
+    
+    private func publishSecurityTestOutcome(_ result: SecurityTestResult) {
+        awaitingBluetoothPairing.value = false
+        testResult.value = result
+    }
+    
+    private func signalBluetoothPairingInProgress() {
+        DispatchQueue.main.async { [weak self] in
+            self?.awaitingBluetoothPairing.value = true
+        }
+    }
+    
+    /// Errors that commonly occur until the user completes Pair / passkey on the system sheet.
+    private func isLikelyAwaitingUserPairingError(_ error: Error) -> Bool {
+        let ns = error as NSError
+        if ns.domain == CBATTErrorDomain {
+            if ns.code == CBATTError.insufficientAuthentication.rawValue
+                || ns.code == CBATTError.insufficientEncryption.rawValue {
+                return true
+            }
+        }
+        if ns.domain == CBErrorDomain, let code = CBError.Code(rawValue: ns.code) {
+            switch code {
+            case .encryptionTimedOut:
+                return true
+            default:
+                break
+            }
+        }
+        return false
     }
     
     private func setupCentralManagerObserverForUnexceptedEvents() {
@@ -100,13 +136,13 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 debugPrint("PERIPHERAL DISCONNECTED WITH ERROR \(String(describing: error?.localizedDescription))")
                 IOPLog().iopLogSwiftFunction(message: "PERIPHERAL DISCONNECTED WITH ERROR \(String(describing: error?.localizedDescription))")
 
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Not allowed disconnection.")
+                weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Not allowed disconnection."))
                 
             case let .bluetoothEnabled(enabled: enabled):
                 if !enabled {
                     IOPLog().iopLogSwiftFunction(message: "Bluetooth disabled!")
                     debugPrint("Bluetooth disabled!")
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Bluetooth disabled.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Bluetooth disabled."))
                 }
                 
             case .unknown:
@@ -129,7 +165,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 guard let pairingCharacteristic = characteristics.first(where: { characteristic in
                     characteristic.uuid == weakSelf.iopTestPhase3TestedCharacteristicUUID
                 }) else {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Tested characteristic didn't found.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Tested characteristic didn't found."))
                     IOPLog().iopLogSwiftFunction(message: "Tested characteristic didn't found.")
 
                     return
@@ -139,7 +175,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 //ADDED NEW...
                 if weakSelf.initialValue == weakSelf.NotifyTest {
                     guard pairingCharacteristic.properties.contains(.notify) else {
-                        weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Characteristic doesn't have notify property.")
+                        weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Characteristic doesn't have notify property."))
                         IOPLog().iopLogSwiftFunction(message: "Characteristic doesn't have notify property.")
 
                         return
@@ -165,7 +201,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                     }
                 }
                 
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Failure when writing to a characteristic.")
+                weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Failure when writing to a characteristic."))
                 IOPLog().iopLogSwiftFunction(message: "Failure when writing to a characteristic.")
 
                 //ADDED NEW...
@@ -176,7 +212,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                     return
                 }
                 
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Failure when writing to CCCD of characteristic.")
+                weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Failure when writing to CCCD of characteristic."))
                 IOPLog().iopLogSwiftFunction(message: "Failure when writing to CCCD of characteristic.")
                 //END
             case let .successWrite(characteristic: characteristic):
@@ -187,15 +223,25 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                     return
                 }
                 
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Failure when writing to a characteristic.")
+                weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Failure when writing to a characteristic."))
                 IOPLog().iopLogSwiftFunction(message: "Failure when writing to a characteristic.")
+                
+            case .servicesModified:
+                // Bonding / encryption often invalidates GATT; show spinner until read/write completes.
+                weakSelf.signalBluetoothPairingInProgress()
+                
+            case let .failure(error):
+                if weakSelf.isLikelyAwaitingUserPairingError(error) {
+                    weakSelf.signalBluetoothPairingInProgress()
+                } else {
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Peripheral delegate error: \(error.localizedDescription)"))
+                }
+                
+            case .successForServices, .successForDescriptors, .successGetValue, .successGetValueDescriptor, .successWriteDescriptor:
+                break
                 
             case .unknown:
                 break
-                
-            default:
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Uknown failure from peripheral delegate.")
-                IOPLog().iopLogSwiftFunction(message: "Uknown failure from peripheral delegate.")
             }
         })
         disposeBag.add(token: peripheralDelegateSubscription)
@@ -227,13 +273,13 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                     weakSelf.connectionTimeout = Timer.scheduledTimer(timeInterval: 10, target: weakSelf, selector: #selector(weakSelf.connectionFailed), userInfo: nil, repeats: false)
                     weakSelf.iopCentralManager.connect(to: weakSelf.discoveredPeripheral)
                 } else {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Exceeded an allowed number of attempts.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Exceeded an allowed number of attempts."))
                 }
                 
             case let .failToConnect(peripheral: _, error: error):
                 weakSelf.pairingTimer?.invalidate()
                 weakSelf.connectionTimeout?.invalidate()
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Fail to connect to peripheral with error \(String(describing: error?.localizedDescription))")
+                weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Fail to connect to peripheral with error \(String(describing: error?.localizedDescription))"))
                 IOPLog().iopLogSwiftFunction(message: "Fail to connect to peripheral with error \(String(describing: error?.localizedDescription))")
                 
             case let .bluetoothEnabled(enabled: enabled):
@@ -242,7 +288,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                     IOPLog().iopLogSwiftFunction(message: "Bluetooth disabled!")
                     weakSelf.connectionTimeout?.invalidate()
                     weakSelf.pairingTimer?.invalidate()
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Bluetooth disabled.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Bluetooth disabled."))
                 }
                 
             case .unknown:
@@ -257,7 +303,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
         connectionTimeout?.invalidate()
         connectionTimeout = nil
         iopCentralManager.disconnect(peripheral: peripheral)
-        testResult.value = SecurityTestResult(passed: false, description: "Peripheral wasn't reconnected in 10 seconds.")
+        publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Peripheral wasn't reconnected in 10 seconds."))
         IOPLog().iopLogSwiftFunction(message: "Peripheral wasn't reconnected in 10 seconds.")
 
     }
@@ -275,7 +321,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                     }
                 }
                 
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Service Test Phase 3 didn't found.")
+                weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Service Test Phase 3 didn't found."))
                 IOPLog().iopLogSwiftFunction(message: "Service Test Phase 3 didn't found.")
 
                 
@@ -283,7 +329,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 guard let pairingCharacteristic = characteristics.first(where: { characteristic in
                     characteristic.uuid == weakSelf.iopTestPhase3TestedCharacteristicUUID
                 }) else {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Tested characteristic didn't found.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Tested characteristic didn't found."))
                     IOPLog().iopLogSwiftFunction(message: "Tested characteristic didn't found.")
 
                     return
@@ -307,7 +353,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 guard let pairingDescriptor = descriptors.first(where: { descriptor in
                     descriptor.uuid.uuidString == CBUUIDClientCharacteristicConfigurationString
                 }) else {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Tested descriptor didn't found.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Tested descriptor didn't found."))
                     IOPLog().iopLogSwiftFunction(message: "Tested descriptor didn't found.")
 
                     return
@@ -316,14 +362,14 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 
             case let .successGetValueDescriptor(value: data, descriptor: descriptor):
                 guard descriptor.uuid.uuidString == CBUUIDClientCharacteristicConfigurationString else {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Tested descriptor didn't found.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Tested descriptor didn't found."))
                     IOPLog().iopLogSwiftFunction(message: "Tested descriptor didn't found.")
 
                     return
                 }
                 let valueDescriptor = (data as? NSNumber)?.stringValue
                 if valueDescriptor != weakSelf.exceptedValue {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Wrong value in Client Characteristic Configuration Descriptor.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Wrong value in Client Characteristic Configuration Descriptor."))
                     IOPLog().iopLogSwiftFunction(message: "Wrong value in Client Characteristic Configuration Descriptor.")
 
                     return
@@ -332,7 +378,7 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 //END
             case let .successGetValue(value: data, characteristic: characteristic):
                 guard characteristic.uuid == weakSelf.iopTestPhase3TestedCharacteristicUUID else {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Tested characteristic didn't found.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Tested characteristic didn't found."))
                     IOPLog().iopLogSwiftFunction(message: "Tested characteristic didn't found.")
 
                     return
@@ -341,9 +387,9 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                 weakSelf.pairingTimer?.invalidate()
                 
                 if data?.hexa()  == weakSelf.exceptedValue {
-                    weakSelf.testResult.value = SecurityTestResult(passed: true, description: "")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: true, description: ""))
                 } else if weakSelf.retryCount == 0 {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Wrong value in a characteristic.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Wrong value in a characteristic."))
                     IOPLog().iopLogSwiftFunction(message: "Wrong value in a characteristic.")
                 }
                 //ADDED NEW
@@ -352,30 +398,42 @@ class SILIOPSecurityTestHelper: SILTestCaseWithRetries {
                     debugPrint("DID WRITE VALUE TO CCCD of characteristic\(characteristic)")
                     IOPLog().iopLogSwiftFunction(message: "DID WRITE VALUE TO CCCD of characteristic\(characteristic)")
 
-                    weakSelf.testResult.value = SecurityTestResult(passed: true, description: "")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: true, description: ""))
                     return
                 }
                 
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Failure when writing to CCCD of characteristic.")
+                weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Failure when writing to CCCD of characteristic."))
                 IOPLog().iopLogSwiftFunction(message: "Failure when writing to CCCD of characteristic.")
 
                 //END
-            case .failure(error: _):
+            case let .failure(error):
                 weakSelf.pairingTimer?.invalidate()
                 
+                if weakSelf.retryCount > 0, weakSelf.isLikelyAwaitingUserPairingError(error) {
+                    weakSelf.signalBluetoothPairingInProgress()
+                    return
+                }
+                
                 if weakSelf.retryCount == 0 {
-                    weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Exceeded an allowed number of attempts.")
+                    weakSelf.publishSecurityTestOutcome(SecurityTestResult(passed: false, description: "Exceeded an allowed number of attempts."))
                     IOPLog().iopLogSwiftFunction(message: "Exceeded an allowed number of attempts.")
 
                 }
                 
-            case .unknown:
+            case .servicesModified:
+                weakSelf.signalBluetoothPairingInProgress()
+                
+            case .successWrite(characteristic: let characteristic):
+                if characteristic.uuid == weakSelf.iopTestPhase3Control {
+                    return
+                }
                 break
                 
-            default:
-                weakSelf.pairingTimer?.invalidate()
-                weakSelf.testResult.value = SecurityTestResult(passed: false, description: "Unknown failure from peripheral delegate.")
-                IOPLog().iopLogSwiftFunction(message: "Unknown failure from peripheral delegate.")
+            case .successWriteDescriptor:
+                break
+                
+            case .unknown:
+                break
             }
         })
         disposeBag.add(token: peripheralDelegateSubscription)

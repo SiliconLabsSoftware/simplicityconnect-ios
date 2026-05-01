@@ -9,8 +9,8 @@
 import Foundation
 
 class SILIOPTester_Test2: SILTestScenario {
-    var scenarioName: String = "Connect to device"
-    var scenarioDescription: String = "Central connects to peripheral."
+    var scenarioName: String = "Connect"
+    var scenarioDescription: String = "Connect to device."
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
     var privTestResults: [SILTestResult] = [SILTestResult]()
     var tests: [SILTestCase] = [SILTestCase]()

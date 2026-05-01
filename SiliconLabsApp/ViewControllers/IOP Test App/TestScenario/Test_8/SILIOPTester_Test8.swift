@@ -9,9 +9,8 @@
 import Foundation
 
 class SILIOPTester_Test8: SILTestScenario {
-    var scenarioName: String = "Security and Encryption"
-    var scenarioDescription: String = "Security and Encryption."
-
+    var scenarioName: String = "Security"
+    var scenarioDescription: String = "Test security features: Just works pairing, Authenticated pairing and Bonding."
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
     var tests: [SILTestCase] = [SILTestCase]()
     var privTestResults: [SILTestResult] = [SILTestResult]()

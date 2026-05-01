@@ -9,8 +9,8 @@
 import Foundation
 
 class SILIOPTester_Test1: SILTestScenario {
-    var scenarioName: String = "Scan device"
-    var scenarioDescription: String = "Central starts scanning and looking for \"IOP Test\" device."
+    var scenarioName: String = "Scan"
+    var scenarioDescription: String = "Scanning for \"IOP_Test_1\" device."
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
     var privTestResults: [SILTestResult] = [SILTestResult]()
     var tests: [SILTestCase] = [SILTestCase]()

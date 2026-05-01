@@ -10,7 +10,7 @@ import Foundation
 
 class SILIOPTester_Test7 : SILTestScenario {
     var scenarioName: String = "Throughput"
-    var scenarioDescription: String = "Throughput-GATT Notification."
+    var scenarioDescription: String = "Measure Throughput speed using GATT notification."
 
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
     var tests: [SILTestCase] = [SILTestCase]()

@@ -94,9 +94,21 @@ CGFloat const SILDeviceSelectionViewModelRSSIThreshold = 1.0;
 }
 
 - (NSInteger)compareFirstPeripheral:(SILDiscoveredPeripheral*)obj1 withSecondPeripheral:(SILDiscoveredPeripheral*)obj2 {
+    // Match SILDeviceSelectionCollectionViewCell RSSI smoothing window.
+    static NSTimeInterval const kRSSISortAverageWindow = 1.0;
+    NSInteger rssi1 = [[obj1.rssiMeasurementTable averageRSSIMeasurementInPastTimeInterval:kRSSISortAverageWindow] integerValue];
+    NSInteger rssi2 = [[obj2.rssiMeasurementTable averageRSSIMeasurementInPastTimeInterval:kRSSISortAverageWindow] integerValue];
+    // Stronger signal (higher dBm, e.g. -40 vs -90) sorts first.
+    if (rssi1 > rssi2) {
+        return NSOrderedAscending;
+    }
+    if (rssi1 < rssi2) {
+        return NSOrderedDescending;
+    }
+
     NSString *nameOfObj1 = obj1.advertisedLocalName;
     NSString *nameOfObj2 = obj2.advertisedLocalName;
-    
+
     if (nameOfObj1 != nil) {
         return [nameOfObj1 localizedCaseInsensitiveCompare:nameOfObj2];
     } else if (nameOfObj2 != nil) {

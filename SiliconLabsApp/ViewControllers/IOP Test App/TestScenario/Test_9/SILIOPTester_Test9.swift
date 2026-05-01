@@ -9,8 +9,8 @@
 import UIKit
 
 class SILIOPTester_Test9: SILTestScenario {
-    var scenarioName: String = "LE Privacy"
-    var scenarioDescription: String = "LE Privacy 1.2 Interoperability Test."
+    var scenarioName: String = "Privacy"
+    var scenarioDescription: String = "Test bluetooth address encryption using resolvable private addresses."
 
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
     var tests: [SILTestCase] = [SILTestCase]()

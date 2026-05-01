@@ -34,6 +34,15 @@ class SILSecurity_7_5TestCase: SILTestCase {
     
     func performTestCase() {
         weak var weakSelf = self
+        let pairingSubscription = securityTestHelper.awaitingBluetoothPairing.observe(sendInitial: false) { isAwaiting in
+            guard let weakSelf = weakSelf else { return }
+            if isAwaiting {
+                weakSelf.publishTestInProgressEvent()
+            }
+        }
+        disposeBag.add(token: pairingSubscription)
+        observableTokens.append(pairingSubscription)
+        
         let securityTestHelperResultSubscription = securityTestHelper.testResult.observe( { testResult in
             guard let weakSelf = weakSelf else { return }
             guard let testResult = testResult else { return }

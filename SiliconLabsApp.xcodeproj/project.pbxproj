@@ -1088,6 +1088,9 @@
 		725454682ACC84AC003967CA /* SwitchOnOffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725454672ACC84AC003967CA /* SwitchOnOffViewController.m */; };
 		7254546B2ACC8895003967CA /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7254546A2ACC8895003967CA /* TemperatureViewController.m */; };
 		7262AB112E48F427009B255D /* SILSmartLockVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7262AB102E48F425009B255D /* SILSmartLockVCExtension.swift */; };
+		72652B0A2CC0FC9300EA2D69 /* Matter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA8FBF2ABCBAD300FE70BA /* Matter.framework */; };
+		72652B0B2CC0FE0F00EA2D69 /* Matter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA8FBF2ABCBAD300FE70BA /* Matter.framework */; };
+		72652B0C2CC0FE0F00EA2D69 /* Matter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA8FBF2ABCBAD300FE70BA /* Matter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7268C1812E1AAFDE003C3A13 /* SILSmartLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268C1762E1AAFDE003C3A13 /* SILSmartLockViewController.swift */; };
 		7268C1832E1AAFDE003C3A13 /* SILSmartLock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7268C17A2E1AAFDE003C3A13 /* SILSmartLock.storyboard */; };
 		7268C1862E1AB12D003C3A13 /* SILSmartLockSubscribeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268C1852E1AB12D003C3A13 /* SILSmartLockSubscribeViewModel.swift */; };
@@ -1100,8 +1103,6 @@
 		7288C3442E47618F00E91563 /* MandatoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288C3432E47618B00E91563 /* MandatoryLabel.swift */; };
 		7288C3462E476AE300E91563 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288C3452E476AE000E91563 /* PlaceholderTextView.swift */; };
 		729B0EDB2A99DC050019C33C /* MatterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B0EDA2A99DC050019C33C /* MatterViewModel.swift */; };
-		729B46832F7D0741008C05DB /* Matter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA8FBF2ABCBAD300FE70BA /* Matter.framework */; };
-		729B46842F7D0741008C05DB /* Matter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA8FBF2ABCBAD300FE70BA /* Matter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72CA8FCB2ABCBB7B00FE70BA /* CHIPUIViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA8FC52ABCBB7B00FE70BA /* CHIPUIViewUtils.m */; };
 		72CA8FCC2ABCBB7B00FE70BA /* FabricKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA8FC72ABCBB7B00FE70BA /* FabricKeys.m */; };
 		72CA8FCD2ABCBB7B00FE70BA /* DefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA8FCA2ABCBB7B00FE70BA /* DefaultsUtils.m */; };
@@ -1318,13 +1319,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		729B46852F7D0741008C05DB /* Embed Frameworks */ = {
+		72652B0D2CC0FE0F00EA2D69 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				729B46842F7D0741008C05DB /* Matter.framework in Embed Frameworks */,
+				72652B0C2CC0FE0F00EA2D69 /* Matter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2551,10 +2552,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72652B0A2CC0FC9300EA2D69 /* Matter.framework in Frameworks */,
 				0C2FCB971F9A542300F4F259 /* CoreBluetooth.framework in Frameworks */,
-				729B46832F7D0741008C05DB /* Matter.framework in Frameworks */,
 				0C2FCB991F9A542300F4F259 /* CoreLocation.framework in Frameworks */,
 				0C2FCB9A1F9A542300F4F259 /* QuartzCore.framework in Frameworks */,
+				72652B0B2CC0FE0F00EA2D69 /* Matter.framework in Frameworks */,
 				FCFE74AF68F9F5BE332F46B6 /* Pods_BlueGecko.framework in Frameworks */,
 				2E8E6EB82B8DC74A00906697 /* SystemConfiguration.framework in Frameworks */,
 			);
@@ -6102,7 +6104,7 @@
 				0C2FCB961F9A542300F4F259 /* Frameworks */,
 				0C2FCB9C1F9A542300F4F259 /* Resources */,
 				0C2FCBD31F9A542300F4F259 /* [CP] Embed Pods Frameworks */,
-				729B46852F7D0741008C05DB /* Embed Frameworks */,
+				72652B0D2CC0FE0F00EA2D69 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -8017,7 +8019,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 52444FG85C;
 				DISPLAY_NAME = "Si Connect";
@@ -8035,7 +8037,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.1;
+				MARKETING_VERSION = 3.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.silabs.BlueGeckoDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -8059,7 +8061,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Silicon Laboratories Inc (52444FG85C)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 52444FG85C;
@@ -8077,7 +8079,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.1;
+				MARKETING_VERSION = 3.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.silabs.BlueGeckoDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -24,8 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * A representation of an endpoint implemented by an MTRDeviceController.
- *
- * MTRServerEndpoint's API can be accessed from any thread.
  */
 NS_SWIFT_SENDABLE
 MTR_AVAILABLE(ios(17.6), macos(14.6), watchos(10.6), tvos(17.6))
@@ -64,9 +62,9 @@ MTR_AVAILABLE(ios(17.6), macos(14.6), watchos(10.6), tvos(17.6))
  */
 - (BOOL)addServerCluster:(MTRServerCluster *)serverCluster;
 
-@property (atomic, copy, readonly) NSNumber * endpointID;
+@property (nonatomic, copy, readonly) NSNumber * endpointID;
 
-@property (atomic, copy, readonly) NSArray<MTRDeviceTypeRevision *> * deviceTypes;
+@property (nonatomic, copy, readonly) NSArray<MTRDeviceTypeRevision *> * deviceTypes;
 
 /**
  * The list of entities that are allowed to access all clusters on this
@@ -75,7 +73,7 @@ MTR_AVAILABLE(ios(17.6), macos(14.6), watchos(10.6), tvos(17.6))
  *
  * Defaults to empty list, which means no access granted.
  */
-@property (atomic, copy, readonly) NSArray<MTRAccessGrant *> * accessGrants;
+@property (nonatomic, copy, readonly) NSArray<MTRAccessGrant *> * accessGrants;
 
 /**
  * A list of server clusters supported on this endpoint.  The Descriptor cluster
@@ -84,7 +82,7 @@ MTR_AVAILABLE(ios(17.6), macos(14.6), watchos(10.6), tvos(17.6))
  * grants.  If not included, the Descriptor cluster will be generated
  * automatically.
  */
-@property (atomic, copy, readonly) NSArray<MTRServerCluster *> * serverClusters;
+@property (nonatomic, copy, readonly) NSArray<MTRServerCluster *> * serverClusters;
 
 @end
 

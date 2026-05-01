@@ -9,8 +9,8 @@
 import Foundation
 
 class SILIOPTester_Test4 : SILTestScenario {
-    var scenarioName: String = "Central performs all the GATT"
-    var scenarioDescription: String = "Central performs all the GATT operations supported by the target."
+    var scenarioName: String = "GATT Operations"
+    var scenarioDescription: String = "Perform GATT operations (read, write, write without response, indication, notification) with various lengths."
     
     var testResults: SILObservable<[SILTestResult]> = SILObservable(initialValue: [])
     var tests: [SILTestCase] = [SILTestCase]()

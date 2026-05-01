@@ -26,8 +26,11 @@ class SILIOPTestScenarioCellView: UITableViewCell, SILCellView {
     }
     
     func setViewModel(_ viewModel: SILCellViewModel) {
-        self.viewModel = (viewModel as! SILIOPTestScenarioCellViewModel)
-        testTitleLabel.text = self.viewModel?.name
-        testDescriptionLabel.text = self.viewModel?.description
+        let scenarioVM = viewModel as! SILIOPTestScenarioCellViewModel
+        self.viewModel = scenarioVM
+        testTitleLabel.text = scenarioVM.name
+        testDescriptionLabel.text = scenarioVM.description
+        // Always refresh status (spinner/pass/fail) on reload — pairing may re-enter .inProgress while table reloads.
+        testStatusView.update(newStatus: scenarioVM.status)
     }
 }

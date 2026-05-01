@@ -200,6 +200,11 @@ extension SILTestCase {
         self.testResult.value = SILTestResult(testID: self.testID, testName: self.testName, testStatus: .inProgress)
     }
     
+    /// Keeps the scenario row in an in-progress (spinner) state while the user completes Bluetooth pairing / passkey entry.
+    func publishTestInProgressEvent() {
+        self.testResult.value = SILTestResult(testID: self.testID, testName: self.testName, testStatus: .inProgress)
+    }
+    
     func publishTestResult(passed: Bool, description: String? = nil, error: Error? = nil) {
         invalidateObservableTokens()
         
