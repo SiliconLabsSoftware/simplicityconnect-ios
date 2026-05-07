@@ -1,0 +1,45 @@
+name: 00-Check-Code-Convention
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+      - "release/**"
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to test"
+        type: string
+        default: "main"
+
+jobs:
+  job1:
+    name: Check coding convention
+    runs-on: [self-hosted, jammy] #uncrustify 0.64 can not be compiled on ubuntu-24.04
+    steps:
+      - name: Trigger
+        run: echo "Triggered by ${{github.event_name}} event"
+      - name: Check Branch Input
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            if [ -z "${{ github.event.inputs.branch }}" ]; then
+              echo "Branch input is required for manual trigger."
+              exit 1
+            fi
+          fi
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+        with:
+          ref: "${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}"
+          submodules: true
+          fetch-depth: 0
+      - name: Log Current Branch and Commit
+        run: |
+          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+          echo "Current commit: $(git rev-parse HEAD)"
+      - name: Check Code Convention
+        uses: SiliconLabsSoftware/devs-coding-convention-tool@master
+        with:
+          exclude-regex: ""
+          codespell-ignore-words: ""
+          codespell-skip-paths: ""
