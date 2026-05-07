@@ -13,7 +13,6 @@ and have Git tools available on your development system. You also need to add yo
 
 As a contributor, you'll want to be familiar with the Silicon Labs tooling:
 - [Simplicity Studio](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-overview/)
-- [Platform](https://docs.silabs.com/gecko-platform/latest/platform-overview/)
 - [Simplicity Commander](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-start/)
 
 Read the Silicon Labs [coding guidelines](https://github.com/SiliconLabsSoftware/agreements-and-guidelines/blob/main/coding_standard.md).
@@ -75,7 +74,7 @@ $ gpg --armor --export 888BA795B7085898
 Make sure your email address is verified by GitHub before committing anything.
 
 ## Licensing
-Please check the [Licensing.md](../LICENSE.md) for more details.
+Please check the [Licensing.md](../LICENSE) for more details.
 
 ## Contributor License Agreement
 When a project receives a contribution, it must be clear that the contributor has the rights to contribute the content and that the project then has the rights to use and otherwise operate with the content (e.g., relicense or distribute). A Contributor License Agreement (CLA) is a legal document establishing these rights and defining the terms under which a license is granted by a contributor to an open-source project. A CLA clarifies that any contribution was authorized (not contributing someone else’s code without permission or without legal authority to contribute) and protects the project from potential future legal challenges.
