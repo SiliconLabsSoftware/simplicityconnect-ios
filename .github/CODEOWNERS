@@ -1,5 +1,6 @@
 # Default codeowners for the repository
 * @SiliconLabsSoftware/mobileapps-leads
 
+
 #codeowners for the CODEOWNERS file
 /.github/CODEOWNERS @SiliconLabsSoftware/mobileapps-leads
