@@ -1,6 +1,5 @@
-framework module Matter {
-  umbrella header "Matter.h"
-  export *
-
-  module * { export * }
+framework module Matter [system] {
+    umbrella header "Matter.h"
+    export *
+    module * { export * }
 }

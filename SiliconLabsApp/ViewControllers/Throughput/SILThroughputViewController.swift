@@ -14,9 +14,9 @@ class SILThroughputViewController: UIViewController, UIGestureRecognizerDelegate
     
     @IBOutlet weak var notificationsTestButton: UIButton!
     @IBOutlet weak var indicationsTestButton: UIButton!
-    private let modeSelectedImage = UIImage(named: "checkBoxActive")
-    private let unselectedModeImage = UIImage(named: "checkBoxInactive")
-    private let disabledSelectedImage = UIImage(named: "gray_checkbox")
+    private let modeSelectedImage = UIImage(systemName: "checkmark.square.fill")
+    private let unselectedModeImage = UIImage(systemName: "square")
+    private let disabledSelectedImage = UIImage(systemName: "checkmark.square.fill")
     
     @IBOutlet weak var optionsView: UIView!
     @IBOutlet weak var phyLabel: SILConnectionParameterLabel!
@@ -70,6 +70,7 @@ class SILThroughputViewController: UIViewController, UIGestureRecognizerDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
     }
     
@@ -87,6 +88,9 @@ class SILThroughputViewController: UIViewController, UIGestureRecognizerDelegate
     }
     
     private func setImagesForSelectionModeButtons() {
+        let redTintColor = UIColor.appPrimaryBrand
+        notificationsTestButton.tintColor = redTintColor
+        indicationsTestButton.tintColor = redTintColor
         notificationsTestButton.setImage(modeSelectedImage, for: .selected)
         notificationsTestButton.setImage(unselectedModeImage, for: .normal)
         notificationsTestButton.setImage(disabledSelectedImage, for: [.disabled, .selected])
@@ -212,7 +216,6 @@ class SILThroughputViewController: UIViewController, UIGestureRecognizerDelegate
                 weakSelf.indicationsTestButton.isEnabled = false
                 weakSelf.notificationsTestButton.isEnabled = false
                 weakSelf.startStopTestButton.isEnabled = false
-                weakSelf.startStopTestButton.backgroundColor = .lightGray
                 weakSelf.startStopTestButton.setTitle("Start", for: .normal)
                 
             case .phoneToEFRTest:
@@ -220,7 +223,6 @@ class SILThroughputViewController: UIViewController, UIGestureRecognizerDelegate
                 weakSelf.indicationsTestButton.isEnabled = false
                 weakSelf.notificationsTestButton.isEnabled = false
                 weakSelf.startStopTestButton.isEnabled = true
-                weakSelf.startStopTestButton.backgroundColor = UIColor.sil_siliconLabsRed()
                 weakSelf.startStopTestButton.setTitle("Stop", for: .normal)
                 
             case .readyForTesting:
@@ -228,7 +230,6 @@ class SILThroughputViewController: UIViewController, UIGestureRecognizerDelegate
                 weakSelf.indicationsTestButton.isEnabled = true
                 weakSelf.notificationsTestButton.isEnabled = true
                 weakSelf.startStopTestButton.isEnabled = true
-                weakSelf.startStopTestButton.backgroundColor = UIColor.sil_regularBlue()
                 weakSelf.startStopTestButton.setTitle("Start", for: .normal)
             }
         })

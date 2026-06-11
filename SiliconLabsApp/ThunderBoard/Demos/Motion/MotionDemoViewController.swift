@@ -54,6 +54,7 @@ class MotionDemoViewController : DemoViewController, MotionDemoInteractionOutput
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         interaction.checkMissingSensors()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.setupWheel()

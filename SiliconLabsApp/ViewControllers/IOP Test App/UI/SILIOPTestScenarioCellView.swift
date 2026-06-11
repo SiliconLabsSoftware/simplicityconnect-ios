@@ -22,15 +22,20 @@ class SILIOPTestScenarioCellView: UITableViewCell, SILCellView {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         viewModel = nil
     }
     
     func setViewModel(_ viewModel: SILCellViewModel) {
         let scenarioVM = viewModel as! SILIOPTestScenarioCellViewModel
         self.viewModel = scenarioVM
-        testTitleLabel.text = scenarioVM.name
-        testDescriptionLabel.text = scenarioVM.description
-        // Always refresh status (spinner/pass/fail) on reload — pairing may re-enter .inProgress while table reloads.
+        // Skip redundant text writes to avoid invalidating intrinsic content size on each reload.
+        if testTitleLabel.text != scenarioVM.name {
+            testTitleLabel.text = scenarioVM.name
+        }
+        if testDescriptionLabel.text != scenarioVM.description {
+            testDescriptionLabel.text = scenarioVM.description
+        }
         testStatusView.update(newStatus: scenarioVM.status)
     }
 }

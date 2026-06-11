@@ -15,8 +15,8 @@ extension UIViewController {
         let gattConfiguratorSubject = subject
         
         let activityViewController = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)
-        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.sil_regularBlue()], for: .normal)
-        UINavigationBar.appearance().tintColor = UIColor.sil_regularBlue()
+        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.appPrimaryBrand], for: .normal)
+        UINavigationBar.appearance().tintColor = UIColor.appPrimaryBrand
         activityViewController.setValue(gattConfiguratorSubject, forKey: "Subject")
         activityViewController.completionWithItemsHandler = completionWithItemsHandler
         

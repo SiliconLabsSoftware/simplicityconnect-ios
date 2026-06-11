@@ -49,7 +49,7 @@ struct SmartLockConstants {
     static let alreayConfigured = "Smart Lock is already configured. Would you like to reconfigure it? Reconfiguring will disconnect the existing connection."
     static let endPointValidationError = "Please enter a valid AWS endpoint URL."
     static let unkownErrorText = "Unknown or no response from the server. Please try again."
-    static let notConnectedText = "* AWS Certificate and endpoints are not configured. To setup it, click the settings icon located in the top-right corner."
+    static let notConnectedText = "* AWS Certificate and endpoints are not configured. To set it up, click the settings icon located in the top-right corner."
     static let connectedToAWS = "Connected to AWS Smart Lock"
 
 }

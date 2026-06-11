@@ -50,7 +50,7 @@ static const CGFloat kConnectAnimationDuration = 1.2f;
     [self.leftwayIndicatorImageView.layer removeAllAnimations];
     [self.rightwayIndicatorImageView.layer removeAllAnimations];
     BOOL active = state != SILActivityBarStateResting;
-    self.view.backgroundColor = active ? [UIColor sil_siliconLabsRedColor] : [UIColor sil_refreshGreyColor];
+    self.view.backgroundColor = active ? [UIColor appPrimaryBrand] : [UIColor sil_refreshGreyColor];
     self.stopActivityButton.hidden = !active;
     self.refreshDivider.hidden = active;
     self.activityButton.hidden = active;

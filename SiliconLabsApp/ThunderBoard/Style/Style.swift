@@ -84,7 +84,7 @@ class StyleColor {
     }
     
     class var blue: UIColor {
-        get { return UIColor.tb_hex(0x00aeff) }
+        get { return UIColor.appPrimaryBrand }
     }
     
     class var darkViolet: UIColor {
@@ -116,7 +116,7 @@ class StyleColor {
     }
     
     class var lightBlue: UIColor {
-        get { return UIColor.tb_hex(0x78d6ff) }
+        get { return UIColor.appPrimaryBrand.withAlphaComponent(0.5) }
     }
     
     class var brightGreen: UIColor {
@@ -145,89 +145,39 @@ class StyleColor {
 }
 
 class StyleText {
-    
-    class var demoTitle: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 29, color: StyleColor.darkGray, kerning: 25) }
-    }
-    
-    class var demoStatus: StyleText {
-        get {
-            let styleText = StyleText(fontName: .OpenSansLight, size: 17, color: StyleColor.siliconGray, kerning: 25)
-            if UIScreen.main.bounds.size.height <= 568.0 {
-                styleText.adjustLineHeightMultiple = true
-            }
-            return styleText
-        }
-    }
-    
-    class var deviceName: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 19, color: StyleColor.siliconGray, kerning: nil) }
-    }
-    
-    class var deviceName2: StyleText {
-        get { return StyleText(fontName: .OpenSansBold, size: 15, color: StyleColor.siliconGray, kerning: nil) }
-    }
-    
-    class var deviceName3: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 19, color: StyleColor.gray, kerning: 25) }
-    }
-    
-    class var deviceListStatus: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 19, color: StyleColor.white, kerning: 25) }
-    }
-    
+
     class var header: StyleText {
-        get { return StyleText(fontName: .OpenSansRegular, size: 12, color: StyleColor.siliconGray, kerning: 25) }
+        get { return StyleText(fontName: .stolzlRegular, size: 12, color: StyleColor.siliconGray, kerning: 25) }
     }
     
     class var header2: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 12, color: StyleColor.mediumGray, kerning: 25) }
-    }
-    
-    class var headerActive: StyleText {
-        get { return StyleText(fontName: .OpenSansBold, size: 12, color: StyleColor.siliconGray, kerning: 25) }
+        get { return StyleText(fontName: .helveticaNeueLight, size: 12, color: StyleColor.mediumGray, kerning: 25) }
     }
     
     class var main1: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 15, color: StyleColor.siliconGray, kerning: nil) }
+        get { return StyleText(fontName: .helveticaNeueLight, size: 15, color: StyleColor.siliconGray, kerning: nil) }
     }
     
     class var navBarTitle: StyleText {
-        get { return StyleText(fontName: .OpenSansRegular, size: 17, color: StyleColor.white, kerning: nil) }
+        get { return StyleText(fontName: .stolzlMedium, size: 17, color: StyleColor.white, kerning: nil) }
     }
     
     class var numbers1: StyleText {
-        get { return StyleText(fontName: .OpenSansBold, size: 12, color: StyleColor.siliconGray, kerning: 25) }
-    }
-    
-    class var streamingLabel: StyleText {
-        get { return StyleText(fontName: .OpenSansBold, size: 13, color: StyleColor.white, kerning: 25) }
+        get { return StyleText(fontName: .stolzlBold, size: 12, color: StyleColor.siliconGray, kerning: 25) }
     }
     
     class var subtitle1: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 12, color: StyleColor.mediumGray, kerning: 25) }
+        get { return StyleText(fontName: .helveticaNeueLight, size: 12, color: StyleColor.mediumGray, kerning: 25) }
     }
     
     class var subtitle2: StyleText {
-        get { return StyleText(fontName: .OpenSansBold, size: 10, color: StyleColor.mediumGray, kerning: 25) }
+        get { return StyleText(fontName: .stolzlBold, size: 10, color: StyleColor.mediumGray, kerning: 25) }
     }
     
     class var demoValue: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 24, color: StyleColor.siliconGray, kerning: 75) }
+        get { return StyleText(fontName: .helveticaNeueLight, size: 24, color: StyleColor.siliconGray, kerning: 75) }
     }
     
-    class var buttonLabel: StyleText {
-        get { return StyleText(fontName: .OpenSansBold, size: 13, color: StyleColor.gray, kerning: nil) }
-    }
-    
-    class var powered_by: StyleText {
-        get { return StyleText(fontName: .OpenSansRegular, size: 15, color: StyleColor.white, kerning: nil) }
-    }
-    
-    class var note: StyleText {
-        get { return StyleText(fontName: .OpenSansLight, size: 12, color: StyleColor.mediumGray, kerning: 25) }
-    }
-
     //MARK:-
     
     var font: UIFont
@@ -236,8 +186,7 @@ class StyleText {
     var adjustLineHeightMultiple = false
     
     init(fontName: FontName, size: CGFloat, color: UIColor, kerning: CGFloat?) {
-        // TODO: it only temporary solution - we need to unify with EFR
-        self.font = UIFont.systemFont(ofSize: size)
+        self.font = UIFont(name: fontName.rawValue, size: size) ?? UIFont.systemFont(ofSize: size)
         self.color = color
         self.kerning = kerning
     }
@@ -275,9 +224,10 @@ class StyleText {
     }
     
     enum FontName: String {
-        case OpenSansLight              = "OpenSans-Light"
-        case OpenSansBold               = "OpenSans-Bold"
-        case OpenSansRegular            = "OpenSans"
+        case helveticaNeueLight   = "HelveticaNeue-Light"
+        case stolzlBold           = "Stolzl-Bold"
+        case stolzlMedium         = "Stolzl-Medium"
+        case stolzlRegular        = "Stolzl-Regular"
     }
 }
 

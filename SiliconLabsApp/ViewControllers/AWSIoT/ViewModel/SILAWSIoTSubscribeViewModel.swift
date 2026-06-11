@@ -22,8 +22,9 @@ class SILAWSIoTSubscribeViewModel {
         self.sensorsData = sensorsData
     }
     func subscribeOverTopic(topicId: String){
+        debugPrint("topicId - \(topicId)")
         getAWSIoTSubscribeData(topicId: topicId) { (ReponsData: AWSIoTSubscribeModel?, APIClientError) in
-            //print(ReponsData)
+            debugPrint("ReponsData = \(ReponsData)")
             if let responseData = ReponsData{
                 self.refromArray(allData: responseData)
             }else{
@@ -35,12 +36,7 @@ class SILAWSIoTSubscribeViewModel {
     
     private func getAWSIoTSubscribeData<T:Codable>(topicId: String, completionBlockSensor: @escaping (_ ReponsData: T?, _ APIClientError:Error?) -> Void)  {
         let iotDataManager = AWSIoTDataManager(forKey: AWS_IOT_DATA_MANAGER_KEY)
-//SOVAN
-        //siwx91x_status
-        //SARAVAN
-        //si91x_status
-        //Silabs
-        //si91x_status_sagar
+
         iotDataManager.subscribe(toTopic: topicId, qoS: .messageDeliveryAttemptedAtMostOnce, messageCallback: {
             (payload) ->Void in
            // print(payload)

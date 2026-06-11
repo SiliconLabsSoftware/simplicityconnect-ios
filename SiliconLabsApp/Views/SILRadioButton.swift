@@ -18,17 +18,19 @@ class SILRadioButton: UIView {
     @objc func select() {
         descriptionLabel.isEnabled = true
         radioButton.setImage(UIImage(named: RadioButtonImages.selected), for: .normal)
-        radioButton.tintColor = UIColor.sil_regularBlue()
+        radioButton.tintColor = UIColor.appPrimaryBrand
         radioButton.titleLabel?.textColor = UIColor.sil_primaryText()
     }
     
     @objc func deselect() {
         descriptionLabel.isEnabled = true
         radioButton.setImage(UIImage(named: RadioButtonImages.active), for: .normal)
+        radioButton.tintColor = UIColor.appPrimaryBrand
     }
     
     @objc func disable() {
         descriptionLabel.isEnabled = false
         radioButton.setImage(UIImage(named: RadioButtonImages.inactive), for: .normal)
+        radioButton.tintColor = UIColor.lightGray
     }
 }

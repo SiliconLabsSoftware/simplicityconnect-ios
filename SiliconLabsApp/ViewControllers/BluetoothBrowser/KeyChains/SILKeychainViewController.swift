@@ -60,6 +60,7 @@ class SILKeychainViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         addObserverForDisplayToastResponse()
     }
     

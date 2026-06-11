@@ -7,9 +7,11 @@
 //
 
 #import "SwitchOnOffViewController.h"
+#import "UIButton+SILMatterStyle.h"
 #import "CHIPUIViewUtils.h"
 #import "SILLightSwitchTableViewCell.h"
 #import "DefaultsUtils.h"
+#import "UIColor+SILColors.h"
 #import "DeviceSelector.h"
 #import <Matter/Matter.h>
 
@@ -56,6 +58,7 @@ NSMutableArray *bindedDevice;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     [self setupUIElements];
     self.noDeviceFoundView.hidden = true;
     
@@ -104,8 +107,7 @@ NSMutableArray *bindedDevice;
     self.cellBGView.layer.cornerRadius = 5;
     self.cellBGView.clipsToBounds = YES;
     
-    self.bindButton.layer.cornerRadius = 5;
-    self.bindButton.clipsToBounds = YES;
+    [self.bindButton applySILMatterDisabledOutlinedStyleWithTitle:@" Bind "];
     
     self.bindLightSwitchView.layer.cornerRadius = 5;
     self.bindLightSwitchView.clipsToBounds = YES;
@@ -113,8 +115,8 @@ NSMutableArray *bindedDevice;
     self.noDeviceFoundView.layer.cornerRadius = 5;
     self.noDeviceFoundView.clipsToBounds = YES;
     
-    self.bindButton.backgroundColor = UIColor.sil_silverChaliceColor;
-    self.bindButton.enabled = NO;
+    self.bindButton.enabled = YES;
+    self.bindButton.userInteractionEnabled = NO;
 }
 
 - (void) updateListOfDevice {
@@ -148,9 +150,7 @@ NSMutableArray *bindedDevice;
             if ([bindStringValue isEqual:@"true"]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     isBind = true;
-                    self.bindButton.backgroundColor = UIColor.sil_siliconLabsRedColor;
-                    self.bindButton.enabled = YES;
-                    [self.bindButton setTitle:@"Unbind" forState:UIControlStateNormal];
+                    [self setBindButtonTitle:@"Unbind" enabled:YES];
                 });
             }
         }
@@ -212,23 +212,24 @@ NSMutableArray *bindedDevice;
 - (void) updateBindInfo:(BOOL) isSelected bindStatus:(BOOL)bindStatus{
     dispatch_async(dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
-    if (bindStatus == true) {
-        self.bindButton.backgroundColor = UIColor.sil_siliconLabsRedColor;
-        self.bindButton.enabled = YES;
-        [self.bindButton setTitle:@"Unbind" forState:UIControlStateNormal];
-    }else{
-        if (isSelected == true) {
-            self.bindButton.backgroundColor = UIColor.sil_regularBlueColor;
-            self.bindButton.enabled = YES;
-            [self.bindButton setTitle:@"Bind" forState:UIControlStateNormal];
-        } else {
-            self.bindButton.backgroundColor = UIColor.sil_boulderColor;
-            self.bindButton.enabled = NO;
-            [self.bindButton setTitle:@"Bind" forState:UIControlStateNormal];
-        }
-    }
-    [self.bindButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        NSString *title = (bindStatus == true) ? @"Unbind" : @"Bind";
+        BOOL enabled = (bindStatus == true) || (isSelected == true);
+        [self setBindButtonTitle:title enabled:enabled];
     });
+}
+
+- (void)setBindButtonTitle:(NSString *)title enabled:(BOOL)enabled {
+    UIButton *button = self.bindButton;
+    [UIView performWithoutAnimation:^{
+        if (enabled) {
+            [button applySILMatterOutlinedStyleWithTitle:title];
+        } else {
+            [button applySILMatterDisabledOutlinedStyleWithTitle:title];
+        }
+        button.enabled = YES;
+        button.userInteractionEnabled = enabled;
+        [button.superview layoutIfNeeded];
+    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -242,7 +243,7 @@ NSMutableArray *bindedDevice;
     
     cell.deviceNameLabel.text = self.data[indexPath.row];
     NSDictionary * deviceDict = allLightDeviceList[indexPath.row];
-    [self.tableView setTintColor:[UIColor blueColor]];
+    [self.tableView setTintColor:[UIColor appPrimaryBrand]];
     if (self.selectedIndexPaths == nil){
         if ([[deviceDict valueForKey:@"isBinded"] isEqual:@"true"]) {
             cell.tickMarkImage.hidden = false;
@@ -266,23 +267,18 @@ NSMutableArray *bindedDevice;
     
     NSDictionary * deviceDict = allLightDeviceList[indexPath.row];
     
-//    if ([indexPath isEqual:self.selectedIndexPaths]) {
-//        self.selectedIndexPaths = nil;
-//        NSLog(@"De Selected Cell: %@", deviceDict);
-//        [self updateBindInfo:false bindStatus:false];
-//    } else {
-        self.selectedIndexPaths = indexPath;
-        NSLog(@"Selected Cell: %@", deviceDict);
-        lightNodeId = [deviceDict valueForKey:@"nodeId"];
-        lightNodeType = [deviceDict valueForKey:@"deviceType"];
-        lightNodeName = [deviceDict valueForKey:@"title"];
-    if ([[deviceDict valueForKey:@"isBinded"] isEqual:@"true"]) {
-        [self updateBindInfo:true bindStatus:true];
-    }else{
-        [self updateBindInfo:true bindStatus:false];
-    }
-        
-    //}
+    self.selectedIndexPaths = indexPath;
+    NSLog(@"Selected Cell: %@", deviceDict);
+    lightNodeId = [deviceDict valueForKey:@"nodeId"];
+    lightNodeType = [deviceDict valueForKey:@"deviceType"];
+    lightNodeName = [deviceDict valueForKey:@"title"];
+
+    // If the switch is already bound, keep the button as "Unbind" regardless of
+    // which light cell is tapped. Unbinding is only triggered when the user
+    // taps the Unbind button itself.
+    BOOL alreadyBound = (isBind == true) || [[deviceDict valueForKey:@"isBinded"] isEqual:@"true"];
+    [self updateBindInfo:true bindStatus:alreadyBound];
+
     [tableView reloadData];
 }
 

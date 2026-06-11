@@ -44,6 +44,7 @@ class SILAppTypeBlinkyViewController: UIViewController, ConnectedDeviceDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
     }
     
@@ -53,8 +54,12 @@ class SILAppTypeBlinkyViewController: UIViewController, ConnectedDeviceDelegate,
     }
     
     private func setupLightBulbButton() -> Void {
-        lightBulbButton.setImage(UIImage(named: "lightOff"), for: .normal)
-        lightBulbButton.setImage(UIImage(named: "lightOn"), for: .selected)
+        let lightOffImage = UIImage(named: "lightOff")
+        let lightOnImage = UIImage(named: "lightOn")
+        lightBulbButton.setImage(lightOffImage, for: .normal)
+        lightBulbButton.setImage(lightOffImage, for: .highlighted)
+        lightBulbButton.setImage(lightOnImage, for: .selected)
+        lightBulbButton.setImage(lightOnImage, for: [.selected, .highlighted])
     }
     
     private func subscribeToViewModel() {
@@ -120,7 +125,13 @@ class SILAppTypeBlinkyViewController: UIViewController, ConnectedDeviceDelegate,
     }
     
     @IBAction func onLightBulbButtonTapped() -> Void {
+        // Prevent rapid re-taps while the BLE write is in flight, which can make
+        // a single tap feel like it was clicked twice (state toggling back and forth).
+        lightBulbButton.isUserInteractionEnabled = false
         viewModel?.changeLightState()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.lightBulbButton.isUserInteractionEnabled = true
+        }
     }
     
     @IBAction func backButtonTapped() -> Void {

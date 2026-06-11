@@ -23,29 +23,45 @@ struct SettingsView: View {
     
     var body: some View {
         let appInfo = NSLocalizedString("app_info", comment: "")
-        NavBarViewWithButtons(title: "Settings") {
-            
-            ScrollView {
-                VStack {
-                    Spacer()
-                    CardViewWithPicker()
-                    Spacer()
-                    Section {
-                        if #available(iOS 15, *) {
-                            Text(LocalizedStringKey(appInfo)).accentColor(.blue)
-                        }else {
-                            LabelView(text: appInfo)
-                        }
-                    }
-                    .padding()
+        NavBarViewWithButtons(title: "Settings", lineColor: .clear) {
+            VStack(spacing: 0) {
+                Rectangle()
+                    .fill(Color.appPrimaryBrand)
+                    .frame(height: 1)
+                
+                ZStack {
+                    Image("bgView_image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        .clipped()
                     
-                    Spacer()
-                    Text("App version \(version)").padding(.bottom, 20)
+                    ScrollView {
+                        VStack {
+                            Spacer()
+                            CardViewWithPicker()
+                            Spacer()
+                            Section {
+                                if #available(iOS 15, *) {
+                                    Text(LocalizedStringKey(appInfo))
+                                        .font(.custom("HelveticaNeue-Medium", size: 15))
+                                        .accentColor(Color.appPrimaryBrand)
+                                }else {
+                                    LabelView(text: appInfo)
+                                }
+                            }
+                            .padding()
+                            
+                            Spacer()
+                            Text("App version \(version)")
+                                .font(.custom("Stolzl-Medium", size: 14))
+                                .foregroundColor(Color.appPrimaryText)
+                                .padding(.bottom, 20)
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
                 }
-                .frame(maxWidth: .infinity)
-                .background(Color(.sil_background()))
             }
-            .background(Color(.sil_background()))
             .sheet(isPresented: $showView) {
                 DetailView(showSheet: $showView)
             }
@@ -53,7 +69,9 @@ struct SettingsView: View {
             Button(action: {
                 showView.toggle()
             }) {
-                Image(systemName: "info.circle").imageScale(.large)
+                Image(systemName: "info.circle")
+                    .imageScale(.large)
+                    .foregroundColor(.white)
             }
         }
     }
@@ -73,9 +91,9 @@ fileprivate struct LabelView: UIViewRepresentable {
         label.dataDetectorTypes = .link
         label.isEditable = false
         label.isSelectable = true
-        label.font = .systemFont(ofSize: 22)
+        label.font = UIFont(name: "Stolzl-Medium", size: 14) ?? .systemFont(ofSize: 22)
         label.text = text
-        label.tintColor = .blue
+        label.tintColor = UIColor.appPrimaryText
         return label
     }
     
@@ -91,19 +109,20 @@ struct CardViewWithPicker: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
-            Text("Select Scaning Timeout:")
-                .font(.subheadline)
-                .foregroundColor(Color.black)
+            Text("Select Scanning Timeout:")
+                .font(.custom("Stolzl-Medium", size: 14))
+                .foregroundColor(Color.appPrimaryText)
             
             Spacer()
             
             Picker("Options", selection: $selectedOption) {
                 ForEach(timeOutValue, id: \.self) { option in
                     Text(option).tag(option)
-                        .foregroundColor(Color.black)
+                        .font(.custom("Stolzl-Medium", size: 14))
+                        .foregroundColor(Color.appPrimaryText)
                 }
             }
-            .tint(.blue)
+            .tint(Color.appPrimaryBrand)
             .pickerStyle(MenuPickerStyle())
             .onChange(of: selectedOption) { newValue in
                 saveToUserDefaults(newValue) // Save the selected value to UserDefaults
@@ -152,10 +171,17 @@ struct TwoColumnRow: View {
     var body: some View {
         HStack {
             Text(leftText)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.custom("Stolzl-Regular", size: 14))
+                .foregroundColor(Color.appPrimaryText)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing, 8)
             Text(rightText)
+                .font(.custom("Stolzl-Medium", size: 14))
+                .foregroundColor(Color.appPrimaryText)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 8)
         }
+        .padding(.vertical, 2)
     }
 }
 
@@ -166,60 +192,107 @@ struct DetailView: View {
     
     var body: some View {
         NavigationView {
-            VStack (alignment: .leading) {
-                
-                let deviceGuru = DeviceGuruImplementation()
-                var modelName: String? { try? deviceGuru.hardwareDescription() }
-                
-                Text("Headware:").font(.headline).padding()
-                VStack(spacing: 0) {
-                    TwoColumnRow(leftText: "Device Name:", rightText: "\(device.name)")
-                    TwoColumnRow(leftText: "IOS Version:", rightText: "\(device.systemVersion)")
-                    TwoColumnRow(leftText: "Manufacturer:", rightText: "Apple")
-                    TwoColumnRow(leftText: "Model:", rightText: "\(modelName ?? "N/A")")
-                    //TwoColumnRow(leftText: "Build Version:", rightText: "\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A")")
-                }.padding(.leading)
-                
-                Text("")
-                Text("Bluetooth Low Energy:").font(.headline).padding()
-                VStack(spacing: 0) {
-                    TwoColumnRow(leftText: "BLE Support Status:", rightText: "\(globalState.isBLESupported ? "YES" : "Not Supported")")
-                    TwoColumnRow(leftText: "Peripheral mode supported:", rightText: "\(globalState.isPeripheralModeSupported ? "YES" : "Not Supported")")
+            VStack(spacing: 0) {
+                Rectangle()
+                    .fill(Color.appPrimaryBrand)
+                    .frame(height: 1)
 
-                }.padding(.leading)
-                
-                Text("")
-                Text("Screen:").font(.headline).padding()
-                
-                let resolution = getScreenResolution()
-                let formattedWidth = String(format: "%.1f", resolution.width)
-                let formattedHeight = String(format: "%.1f", resolution.height)
-                
-                let screenDimensions = getScreenDimensionsInDIP()
-                let screenDimensionsWidth = String(format: "%.1f", screenDimensions.width)
-                let screenDimensionsHeight = String(format: "%.1f", screenDimensions.height)
-                
-                let wideColorGamutSupported = isWideColorGamutSupported()
-                let hdrSupported = isHDRSupported()
-                let aspectRatio = getAspectRatio()
-                
-                VStack(spacing: 0) {
-                    TwoColumnRow(leftText: "Dimensions(px):", rightText: " \(formattedWidth) x \(formattedHeight)")
-                    TwoColumnRow(leftText: "Dimensions(dpi):", rightText: "\(screenDimensionsWidth) x \(screenDimensionsHeight)")
-                    TwoColumnRow(leftText: "Wide color gamut:", rightText: "\(wideColorGamutSupported ? "Supported" : "Not supported")")
-                    TwoColumnRow(leftText: "High Dynamic Range (HDR):", rightText: "\(hdrSupported ? "Supported" : "Not supported")")
-                    TwoColumnRow(leftText: "Aspect ratio:", rightText: "\(aspectRatio)")
-                }.padding(.leading)
-                Spacer()
+                ZStack {
+                    Image("bgView_image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        .clipped()
+                        .ignoresSafeArea()
+                    
+                    ScrollView {
+                        VStack (alignment: .center) {
+                        
+                        let deviceGuru = DeviceGuruImplementation()
+                        var modelName: String? { try? deviceGuru.hardwareDescription() }
+                        
+                        Text("Hardware:")
+                            .font(.custom("Stolzl-Medium", size: 14))
+                            .foregroundColor(Color.appPrimaryText)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.top, 20)
+                            .padding(.bottom, 10)
+                        
+                        VStack(spacing: 0) {
+                            TwoColumnRow(leftText: "Device Name:", rightText: "\(device.name)")
+                            TwoColumnRow(leftText: "IOS Version:", rightText: "\(device.systemVersion)")
+                            TwoColumnRow(leftText: "Manufacturer:", rightText: "Apple")
+                            TwoColumnRow(leftText: "Model:", rightText: "\(modelName ?? "N/A")")
+                        }
+                        .padding(.horizontal)
+                        
+                        Text("Bluetooth Low Energy:")
+                            .font(.custom("Stolzl-Medium", size: 14))
+                            .foregroundColor(Color.appPrimaryText)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.top, 20)
+                            .padding(.bottom, 10)
+                        
+                        VStack(spacing: 0) {
+                            TwoColumnRow(leftText: "BLE Support Status:", rightText: "\(globalState.isBLESupported ? "YES" : "Not Supported")")
+                            TwoColumnRow(leftText: "Periphreal mode supported:", rightText: "\(globalState.isPeripheralModeSupported ? "YES" : "Not Supported")")
+                        }
+                        .padding(.horizontal)
+                        
+                        Text("Screen:")
+                            .font(.custom("Stolzl-Medium", size: 14))
+                            .foregroundColor(Color.appPrimaryText)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.top, 20)
+                            .padding(.bottom, 10)
+                        
+                        let resolution = getScreenResolution()
+                        let formattedWidth = String(format: "%.1f", resolution.width)
+                        let formattedHeight = String(format: "%.1f", resolution.height)
+                        
+                        let screenDimensions = getScreenDimensionsInDIP()
+                        let screenDimensionsWidth = String(format: "%.1f", screenDimensions.width)
+                        let screenDimensionsHeight = String(format: "%.1f", screenDimensions.height)
+                        
+                        let wideColorGamutSupported = isWideColorGamutSupported()
+                        let hdrSupported = isHDRSupported()
+                        let aspectRatio = getAspectRatio()
+                        
+                        VStack(spacing: 0) {
+                            TwoColumnRow(leftText: "Dimensions(px):", rightText: "\(formattedWidth) x \(formattedHeight)")
+                            TwoColumnRow(leftText: "Dimensions(dpi):", rightText: "\(screenDimensionsWidth) x \(screenDimensionsHeight)")
+                            TwoColumnRow(leftText: "High Dynamic Range (HDR):", rightText: "\(hdrSupported ? "Supported" : "")")
+                            TwoColumnRow(leftText: "Aspect ratio:", rightText: "\(aspectRatio)")
+                        }
+                        .padding(.horizontal)
+                        
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity)
+                }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .navigationBarTitle("System Information", displayMode: .inline)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("System Information")
+                        .font(.custom("Stolzl-Medium", size: 14))
+                        .foregroundColor(.white)
+                }
+            }
             .navigationBarItems(leading: Button(action: {
                 showSheet = false
             }) {
-                Text("Back")
-                    .font(.headline)
-                    .foregroundColor(.white)
+                HStack(spacing: 4) {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.white)
+                    Text("Back")
+                        .font(.custom("Stolzl-Medium", size: 14))
+                        .foregroundColor(.white)
+                }
+                .frame(minWidth: 70, minHeight: 44)
+                .contentShape(Rectangle())
             })
         }
     }

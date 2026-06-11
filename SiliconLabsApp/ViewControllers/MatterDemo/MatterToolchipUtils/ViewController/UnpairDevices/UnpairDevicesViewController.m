@@ -3,6 +3,7 @@
 #import "UnpairDevicesViewController.h"
 #import "CHIPUIViewUtils.h"
 #import "DefaultsUtils.h"
+#import "UIColor+SILColors.h"
 #import "DeviceSelector.h"
 #import <Matter/Matter.h>
 
@@ -27,6 +28,12 @@
     [self.view addGestureRecognizer:tap];
 
     [self setupUIElements];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
 }
 
 - (void)dismissKeyboard
@@ -89,7 +96,7 @@
     _unpairButton = [UIButton new];
     [_unpairButton setTitle:@"Unpair Devices" forState:UIControlStateNormal];
     [_unpairButton addTarget:self action:@selector(unpairSelectedDevices:) forControlEvents:UIControlEventTouchUpInside];
-    _unpairButton.backgroundColor = UIColor.systemBlueColor;
+    _unpairButton.backgroundColor = [UIColor appPrimaryBrand];
     _unpairButton.titleLabel.font = [UIFont systemFontOfSize:17];
     _unpairButton.titleLabel.textColor = [UIColor whiteColor];
     _unpairButton.layer.cornerRadius = 5;

@@ -23,14 +23,14 @@ class SettingsNavigationController : UINavigationController {
         self.navigationBar.isTranslucent = true
         self.navigationBar.shadowImage = UIImage()
         self.navigationBar.tintColor = StyleColor.white
-        self.navigationBar.backgroundColor = UIColor.sil_siliconLabsRed()
+        self.navigationBar.backgroundColor = UIColor.appNavigationPrimary
 
         self.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([
             NSAttributedString.Key.foregroundColor.rawValue: StyleColor.white,
             NSAttributedString.Key.font.rawValue : StyleText.navBarTitle.font
         ])
 
-        let image = UIImage.tb_imageWithColor(StyleColor.vileRed, size: CGSize(width: 1, height: 1))
+        let image = UIImage.tb_imageWithColor(UIColor.appNavigationPrimary, size: CGSize(width: 1, height: 1))
         self.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
     }
     

@@ -201,7 +201,7 @@ class EHGraphLineChartView: LineChartView {
         dataSet.drawFilledEnabled = false
         dataSet.drawValuesEnabled = true
         dataSet.fillAlpha = 3
-        dataSet.setCircleColor(.systemBlue)
+        dataSet.setCircleColor(UIColor.appPrimaryBrand)
         dataSet.drawHorizontalHighlightIndicatorEnabled = false
         dataSet.drawVerticalHighlightIndicatorEnabled = false
         

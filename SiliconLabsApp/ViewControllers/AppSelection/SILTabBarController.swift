@@ -51,13 +51,13 @@ class SILTabBarController: UITabBarController, UITabBarControllerDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor: UIColor.sil_background(),
-                NSAttributedString.Key.font: UIFont.robotoRegular(size: UIFont.getMiddleFontSize())!
+                NSAttributedString.Key.font: UIFont.stolzlRegular(size: UIFont.getMiddleFontSize())!
             ],
             for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.foregroundColor: UIColor.sil_regularBlue(),
-                NSAttributedString.Key.font: UIFont.robotoRegular(size: UIFont.getMiddleFontSize())!
+                NSAttributedString.Key.foregroundColor: UIColor.appPrimaryBrand,
+                NSAttributedString.Key.font: UIFont.stolzlRegular(size: UIFont.getMiddleFontSize())!
             ],
             for: .selected)
     }

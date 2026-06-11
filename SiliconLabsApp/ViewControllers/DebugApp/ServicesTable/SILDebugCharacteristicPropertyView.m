@@ -8,6 +8,8 @@
 
 #import "SILDebugCharacteristicPropertyView.h"
 #import "SILDebugProperty.h"
+#import "UIImage+SILImages.h"
+#import "UIColor+SILColors.h"
 
 @interface SILDebugCharacteristicPropertyView ()
 
@@ -56,6 +58,10 @@
     self.propertyTitleLabel.text = propertyModel.title;
     if (propertyModel.imageName) {
         self.propertyIconImageView.image = [UIImage imageNamed:propertyModel.imageName];
+        if ([propertyModel.imageName isEqualToString:SILImageNamePropertyWrite] ||
+            [propertyModel.imageName isEqualToString:SILImageNamePropertyWriteDisabled]) {
+            self.propertyIconImageView.tintColor = [UIColor sil_primaryTextColor];
+        }
     }
     [self layoutIfNeeded];
 }

@@ -39,7 +39,7 @@ class SILESLDemoTagCell: UITableViewCell, SILCellView {
             btAddressLabel.text = viewModel.btAddress.address
             eslIdLabel.text = "ESL ID: \(viewModel.elsId.rawValue)"
             pingButton.imageView?.tintColor = UIColor.black
-            ledButton.imageView?.tintColor = viewModel.isOnLed ? UIColor.sil_regularBlue() : UIColor.black
+            ledButton.imageView?.tintColor = viewModel.isOnLed ? UIColor.appPrimaryBrand : UIColor.black
             imageUpdateButton.imageView?.tintColor = UIColor.black
             displayImageButton.imageView?.tintColor = UIColor.black
             deleteButton.imageView?.tintColor = UIColor.black

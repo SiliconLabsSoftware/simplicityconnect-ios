@@ -42,6 +42,8 @@ class SILGattConfiguratorHomeViewController: UIViewController, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupBackgroundImage()
         setupNormalModeView()
         disallowMultipleButtonTouches()
         setupLogic()
@@ -53,6 +55,36 @@ class SILGattConfiguratorHomeViewController: UIViewController, UITableViewDataSo
         super.viewWillAppear(animated)
         self.floatingButtonSettings?.setPresented(true)
         self.viewModel.isActiveScrollingUp = false
+    }
+    
+    private func setupBackgroundImage() {
+        let bgImageView = UIImageView(image: UIImage(named: "bgView_image"))
+        bgImageView.contentMode = .scaleAspectFill
+        bgImageView.clipsToBounds = true
+        bgImageView.translatesAutoresizingMaskIntoConstraints = false
+        bgImageView.tag = 9999
+        view.insertSubview(bgImageView, at: 0)
+        
+        NSLayoutConstraint.activate([
+            bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            bgImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bgImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bgImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        clearBackgroundsRecursively(view)
+    }
+    
+    private func clearBackgroundsRecursively(_ view: UIView) {
+        if view.tag == 9999 { return }
+        
+        if !(view is UITableViewCell) && !(view is UICollectionViewCell) {
+            view.backgroundColor = .clear
+        }
+        
+        for subview in view.subviews {
+            clearBackgroundsRecursively(subview)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -85,6 +117,9 @@ class SILGattConfiguratorHomeViewController: UIViewController, UITableViewDataSo
     }
     
     private func setupLogic() {
+        // visible when export mode turns on.
+        exportButtonView.backgroundColor = .systemBackground
+
         viewModel.isExportButtonEnable.observe { enable in
             self.exportButton.isEnabled = enable
         }.putIn(bag: tokenBag)
@@ -93,6 +128,7 @@ class SILGattConfiguratorHomeViewController: UIViewController, UITableViewDataSo
         viewModel.isExportModeOn.observe { isOn in
             self.floatingButtonSettings?.setPresented(!isOn)
             self.exportButtonView.isHidden = !isOn
+            self.exportButtonView.backgroundColor = .systemBackground
             self.exportViewHeight.constant = isOn ? 70.0 : 0.0
             self.exportCheckBoxTableViewWidthConstraint.constant = isOn ? 52.0 : 16.0
             self.configurationsTableView.reloadData()

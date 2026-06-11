@@ -11,8 +11,15 @@ import UIKit
 @IBDesignable
 class SILRoundedButton: UIButton {
 
+    @IBInspectable var cornerRadius: CGFloat = CornerRadiusForButtons {
+        didSet {
+            self.layer.cornerRadius = cornerRadius
+            self.layer.masksToBounds = true
+        }
+    }
+
     override func draw(_ rect: CGRect) {
-        self.layer.cornerRadius = CornerRadiusForButtons
+        self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
     

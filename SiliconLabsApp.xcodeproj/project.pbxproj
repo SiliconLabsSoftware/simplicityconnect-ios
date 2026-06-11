@@ -225,146 +225,6 @@
 		0F3EB6B820C524C30062A7C1 /* SILRangeTestAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3EB6B620C524C30062A7C1 /* SILRangeTestAppViewModel.swift */; };
 		0F44BCAE20EE5E0E00CD27B3 /* SILRangeTestCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44BCAD20EE5E0E00CD27B3 /* SILRangeTestCharacteristic.swift */; };
 		0F44BCAF20EE5E0E00CD27B3 /* SILRangeTestCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44BCAD20EE5E0E00CD27B3 /* SILRangeTestCharacteristic.swift */; };
-		0F4E50F621525FDC00F58ACE /* SILBluetoothFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA7641BD68AB300C2B07E /* SILBluetoothFieldModel.m */; };
-		0F4E50F821525FDC00F58ACE /* SILOTAUICoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 491ADCBA1E71EEA300AC2E69 /* SILOTAUICoordinator.m */; };
-		0F4E50F921525FDC00F58ACE /* SILActivityBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492CA4AF1E4E0DD700502AC9 /* SILActivityBarViewController.m */; };
-		0F4E50FA21525FDC00F58ACE /* SILDebugAdvDetailsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0755DD031BD05C5C0003886D /* SILDebugAdvDetailsCollectionView.m */; };
-		0F4E50FD21525FDC00F58ACE /* SILBigBlueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 496A42F21E7C582F006E87F2 /* SILBigBlueButton.m */; };
-		0F4E50FE21525FDC00F58ACE /* SILDebugCharacteristicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8CB1BCD6E3B001948C1 /* SILDebugCharacteristicTableViewCell.m */; };
-		0F4E50FF21525FDC00F58ACE /* SILBluetoothModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA74D1BD5858F00C2B07E /* SILBluetoothModelManager.m */; };
-		0F4E510021525FDC00F58ACE /* SILSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E607A3501A8D4FD100DAAFD3 /* SILSettings.m */; };
-		0F4E510121525FDC00F58ACE /* SILWeakTargetWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E642661F1A855DA8006C6B2F /* SILWeakTargetWrapper.m */; };
-		0F4E510421525FDC00F58ACE /* SILDebugServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8CF1BCD6E3B001948C1 /* SILDebugServiceTableViewCell.m */; };
-		0F4E510521525FDC00F58ACE /* SILDebugAdvDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078138461BE99502001EFE7E /* SILDebugAdvDetailsViewController.m */; };
-		0F4E510621525FDC00F58ACE /* SILDeviceSelectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CC658141F96C3C200953CDC /* SILDeviceSelectionViewModel.m */; };
-		0F4E510A21525FDC00F58ACE /* SILCharacteristicFieldValueResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702AB2B1BDFEE35009527B0 /* SILCharacteristicFieldValueResolver.m */; };
-		0F4E510B21525FDC00F58ACE /* SILBluetoothBitFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA75E1BD687CC00C2B07E /* SILBluetoothBitFieldModel.m */; };
-		0F4E510C21525FDC00F58ACE /* SILDiscoveredPeripheralDisplayDataViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BB94B41E68FB4B0068670E /* SILDiscoveredPeripheralDisplayDataViewModel.m */; };
-		0F4E510D21525FDC00F58ACE /* SILDebugDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8D61BCD6E6F001948C1 /* SILDebugDeviceTableViewCell.m */; };
-		0F4E510E21525FDC00F58ACE /* DebugDeviceFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9E9311F279A670054C387 /* DebugDeviceFilterViewController.swift */; };
-		0F4E510F21525FDC00F58ACE /* SILDebugAdvDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0755DCFA1BCFEE5D0003886D /* SILDebugAdvDetailCollectionViewCell.m */; };
-		0F4E511021525FDC00F58ACE /* SILHealthThermometerAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CFEB261A686DC000F216AB /* SILHealthThermometerAppViewController.m */; };
-		0F4E511121525FDC00F58ACE /* SILProximityCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = E64266221A8565BA006C6B2F /* SILProximityCalculator.m */; };
-		0F4E511221525FDC00F58ACE /* SILDoubleKeyDictionaryPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 0752B7811BDEEC2C0064CBF0 /* SILDoubleKeyDictionaryPair.m */; };
-		0F4E511321525FDC00F58ACE /* SILBluetoothEnumerationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA7611BD688D300C2B07E /* SILBluetoothEnumerationModel.m */; };
-		0F4E511421525FDC00F58ACE /* RSSISliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D43591F291C17001EE0D2 /* RSSISliderTableViewCell.swift */; };
-		0F4E511821525FDC00F58ACE /* SILDebugCharacteristicValueFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702AB311BE10E07009527B0 /* SILDebugCharacteristicValueFieldTableViewCell.m */; };
-		0F4E511921525FDC00F58ACE /* UIImage+SILImages.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CCCFF71A7304210004B2F4 /* UIImage+SILImages.m */; };
-		0F4E511B21525FDC00F58ACE /* TLMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA162DCD1F0541B600E3DB22 /* TLMData.swift */; };
-		0F4E511C21525FDC00F58ACE /* UITableViewCell+SILHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 074691431BFE21A7000D6839 /* UITableViewCell+SILHelpers.m */; };
-		0F4E511D21525FDC00F58ACE /* SILTextFieldEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 078138571BE9B014001EFE7E /* SILTextFieldEntryCell.m */; };
-		0F4E511E21525FDC00F58ACE /* SILAdvertisementDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0755DD061BD086180003886D /* SILAdvertisementDataModel.m */; };
-		0F4E511F21525FDC00F58ACE /* SILCharacteristicTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8861BC47790001948C1 /* SILCharacteristicTableModel.m */; };
-		0F4E512121525FDC00F58ACE /* SILRangeTestAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3EB6B620C524C30062A7C1 /* SILRangeTestAppViewModel.swift */; };
-		0F4E512221525FDC00F58ACE /* SILDebugCharacteristicPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8C91BCD6E3B001948C1 /* SILDebugCharacteristicPropertyView.m */; };
-		0F4E512321525FDC00F58ACE /* CBPeripheral+Services.m in Sources */ = {isa = PBXBuildFile; fileRef = 4924BA6A1E7057F800AE9E56 /* CBPeripheral+Services.m */; };
-		0F4E512421525FDC00F58ACE /* SILDebugProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A89B1BC5F872001948C1 /* SILDebugProperty.m */; };
-		0F4E512521525FDC00F58ACE /* SILPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB4BEA1E7A2EC200223F3E /* SILPopoverViewController.m */; };
-		0F4E512621525FDC00F58ACE /* SILThermometerSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E666CBEA1A77C75400676C5C /* SILThermometerSegmentedControl.m */; };
-		0F4E512821525FDC00F58ACE /* SILOTAHUDPeripheralViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E508D1E92E507004FD829 /* SILOTAHUDPeripheralViewModel.m */; };
-		0F4E512921525FDC00F58ACE /* SILDebugAdvDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 078138481BE99502001EFE7E /* SILDebugAdvDetailTableViewCell.m */; };
-		0F4E512D21525FDC00F58ACE /* SILHeartRateMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B773EC1A68474800B93058 /* SILHeartRateMeasurement.m */; };
-		0F4E512E21525FDC00F58ACE /* SILApp+AttributedProfiles.m in Sources */ = {isa = PBXBuildFile; fileRef = E666CBE01A76B67900676C5C /* SILApp+AttributedProfiles.m */; };
-		0F4E512F21525FDC00F58ACE /* SILOTAFirmwareFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 494F93C91E7719D40057C1E0 /* SILOTAFirmwareFile.m */; };
-		0F4E513021525FDC00F58ACE /* SILBitRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0752B77B1BDED93F0064CBF0 /* SILBitRowModel.m */; };
-		0F4E513221525FDC00F58ACE /* SILCollectionViewRightAlignedFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C8FF0E1A71A9A900DF062F /* SILCollectionViewRightAlignedFlowLayout.m */; };
-		0F4E513321525FDC00F58ACE /* UIColor+SILColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E666CBDA1A767DCB00676C5C /* UIColor+SILColors.m */; };
-		0F4E513621525FDC00F58ACE /* SILTemperatureType.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CDEB3B1A698F4900AC7B33 /* SILTemperatureType.m */; };
-		0F4E513821525FDC00F58ACE /* SILCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A37E401A82809B00510E39 /* SILCentralManager.m */; };
-		0F4E513921525FDC00F58ACE /* CBService+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 4924BA6D1E70585100AE9E56 /* CBService+Categories.m */; };
-		0F4E513B21525FDC00F58ACE /* SILBluetoothDescriptorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA7581BD5CDB400C2B07E /* SILBluetoothDescriptorModel.m */; };
-		0F4E513C21525FDC00F58ACE /* SILRoundedViewBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B3EC9B1AADD9BD005A687F /* SILRoundedViewBehaviour.m */; };
-		0F4E513D21525FDC00F58ACE /* SILRangeTestSettingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8163C020C52386008B98C6 /* SILRangeTestSettingValue.swift */; };
-		0F4E513E21525FDC00F58ACE /* EddystoneBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E96F3E1E64618E00516DDC /* EddystoneBeacon.swift */; };
-		0F4E513F21525FDC00F58ACE /* SILRangeTestModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AC36520ADAABF0010091C /* SILRangeTestModeSelectionViewController.swift */; };
-		0F4E514021525FDC00F58ACE /* SILRangeTestPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD15EB920BD3D0D00ED43BB /* SILRangeTestPeripheral.swift */; };
-		0F4E514221525FDC00F58ACE /* SILKeyValueViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 494F93C01E77170B0057C1E0 /* SILKeyValueViewModel.m */; };
-		0F4E514321525FDC00F58ACE /* SILDebugCharacteristicEnumerationFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702AB3B1BE1844E009527B0 /* SILDebugCharacteristicEnumerationFieldTableViewCell.m */; };
-		0F4E514421525FDC00F58ACE /* SILRangeTestCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44BCAD20EE5E0E00CD27B3 /* SILRangeTestCharacteristic.swift */; };
-		0F4E514521525FDC00F58ACE /* SILTemperatureMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CDEB3E1A69911D00AC7B33 /* SILTemperatureMeasurement.m */; };
-		0F4E514821525FDC00F58ACE /* SILOTAFirmwareUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 494F93C61E7717A90057C1E0 /* SILOTAFirmwareUpdate.m */; };
-		0F4E514921525FDC00F58ACE /* SILBodySensorLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B773EF1A684B9700B93058 /* SILBodySensorLocation.m */; };
-		0F4E514A21525FDC00F58ACE /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D43571F27EA65001EE0D2 /* TextFieldTableViewCell.swift */; };
-		0F4E514B21525FDC00F58ACE /* SILConnectedLightingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C39082E1FA8AC7A00934AD1 /* SILConnectedLightingViewController.m */; };
-		0F4E514C21525FDC00F58ACE /* SILCharacteristicFieldBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0752B7741BDEC2C00064CBF0 /* SILCharacteristicFieldBuilder.m */; };
-		0F4E514D21525FDC00F58ACE /* SILApp.m in Sources */ = {isa = PBXBuildFile; fileRef = E621B34B1A655B3F00223C5A /* SILApp.m */; };
-		0F4E514E21525FDC00F58ACE /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78173E1F33A86100B37B09 /* UIFont+Extensions.swift */; };
-		0F4E514F21525FDC00F58ACE /* SILDebugServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8CD1BCD6E3B001948C1 /* SILDebugServicesViewController.m */; };
-		0F4E515021525FDC00F58ACE /* SILBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CCCFE91A73040C0004B2F4 /* SILBeacon.m */; };
-		0F4E515321525FDC00F58ACE /* SILOTASetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491ADCBD1E72E58300AC2E69 /* SILOTASetupViewController.m */; };
-		0F4E515421525FDC00F58ACE /* WYPopoverController+SILHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CCCFF91A7304210004B2F4 /* WYPopoverController+SILHelpers.m */; };
-		0F4E515521525FDC00F58ACE /* SILUUIDProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4924BA731E719C9900AE9E56 /* SILUUIDProvider.m */; };
-		0F4E515621525FDC00F58ACE /* SILRangeTestMovingAverageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFDD024210F09A000CFFB5E /* SILRangeTestMovingAverageCalculator.swift */; };
-		0F4E515721525FDC00F58ACE /* SILDebugSpacerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 078137DB1BE3C45D001EFE7E /* SILDebugSpacerTableViewCell.m */; };
-		0F4E515821525FDC00F58ACE /* SILOTAFirmwareUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C10EEE1E71E0EC00C67256 /* SILOTAFirmwareUpdateManager.m */; };
-		0F4E515921525FDC00F58ACE /* SILOTAProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB4BEF1E7A33C900223F3E /* SILOTAProgressViewController.m */; };
-		0F4E515A21525FDC00F58ACE /* SILDebugCharacteristicToggleFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702AB361BE179EE009527B0 /* SILDebugCharacteristicToggleFieldTableViewCell.m */; };
-		0F4E515C21525FDC00F58ACE /* SILConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A37E461A82C1C400510E39 /* SILConstants.m */; };
-		0F4E515D21525FDC00F58ACE /* SILCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E607A34D1A8D1F3000DAAFD3 /* SILCalibrationViewController.m */; };
-		0F4E515F21525FDC00F58ACE /* SILBitFieldFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 070167491BE2B5B70075F005 /* SILBitFieldFieldModel.m */; };
-		0F4E516021525FDC00F58ACE /* SILBluetoothXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA7461BD5820C00C2B07E /* SILBluetoothXMLParser.m */; };
-		0F4E516421525FDC00F58ACE /* SILDebugHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8C61BCD6E2D001948C1 /* SILDebugHeaderView.m */; };
-		0F4E516721525FDC00F58ACE /* SILRangeTestAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34409A20AF18BA0067397C /* SILRangeTestAppViewController.swift */; };
-		0F4E516821525FDC00F58ACE /* SILOTAFirmwareUpdateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 494F93C31E7717540057C1E0 /* SILOTAFirmwareUpdateViewModel.m */; };
-		0F4E516921525FDC00F58ACE /* UIView+SILAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A87F1BC41462001948C1 /* UIView+SILAnimations.m */; };
-		0F4E516A21525FDC00F58ACE /* SILValueFieldRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0752B77E1BDED9710064CBF0 /* SILValueFieldRowModel.m */; };
-		0F4E516B21525FDC00F58ACE /* SILEnumerationFieldRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0752B7781BDED8D00064CBF0 /* SILEnumerationFieldRowModel.m */; };
-		0F4E516C21525FDC00F58ACE /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7817421F34C5C500B37B09 /* Int+Extensions.swift */; };
-		0F4E516D21525FDC00F58ACE /* UIImage+SILHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E666CBDD1A76809A00676C5C /* UIImage+SILHelpers.m */; };
-		0F4E516E21525FDC00F58ACE /* SILOTAHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB431101E8315CE00EE94F0 /* SILOTAHUDView.m */; };
-		0F4E516F21525FDC00F58ACE /* SILServiceTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8831BC47615001948C1 /* SILServiceTableModel.m */; };
-		0F4E517021525FDC00F58ACE /* SILBluetoothSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E62B4E1ECCA29400344CAA /* SILBluetoothSearch.m */; };
-		0F4E517121525FDC00F58ACE /* SILBluetoothCharacteristicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA7551BD5C89700C2B07E /* SILBluetoothCharacteristicModel.m */; };
-		0F4E517321525FDC00F58ACE /* SILBluetoothServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA7521BD5BD3500C2B07E /* SILBluetoothServiceModel.m */; };
-		0F4E517421525FDC00F58ACE /* SILWeakNotificationPair.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C667231B0A5BD90083C248 /* SILWeakNotificationPair.m */; };
-		0F4E517521525FDC00F58ACE /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D435D1F2A3F15001EE0D2 /* GradientSlider.swift */; };
-		0F4E517721525FDC00F58ACE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CAA2251A64011900A49DAF /* main.m */; };
-		0F4E517821525FDC00F58ACE /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA154A71F20F3D8002078B5 /* BrowserViewModel.swift */; };
-		0F4E517921525FDC00F58ACE /* SILDebugPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078138361BE97370001EFE7E /* SILDebugPopoverViewController.m */; };
-		0F4E517C21525FDC00F58ACE /* SILBluetoothBitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BBA75B1BD6862A00C2B07E /* SILBluetoothBitModel.m */; };
-		0F4E517E21525FDC00F58ACE /* SILRangeTestTXValueUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F75B9D021395E3200E8D9E9 /* SILRangeTestTXValueUpdater.swift */; };
-		0F4E517F21525FDC00F58ACE /* NSDictionary+SILErrorCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 494F93AA1E757FB10057C1E0 /* NSDictionary+SILErrorCode.m */; };
-		0F4E518021525FDC00F58ACE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D435B1F2A35A3001EE0D2 /* GradientView.swift */; };
-		0F4E518121525FDC00F58ACE /* KZBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = E64C95BB1AB20DB60029E23A /* KZBehaviour.m */; };
-		0F4E518221525FDC00F58ACE /* SILDescriptorTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B8A8891BC47834001948C1 /* SILDescriptorTableModel.m */; };
-		0F4E518421525FDC00F58ACE /* SILBarGraphCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C8FF0B1A71869A00DF062F /* SILBarGraphCollectionViewCell.m */; };
-		0F4E518621525FDC00F58ACE /* SILRangeTestManufacturerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F69656820ECD32A0083C32A /* SILRangeTestManufacturerData.swift */; };
-		0F4E518721525FDC00F58ACE /* NSError+SILHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CCCFF51A7304210004B2F4 /* NSError+SILHelpers.m */; };
-		0F4E518821525FDC00F58ACE /* SILAdvertisementDataViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BB94B11E68F2DC0068670E /* SILAdvertisementDataViewModel.m */; };
-		0F4E518921525FDC00F58ACE /* SILEncodingPseudoFieldRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC2956BD095FCA31424BC0 /* SILEncodingPseudoFieldRowModel.m */; };
-		0F4E518B21525FDC00F58ACE /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621B33E1A65573500223C5A /* CoreBluetooth.framework */; };
-		0F4E518C21525FDC00F58ACE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D45D351A6EA74C002D9EC4 /* CoreLocation.framework */; };
-		0F4E518D21525FDC00F58ACE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E666CBE61A77298900676C5C /* QuartzCore.framework */; };
-		0F4E519121525FDC00F58ACE /* SILOTAProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FB4BF01E7A33C900223F3E /* SILOTAProgressViewController.xib */; };
-		0F4E519221525FDC00F58ACE /* SILDebugDeviceFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD9E9331F279B910054C387 /* SILDebugDeviceFilterViewController.xib */; };
-		0F4E519321525FDC00F58ACE /* SILBeaconRegistryEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07140FA01BFD80E8001CD217 /* SILBeaconRegistryEntryCell.xib */; };
-		0F4E519521525FDC00F58ACE /* SILDebugDeviceTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137EC1BE40A8C001EFE7E /* SILDebugDeviceTableViewCell~iphone.xib */; };
-		0F4E519621525FDC00F58ACE /* SILDebugDeviceTableViewCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137EB1BE40A8C001EFE7E /* SILDebugDeviceTableViewCell~ipad.xib */; };
-		0F4E519721525FDC00F58ACE /* SILRetailBeaconDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5F62EC1F0A859F007EDAAC /* SILRetailBeaconDetailsHeaderView.xib */; };
-		0F4E519821525FDC00F58ACE /* SILDebugAdvDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0763AC4A1BFE8F5400EBE94B /* SILDebugAdvDetailTableViewCell.xib */; };
-		0F4E519A21525FDC00F58ACE /* SILDebugDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137ED1BE40A8C001EFE7E /* SILDebugDeviceViewController.xib */; };
-		0F4E519B21525FDC00F58ACE /* SILDebugCharacteristicToggleFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137FD1BE40AA5001EFE7E /* SILDebugCharacteristicToggleFieldTableViewCell.xib */; };
-		0F4E519C21525FDC00F58ACE /* SILOTAHUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB431121E8315EF00EE94F0 /* SILOTAHUDView.xib */; };
-		0F4E519D21525FDC00F58ACE /* SILDebugCharacteristicValueFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137FE1BE40AA5001EFE7E /* SILDebugCharacteristicValueFieldTableViewCell.xib */; };
-		0F4E519E21525FDC00F58ACE /* SILAppTypeRangeTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F34409420AF0E250067397C /* SILAppTypeRangeTest.storyboard */; };
-		0F4E519F21525FDC00F58ACE /* SILActivityBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492CA4B01E4E0DD700502AC9 /* SILActivityBarViewController.xib */; };
-		0F4E51A121525FDC00F58ACE /* SILDebugAdvDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137E81BE40A8C001EFE7E /* SILDebugAdvDetailCollectionViewCell.xib */; };
-		0F4E51A221525FDC00F58ACE /* SILDebugServiceTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078138021BE40AA5001EFE7E /* SILDebugServiceTableViewCell~iphone.xib */; };
-		0F4E51A421525FDC00F58ACE /* SILDebugSpacerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137FF1BE40AA5001EFE7E /* SILDebugSpacerTableViewCell.xib */; };
-		0F4E51A921525FDC00F58ACE /* XML in Resources */ = {isa = PBXBuildFile; fileRef = 07BBA74F1BD599F800C2B07E /* XML */; };
-		0F4E51AA21525FDC00F58ACE /* SILDebugCharacteristicEnumerationFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137F91BE40AA5001EFE7E /* SILDebugCharacteristicEnumerationFieldTableViewCell.xib */; };
-		0F4E51AB21525FDC00F58ACE /* SILPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FB4BEB1E7A2EC200223F3E /* SILPopoverViewController.xib */; };
-		0F4E51AD21525FDC00F58ACE /* SILDebugAdvDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0763AC491BFE8F5400EBE94B /* SILDebugAdvDetailsViewController.xib */; };
-		0F4E51AE21525FDC00F58ACE /* SILRetailBeaconDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0FF4061EFC11AD007C14D3 /* SILRetailBeaconDetailsViewController.xib */; };
-		0F4E51B021525FDC00F58ACE /* SILDebugCharacteristicPropertyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137FA1BE40AA5001EFE7E /* SILDebugCharacteristicPropertyView.xib */; };
-		0F4E51B421525FDC00F58ACE /* SILRetailBeaconAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0781381A1BE40D4C001EFE7E /* SILRetailBeaconAppViewController.xib */; };
-		0F4E51B521525FDC00F58ACE /* SILDebugServiceTableViewCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078138011BE40AA5001EFE7E /* SILDebugServiceTableViewCell~ipad.xib */; };
-		0F4E51BA21525FDC00F58ACE /* SILOTASetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491ADCBE1E72E58300AC2E69 /* SILOTASetupViewController.xib */; };
-		0F4E51BC21525FDC00F58ACE /* SILCalibrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B3ECA01AAE2C8B005A687F /* SILCalibrationViewController.xib */; };
-		0F4E51BD21525FDC00F58ACE /* SILBarGraphCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0781381C1BE40D69001EFE7E /* SILBarGraphCollectionViewCell.xib */; };
-		0F4E51BE21525FDC00F58ACE /* SILDebugHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078137EF1BE40A8C001EFE7E /* SILDebugHeaderView.xib */; };
-		0F4E51BF21525FDC00F58ACE /* SILTextFieldEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0797E34B1BF0071D0046EF0E /* SILTextFieldEntryCell.xib */; };
-		0F4E51C121525FDC00F58ACE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6CAA2301A64011900A49DAF /* Images.xcassets */; };
 		0F69656920ECD32A0083C32A /* SILRangeTestManufacturerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F69656820ECD32A0083C32A /* SILRangeTestManufacturerData.swift */; };
 		0F69656A20ECD32A0083C32A /* SILRangeTestManufacturerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F69656820ECD32A0083C32A /* SILRangeTestManufacturerData.swift */; };
 		0F75B9D121395E3200E8D9E9 /* SILRangeTestTXValueUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F75B9D021395E3200E8D9E9 /* SILRangeTestTXValueUpdater.swift */; };
@@ -381,13 +241,10 @@
 		133D39C32554514600BFB484 /* SILAdvertiserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133D39C22554514600BFB484 /* SILAdvertiserNotification.swift */; };
 		1394F95E2566BD4400795E5A /* SILBigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1394F95D2566BD4400795E5A /* SILBigButton.swift */; };
 		1394F95F2566BD4400795E5A /* SILBigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1394F95D2566BD4400795E5A /* SILBigButton.swift */; };
-		1394F9602566BD4400795E5A /* SILBigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1394F95D2566BD4400795E5A /* SILBigButton.swift */; };
 		13ACBA7F256FA10D00D3EE11 /* SILRangeTestSelectDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ACBA7E256FA10D00D3EE11 /* SILRangeTestSelectDeviceViewController.swift */; };
 		13ACBA80256FA10D00D3EE11 /* SILRangeTestSelectDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ACBA7E256FA10D00D3EE11 /* SILRangeTestSelectDeviceViewController.swift */; };
-		13ACBA81256FA10D00D3EE11 /* SILRangeTestSelectDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ACBA7E256FA10D00D3EE11 /* SILRangeTestSelectDeviceViewController.swift */; };
 		13ACBA87256FB1D400D3EE11 /* SILRangeTestAppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ACBA86256FB1D400D3EE11 /* SILRangeTestAppContainerViewController.swift */; };
 		13ACBA88256FB1D400D3EE11 /* SILRangeTestAppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ACBA86256FB1D400D3EE11 /* SILRangeTestAppContainerViewController.swift */; };
-		13ACBA89256FB1D400D3EE11 /* SILRangeTestAppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ACBA86256FB1D400D3EE11 /* SILRangeTestAppContainerViewController.swift */; };
 		19AC27E79B49CB3AD403E6EA /* SILEncodingPseudoFieldRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC2956BD095FCA31424BC0 /* SILEncodingPseudoFieldRowModel.m */; };
 		1E0458C62680D26D00D5067D /* SILGattMarkerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0458C52680D26D00D5067D /* SILGattMarkerTest.swift */; };
 		1E0458D22681132E00D5067D /* SILGattServiceMarkerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0458D12681132E00D5067D /* SILGattServiceMarkerTest.swift */; };
@@ -872,7 +729,6 @@
 		20513289270365A800C27B92 /* ThunderBoardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205131D9270365A800C27B92 /* ThunderBoardSettings.swift */; };
 		2051328B270365A800C27B92 /* DispatchBlockHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205131DB270365A800C27B92 /* DispatchBlockHelpers.swift */; };
 		2051328C270365A800C27B92 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205131DC270365A800C27B92 /* SettingsViewController.swift */; };
-		2B257CB817ADC2635883B007 /* Pods_WirelessGecko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E1967C516A49F37A0A7B8 /* Pods_WirelessGecko.framework */; };
 		2E25DA4C2C6213970002C09C /* WifiThroughputStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E25DA4B2C6213970002C09C /* WifiThroughputStoryboard.storyboard */; };
 		2E25DA4F2C6214A00002C09C /* WifiThroughputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E25DA4E2C6214A00002C09C /* WifiThroughputVC.swift */; };
 		2E25DA522C622EB50002C09C /* TcpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E25DA512C622EB50002C09C /* TcpClient.m */; };
@@ -902,25 +758,20 @@
 		2ED532BB2CBD3AFD00E456AA /* server_combined.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2ED532BA2CBD3AFD00E456AA /* server_combined.pem */; };
 		2EE8A4412CC63B1D00789115 /* keystore.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4402CC63B1D00789115 /* keystore.p12 */; };
 		2EE8A4422CC63B1D00789115 /* keystore.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4402CC63B1D00789115 /* keystore.p12 */; };
-		2EE8A4432CC63B1D00789115 /* keystore.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4402CC63B1D00789115 /* keystore.p12 */; };
 		2EE8A4442CC63B1D00789115 /* keystore.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4402CC63B1D00789115 /* keystore.p12 */; };
 		2EE8A4462CC7B6F800789115 /* TLSCertificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4452CC7B6F800789115 /* TLSCertificate.p12 */; };
 		2EE8A4472CC7B6F800789115 /* TLSCertificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4452CC7B6F800789115 /* TLSCertificate.p12 */; };
 		2EE8A44E2CC7E5D500789115 /* TLS_Tx.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A44D2CC7E5D500789115 /* TLS_Tx.m */; };
 		2EE8A44F2CC7E5D500789115 /* TLS_Tx.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A44D2CC7E5D500789115 /* TLS_Tx.m */; };
-		2EE8A4502CC7E5D500789115 /* TLS_Tx.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A44D2CC7E5D500789115 /* TLS_Tx.m */; };
 		2EE8A4512CC7E5D500789115 /* TLS_Tx.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A44D2CC7E5D500789115 /* TLS_Tx.m */; };
 		2EE8A4552CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4522CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib */; };
 		2EE8A4562CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4522CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib */; };
-		2EE8A4572CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4522CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib */; };
 		2EE8A4582CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8A4522CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib */; };
 		2EE8A4592CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4532CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift */; };
 		2EE8A45A2CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4532CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift */; };
-		2EE8A45B2CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4532CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift */; };
 		2EE8A45C2CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4532CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift */; };
 		2EE8A45D2CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4542CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift */; };
 		2EE8A45E2CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4542CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift */; };
-		2EE8A45F2CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4542CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift */; };
 		2EE8A4602CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8A4542CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift */; };
 		2EF2AF9E2C65F3B100C34902 /* SILTCPServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2AF9D2C65F3B100C34902 /* SILTCPServerViewController.swift */; };
 		2EF2AFA02C65F3F000C34902 /* SILThroughputMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2AF9F2C65F3F000C34902 /* SILThroughputMainScreenVC.swift */; };
@@ -929,7 +780,6 @@
 		2EF2AFA72C6611F900C34902 /* SILTCPClinetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2AFA52C6611F900C34902 /* SILTCPClinetHelper.swift */; };
 		2EF2AFA82C6611F900C34902 /* SILTCPClinetHelper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2AFA62C6611F900C34902 /* SILTCPClinetHelper.xib */; };
 		2EF2AFAF2C66179900C34902 /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2AFAE2C66179900C34902 /* TCPServer.m */; };
-		2EF2AFB12C66234F00C34902 /* SILThroughputMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2AF9F2C65F3F000C34902 /* SILThroughputMainScreenVC.swift */; };
 		2F0DE91D258B7F4D00BEFF76 /* SILContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DE91C258B7F4D00BEFF76 /* SILContextMenu.swift */; };
 		2FD579D7257933DD001D7E9E /* NSObject+SILAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD579D6257933DD001D7E9E /* NSObject+SILAssociatedObject.m */; };
 		2FD579DD2579352C001D7E9E /* UIViewController+SILContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD579DC2579352C001D7E9E /* UIViewController+SILContext.swift */; };
@@ -940,7 +790,6 @@
 		4320C6C22ADD214800A6D67A /* ContactSensorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4320C6C12ADD214800A6D67A /* ContactSensorViewController.m */; };
 		4320C6C82ADD381800A6D67A /* TemperatureSensorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4320C6C72ADD381800A6D67A /* TemperatureSensorController.m */; };
 		433810762C6A392300213F3D /* SILWifiThroughputGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433810752C6A392300213F3D /* SILWifiThroughputGaugeView.swift */; };
-		433810772C6A392300213F3D /* SILWifiThroughputGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433810752C6A392300213F3D /* SILWifiThroughputGaugeView.swift */; };
 		434488E42C859A4800CD0430 /* UdpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 434488E32C859A4800CD0430 /* UdpClient.m */; };
 		434488E92C88333A00CD0430 /* SILUdpClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434488E72C88333A00CD0430 /* SILUdpClientHelper.swift */; };
 		434488EA2C88333A00CD0430 /* SILUdpClientHelper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434488E82C88333A00CD0430 /* SILUdpClientHelper.xib */; };
@@ -952,7 +801,6 @@
 		434489052C8EF5AD00CD0430 /* SILWifiUdpServerGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434489042C8EF5AD00CD0430 /* SILWifiUdpServerGaugeView.swift */; };
 		434489072C8EF6C700CD0430 /* SILWifiUdpClientGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434489062C8EF6C700CD0430 /* SILWifiUdpClientGaugeView.swift */; };
 		43483A2C2C6A13DA00E965D2 /* SILTransferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43483A2B2C6A13DA00E965D2 /* SILTransferTableViewCell.swift */; };
-		43483A2D2C6A2FF100E965D2 /* SILTransferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43483A2B2C6A13DA00E965D2 /* SILTransferTableViewCell.swift */; };
 		4359CA982E964DFA00C6AFDA /* SILEHGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4359CA972E964DFA00C6AFDA /* SILEHGraphView.xib */; };
 		4359CA992E964DFA00C6AFDA /* SILEHGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359CA962E964DFA00C6AFDA /* SILEHGraphView.swift */; };
 		4359CA9A2E964DFA00C6AFDA /* EHGraphYAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359CA952E964DFA00C6AFDA /* EHGraphYAxisRenderer.swift */; };
@@ -1059,13 +907,16 @@
 		4CEE629D241276EC00D88354 /* SILCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE629C241276EC00D88354 /* SILCell.swift */; };
 		4D8E8168238C30AE00E7EC35 /* SILCharacteristicFieldValueResolverContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E8167238C30AE00E7EC35 /* SILCharacteristicFieldValueResolverContext.m */; };
 		4D8E8169238C30AE00E7EC35 /* SILCharacteristicFieldValueResolverContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E8167238C30AE00E7EC35 /* SILCharacteristicFieldValueResolverContext.m */; };
-		4D8E816A238C30AE00E7EC35 /* SILCharacteristicFieldValueResolverContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E8167238C30AE00E7EC35 /* SILCharacteristicFieldValueResolverContext.m */; };
 		4D9E26202212BFB200617DBA /* SILRangeTestBoardFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E261F2212BFB100617DBA /* SILRangeTestBoardFeatures.swift */; };
 		4D9E26212212BFB200617DBA /* SILRangeTestBoardFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E261F2212BFB100617DBA /* SILRangeTestBoardFeatures.swift */; };
-		4D9E26222212BFB200617DBA /* SILRangeTestBoardFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E261F2212BFB100617DBA /* SILRangeTestBoardFeatures.swift */; };
 		4D9E26252212CA7000617DBA /* SILRangeTestBoardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E26242212CA7000617DBA /* SILRangeTestBoardInfo.swift */; };
 		4D9E26262212CA7000617DBA /* SILRangeTestBoardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E26242212CA7000617DBA /* SILRangeTestBoardInfo.swift */; };
-		4D9E26272212CA7000617DBA /* SILRangeTestBoardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E26242212CA7000617DBA /* SILRangeTestBoardInfo.swift */; };
+		5A01F00200000000000001 /* Stolzl-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A01F00100000000000001 /* Stolzl-Bold.ttf */; };
+		5A01F00200000000000002 /* Stolzl-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A01F00100000000000002 /* Stolzl-Book.ttf */; };
+		5A01F00200000000000003 /* Stolzl-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A01F00100000000000003 /* Stolzl-Light.ttf */; };
+		5A01F00200000000000004 /* Stolzl-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A01F00100000000000004 /* Stolzl-Medium.ttf */; };
+		5A01F00200000000000005 /* Stolzl-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A01F00100000000000005 /* Stolzl-Regular.ttf */; };
+		5A01F00200000000000006 /* Stolzl-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A01F00100000000000006 /* Stolzl-Thin.ttf */; };
 		720FE5762E9684A80044E005 /* EVSEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720FE5752E9684A80044E005 /* EVSEViewController.m */; };
 		720FE5792E9686330044E005 /* EVSEModeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 720FE5782E9686330044E005 /* EVSEModeUtils.m */; };
 		720FE57C2E9686B90044E005 /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 720FE57B2E9686B90044E005 /* CircularProgressView.m */; };
@@ -1082,11 +933,12 @@
 		722383582D55E977004AE776 /* AirQualityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722383572D55E977004AE776 /* AirQualityViewController.m */; };
 		724C0D3C2E4DE9BE00062120 /* SILEnergyHarvesting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 724C0D3B2E4DE9BE00062120 /* SILEnergyHarvesting.storyboard */; };
 		724C0D402E4DEEC600062120 /* SILEnergyHarvestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0D3F2E4DEEC600062120 /* SILEnergyHarvestingViewController.swift */; };
+		725389052F459DB900844AB3 /* DeviceBindingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 725389042F459DB900844AB3 /* DeviceBindingManager.m */; };
 		7254545F2ACC1710003967CA /* Cluster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7254545E2ACC1710003967CA /* Cluster.storyboard */; };
 		725454622ACC82B9003967CA /* WindowOpenCloseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725454612ACC82B9003967CA /* WindowOpenCloseViewController.m */; };
 		725454652ACC8486003967CA /* DoorLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725454642ACC8486003967CA /* DoorLockViewController.m */; };
 		725454682ACC84AC003967CA /* SwitchOnOffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725454672ACC84AC003967CA /* SwitchOnOffViewController.m */; };
-		7254546B2ACC8895003967CA /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7254546A2ACC8895003967CA /* TemperatureViewController.m */; };
+		7254546B2ACC8895003967CA /* ThermostatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7254546A2ACC8895003967CA /* ThermostatViewController.m */; };
 		7262AB112E48F427009B255D /* SILSmartLockVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7262AB102E48F425009B255D /* SILSmartLockVCExtension.swift */; };
 		72652B0A2CC0FC9300EA2D69 /* Matter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA8FBF2ABCBAD300FE70BA /* Matter.framework */; };
 		72652B0B2CC0FE0F00EA2D69 /* Matter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA8FBF2ABCBAD300FE70BA /* Matter.framework */; };
@@ -1097,9 +949,13 @@
 		7268C1882E1AB48D003C3A13 /* SILSmartLockAWSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268C1872E1AB47E003C3A13 /* SILSmartLockAWSViewModel.swift */; };
 		7268C34D2E1D107E003C3A13 /* SmartLockConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268C34C2E1D107D003C3A13 /* SmartLockConstants.swift */; };
 		7269F9782AF427D400246507 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7269F9772AF427D400246507 /* QRCodeViewController.m */; };
+		727129DD2F2CE12B00215A61 /* RangeHoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727129DC2F2CE12B00215A61 /* RangeHoodViewController.m */; };
+		727C37762F28EBF800B6809D /* RangeHoodDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C37722F28EBF800B6809D /* RangeHoodDeviceManager.m */; };
 		727EF4402CA57A9C0062514B /* DishwasherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727EF43F2CA57A9C0062514B /* DishwasherViewController.m */; };
 		72801E302D65DD530035CD37 /* SILLightSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72801E2F2D65DD530035CD37 /* SILLightSwitchTableViewCell.xib */; };
 		72801E312D65DD530035CD37 /* SILLightSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72801E2E2D65DD530035CD37 /* SILLightSwitchTableViewCell.m */; };
+		72823C082F251A2A00414789 /* OvenViewController+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 72823C072F251A2A00414789 /* OvenViewController+UI.m */; };
+		72823C0B2F251A6B00414789 /* OvenDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72823C0A2F251A6B00414789 /* OvenDeviceManager.m */; };
 		7288C3442E47618F00E91563 /* MandatoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288C3432E47618B00E91563 /* MandatoryLabel.swift */; };
 		7288C3462E476AE300E91563 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288C3452E476AE000E91563 /* PlaceholderTextView.swift */; };
 		729B0EDB2A99DC050019C33C /* MatterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B0EDA2A99DC050019C33C /* MatterViewModel.swift */; };
@@ -1118,6 +974,7 @@
 		72EBF7D42B7E1F20006753D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7D074B29420639003595A8 /* LaunchScreen.storyboard */; };
 		72EEF90E2BF883C0008E7EB4 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EEF90D2BF883C0008E7EB4 /* NetworkMonitor.swift */; };
 		72F453C82BE8FA13000E38C1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 72F453C72BE8FA13000E38C1 /* PrivacyInfo.xcprivacy */; };
+		72F588372F1F705500ACFB69 /* OvenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F588362F1F705500ACFB69 /* OvenViewController.m */; };
 		7928D85E1ECA10FD0075FFCB /* SILHomeKitDebugServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928D85D1ECA10FD0075FFCB /* SILHomeKitDebugServicesViewController.m */; };
 		7928D8601ECA12070075FFCB /* SILHomeKitDebugServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7928D85F1ECA12070075FFCB /* SILHomeKitDebugServicesViewController.xib */; };
 		7928D8671ECA38AE0075FFCB /* SILHomeKitServiceTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928D8661ECA38AE0075FFCB /* SILHomeKitServiceTableModel.m */; };
@@ -1164,21 +1021,16 @@
 		806C76E925E69DBC00FADA97 /* SILValueResolverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 806C76E825E69DBC00FADA97 /* SILValueResolverSpec.m */; };
 		807B139B2523355A0056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807B139A2523355A0056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.xib */; };
 		807B139C2523355A0056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807B139A2523355A0056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.xib */; };
-		807B139D2523355A0056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807B139A2523355A0056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.xib */; };
 		807B13A8252335A50056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807B13A7252335A50056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.m */; };
 		807B13A9252335A50056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807B13A7252335A50056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.m */; };
-		807B13AA252335A50056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807B13A7252335A50056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.m */; };
 		807B13D7252347390056CFCC /* SILEncodingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 807B13D6252347390056CFCC /* SILEncodingTextField.m */; };
 		807B13D8252347390056CFCC /* SILEncodingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 807B13D6252347390056CFCC /* SILEncodingTextField.m */; };
-		807B13D9252347390056CFCC /* SILEncodingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 807B13D6252347390056CFCC /* SILEncodingTextField.m */; };
 		808E0D8A257E1A4400A3E4A8 /* SILBrowserDescriptorValueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E0D89257E1A4400A3E4A8 /* SILBrowserDescriptorValueParser.swift */; };
 		808E0DC0257E42FE00A3E4A8 /* SILDescryptorTypeUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E0DBF257E42FE00A3E4A8 /* SILDescryptorTypeUUID.swift */; };
 		8096567B2524A6E4000E98F5 /* SILDebugCharacteristicEncodingFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8096567A2524A6E4000E98F5 /* SILDebugCharacteristicEncodingFieldView.xib */; };
 		8096567C2524A6E4000E98F5 /* SILDebugCharacteristicEncodingFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8096567A2524A6E4000E98F5 /* SILDebugCharacteristicEncodingFieldView.xib */; };
-		8096567D2524A6E4000E98F5 /* SILDebugCharacteristicEncodingFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8096567A2524A6E4000E98F5 /* SILDebugCharacteristicEncodingFieldView.xib */; };
 		809656842524A71C000E98F5 /* SILDebugCharacteristicEncodingFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 809656832524A71C000E98F5 /* SILDebugCharacteristicEncodingFieldView.m */; };
 		809656852524A71C000E98F5 /* SILDebugCharacteristicEncodingFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 809656832524A71C000E98F5 /* SILDebugCharacteristicEncodingFieldView.m */; };
-		809656862524A71C000E98F5 /* SILDebugCharacteristicEncodingFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 809656832524A71C000E98F5 /* SILDebugCharacteristicEncodingFieldView.m */; };
 		809BEA2B27BEDB53006BC2D9 /* SILRSSIGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEA2927BEDB52006BC2D9 /* SILRSSIGraphViewController.swift */; };
 		809BEA2C27BEDB53006BC2D9 /* SILAppRSSIGraph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809BEA2A27BEDB52006BC2D9 /* SILAppRSSIGraph.storyboard */; };
 		809DE3CC27F4AC1E00BD71E0 /* SILRSSIGraphCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8011D03127CE670700F08754 /* SILRSSIGraphCentralManager.swift */; };
@@ -1205,10 +1057,8 @@
 		80B5FFAA275F9148008F08A8 /* SILDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B5FFA9275F9148008F08A8 /* SILDot.swift */; };
 		80C67059255169950083D20C /* SILRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67058255169950083D20C /* SILRadioButton.swift */; };
 		80C6705A255169950083D20C /* SILRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67058255169950083D20C /* SILRadioButton.swift */; };
-		80C6705B255169950083D20C /* SILRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67058255169950083D20C /* SILRadioButton.swift */; };
 		80C6706925516A450083D20C /* SILTimeLimitRadioButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6706825516A450083D20C /* SILTimeLimitRadioButtonState.swift */; };
 		80C6706A25516A450083D20C /* SILTimeLimitRadioButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6706825516A450083D20C /* SILTimeLimitRadioButtonState.swift */; };
-		80C6706B25516A450083D20C /* SILTimeLimitRadioButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6706825516A450083D20C /* SILTimeLimitRadioButtonState.swift */; };
 		80DBE36F282E4B0D00F7C579 /* SILIOPInfoPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DBE36D282E4B0D00F7C579 /* SILIOPInfoPopup.xib */; };
 		80DBE370282E4B0D00F7C579 /* SILIOPInfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBE36E282E4B0D00F7C579 /* SILIOPInfoPopup.swift */; };
 		80FB2ED127FDA77A00241470 /* SILPeripheralDataFilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FB2ED027FDA77A00241470 /* SILPeripheralDataFilterHelper.swift */; };
@@ -1217,7 +1067,10 @@
 		9450946334099D8FAA384ABE /* Pods_BlueGeckoWithHomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84342BE824D4F9248E13114A /* Pods_BlueGeckoWithHomeKit.framework */; };
 		9B44734425137C6100355E0A /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B44734325137C6100355E0A /* Colours.xcassets */; };
 		9B44734525137C6100355E0A /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B44734325137C6100355E0A /* Colours.xcassets */; };
-		9B44734625137C6100355E0A /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B44734325137C6100355E0A /* Colours.xcassets */; };
+		AA000001THEME000000000001 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001THEME000000000002 /* ThemeManager.swift */; };
+		AA000001THEME000000000003 /* UIColor+AppSemantic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001THEME000000000004 /* UIColor+AppSemantic.swift */; };
+		AA000001THEME000000000005 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001THEME000000000002 /* ThemeManager.swift */; };
+		AA000001THEME000000000006 /* UIColor+AppSemantic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001THEME000000000004 /* UIColor+AppSemantic.swift */; };
 		AA0FF4081EFC11AD007C14D3 /* SILRetailBeaconDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0FF4061EFC11AD007C14D3 /* SILRetailBeaconDetailsViewController.xib */; };
 		AA162DCE1F0541B600E3DB22 /* TLMData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA162DCD1F0541B600E3DB22 /* TLMData.swift */; };
 		AA4D43581F27EA65001EE0D2 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D43571F27EA65001EE0D2 /* TextFieldTableViewCell.swift */; };
@@ -1265,6 +1118,7 @@
 		E6CDEB3F1A69911D00AC7B33 /* SILTemperatureMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CDEB3E1A69911D00AC7B33 /* SILTemperatureMeasurement.m */; };
 		E6CFEB271A686DC000F216AB /* SILHealthThermometerAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CFEB261A686DC000F216AB /* SILHealthThermometerAppViewController.m */; };
 		E6D45D361A6EA74C002D9EC4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D45D351A6EA74C002D9EC4 /* CoreLocation.framework */; };
+		F4B26B5752E11D2FE0A21ACD /* UIButton+SILMatterStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A5809A0905CD129B5632E7 /* UIButton+SILMatterStyle.m */; };
 		FCFE74AF68F9F5BE332F46B6 /* Pods_BlueGecko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F25116C7DF08741307B3E0 /* Pods_BlueGecko.framework */; };
 		FE05894C29434573002F3BFE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05894B29434573002F3BFE /* SettingsView.swift */; };
 		FE075BBE28C3E13E00382903 /* HexStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE075BBD28C3E13E00382903 /* HexStringConverter.swift */; };
@@ -1277,7 +1131,6 @@
 		FE362A07287D6F7C00014A1D /* AdvertiserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE362A06287D6F7C00014A1D /* AdvertiserView.swift */; };
 		FE362A09287D98D800014A1D /* GattConfiguratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE362A08287D98D800014A1D /* GattConfiguratorView.swift */; };
 		FE36FC6C2864783B00A9CB41 /* SILAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36FC6B2864783B00A9CB41 /* SILAppDelegate.swift */; };
-		FE36FC6D2864795900A9CB41 /* SILAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = E666CBD71A767C5500676C5C /* SILAppearance.m */; };
 		FE36FC732864852000A9CB41 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36FC722864852000A9CB41 /* DemoView.swift */; };
 		FE36FC75286486CD00A9CB41 /* PickerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36FC74286486CD00A9CB41 /* PickerTabView.swift */; };
 		FE36FC77286486F700A9CB41 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36FC76286486F700A9CB41 /* TestView.swift */; };
@@ -1333,6 +1186,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01A5809A0905CD129B5632E7 /* UIButton+SILMatterStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SILMatterStyle.m"; sourceTree = "<group>"; };
 		040DC54628B3814C00CE7CF4 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		040DC54828B389AF00CE7CF4 /* ActiveConnectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveConnectionsView.swift; sourceTree = "<group>"; };
 		041334AD29B7F6C600CB4CBD /* UIButton+OutlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+OutlineButton.swift"; sourceTree = "<group>"; };
@@ -1467,7 +1321,6 @@
 		0F3AC36520ADAABF0010091C /* SILRangeTestModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILRangeTestModeSelectionViewController.swift; sourceTree = "<group>"; };
 		0F3EB6B620C524C30062A7C1 /* SILRangeTestAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILRangeTestAppViewModel.swift; sourceTree = "<group>"; };
 		0F44BCAD20EE5E0E00CD27B3 /* SILRangeTestCharacteristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILRangeTestCharacteristic.swift; sourceTree = "<group>"; };
-		0F4E51CC21525FDC00F58ACE /* WirelessGecko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WirelessGecko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4E51CE2152684500F58ACE /* WirelessGecko.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WirelessGecko.pch; sourceTree = "<group>"; };
 		0F69656820ECD32A0083C32A /* SILRangeTestManufacturerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILRangeTestManufacturerData.swift; sourceTree = "<group>"; };
 		0F75B9D021395E3200E8D9E9 /* SILRangeTestTXValueUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILRangeTestTXValueUpdater.swift; sourceTree = "<group>"; };
@@ -2141,6 +1994,7 @@
 		43D9341E2D81873A00D493FF /* SILAWSIoTMotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILAWSIoTMotionViewModel.swift; sourceTree = "<group>"; };
 		4491900FB788A5F0E74824C6 /* Pods-BlueGecko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueGecko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueGecko/Pods-BlueGecko.debug.xcconfig"; sourceTree = "<group>"; };
 		464771D738590C9BE6DC4FC0 /* Pods-SiliconLabsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiliconLabsAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SiliconLabsAppTests/Pods-SiliconLabsAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		48104573031AF6E51E605255 /* UIButton+SILMatterStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SILMatterStyle.h"; sourceTree = "<group>"; };
 		48633F2056480FFEA1BD8A72 /* Pods-SiliconLabsApp Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiliconLabsApp Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SiliconLabsApp Dev/Pods-SiliconLabsApp Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		491ADCB91E71EEA300AC2E69 /* SILOTAUICoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILOTAUICoordinator.h; sourceTree = "<group>"; };
 		491ADCBA1E71EEA300AC2E69 /* SILOTAUICoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SILOTAUICoordinator.m; sourceTree = "<group>"; };
@@ -2220,6 +2074,12 @@
 		4D9E261F2212BFB100617DBA /* SILRangeTestBoardFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SILRangeTestBoardFeatures.swift; sourceTree = "<group>"; };
 		4D9E26242212CA7000617DBA /* SILRangeTestBoardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILRangeTestBoardInfo.swift; sourceTree = "<group>"; };
 		53141C6BB0A69CCB49A16AB2 /* Pods_SiliconLabsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SiliconLabsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A01F00100000000000001 /* Stolzl-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stolzl-Bold.ttf"; sourceTree = "<group>"; };
+		5A01F00100000000000002 /* Stolzl-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stolzl-Book.ttf"; sourceTree = "<group>"; };
+		5A01F00100000000000003 /* Stolzl-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stolzl-Light.ttf"; sourceTree = "<group>"; };
+		5A01F00100000000000004 /* Stolzl-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stolzl-Medium.ttf"; sourceTree = "<group>"; };
+		5A01F00100000000000005 /* Stolzl-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stolzl-Regular.ttf"; sourceTree = "<group>"; };
+		5A01F00100000000000006 /* Stolzl-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stolzl-Thin.ttf"; sourceTree = "<group>"; };
 		5D477CF57EA327218A303591 /* Pods-SiliconLabsAppWithoutHomeKit Dev.release-wireless-gecko.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiliconLabsAppWithoutHomeKit Dev.release-wireless-gecko.xcconfig"; path = "Pods/Target Support Files/Pods-SiliconLabsAppWithoutHomeKit Dev/Pods-SiliconLabsAppWithoutHomeKit Dev.release-wireless-gecko.xcconfig"; sourceTree = "<group>"; };
 		61C2546AB44D8C072A96C83A /* Pods-SiliconLabsAppWithoutHomeKit.debug-wireless-gecko.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiliconLabsAppWithoutHomeKit.debug-wireless-gecko.xcconfig"; path = "Pods/Target Support Files/Pods-SiliconLabsAppWithoutHomeKit/Pods-SiliconLabsAppWithoutHomeKit.debug-wireless-gecko.xcconfig"; sourceTree = "<group>"; };
 		62E0D0F50D4DF9406BE2453B /* Pods-SiliconLabsApp.release-wireless-gecko.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiliconLabsApp.release-wireless-gecko.xcconfig"; path = "Pods/Target Support Files/Pods-SiliconLabsApp/Pods-SiliconLabsApp.release-wireless-gecko.xcconfig"; sourceTree = "<group>"; };
@@ -2249,6 +2109,8 @@
 		722F5EF560719504746B876B /* Pods-BlueGecko.release-wireless-gecko.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueGecko.release-wireless-gecko.xcconfig"; path = "Pods/Target Support Files/Pods-BlueGecko/Pods-BlueGecko.release-wireless-gecko.xcconfig"; sourceTree = "<group>"; };
 		724C0D3B2E4DE9BE00062120 /* SILEnergyHarvesting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SILEnergyHarvesting.storyboard; sourceTree = "<group>"; };
 		724C0D3F2E4DEEC600062120 /* SILEnergyHarvestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILEnergyHarvestingViewController.swift; sourceTree = "<group>"; };
+		725389032F459DB900844AB3 /* DeviceBindingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceBindingManager.h; sourceTree = "<group>"; };
+		725389042F459DB900844AB3 /* DeviceBindingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceBindingManager.m; sourceTree = "<group>"; };
 		7254545E2ACC1710003967CA /* Cluster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cluster.storyboard; sourceTree = "<group>"; };
 		725454602ACC82B9003967CA /* WindowOpenCloseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowOpenCloseViewController.h; sourceTree = "<group>"; };
 		725454612ACC82B9003967CA /* WindowOpenCloseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowOpenCloseViewController.m; sourceTree = "<group>"; };
@@ -2256,8 +2118,8 @@
 		725454642ACC8486003967CA /* DoorLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoorLockViewController.m; sourceTree = "<group>"; };
 		725454662ACC84AC003967CA /* SwitchOnOffViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchOnOffViewController.h; sourceTree = "<group>"; };
 		725454672ACC84AC003967CA /* SwitchOnOffViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchOnOffViewController.m; sourceTree = "<group>"; };
-		725454692ACC8895003967CA /* TemperatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemperatureViewController.h; sourceTree = "<group>"; };
-		7254546A2ACC8895003967CA /* TemperatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemperatureViewController.m; sourceTree = "<group>"; };
+		725454692ACC8895003967CA /* ThermostatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThermostatViewController.h; sourceTree = "<group>"; };
+		7254546A2ACC8895003967CA /* ThermostatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThermostatViewController.m; sourceTree = "<group>"; };
 		7262AB102E48F425009B255D /* SILSmartLockVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILSmartLockVCExtension.swift; sourceTree = "<group>"; };
 		7268C1762E1AAFDE003C3A13 /* SILSmartLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILSmartLockViewController.swift; sourceTree = "<group>"; };
 		7268C17A2E1AAFDE003C3A13 /* SILSmartLock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SILSmartLock.storyboard; sourceTree = "<group>"; };
@@ -2266,11 +2128,19 @@
 		7268C34C2E1D107D003C3A13 /* SmartLockConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartLockConstants.swift; sourceTree = "<group>"; };
 		7269F9762AF427D400246507 /* QRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		7269F9772AF427D400246507 /* QRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		727129DC2F2CE12B00215A61 /* RangeHoodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RangeHoodViewController.m; sourceTree = "<group>"; };
+		727C37712F28EBF800B6809D /* RangeHoodDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RangeHoodDeviceManager.h; sourceTree = "<group>"; };
+		727C37722F28EBF800B6809D /* RangeHoodDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RangeHoodDeviceManager.m; sourceTree = "<group>"; };
+		727C37732F28EBF800B6809D /* RangeHoodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RangeHoodViewController.h; sourceTree = "<group>"; };
 		727EF43E2CA57A9C0062514B /* DishwasherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DishwasherViewController.h; sourceTree = "<group>"; };
 		727EF43F2CA57A9C0062514B /* DishwasherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DishwasherViewController.m; sourceTree = "<group>"; };
 		72801E2D2D65DD530035CD37 /* SILLightSwitchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SILLightSwitchTableViewCell.h; sourceTree = "<group>"; };
 		72801E2E2D65DD530035CD37 /* SILLightSwitchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SILLightSwitchTableViewCell.m; sourceTree = "<group>"; };
 		72801E2F2D65DD530035CD37 /* SILLightSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SILLightSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		72823C062F251A2A00414789 /* OvenViewController+UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OvenViewController+UI.h"; sourceTree = "<group>"; };
+		72823C072F251A2A00414789 /* OvenViewController+UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OvenViewController+UI.m"; sourceTree = "<group>"; };
+		72823C092F251A6B00414789 /* OvenDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OvenDeviceManager.h; sourceTree = "<group>"; };
+		72823C0A2F251A6B00414789 /* OvenDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OvenDeviceManager.m; sourceTree = "<group>"; };
 		7288C3432E47618B00E91563 /* MandatoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandatoryLabel.swift; sourceTree = "<group>"; };
 		7288C3452E476AE000E91563 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		729B0EDA2A99DC050019C33C /* MatterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterViewModel.swift; sourceTree = "<group>"; };
@@ -2300,6 +2170,8 @@
 		72E78A492A97884C003F05F7 /* SILMatterDemo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SILMatterDemo.storyboard; sourceTree = "<group>"; };
 		72EEF90D2BF883C0008E7EB4 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		72F453C72BE8FA13000E38C1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		72F588352F1F705500ACFB69 /* OvenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OvenViewController.h; sourceTree = "<group>"; };
+		72F588362F1F705500ACFB69 /* OvenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OvenViewController.m; sourceTree = "<group>"; };
 		7928D85C1ECA10FD0075FFCB /* SILHomeKitDebugServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SILHomeKitDebugServicesViewController.h; path = HomeKitDebugApp/ServicesTable/SILHomeKitDebugServicesViewController.h; sourceTree = "<group>"; };
 		7928D85D1ECA10FD0075FFCB /* SILHomeKitDebugServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SILHomeKitDebugServicesViewController.m; path = HomeKitDebugApp/ServicesTable/SILHomeKitDebugServicesViewController.m; sourceTree = "<group>"; };
 		7928D85F1ECA12070075FFCB /* SILHomeKitDebugServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SILHomeKitDebugServicesViewController.xib; path = Debug/HomeKit/SILHomeKitDebugServicesViewController.xib; sourceTree = "<group>"; };
@@ -2409,6 +2281,8 @@
 		9D503111803F12397900799A /* Pods-BlueGecko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueGecko.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueGecko/Pods-BlueGecko.release.xcconfig"; sourceTree = "<group>"; };
 		A058D14EA4646B6D95A1DC6C /* Pods-SiliconLabsApp.debug-wireless-gecko.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiliconLabsApp.debug-wireless-gecko.xcconfig"; path = "Pods/Target Support Files/Pods-SiliconLabsApp/Pods-SiliconLabsApp.debug-wireless-gecko.xcconfig"; sourceTree = "<group>"; };
 		A96DF018704C41E44822DFDB /* Pods-BlueGeckoWithHomeKit.release-wireless-gecko.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueGeckoWithHomeKit.release-wireless-gecko.xcconfig"; path = "Pods/Target Support Files/Pods-BlueGeckoWithHomeKit/Pods-BlueGeckoWithHomeKit.release-wireless-gecko.xcconfig"; sourceTree = "<group>"; };
+		AA000001THEME000000000002 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		AA000001THEME000000000004 /* UIColor+AppSemantic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppSemantic.swift"; sourceTree = "<group>"; };
 		AA0FF4071EFC11AD007C14D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = SILRetailBeaconDetailsViewController.xib; sourceTree = "<group>"; };
 		AA162DCD1F0541B600E3DB22 /* TLMData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLMData.swift; sourceTree = "<group>"; };
 		AA4D43571F27EA65001EE0D2 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldTableViewCell.swift; path = ../Views/TextFieldTableViewCell.swift; sourceTree = "<group>"; };
@@ -2559,17 +2433,6 @@
 				72652B0B2CC0FE0F00EA2D69 /* Matter.framework in Frameworks */,
 				FCFE74AF68F9F5BE332F46B6 /* Pods_BlueGecko.framework in Frameworks */,
 				2E8E6EB82B8DC74A00906697 /* SystemConfiguration.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0F4E518A21525FDC00F58ACE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F4E518B21525FDC00F58ACE /* CoreBluetooth.framework in Frameworks */,
-				0F4E518C21525FDC00F58ACE /* CoreLocation.framework in Frameworks */,
-				0F4E518D21525FDC00F58ACE /* QuartzCore.framework in Frameworks */,
-				2B257CB817ADC2635883B007 /* Pods_WirelessGecko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3086,13 +2949,6 @@
 				0C39082E1FA8AC7A00934AD1 /* SILConnectedLightingViewController.m */,
 			);
 			name = ConnectedLighting;
-			sourceTree = "<group>";
-		};
-		0F34406020ADAB580067397C /* RangeTest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RangeTest;
 			sourceTree = "<group>";
 		};
 		0F3AC36420ADAA200010091C /* RangeTestApp */ = {
@@ -4003,6 +3859,7 @@
 			isa = PBXGroup;
 			children = (
 				4C9EAB4C24042EAC0023FFB1 /* Roboto */,
+				5A01F00300000000000001 /* Stolzl */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -5182,6 +5039,19 @@
 			path = Board;
 			sourceTree = "<group>";
 		};
+		5A01F00300000000000001 /* Stolzl */ = {
+			isa = PBXGroup;
+			children = (
+				5A01F00100000000000001 /* Stolzl-Bold.ttf */,
+				5A01F00100000000000002 /* Stolzl-Book.ttf */,
+				5A01F00100000000000003 /* Stolzl-Light.ttf */,
+				5A01F00100000000000004 /* Stolzl-Medium.ttf */,
+				5A01F00100000000000005 /* Stolzl-Regular.ttf */,
+				5A01F00100000000000006 /* Stolzl-Thin.ttf */,
+			);
+			path = Stolzl;
+			sourceTree = "<group>";
+		};
 		721169122D38FBC500065E3F /* DefaultTheme7 */ = {
 			isa = PBXGroup;
 			children = (
@@ -5291,6 +5161,32 @@
 			path = Constents;
 			sourceTree = "<group>";
 		};
+		727C37752F28EBF800B6809D /* RangeHood */ = {
+			isa = PBXGroup;
+			children = (
+				727C37712F28EBF800B6809D /* RangeHoodDeviceManager.h */,
+				727C37722F28EBF800B6809D /* RangeHoodDeviceManager.m */,
+				727C37732F28EBF800B6809D /* RangeHoodViewController.h */,
+				727129DC2F2CE12B00215A61 /* RangeHoodViewController.m */,
+			);
+			path = RangeHood;
+			sourceTree = "<group>";
+		};
+		72823C052F2519E100414789 /* Oven */ = {
+			isa = PBXGroup;
+			children = (
+				725389032F459DB900844AB3 /* DeviceBindingManager.h */,
+				725389042F459DB900844AB3 /* DeviceBindingManager.m */,
+				72F588352F1F705500ACFB69 /* OvenViewController.h */,
+				72F588362F1F705500ACFB69 /* OvenViewController.m */,
+				72823C062F251A2A00414789 /* OvenViewController+UI.h */,
+				72823C072F251A2A00414789 /* OvenViewController+UI.m */,
+				72823C092F251A6B00414789 /* OvenDeviceManager.h */,
+				72823C0A2F251A6B00414789 /* OvenDeviceManager.m */,
+			);
+			path = Oven;
+			sourceTree = "<group>";
+		};
 		7288C3422E47616500E91563 /* Helphers */ = {
 			isa = PBXGroup;
 			children = (
@@ -5381,6 +5277,8 @@
 			children = (
 				7254545E2ACC1710003967CA /* Cluster.storyboard */,
 				72CA8FF02ABCBB8A00FE70BA /* OnOffViewController.h */,
+				48104573031AF6E51E605255 /* UIButton+SILMatterStyle.h */,
+				01A5809A0905CD129B5632E7 /* UIButton+SILMatterStyle.m */,
 				72CA8FEF2ABCBB8A00FE70BA /* OnOffViewController.m */,
 				725454602ACC82B9003967CA /* WindowOpenCloseViewController.h */,
 				725454612ACC82B9003967CA /* WindowOpenCloseViewController.m */,
@@ -5388,8 +5286,8 @@
 				725454642ACC8486003967CA /* DoorLockViewController.m */,
 				725454662ACC84AC003967CA /* SwitchOnOffViewController.h */,
 				725454672ACC84AC003967CA /* SwitchOnOffViewController.m */,
-				725454692ACC8895003967CA /* TemperatureViewController.h */,
-				7254546A2ACC8895003967CA /* TemperatureViewController.m */,
+				725454692ACC8895003967CA /* ThermostatViewController.h */,
+				7254546A2ACC8895003967CA /* ThermostatViewController.m */,
 				721423902AD69E8B00DC3FA2 /* PlugViewController.h */,
 				721423912AD69E8B00DC3FA2 /* PlugViewController.m */,
 				4320C6BD2ADD210D00A6D67A /* OccupancySensorViewController.h */,
@@ -5404,6 +5302,8 @@
 				722383572D55E977004AE776 /* AirQualityViewController.m */,
 				720FE5742E9684A80044E005 /* EVSEViewController.h */,
 				720FE5752E9684A80044E005 /* EVSEViewController.m */,
+				727C37752F28EBF800B6809D /* RangeHood */,
+				72823C052F2519E100414789 /* Oven */,
 			);
 			path = ClusterControllers;
 			sourceTree = "<group>";
@@ -5714,7 +5614,6 @@
 			children = (
 				078137E41BE4092F001EFE7E /* Debug */,
 				078137E21BE408FC001EFE7E /* RetailBeacon */,
-				0F34406020ADAB580067397C /* RangeTest */,
 				E6B3ECA01AAE2C8B005A687F /* SILCalibrationViewController.xib */,
 				FE7D074B29420639003595A8 /* LaunchScreen.storyboard */,
 			);
@@ -5915,6 +5814,7 @@
 				FEDEE5482902A87100F354A6 /* UIViewController+LeftAlignedTitle.swift */,
 				FE8271E3294788E8009D90E1 /* UITabBarController+Hide.swift */,
 				041334AD29B7F6C600CB4CBD /* UIButton+OutlineButton.swift */,
+				AA000001THEME000000000004 /* UIColor+AppSemantic.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -5930,6 +5830,7 @@
 				E64C95BB1AB20DB60029E23A /* KZBehaviour.m */,
 				E666CBD61A767C5500676C5C /* SILAppearance.h */,
 				E666CBD71A767C5500676C5C /* SILAppearance.m */,
+				AA000001THEME000000000002 /* ThemeManager.swift */,
 				E6B3EC9A1AADD9BD005A687F /* SILRoundedViewBehaviour.h */,
 				E6B3EC9B1AADD9BD005A687F /* SILRoundedViewBehaviour.m */,
 				E642661E1A855DA8006C6B2F /* SILWeakTargetWrapper.h */,
@@ -6011,7 +5912,6 @@
 			children = (
 				E6CAA2201A64011900A49DAF /* BlueGeckoWithHomeKit.app */,
 				0C2FCBDA1F9A542300F4F259 /* BlueGecko.app */,
-				0F4E51CC21525FDC00F58ACE /* WirelessGecko.app */,
 				8008B8ED25E67D7A00439F3A /* BlueGeckoTests.xctest */,
 			);
 			name = Products;
@@ -6115,26 +6015,6 @@
 			productReference = 0C2FCBDA1F9A542300F4F259 /* BlueGecko.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0F4E50F321525FDC00F58ACE /* WirelessGecko */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0F4E51C721525FDC00F58ACE /* Build configuration list for PBXNativeTarget "WirelessGecko" */;
-			buildPhases = (
-				0F4E50F421525FDC00F58ACE /* [CP] Check Pods Manifest.lock */,
-				0F4E50F521525FDC00F58ACE /* Sources */,
-				0F4E518A21525FDC00F58ACE /* Frameworks */,
-				0F4E519021525FDC00F58ACE /* Resources */,
-				0F4E51C621525FDC00F58ACE /* [CP] Embed Pods Frameworks */,
-				0F4E51C521525FDC00F58ACE /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WirelessGecko;
-			productName = SiliconLabsApp;
-			productReference = 0F4E51CC21525FDC00F58ACE /* WirelessGecko.app */;
-			productType = "com.apple.product-type.application";
-		};
 		8008B8EC25E67D7A00439F3A /* BlueGeckoTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8008B8F625E67D7A00439F3A /* Build configuration list for PBXNativeTarget "BlueGeckoTests" */;
@@ -6194,10 +6074,6 @@
 							};
 						};
 					};
-					0F4E50F321525FDC00F58ACE = {
-						DevelopmentTeam = 52444FG85C;
-						ProvisioningStyle = Automatic;
-					};
 					8008B8EC25E67D7A00439F3A = {
 						CreatedOnToolsVersion = 12.0;
 						DevelopmentTeam = 52444FG85C;
@@ -6246,7 +6122,6 @@
 			targets = (
 				0C2FCB001F9A542300F4F259 /* BlueGecko */,
 				E6CAA21F1A64011900A49DAF /* BlueGeckoWithHomeKit */,
-				0F4E50F321525FDC00F58ACE /* WirelessGecko */,
 				8008B8EC25E67D7A00439F3A /* BlueGeckoTests */,
 			);
 		};
@@ -6375,6 +6250,12 @@
 				80671C3A271EE2A4009B6284 /* BRD4184A_LowPoly_Front.jpg in Resources */,
 				0C2FCBC51F9A542300F4F259 /* SILOTASetupViewController.xib in Resources */,
 				1E4C37A62429095300C822E4 /* Roboto-Regular.ttf in Resources */,
+				5A01F00200000000000001 /* Stolzl-Bold.ttf in Resources */,
+				5A01F00200000000000002 /* Stolzl-Book.ttf in Resources */,
+				5A01F00200000000000003 /* Stolzl-Light.ttf in Resources */,
+				5A01F00200000000000004 /* Stolzl-Medium.ttf in Resources */,
+				5A01F00200000000000005 /* Stolzl-Regular.ttf in Resources */,
+				5A01F00200000000000006 /* Stolzl-Thin.ttf in Resources */,
 				43C4AC2E2D65E32C0067EE4C /* SILAWSIoT.storyboard in Resources */,
 				0C2FCBC71F9A542300F4F259 /* SILCalibrationViewController.xib in Resources */,
 				2051324E270365A800C27B92 /* IoDemoViewController.storyboard in Resources */,
@@ -6410,48 +6291,6 @@
 				1EC92EF923A3959200FD2219 /* SILAppBluetoothBrowser.storyboard in Resources */,
 				1EC92EF323A3955000FD2219 /* SILAppTypeConnectedLighting.storyboard in Resources */,
 				205131E5270365A800C27B92 /* SILAppSelectionHelpViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0F4E519021525FDC00F58ACE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F4E519121525FDC00F58ACE /* SILOTAProgressViewController.xib in Resources */,
-				0F4E519221525FDC00F58ACE /* SILDebugDeviceFilterViewController.xib in Resources */,
-				0F4E519321525FDC00F58ACE /* SILBeaconRegistryEntryCell.xib in Resources */,
-				0F4E519521525FDC00F58ACE /* SILDebugDeviceTableViewCell~iphone.xib in Resources */,
-				0F4E519621525FDC00F58ACE /* SILDebugDeviceTableViewCell~ipad.xib in Resources */,
-				0F4E519721525FDC00F58ACE /* SILRetailBeaconDetailsHeaderView.xib in Resources */,
-				0F4E519821525FDC00F58ACE /* SILDebugAdvDetailTableViewCell.xib in Resources */,
-				0F4E519A21525FDC00F58ACE /* SILDebugDeviceViewController.xib in Resources */,
-				0F4E519B21525FDC00F58ACE /* SILDebugCharacteristicToggleFieldTableViewCell.xib in Resources */,
-				9B44734625137C6100355E0A /* Colours.xcassets in Resources */,
-				0F4E519C21525FDC00F58ACE /* SILOTAHUDView.xib in Resources */,
-				0F4E519D21525FDC00F58ACE /* SILDebugCharacteristicValueFieldTableViewCell.xib in Resources */,
-				0F4E519E21525FDC00F58ACE /* SILAppTypeRangeTest.storyboard in Resources */,
-				0F4E519F21525FDC00F58ACE /* SILActivityBarViewController.xib in Resources */,
-				2EE8A4432CC63B1D00789115 /* keystore.p12 in Resources */,
-				0F4E51A121525FDC00F58ACE /* SILDebugAdvDetailCollectionViewCell.xib in Resources */,
-				0F4E51A221525FDC00F58ACE /* SILDebugServiceTableViewCell~iphone.xib in Resources */,
-				2EE8A4572CC7FC0900789115 /* SIL_TLS_Tx_Helper.xib in Resources */,
-				0F4E51A421525FDC00F58ACE /* SILDebugSpacerTableViewCell.xib in Resources */,
-				8096567D2524A6E4000E98F5 /* SILDebugCharacteristicEncodingFieldView.xib in Resources */,
-				0F4E51A921525FDC00F58ACE /* XML in Resources */,
-				0F4E51AA21525FDC00F58ACE /* SILDebugCharacteristicEnumerationFieldTableViewCell.xib in Resources */,
-				0F4E51AB21525FDC00F58ACE /* SILPopoverViewController.xib in Resources */,
-				0F4E51AD21525FDC00F58ACE /* SILDebugAdvDetailsViewController.xib in Resources */,
-				0F4E51AE21525FDC00F58ACE /* SILRetailBeaconDetailsViewController.xib in Resources */,
-				0F4E51B021525FDC00F58ACE /* SILDebugCharacteristicPropertyView.xib in Resources */,
-				0F4E51B421525FDC00F58ACE /* SILRetailBeaconAppViewController.xib in Resources */,
-				0F4E51B521525FDC00F58ACE /* SILDebugServiceTableViewCell~ipad.xib in Resources */,
-				0F4E51BA21525FDC00F58ACE /* SILOTASetupViewController.xib in Resources */,
-				807B139D2523355A0056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.xib in Resources */,
-				0F4E51BC21525FDC00F58ACE /* SILCalibrationViewController.xib in Resources */,
-				0F4E51BD21525FDC00F58ACE /* SILBarGraphCollectionViewCell.xib in Resources */,
-				0F4E51BE21525FDC00F58ACE /* SILDebugHeaderView.xib in Resources */,
-				0F4E51BF21525FDC00F58ACE /* SILTextFieldEntryCell.xib in Resources */,
-				0F4E51C121525FDC00F58ACE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6678,99 +6517,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueGecko/Pods-BlueGecko-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0F4E50F421525FDC00F58ACE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WirelessGecko-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0F4E51C521525FDC00F58ACE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" d4644999f9acaab70a6af52eebed37881b8dc107 3ac40070001448c72125e7becb3d822cc0a1f74a30c6327231b6eb046bdd7e4e\n";
-		};
-		0F4E51C621525FDC00F58ACE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WirelessGecko/Pods-WirelessGecko-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSIoT/AWSIoT.framework",
-				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/DeviceGuru/DeviceGuru.framework",
-				"${BUILT_PRODUCTS_DIR}/IP-UIKit-Wisdom/IP_UIKit_Wisdom.framework",
-				"${BUILT_PRODUCTS_DIR}/Introspect/Introspect.framework",
-				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
-				"${BUILT_PRODUCTS_DIR}/MZTimerLabel/MZTimerLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftAlgorithms/Algorithms.framework",
-				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
-				"${BUILT_PRODUCTS_DIR}/WYPopoverController/WYPopoverController.framework",
-				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSIoT.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceGuru.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IP_UIKit_Wisdom.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Introspect.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZTimerLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Algorithms.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WYPopoverController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WirelessGecko/Pods-WirelessGecko-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2647BDE6F2DEEDB67778BAD3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -6963,6 +6709,7 @@
 				1EC1F22E260CEACB00508552 /* SILGATT4_9TestCase.swift in Sources */,
 				0C2FCB0E1F9A542300F4F259 /* SILWeakTargetWrapper.m in Sources */,
 				1E26ECD225529C20002FFAAB /* SILScanResponseTitleCellView.swift in Sources */,
+				F4B26B5752E11D2FE0A21ACD /* UIButton+SILMatterStyle.m in Sources */,
 				72CA8FFC2ABCBB8B00FE70BA /* OnOffViewController.m in Sources */,
 				80B3E2DA27D77AE800838066 /* BehaviorRelay+Collections.swift in Sources */,
 				431015882E8A674B002259F9 /* Data+EHHelpers.swift in Sources */,
@@ -7115,6 +6862,7 @@
 				434489032C8B0A1600CD0430 /* SILUDPServerViewController.swift in Sources */,
 				205131F8270365A800C27B92 /* BleDevice+DemoConfiguration.swift in Sources */,
 				FE05894C29434573002F3BFE /* SettingsView.swift in Sources */,
+				727C37762F28EBF800B6809D /* RangeHoodDeviceManager.m in Sources */,
 				4320C6BF2ADD210D00A6D67A /* OccupancySensorViewController.m in Sources */,
 				205131FC270365A800C27B92 /* IoDemoViewController.swift in Sources */,
 				1E4DB3BC266A720600405BD2 /* SILCheckBox.swift in Sources */,
@@ -7128,6 +6876,9 @@
 				20513270270365A800C27B92 /* BleDevice.swift in Sources */,
 				2EF2AF9E2C65F3B100C34902 /* SILTCPServerViewController.swift in Sources */,
 				041334AE29B7F6C600CB4CBD /* UIButton+OutlineButton.swift in Sources */,
+				AA000001THEME000000000001 /* ThemeManager.swift in Sources */,
+				AA000001THEME000000000003 /* UIColor+AppSemantic.swift in Sources */,
+				72823C0B2F251A6B00414789 /* OvenDeviceManager.m in Sources */,
 				1E4DB3B9266A720600405BD2 /* SILGattConfiguratorDetailsViewController.swift in Sources */,
 				4C3BA28B240D599200CF3268 /* SILBrowserMappingsSegmentedControl.swift in Sources */,
 				0C2FCB2F1F9A542300F4F259 /* SILCharacteristicTableModel.m in Sources */,
@@ -7209,6 +6960,7 @@
 				1E1A43C324728F770052DE8D /* SILAdTypeEddystoneDecoder.swift in Sources */,
 				80FFFFAC27F1FBF7004F139F /* SILRSSIGraphDiscoveredDeviceCellCollectionViewCell.swift in Sources */,
 				205131F3270365A800C27B92 /* SimulatedDevice.swift in Sources */,
+				725389052F459DB900844AB3 /* DeviceBindingManager.m in Sources */,
 				43D9340D2D6666B300D493FF /* SILAWSIoTMotionViewController.swift in Sources */,
 				43483A2C2C6A13DA00E965D2 /* SILTransferTableViewCell.swift in Sources */,
 				0C2FCB411F9A542300F4F259 /* SILCollectionViewRightAlignedFlowLayout.m in Sources */,
@@ -7349,6 +7101,7 @@
 				1E36E8B729D082C00011BA0D /* SILESLDemoTagCell.swift in Sources */,
 				20513254270365A800C27B92 /* ButtonSpinner.swift in Sources */,
 				1EFC766526AEDF770035594E /* SILGattPropertiesMarker.swift in Sources */,
+				72823C082F251A2A00414789 /* OvenViewController+UI.m in Sources */,
 				20513239270365A800C27B92 /* BarView.swift in Sources */,
 				1EFC76A526AEDFA40035594E /* SILGattConfiguratorDescriptorButtonCellViewModel.swift in Sources */,
 				FEDEE5492902A87100F354A6 /* UIViewController+LeftAlignedTitle.swift in Sources */,
@@ -7512,7 +7265,7 @@
 				1EC1F25F260CEB2800508552 /* SILGATT5_6TestCase.swift in Sources */,
 				80B5FF9E275F912F008F08A8 /* SILWifiCommissioningViewController.swift in Sources */,
 				20513264270365A800C27B92 /* EnvironmentDemoCollectionViewLayout.swift in Sources */,
-				7254546B2ACC8895003967CA /* TemperatureViewController.m in Sources */,
+				7254546B2ACC8895003967CA /* ThermostatViewController.m in Sources */,
 				434488E92C88333A00CD0430 /* SILUdpClientHelper.swift in Sources */,
 				0C2FCB7F1F9A542300F4F259 /* SILBluetoothServiceModel.m in Sources */,
 				0C2FCB801F9A542300F4F259 /* SILWeakNotificationPair.m in Sources */,
@@ -7574,12 +7327,14 @@
 				80671D8127217A54009B6284 /* SILDeviceSelectionViewController.swift in Sources */,
 				80671D8D27218401009B6284 /* SILAbstractDeviceSelectionViewController.swift in Sources */,
 				1E26EC8F255019E0002FFAAB /* SILPassthroughView.swift in Sources */,
+				727129DD2F2CE12B00215A61 /* RangeHoodViewController.m in Sources */,
 				0C2FCB911F9A542300F4F259 /* SILBarGraphCollectionViewCell.m in Sources */,
 				8011D03027CE587F00F08754 /* SILRSSIGraphViewModel.swift in Sources */,
 				802A28A327566F7800E701A1 /* SILBlinkyPeripheralGATTDatabase.swift in Sources */,
 				20513280270365A800C27B92 /* Data+Extensions.swift in Sources */,
 				1EC1F2DE260CF46100508552 /* SILIOPTester_Test4.swift in Sources */,
 				435B1FDD2E0D1E3300A66DA1 /* SILSmartLockPeripheralGATTDatabase.swift in Sources */,
+				72F588372F1F705500ACFB69 /* OvenViewController.m in Sources */,
 				1EDA0A11253472EE0031961D /* SILErrorDetailsViewControllerDelegate.swift in Sources */,
 				1E0C1279298BF31500BCADFC /* SILESLPeripheralDelegate.swift in Sources */,
 				1EFC766926AEDF770035594E /* SILGattServiceMarker.swift in Sources */,
@@ -7621,138 +7376,6 @@
 				1E26EC482550197A002FFAAB /* SILAdvertiserService.swift in Sources */,
 				1E26EC92255019E0002FFAAB /* SILBaseWireframe.swift in Sources */,
 				80C6706925516A450083D20C /* SILTimeLimitRadioButtonState.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0F4E50F521525FDC00F58ACE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F4E50F621525FDC00F58ACE /* SILBluetoothFieldModel.m in Sources */,
-				0F4E50F821525FDC00F58ACE /* SILOTAUICoordinator.m in Sources */,
-				0F4E50F921525FDC00F58ACE /* SILActivityBarViewController.m in Sources */,
-				4D9E26222212BFB200617DBA /* SILRangeTestBoardFeatures.swift in Sources */,
-				0F4E50FA21525FDC00F58ACE /* SILDebugAdvDetailsCollectionView.m in Sources */,
-				0F4E50FD21525FDC00F58ACE /* SILBigBlueButton.m in Sources */,
-				0F4E50FE21525FDC00F58ACE /* SILDebugCharacteristicTableViewCell.m in Sources */,
-				0F4E50FF21525FDC00F58ACE /* SILBluetoothModelManager.m in Sources */,
-				0F4E510021525FDC00F58ACE /* SILSettings.m in Sources */,
-				0F4E510121525FDC00F58ACE /* SILWeakTargetWrapper.m in Sources */,
-				2EF2AFB12C66234F00C34902 /* SILThroughputMainScreenVC.swift in Sources */,
-				0F4E510421525FDC00F58ACE /* SILDebugServiceTableViewCell.m in Sources */,
-				0F4E510521525FDC00F58ACE /* SILDebugAdvDetailsViewController.m in Sources */,
-				0F4E510621525FDC00F58ACE /* SILDeviceSelectionViewModel.m in Sources */,
-				0F4E510A21525FDC00F58ACE /* SILCharacteristicFieldValueResolver.m in Sources */,
-				0F4E510B21525FDC00F58ACE /* SILBluetoothBitFieldModel.m in Sources */,
-				0F4E510C21525FDC00F58ACE /* SILDiscoveredPeripheralDisplayDataViewModel.m in Sources */,
-				807B13D9252347390056CFCC /* SILEncodingTextField.m in Sources */,
-				0F4E510D21525FDC00F58ACE /* SILDebugDeviceTableViewCell.m in Sources */,
-				0F4E510E21525FDC00F58ACE /* DebugDeviceFilterViewController.swift in Sources */,
-				433810772C6A392300213F3D /* SILWifiThroughputGaugeView.swift in Sources */,
-				0F4E510F21525FDC00F58ACE /* SILDebugAdvDetailCollectionViewCell.m in Sources */,
-				0F4E511021525FDC00F58ACE /* SILHealthThermometerAppViewController.m in Sources */,
-				0F4E511121525FDC00F58ACE /* SILProximityCalculator.m in Sources */,
-				0F4E511221525FDC00F58ACE /* SILDoubleKeyDictionaryPair.m in Sources */,
-				0F4E511321525FDC00F58ACE /* SILBluetoothEnumerationModel.m in Sources */,
-				0F4E511421525FDC00F58ACE /* RSSISliderTableViewCell.swift in Sources */,
-				0F4E511821525FDC00F58ACE /* SILDebugCharacteristicValueFieldTableViewCell.m in Sources */,
-				0F4E511921525FDC00F58ACE /* UIImage+SILImages.m in Sources */,
-				0F4E511B21525FDC00F58ACE /* TLMData.swift in Sources */,
-				0F4E511C21525FDC00F58ACE /* UITableViewCell+SILHelpers.m in Sources */,
-				0F4E511D21525FDC00F58ACE /* SILTextFieldEntryCell.m in Sources */,
-				0F4E511E21525FDC00F58ACE /* SILAdvertisementDataModel.m in Sources */,
-				0F4E511F21525FDC00F58ACE /* SILCharacteristicTableModel.m in Sources */,
-				0F4E512121525FDC00F58ACE /* SILRangeTestAppViewModel.swift in Sources */,
-				0F4E512221525FDC00F58ACE /* SILDebugCharacteristicPropertyView.m in Sources */,
-				0F4E512321525FDC00F58ACE /* CBPeripheral+Services.m in Sources */,
-				0F4E512421525FDC00F58ACE /* SILDebugProperty.m in Sources */,
-				0F4E512521525FDC00F58ACE /* SILPopoverViewController.m in Sources */,
-				0F4E512621525FDC00F58ACE /* SILThermometerSegmentedControl.m in Sources */,
-				0F4E512821525FDC00F58ACE /* SILOTAHUDPeripheralViewModel.m in Sources */,
-				0F4E512921525FDC00F58ACE /* SILDebugAdvDetailTableViewCell.m in Sources */,
-				4D8E816A238C30AE00E7EC35 /* SILCharacteristicFieldValueResolverContext.m in Sources */,
-				0F4E512D21525FDC00F58ACE /* SILHeartRateMeasurement.m in Sources */,
-				0F4E512E21525FDC00F58ACE /* SILApp+AttributedProfiles.m in Sources */,
-				0F4E512F21525FDC00F58ACE /* SILOTAFirmwareFile.m in Sources */,
-				0F4E513021525FDC00F58ACE /* SILBitRowModel.m in Sources */,
-				0F4E513221525FDC00F58ACE /* SILCollectionViewRightAlignedFlowLayout.m in Sources */,
-				0F4E513321525FDC00F58ACE /* UIColor+SILColors.m in Sources */,
-				807B13AA252335A50056CFCC /* SILDebugCharacteristicEncodingFieldEntryCell.m in Sources */,
-				0F4E513621525FDC00F58ACE /* SILTemperatureType.m in Sources */,
-				0F4E513821525FDC00F58ACE /* SILCentralManager.m in Sources */,
-				43483A2D2C6A2FF100E965D2 /* SILTransferTableViewCell.swift in Sources */,
-				80C6706B25516A450083D20C /* SILTimeLimitRadioButtonState.swift in Sources */,
-				0F4E513921525FDC00F58ACE /* CBService+Categories.m in Sources */,
-				0F4E513B21525FDC00F58ACE /* SILBluetoothDescriptorModel.m in Sources */,
-				0F4E513C21525FDC00F58ACE /* SILRoundedViewBehaviour.m in Sources */,
-				0F4E513D21525FDC00F58ACE /* SILRangeTestSettingValue.swift in Sources */,
-				0F4E513E21525FDC00F58ACE /* EddystoneBeacon.swift in Sources */,
-				2EE8A45F2CC7FC0900789115 /* SIL_TLS_Tx_Helper.swift in Sources */,
-				0F4E513F21525FDC00F58ACE /* SILRangeTestModeSelectionViewController.swift in Sources */,
-				0F4E514021525FDC00F58ACE /* SILRangeTestPeripheral.swift in Sources */,
-				0F4E514221525FDC00F58ACE /* SILKeyValueViewModel.m in Sources */,
-				0F4E514321525FDC00F58ACE /* SILDebugCharacteristicEnumerationFieldTableViewCell.m in Sources */,
-				0F4E514421525FDC00F58ACE /* SILRangeTestCharacteristic.swift in Sources */,
-				13ACBA81256FA10D00D3EE11 /* SILRangeTestSelectDeviceViewController.swift in Sources */,
-				0F4E514521525FDC00F58ACE /* SILTemperatureMeasurement.m in Sources */,
-				13ACBA89256FB1D400D3EE11 /* SILRangeTestAppContainerViewController.swift in Sources */,
-				0F4E514821525FDC00F58ACE /* SILOTAFirmwareUpdate.m in Sources */,
-				0F4E514921525FDC00F58ACE /* SILBodySensorLocation.m in Sources */,
-				0F4E514A21525FDC00F58ACE /* TextFieldTableViewCell.swift in Sources */,
-				0F4E514B21525FDC00F58ACE /* SILConnectedLightingViewController.m in Sources */,
-				0F4E514C21525FDC00F58ACE /* SILCharacteristicFieldBuilder.m in Sources */,
-				0F4E514D21525FDC00F58ACE /* SILApp.m in Sources */,
-				0F4E514E21525FDC00F58ACE /* UIFont+Extensions.swift in Sources */,
-				0F4E514F21525FDC00F58ACE /* SILDebugServicesViewController.m in Sources */,
-				0F4E515021525FDC00F58ACE /* SILBeacon.m in Sources */,
-				0F4E515321525FDC00F58ACE /* SILOTASetupViewController.m in Sources */,
-				2EE8A45B2CC7FC0900789115 /* SIL_TLS_Tx_ViewController.swift in Sources */,
-				0F4E515421525FDC00F58ACE /* WYPopoverController+SILHelpers.m in Sources */,
-				0F4E515521525FDC00F58ACE /* SILUUIDProvider.m in Sources */,
-				0F4E515621525FDC00F58ACE /* SILRangeTestMovingAverageCalculator.swift in Sources */,
-				0F4E515721525FDC00F58ACE /* SILDebugSpacerTableViewCell.m in Sources */,
-				0F4E515821525FDC00F58ACE /* SILOTAFirmwareUpdateManager.m in Sources */,
-				0F4E515921525FDC00F58ACE /* SILOTAProgressViewController.m in Sources */,
-				0F4E515A21525FDC00F58ACE /* SILDebugCharacteristicToggleFieldTableViewCell.m in Sources */,
-				0F4E515C21525FDC00F58ACE /* SILConstants.m in Sources */,
-				0F4E515D21525FDC00F58ACE /* SILCalibrationViewController.m in Sources */,
-				0F4E515F21525FDC00F58ACE /* SILBitFieldFieldModel.m in Sources */,
-				0F4E516021525FDC00F58ACE /* SILBluetoothXMLParser.m in Sources */,
-				0F4E516421525FDC00F58ACE /* SILDebugHeaderView.m in Sources */,
-				4D9E26272212CA7000617DBA /* SILRangeTestBoardInfo.swift in Sources */,
-				809656862524A71C000E98F5 /* SILDebugCharacteristicEncodingFieldView.m in Sources */,
-				80C6705B255169950083D20C /* SILRadioButton.swift in Sources */,
-				0F4E516721525FDC00F58ACE /* SILRangeTestAppViewController.swift in Sources */,
-				0F4E516821525FDC00F58ACE /* SILOTAFirmwareUpdateViewModel.m in Sources */,
-				0F4E516921525FDC00F58ACE /* UIView+SILAnimations.m in Sources */,
-				0F4E516A21525FDC00F58ACE /* SILValueFieldRowModel.m in Sources */,
-				0F4E516B21525FDC00F58ACE /* SILEnumerationFieldRowModel.m in Sources */,
-				0F4E516C21525FDC00F58ACE /* Int+Extensions.swift in Sources */,
-				0F4E516D21525FDC00F58ACE /* UIImage+SILHelpers.m in Sources */,
-				0F4E516E21525FDC00F58ACE /* SILOTAHUDView.m in Sources */,
-				0F4E516F21525FDC00F58ACE /* SILServiceTableModel.m in Sources */,
-				0F4E517021525FDC00F58ACE /* SILBluetoothSearch.m in Sources */,
-				0F4E517121525FDC00F58ACE /* SILBluetoothCharacteristicModel.m in Sources */,
-				0F4E517321525FDC00F58ACE /* SILBluetoothServiceModel.m in Sources */,
-				FE36FC6D2864795900A9CB41 /* SILAppearance.m in Sources */,
-				0F4E517421525FDC00F58ACE /* SILWeakNotificationPair.m in Sources */,
-				0F4E517521525FDC00F58ACE /* GradientSlider.swift in Sources */,
-				2EE8A4502CC7E5D500789115 /* TLS_Tx.m in Sources */,
-				0F4E517721525FDC00F58ACE /* main.m in Sources */,
-				0F4E517821525FDC00F58ACE /* BrowserViewModel.swift in Sources */,
-				0F4E517921525FDC00F58ACE /* SILDebugPopoverViewController.m in Sources */,
-				1394F9602566BD4400795E5A /* SILBigButton.swift in Sources */,
-				0F4E517C21525FDC00F58ACE /* SILBluetoothBitModel.m in Sources */,
-				0F4E517E21525FDC00F58ACE /* SILRangeTestTXValueUpdater.swift in Sources */,
-				0F4E517F21525FDC00F58ACE /* NSDictionary+SILErrorCode.m in Sources */,
-				0F4E518021525FDC00F58ACE /* GradientView.swift in Sources */,
-				0F4E518121525FDC00F58ACE /* KZBehaviour.m in Sources */,
-				0F4E518221525FDC00F58ACE /* SILDescriptorTableModel.m in Sources */,
-				0F4E518421525FDC00F58ACE /* SILBarGraphCollectionViewCell.m in Sources */,
-				0F4E518621525FDC00F58ACE /* SILRangeTestManufacturerData.swift in Sources */,
-				0F4E518721525FDC00F58ACE /* NSError+SILHelpers.m in Sources */,
-				0F4E518821525FDC00F58ACE /* SILAdvertisementDataViewModel.m in Sources */,
-				0F4E518921525FDC00F58ACE /* SILEncodingPseudoFieldRowModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7841,6 +7464,8 @@
 				492CA4B11E4E0DD700502AC9 /* SILActivityBarViewController.m in Sources */,
 				0755DD041BD05C5C0003886D /* SILDebugAdvDetailsCollectionView.m in Sources */,
 				E666CBD81A767C5500676C5C /* SILAppearance.m in Sources */,
+				AA000001THEME000000000005 /* ThemeManager.swift in Sources */,
+				AA000001THEME000000000006 /* UIColor+AppSemantic.swift in Sources */,
 				496A42F31E7C582F006E87F2 /* SILBigBlueButton.m in Sources */,
 				07B8A8D21BCD6E3B001948C1 /* SILDebugCharacteristicTableViewCell.m in Sources */,
 				0F3EB6B720C524C30062A7C1 /* SILRangeTestAppViewModel.swift in Sources */,
@@ -8019,7 +7644,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 12;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 52444FG85C;
 				DISPLAY_NAME = "Si Connect";
@@ -8032,12 +7657,12 @@
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/BlueGecko/Info.plist";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.silabs.BlueGeckoDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -8061,7 +7686,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Silicon Laboratories Inc (52444FG85C)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 12;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 52444FG85C;
@@ -8074,12 +7699,12 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/BlueGecko/BlueGecko.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/BlueGecko/Info.plist";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.silabs.BlueGeckoDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -8088,80 +7713,6 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "SiliconLabsApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		0F4E51C821525FDC00F58ACE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D578365DE8C84B43DE844D60 /* Pods-WirelessGecko.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWirelessGecko;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
-				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/WirelessGecko/Entitlements.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 52444FG85C;
-				DISPLAY_NAME = "Wireless Gecko";
-				ENABLE_BITCODE = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/WirelessGecko/WirelessGecko.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"WIRELESS=1",
-				);
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "$(inherited)";
-				INFOPLIST_FILE = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/WirelessGecko/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.silabs.WirelessGeckoDemoApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "SiliconLabsApp-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0F4E51CA21525FDC00F58ACE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBA88A0DF7A10843B48785CA /* Pods-WirelessGecko.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWirelessGecko;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
-				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/WirelessGecko/Entitlements.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 52444FG85C;
-				DISPLAY_NAME = "Wireless Gecko";
-				ENABLE_BITCODE = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/WirelessGecko/WirelessGecko.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"WIRELESS=1",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/SiliconLabsApp/SupportingFiles/WirelessGecko/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.silabs.WirelessGeckoDemoApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "SiliconLabsApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -8431,15 +7982,6 @@
 			buildConfigurations = (
 				0C2FCBD61F9A542300F4F259 /* Debug */,
 				0C2FCBD81F9A542300F4F259 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0F4E51C721525FDC00F58ACE /* Build configuration list for PBXNativeTarget "WirelessGecko" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0F4E51C821525FDC00F58ACE /* Debug */,
-				0F4E51CA21525FDC00F58ACE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

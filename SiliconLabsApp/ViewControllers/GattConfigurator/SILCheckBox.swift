@@ -55,7 +55,7 @@ open class SILCheckBox: UIControl {
     var checkboxUnselectedBackgroundColor: UIColor! = .clear
     
     @IBInspectable
-    var checkboxSelectedBackgroundColor: UIColor! = UIColor.sil_regularBlue()
+    var checkboxSelectedBackgroundColor: UIColor! = UIColor.appPrimaryBrand
     
     //Used to increase the touchable are for the component
     var increasedTouchRadius: CGFloat = 5

@@ -60,6 +60,11 @@ class SILCreateGattCharacteristicViewController: UIViewController, UITextViewDel
         setupLogic()
         viewModel.updateView()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+    }
     
     func setupAppearance() {
         typeValuePicker.layer.borderWidth = 1
@@ -79,7 +84,7 @@ class SILCreateGattCharacteristicViewController: UIViewController, UITextViewDel
         characteristicUUIDField.addTarget(self, action: #selector(onCharacteristicUUIDChange(_:)), for: .editingChanged)
         initialHexValueTextField.addTarget(self, action: #selector(onCharacteristicInitialValueChange(_:)), for: .editingChanged)
         initialTextValueTextField.addTarget(self, action: #selector(onCharacteristicInitialValueChange(_:)), for: .editingChanged)
-        [characteristicNameField, characteristicUUIDField, initialHexValueTextField, initialTextValueTextField].forEach { $0?.tintColor = UIColor.sil_regularBlue() }
+        [characteristicNameField, characteristicUUIDField, initialHexValueTextField, initialTextValueTextField].forEach { $0?.tintColor = UIColor.appPrimaryBrand }
         
         switches.forEach( { _switch in
             _switch.addTarget(self, action: #selector(onSwitchChange(_:)), for: .valueChanged)
@@ -96,7 +101,7 @@ class SILCreateGattCharacteristicViewController: UIViewController, UITextViewDel
         
         viewModel.isSaveButtonEnabled.observe { enabled in
             weakSelf?.saveButton.isEnabled = enabled
-            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.sil_regularBlue() : UIColor.lightGray
+            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.appPrimaryBrand : UIColor.lightGray
         }.putIn(bag: tokenBag)
         observeProperties()
         updateCheckboxes()

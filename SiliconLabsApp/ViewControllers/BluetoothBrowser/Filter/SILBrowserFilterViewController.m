@@ -47,6 +47,7 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addWhiteLineBelowNavigationBar];
     [self addObservers];
     [self setAppearanceForSeachingView];
     [self setAppearanceForRSSIView];
@@ -139,8 +140,8 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 - (void)setAppearanceForSearchingByDeviceName {
     _searchByDeviceNameTextView.textContainer.maximumNumberOfLines = 1;
     _searchByDeviceNameTextView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
-    [_searchByDeviceNameTextView setFont:[UIFont robotoMediumWithSize:[UIFont getMiddleFontSize]]];
-    _searchByDeviceNameTextView.textColor = [UIColor sil_subtleTextColor];
+    [_searchByDeviceNameTextView setFont:[UIFont helveticaNeueMediumWithSize:[UIFont getMiddleFontSize]]];
+    _searchByDeviceNameTextView.textColor = [UIColor sil_subtitleTextColor];
     _searchByDeviceNameTextView.delegate = self;
     _searchByDeviceNameTextView.text = SearchByDeviceNamePlaceholder;
     _searchByDeviceNameTextView.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -148,7 +149,9 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 
 - (void)setBackgroundAppearance {
     _seachByDeviceNameView.backgroundColor = [UIColor sil_backgroundColor];
-    _seachByDeviceNameView.layer.cornerRadius = 10.0;
+    _seachByDeviceNameView.layer.cornerRadius = 5.0;
+    _seachByDeviceNameView.layer.borderWidth = 1.0;
+    _seachByDeviceNameView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
 - (void)setupGesturesForClearImages {
@@ -264,13 +267,13 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 }
 
 - (void)setApperanceForRSSITitleLabel {
-    [_rssiLabel setFont:[UIFont robotoBoldWithSize:[UIFont getMiddleFontSize]]];
+    [_rssiLabel setFont:[UIFont stolzlBoldWithSize:[UIFont getMiddleFontSize]]];
     _rssiLabel.textColor = [UIColor sil_primaryTextColor];
 }
 
 - (void)setApperanceForDBMValueLabel {
-    [_dBmValueLabel setFont:[UIFont robotoBoldWithSize:[UIFont getSmallFontSize]]];
-    _dBmValueLabel.textColor = [UIColor sil_regularBlueColor];
+    [_dBmValueLabel setFont:[UIFont stolzlBoldWithSize:[UIFont getSmallFontSize]]];
+    _dBmValueLabel.textColor = [UIColor appPrimaryBrand];
     _dBmValueLabel.text = StarterRSSIValue;
 }
 
@@ -297,7 +300,7 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 #pragma mark - Appearance for Beacon Type Area
 
 - (void)setAppearanceForBeaconType {
-    [_beaconTypeLabel setFont:[UIFont robotoBoldWithSize:[UIFont getMiddleFontSize]]];
+    [_beaconTypeLabel setFont:[UIFont stolzlBoldWithSize:[UIFont getMiddleFontSize]]];
     _beaconTypeLabel.textColor = [UIColor sil_primaryTextColor];
 }
 
@@ -310,8 +313,8 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 }
 
 - (void)setAppearanceForFavouritesLabel {
-    [_favouriteAreaTitleLabel setFont:[UIFont robotoRegularWithSize:[UIFont getSmallFontSize]]];
-    _favouriteAreaTitleLabel.textColor = [UIColor sil_subtleTextColor];
+    [_favouriteAreaTitleLabel setFont:[UIFont stolzlMediumWithSize:[UIFont getMiddleFontSize]]];
+    _favouriteAreaTitleLabel.textColor = [UIColor sil_primaryTextColor];
 }
 
 - (void)addGestureToFavouriteSwitch {
@@ -331,8 +334,8 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 }
 
 - (void)setAppearanceForConnectableLabel {
-    [_connectableTittleLabel setFont:[UIFont robotoRegularWithSize:[UIFont getSmallFontSize]]];
-    _connectableTittleLabel.textColor = [UIColor sil_subtleTextColor];
+    [_connectableTittleLabel setFont:[UIFont stolzlMediumWithSize:[UIFont getMiddleFontSize]]];
+    _connectableTittleLabel.textColor = [UIColor sil_primaryTextColor];
 }
 
 - (void)addGestureToConnectableSwitch {
@@ -359,13 +362,13 @@ NSString* const StarterRSSIValue = @"-100 dBm";
 }
 
 - (void)setAppearanceForApplyFiltersButton {
-    _applyFiltersButton.layer.cornerRadius = CornerRadiusForButtons;
-    [_applyFiltersButton.titleLabel setFont:[UIFont robotoMediumWithSize:[UIFont getMiddleFontSize]]];
+    _applyFiltersButton.layer.cornerRadius = 10.0;
+    [_applyFiltersButton.titleLabel setFont:[UIFont stolzlMediumWithSize:[UIFont getMiddleFontSize]]];
     _applyFiltersButton.titleLabel.textColor = [UIColor sil_backgroundColor];
 }
 
 - (void)setAppearanceForResetButton {
-    [_resetButton.titleLabel setFont:[UIFont robotoMediumWithSize:[UIFont getMiddleFontSize]]];
+    [_resetButton.titleLabel setFont:[UIFont stolzlMediumWithSize:[UIFont getMiddleFontSize]]];
 }
 
 - (void)setAppearanceForExitButton {

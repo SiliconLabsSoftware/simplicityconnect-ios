@@ -63,6 +63,7 @@ class SILLocalGattServerViewController: UIViewController, UITableViewDelegate, U
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         registerForNotifications()
         installRSSITimer()
         observeLocalGattServer()

@@ -18,6 +18,14 @@ class SILIOPTestStatusView: UIView {
                                failed: "cancelScanning")
     
     func update(newStatus: SILTestStatus) {
+        // Silence implicit layout animations from constraint/isHidden flips so the parent row stays stable.
+        UIView.performWithoutAnimation {
+            applyStatus(newStatus)
+            self.layoutIfNeeded()
+        }
+    }
+    
+    private func applyStatus(_ newStatus: SILTestStatus) {
         switch newStatus {
         case .waiting:
             testStatusLabel.isHidden = false
@@ -25,7 +33,7 @@ class SILIOPTestStatusView: UIView {
             testStatusImageView.isHidden = true
             testStatusImageView.layer.removeAllAnimations()
             testStatusLabel.text = "Waiting"
-            testStatusLabel.textColor = UIColor.sil_subtleText()
+            testStatusLabel.textColor = UIColor.sil_subtitleText()
 
         case .inProgress:
             testStatusLabel.isHidden = true
@@ -40,8 +48,10 @@ class SILIOPTestStatusView: UIView {
             testStatusImageView.isHidden = false
             testStatusImageView.layer.removeAllAnimations()
             testStatusLabel.text = "Pass"
-            testStatusLabel.textColor = UIColor.sil_regularBlue()
-            testStatusImageView.image = UIImage(named: imageNamesForStatus.passed)
+            let greenColor = UIColor(named: "sil_regularGreenColor") ?? .systemGreen
+            testStatusLabel.textColor = greenColor
+            testStatusImageView.image = UIImage(named: imageNamesForStatus.passed)?.withRenderingMode(.alwaysTemplate)
+            testStatusImageView.tintColor = greenColor
             
         case .failed(reason: _):
             testStatusLabel.isHidden = false
@@ -49,7 +59,7 @@ class SILIOPTestStatusView: UIView {
             testStatusImageView.isHidden = false
             testStatusImageView.layer.removeAllAnimations()
             testStatusLabel.text = "Fail"
-            testStatusLabel.textColor = UIColor.sil_siliconLabsRed()
+            testStatusLabel.textColor = UIColor(named: "sil_siliconLabsRedColor") ?? .systemRed
             testStatusImageView.image = UIImage(named: imageNamesForStatus.failed)
             
         case .unknown(reason: _):
@@ -58,7 +68,7 @@ class SILIOPTestStatusView: UIView {
             testStatusImageView.isHidden = true
             testStatusImageView.layer.removeAllAnimations()
             testStatusLabel.text = "N/A"
-            testStatusLabel.textColor = UIColor.sil_subtleText()
+            testStatusLabel.textColor = UIColor.sil_subtitleText()
             
         case .none:
             break

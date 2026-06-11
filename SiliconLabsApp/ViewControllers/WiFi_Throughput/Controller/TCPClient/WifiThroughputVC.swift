@@ -36,6 +36,7 @@ class WifiThroughputVC: UIViewController, ITcpClient, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRedLineBelowNavigationBar()
         setLeftAlignedTitle("TCP Upload")
         showAlert.isHidden = true
         tcp.setDelegate_I(self)

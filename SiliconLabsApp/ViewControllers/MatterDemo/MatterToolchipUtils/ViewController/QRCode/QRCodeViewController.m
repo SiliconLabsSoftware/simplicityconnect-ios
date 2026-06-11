@@ -7,6 +7,8 @@
 #import "CHIPUIViewUtils.h"
 #import "DefaultsUtils.h"
 #import "DeviceSelector.h"
+#import "UIButton+SILMatterStyle.h"
+#import "UIColor+SILColors.h"
 #import <Matter/MTRDeviceAttestationDelegate.h>
 #import <Matter/MTRSetupPayload.h>
 #import <Matter/Matter.h>
@@ -81,14 +83,24 @@ UIButton * backButton;
     self.navigationItem.title = @"Commissioning Device";
     
     self.qrView.layer.cornerRadius = 8;
-    self.pairButton.layer.cornerRadius = 8;
-    self.hintLbl.text = @"Please position the camera to point at the QR Code. \n\nManual QR code payload ID:";
+    _manualQrCodeTextField.backgroundColor = [UIColor whiteColor];
+    _nameInputTextField.backgroundColor = [UIColor whiteColor];
+    self.hintLbl.text = @"Please position the camera to point at the QR Code.";
     _qrCodeInfoView.hidden = TRUE;
-    _qrCodeInfoBGView.layer.cornerRadius = 10;
-    _qrCodeInfoButton.layer.cornerRadius = 5;
+    _qrCodeInfoBGView.layer.cornerRadius = 5;
+    _qrCodeInfoBGView.layer.masksToBounds = YES;
+
+    _qrCodeInfoButton.layer.cornerRadius = 10;
+    _qrCodeInfoButton.layer.masksToBounds = YES;
+
+    _cancelButton.layer.cornerRadius = 10;
+    _cancelButton.layer.masksToBounds = YES;
+    _cancelButton.layer.borderWidth = 1.5;
+    _cancelButton.layer.borderColor = [UIColor sil_siliconLabsRedColor].CGColor;
+    _cancelButton.backgroundColor = [UIColor whiteColor];
     _addDeviceNameView.hidden = TRUE;
     _addDeviceNamePopupView.layer.cornerRadius = 5;
-    _addDeviceButton.layer.cornerRadius = 5;
+    _addDeviceButton.layer.cornerRadius = SILMatterButtonCornerRadius - 5.0;
     _commissioningDeviceProgressView.hidden = TRUE;
     backButton.enabled = YES;
     _commissioningPopupView.layer.cornerRadius = 10;
@@ -149,7 +161,8 @@ UIButton * backButton;
     backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 80.0f, 44.0f)];
     UIImage *backImage = [UIImage imageNamed:@"btn_navbar_back"];
     [backButton setImage:backImage  forState:UIControlStateNormal];
-    backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+    backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10);
     [backButton setTitle:text forState:UIControlStateNormal];
     [backButton addTarget:self action: @selector(goback) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView: backButton];
@@ -162,6 +175,7 @@ UIButton * backButton;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     _manualQrCodeTextField.delegate = self;
     _nameInputTextField.delegate = self;
     _manualQrCodeTextField.tintColor = UIColor.blackColor;
@@ -593,7 +607,7 @@ UIButton * backButton;
     currentIntDeviceId = deviceId;
     NSLog(@"commission int DeviceId - 1 := %d", currentIntDeviceId);
     _commissionCancelButton.enabled = YES;
-    [_commissionCancelButton setTitleColor:UIColor.sil_regularBlueColor forState: normal];
+    [_commissionCancelButton setTitleColor:UIColor.appPrimaryBrand forState: normal];
     if (![controller commissionDevice:deviceId commissioningParams:params error:&error]) {
         NSLog(@"Failed to commission Device %llu, with error %@", deviceId, error);
     }
@@ -619,7 +633,7 @@ UIButton * backButton;
     uint64_t deviceId = MTRGetNextAvailableDeviceID() - 1;
     currentIntDeviceId = deviceId;
     _commissionCancelButton.enabled = YES;
-    [_commissionCancelButton setTitleColor:UIColor.sil_regularBlueColor forState: normal];
+    [_commissionCancelButton setTitleColor:UIColor.appPrimaryBrand forState: normal];
 
     if (![controller commissionDevice:deviceId commissioningParams:params error:&error]) {
         NSLog(@"Failed to commission Device %llu, with error %@", deviceId, error);
@@ -1028,10 +1042,10 @@ UIButton * backButton;
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * action)
                                    {
-        NSLog(@"you pressed Yes, please button");
         isThread = @"THREAD";
         [self retrieveAndSendThreadCredentials:strQrCode error:error];
     }];
+    [threadButton setValue:[UIColor sil_primaryTextColor] forKey:@"titleTextColor"];
     
     UIAlertAction* wifiButton = [UIAlertAction actionWithTitle:@"Wi-Fi"
                                                          style:UIAlertActionStyleDefault
@@ -1048,6 +1062,7 @@ UIButton * backButton;
         
         [self retrieveAndSendWiFiCredentials:strQrCode error:error];
     }];
+    [wifiButton setValue:[UIColor sil_primaryTextColor] forKey:@"titleTextColor"];
     
     UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel"
                                                            style:UIAlertActionStyleDefault

@@ -60,9 +60,9 @@ class SILTCPServerHelper: UIViewController ,WYPopoverControllerDelegate, UITextF
     override var preferredContentSize: CGSize {
         get {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                return CGSize(width: 540, height: 556)
+                return CGSize(width: 540, height: 390)
             } else {
-                return CGSize(width: 346, height: 350)
+                return CGSize(width: 346, height: 320)
             }
         }
         set {
@@ -75,7 +75,18 @@ class SILTCPServerHelper: UIViewController ,WYPopoverControllerDelegate, UITextF
     func setupTextLabels() {
         
         btn_cancel.layer.cornerRadius = 8
+        btn_cancel.setupOutlineButton()
+        btn_cancel.layer.borderWidth = 2
         btn_StartUpdate.layer.cornerRadius = 8
+        
+        txtFld_ServerPort.borderStyle = .none
+        txtFld_ServerPort.layer.cornerRadius = 6
+        txtFld_ServerPort.layer.borderWidth = 1.0
+        txtFld_ServerPort.layer.borderColor = UIColor.sil_boulder().cgColor
+        txtFld_ServerPort.layer.masksToBounds = true
+        let portLeftPadding = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 1))
+        txtFld_ServerPort.leftView = portLeftPadding
+        txtFld_ServerPort.leftViewMode = .always
      
         let ip = ipAddress
         if ip == "0.0.0.0"{

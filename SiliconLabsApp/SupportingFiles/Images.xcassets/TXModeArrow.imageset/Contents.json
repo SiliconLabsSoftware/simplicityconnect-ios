@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "icon - TX_Mode - Arrow.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "icon - TX_Mode - Arrow@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "icon - TX_Mode - Arrow@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_TXModeArrow.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

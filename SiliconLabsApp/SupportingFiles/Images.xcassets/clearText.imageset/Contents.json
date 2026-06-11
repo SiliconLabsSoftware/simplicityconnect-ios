@@ -1,23 +1,12 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "clearText.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "clearText@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "clearText@3x.png"
+      "filename" : "clearText@3x.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
-    "author" : "zeplin",
-    "version" : "1"
+    "author" : "xcode",
+    "version" : 1
   }
 }

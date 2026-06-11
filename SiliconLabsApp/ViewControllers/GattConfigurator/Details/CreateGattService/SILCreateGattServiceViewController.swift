@@ -44,6 +44,11 @@ class SILCreateGattServiceViewController: UIViewController, UITextFieldDelegate 
         setupLogic()
         viewModel.updateView()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+    }
     
     func setupAppearance() {
         setupServiceTypePicker()
@@ -64,7 +69,7 @@ class SILCreateGattServiceViewController: UIViewController, UITextFieldDelegate 
         dropDownUUID = SILDropDown(textField: serviceUUIDField, values: viewModel.autocompleteValues, delegate: viewModel)
         serviceNameField.addTarget(self, action: #selector(onServiceNameChange(_:)), for: .editingChanged)
         serviceUUIDField.addTarget(self, action: #selector(onServiceUUIDChange(_:)), for: .editingChanged)
-        [serviceNameField, serviceUUIDField].forEach { $0?.tintColor = UIColor.sil_regularBlue()}
+        [serviceNameField, serviceUUIDField].forEach { $0?.tintColor = UIColor.appPrimaryBrand}
         
         let mandatoryServicesLabelTapGesture = UITapGestureRecognizer(target: self, action: #selector(onMandatoryServicesLabelTap(_:)))
         mandatoryServicesLabel.addGestureRecognizer(mandatoryServicesLabelTapGesture)
@@ -73,11 +78,17 @@ class SILCreateGattServiceViewController: UIViewController, UITextFieldDelegate 
         
         viewModel.isClearButtonEnabled.observe { enabled in
             weakSelf?.clearButton.isEnabled = enabled
+            let borderColor = enabled ? UIColor.sil_siliconLabsRed().cgColor : UIColor.lightGray.cgColor
+            let textColor = enabled ? UIColor.sil_siliconLabsRed() : UIColor.lightGray
+            weakSelf?.clearButton.layer.borderWidth = 2
+            weakSelf?.clearButton.layer.borderColor = borderColor
+            weakSelf?.clearButton.layer.cornerRadius = 10
+            weakSelf?.clearButton.setTitleColor(textColor, for: .normal)
         }.putIn(bag: tokenBag)
         
         viewModel.isSaveButtonEnabled.observe { enabled in
             weakSelf?.saveButton.isEnabled = enabled
-            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.sil_regularBlue() : UIColor.lightGray
+            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.appPrimaryBrand : UIColor.lightGray
         }.putIn(bag: tokenBag)
         
         viewModel.isSelected16BitService.observe { enabled in

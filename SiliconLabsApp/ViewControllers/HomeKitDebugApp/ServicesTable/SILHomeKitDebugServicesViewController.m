@@ -117,6 +117,7 @@ static float kTableRefreshInterval = 1;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self addRedLineBelowNavigationBar];
     
     [self configureNavigationItemWithAccessory:self.accessory];
     [self updateServices];

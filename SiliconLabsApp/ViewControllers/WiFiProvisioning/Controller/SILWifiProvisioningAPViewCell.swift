@@ -15,6 +15,7 @@ class SILWifiProvisioningAPViewCell: UITableViewCell {
     @IBOutlet weak var securityTypeLbl: UILabel!
     @IBOutlet weak var bssidLbl: UILabel!
     @IBOutlet weak var rssiLbl: UILabel!
+    @IBOutlet weak var cardView: UIView!
 
      
    private let bestRange = -48...0
@@ -23,7 +24,17 @@ class SILWifiProvisioningAPViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        clipsToBounds = false
+        contentView.clipsToBounds = false
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+
+        cardView.layer.cornerRadius = 10
+        cardView.layer.masksToBounds = false
+        cardView.layer.shadowColor = UIColor.black.cgColor
+        cardView.layer.shadowOpacity = 0.15
+        cardView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cardView.layer.shadowRadius = 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,7 +60,7 @@ class SILWifiProvisioningAPViewCell: UITableViewCell {
         apNameLbl.text = cellData.ssid
         securityTypeLbl.text = cellData.securityType
         bssidLbl.text = cellData.bssid
-        rssiLbl.text = cellData.rssi
+        rssiLbl.text = "rssi: \(cellData.rssi)"
     }
     
 }

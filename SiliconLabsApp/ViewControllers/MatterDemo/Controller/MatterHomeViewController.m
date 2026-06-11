@@ -14,7 +14,8 @@
 #import "WindowOpenCloseViewController.h"
 #import "DoorLockViewController.h"
 #import "SwitchOnOffViewController.h"
-#import "TemperatureViewController.h"
+#import "ThermostatViewController.h"
+#import "AirQualityViewController.h"
 #import "PlugViewController.h"
 #import "TemperatureSensorController.h"
 #import "OccupancySensorViewController.h"
@@ -22,10 +23,13 @@
 #import "DishwasherViewController.h"
 #import "DefaultsUtils.h"
 #import "CHIPUIViewUtils.h"
+#import "UIColor+SILColors.h"
 #import <Matter/Matter.h>
 #import "DeviceSelector.h"
 #import "FRHyperLabel.h"
 #import "EVSEViewController.h"
+#import "OvenViewController.h"
+#import "RangeHoodViewController.h"
 
 @protocol MatterDeviceListDelegate <NSObject>
 - (void) didCommissionComplete:(BOOL)isCommissioned;
@@ -42,17 +46,22 @@
 @property (weak, nonatomic) WindowOpenCloseViewController * windowOpenCloseViewController;
 @property (weak, nonatomic) DoorLockViewController * doorLockViewController;
 @property (weak, nonatomic) SwitchOnOffViewController * switchOnOffViewController;
-@property (weak, nonatomic) TemperatureViewController * temperatureViewController;
+@property (weak, nonatomic) ThermostatViewController * thermostatViewController;
 @property (weak, nonatomic) PlugViewController * plugViewController;
 @property (weak, nonatomic) TemperatureSensorController * temperatureSensorController;
 @property (weak, nonatomic) OccupancySensorViewController * occupancySensorViewController;
 @property (weak, nonatomic) ContactSensorViewController * contactSensorViewController;
 @property (weak, nonatomic) DishwasherViewController * dishwasherViewController;
+@property (weak, nonatomic) AirQualityViewController * airQualityViewController;
+
 @property (strong, nonatomic) MTRDescriptorClusterDeviceTypeStruct * descriptorClusterDeviceTypeStruct;
 @property (strong, nonatomic) NSTimer *tempRefreshTimerHome;
 @property (weak, nonatomic) IBOutlet UIView *matterSetupInfoView;
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (strong, nonatomic)MTRDeviceController * controller;
 @property (weak, nonatomic) EVSEViewController * evseViewController;
+@property (weak, nonatomic) OvenViewController * ovenViewController;
+@property (weak, nonatomic) RangeHoodViewController * rangeHoodViewController;
 
 @end
 
@@ -82,10 +91,21 @@ int commissiond;
     [self updateListOfDevice];
     //[self fetchFabricsList];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveTestNotification:) name:@"controllerNotification" object:nil];
+
+    [self setupOkButtonAppearance];
+}
+
+- (void)setupOkButtonAppearance {
+    _okButton.layer.cornerRadius = 10;
+    _okButton.layer.borderWidth = 2;
+    _okButton.layer.borderColor = [UIColor sil_siliconLabsRedColor].CGColor;
+    _okButton.layer.masksToBounds = YES;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // Load connected device
     [self setRightBarButton];
@@ -116,24 +136,74 @@ int commissiond;
 
 -(void) initialSetup {
     _guidanceLabel.numberOfLines = 0;
-    
-    // Define a normal attributed string
-    NSDictionary *attributes = @{NSForegroundColorAttributeName: [UIColor blackColor], NSFontAttributeName: [UIFont helveticaNeueWithSize:14]};
-    _guidanceLabel.attributedText = [[NSAttributedString alloc]initWithString:kQuickStartGuide attributes:attributes];
-    
-    // Define a selection handler block
-    void(^handler)(FRHyperLabel *label, NSString *substring) = ^(FRHyperLabel *label, NSString *substring){
-        // Go to link
-        UIApplication *application = [UIApplication sharedApplication];
-          NSURL *URL = [NSURL URLWithString:@"https://docs.silabs.com/matter/2.1.0/matter-overview/"];
-          [application openURL:URL options:@{} completionHandler:^(BOOL success) {
-              if (success) {
-                  // success action
-              }
-          }];
+    _guidanceLabel.userInteractionEnabled = YES;
+    _guidanceLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _guidanceLabel.textAlignment = NSTextAlignmentLeft;
+
+    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+
+    NSDictionary *attributes = @{
+        NSForegroundColorAttributeName: [UIColor sil_subtitleTextColor],
+        NSFontAttributeName: [UIFont stolzlRegularWithSize:12],
+        NSParagraphStyleAttributeName: paragraphStyle
     };
-    // Add link to substrings
-    [_guidanceLabel setLinksForSubstrings:@[@"Quick-Start Guide"] withLinkHandler:handler];
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:kQuickStartGuide attributes:attributes];
+
+    NSRange linkRange = [kQuickStartGuide rangeOfString:@"Quick-Start Guide"];
+    if (linkRange.location != NSNotFound) {
+        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor appPrimaryBrand] range:linkRange];
+        [attrString addAttribute:NSUnderlineStyleAttributeName value:@(NSUnderlineStyleSingle) range:linkRange];
+    }
+    _guidanceLabel.attributedText = attrString;
+
+    for (UIGestureRecognizer *gr in [_guidanceLabel.gestureRecognizers copy]) {
+        [_guidanceLabel removeGestureRecognizer:gr];
+    }
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGuidanceLabelTap:)];
+    [_guidanceLabel addGestureRecognizer:tap];
+}
+
+- (void)handleGuidanceLabelTap:(UITapGestureRecognizer *)tap {
+    UILabel *label = (UILabel *)tap.view;
+    NSAttributedString *text = label.attributedText;
+    if (text.length == 0) {
+        return;
+    }
+
+    NSRange linkRange = [text.string rangeOfString:@"Quick-Start Guide"];
+    if (linkRange.location == NSNotFound) {
+        return;
+    }
+
+    [label layoutIfNeeded];
+
+    NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
+    NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:label.bounds.size];
+    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:text];
+
+    textContainer.lineFragmentPadding = 0.0;
+    textContainer.lineBreakMode = label.lineBreakMode;
+    textContainer.maximumNumberOfLines = label.numberOfLines;
+
+    [layoutManager addTextContainer:textContainer];
+    [textStorage addLayoutManager:layoutManager];
+
+    CGPoint locationOfTouch = [tap locationInView:label];
+
+    CGRect usedRect = [layoutManager usedRectForTextContainer:textContainer];
+    CGPoint textOffset = CGPointMake(0, MAX(0, (label.bounds.size.height - usedRect.size.height) * 0.5 - usedRect.origin.y));
+    locationOfTouch.y -= textOffset.y;
+
+    NSUInteger indexOfCharacter = [layoutManager characterIndexForPoint:locationOfTouch
+                                                        inTextContainer:textContainer
+                               fractionOfDistanceBetweenInsertionPoints:NULL];
+
+    if (NSLocationInRange(indexOfCharacter, linkRange)) {
+        NSURL *URL = [NSURL URLWithString:@"https://docs.silabs.com/matter/2.1.0/matter-overview/"];
+        [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+    }
 }
 
 - (void) updateListOfDevice {
@@ -193,7 +263,7 @@ int commissiond;
     
     UIImage* qrImg1 = [UIImage imageNamed:@"refresh"];
     //UIButton *btn1 = [[UIButton alloc] initWithFrame: CGRectMake(-15,0,30,30)];
-    UIButton *btn1 = [[UIButton alloc] initWithFrame: CGRectMake(-15,0,35,35)];
+    UIButton *btn1 = [[UIButton alloc] initWithFrame: CGRectMake(-15,0,30,30)];
     [btn1 setBackgroundImage:qrImg1 forState:UIControlStateNormal];
     //[btn1 setImage:qrImg1 forState:UIControlStateNormal];
     [btn1 addTarget:self action:@selector(refressListScreen:) forControlEvents:UIControlEventTouchUpInside];
@@ -310,10 +380,10 @@ int commissiond;
         _onOffViewController.endPoint = endPoint;
         [self.navigationController pushViewController:_onOffViewController animated: YES];
     } else if ([deviceType isEqualToString:@"769"]){
-        _temperatureViewController = [story instantiateViewControllerWithIdentifier:@"TemperatureViewController"];
-        _temperatureViewController.nodeId = nodeId;
-        _temperatureViewController.endPoint = endPoint;
-        [self.navigationController pushViewController:_temperatureViewController animated: YES];
+        _thermostatViewController = [story instantiateViewControllerWithIdentifier:@"ThermostatViewController"];
+        _thermostatViewController.nodeId = nodeId;
+        _thermostatViewController.endPoint = endPoint;
+        [self.navigationController pushViewController:_thermostatViewController animated: YES];
     } else if ([deviceType isEqualToString:@"267"]){
         _plugViewController = [story instantiateViewControllerWithIdentifier:@"PlugViewController"];
         _plugViewController.nodeId = nodeId;
@@ -356,15 +426,25 @@ int commissiond;
             [self.navigationController pushViewController:_dishwasherViewController animated: YES];
         } 
     } else if ([deviceType isEqualToString: AirQuality]){
-        _temperatureViewController = [story instantiateViewControllerWithIdentifier:@"AirQualityViewController"];
-        _temperatureViewController.nodeId = nodeId;
-        _temperatureViewController.endPoint = endPoint;
-        [self.navigationController pushViewController:_temperatureViewController animated: YES];
-    } else if ([deviceType isEqualToString:ElectricVehicles]) {
+        _airQualityViewController = [story instantiateViewControllerWithIdentifier:@"AirQualityViewController"];
+        _airQualityViewController.nodeId = nodeId;
+        _airQualityViewController.endPoint = endPoint;
+        [self.navigationController pushViewController:_airQualityViewController animated: YES];
+    } else if ([deviceType isEqualToString:ElectricVehicles] || [deviceType isEqualToString:@"1292"]) {
         _evseViewController = [story instantiateViewControllerWithIdentifier:@"EVSEViewController"];
         _evseViewController.nodeId = nodeId;
         _evseViewController.endPoint = endPoint;
         [self.navigationController pushViewController:_evseViewController animated: YES];
+    }  else if ([deviceType isEqualToString: Oven]){
+        _ovenViewController = [story instantiateViewControllerWithIdentifier:@"OvenViewController"];
+        _ovenViewController.nodeId = nodeId;
+        _ovenViewController.endPoint = endPoint;
+        [self.navigationController pushViewController:_ovenViewController animated: YES];
+    } else if ([deviceType isEqualToString:RangeHood]) {
+        _rangeHoodViewController = [story instantiateViewControllerWithIdentifier:@"RangeHoodViewController"];
+        _rangeHoodViewController.nodeId = nodeId;
+        _rangeHoodViewController.endPoint = endPoint;
+        [self.navigationController pushViewController:_rangeHoodViewController animated: YES];
     }
 }
 

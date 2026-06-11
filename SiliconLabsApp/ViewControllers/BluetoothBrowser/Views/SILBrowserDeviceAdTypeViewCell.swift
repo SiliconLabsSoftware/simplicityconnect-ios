@@ -23,7 +23,13 @@ import UIKit
     }
     
     func configure() {
-        adTypeNameLabel.text = viewModel?.typeString
-        adTypeValueLabel.text = viewModel?.valueString
+        let nameTarget = viewModel?.typeString
+        if adTypeNameLabel.text != nameTarget {
+            adTypeNameLabel.text = nameTarget
+        }
+        let valueTarget = viewModel?.valueString
+        if adTypeValueLabel.text != valueTarget {
+            adTypeValueLabel.text = valueTarget
+        }
     }
 }

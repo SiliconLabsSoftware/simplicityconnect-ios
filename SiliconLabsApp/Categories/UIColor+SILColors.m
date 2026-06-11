@@ -10,89 +10,102 @@
 
 @implementation UIColor (SILColors)
 
+#pragma mark - Brand / Accent (theme‑dependent)
+
 + (UIColor *)sil_siliconLabsRedColor {
-    return [UIColor colorNamed: @"sil_siliconLabsRedColor"];
+    return [UIColor appPrimaryBrand];
 }
 
 + (UIColor *)sil_regularBlueColor {
-    return [UIColor colorNamed: @"sil_regularBlueColor"];
+    return [UIColor appPrimaryBrand];
 }
-
-+ (UIColor *)sil_cardBackgroundColor {
-    return [UIColor colorNamed: @"sil_cardBackgroundColor"];
-}
-
-+ (UIColor *)sil_backgroundColor {
-    return [UIColor colorNamed: @"sil_backgroundColor"];
-}
-
-+ (UIColor *)sil_secondaryBackgroundColor {
-    return [UIColor colorNamed: @"sil_secondaryBackgroundColor"];
-}
-
-+ (UIColor *)sil_subtleTextColor {
-    return [UIColor colorNamed: @"sil_subtleTextColor"];
-}
-
-+ (UIColor *)sil_primaryTextColor {
-    return [UIColor colorNamed: @"sil_primaryTextColor"];
-}
-
-#pragma mark - Old colors
 
 + (UIColor *)sil_strongBlueColor {
-    return [UIColor colorNamed: @"sil_strongBlueColor"];
+    return [UIColor appStrongAccent];
 }
 
 + (UIColor *)sil_lightBlueColor {
-    return [UIColor colorNamed: @"sil_lightBlueColor"];
+    return [UIColor appLightAccent];
 }
 
-+ (UIColor *)sil_lineGreyColor {
-    return [UIColor colorNamed: @"sil_lineGreyColor"];
+#pragma mark - Text (routed through palette)
+
++ (UIColor *)sil_primaryTextColor {
+    return [UIColor appPrimaryText];
 }
 
-+ (UIColor *)sil_bgGreyColor {
-    return [UIColor colorNamed: @"sil_bgGreyColor"];
-}
-
-+ (UIColor *)sil_refreshGreyColor {
-    return [UIColor colorNamed: @"sil_refreshGreyColor"];
-}
-
-+ (UIColor *)sil_lightGreyColor {
-    return [UIColor colorNamed: @"sil_lightGreyColor"];
-}
-
-+ (UIColor *)sil_bgWhiteColor {
-    return [UIColor colorNamed: @"sil_bgWhiteColor"];
-}
-
-+ (UIColor *)sil_silverChaliceColor {
-    return [UIColor colorNamed: @"sil_silverChaliceColor"];
-}
-
-+ (UIColor *)sil_boulderColor {
-    return [UIColor colorNamed: @"sil_boulderColor"];
-}
-
-+ (UIColor *)sil_masala50pcColor {
-    return [UIColor colorNamed: @"sil_masala50pcColor"];
++ (UIColor *)sil_subtitleTextColor {
+    return [UIColor appSubtleText];
 }
 
 + (UIColor *)sil_masalaColor {
-    return [UIColor colorNamed: @"sil_masalaColor"];
+    return [UIColor appMasalaText];
+}
+
++ (UIColor *)sil_masala50pcColor {
+    return [UIColor appMasala50pcText];
+}
+
+#pragma mark - Backgrounds (routed through palette)
+
++ (UIColor *)sil_backgroundColor {
+    return [UIColor appBackground];
+}
+
++ (UIColor *)sil_secondaryBackgroundColor {
+    return [UIColor appSecondaryBackground];
+}
+
++ (UIColor *)sil_cardBackgroundColor {
+    return [UIColor appCardBackground];
+}
+
++ (UIColor *)sil_disableCardBgColor {
+    return [UIColor appDisableCardBackground];
+}
+
++ (UIColor *)sil_bgWhiteColor {
+    return [UIColor appBgWhite];
+}
+
++ (UIColor *)sil_bgGreyColor {
+    return [UIColor appBgGrey];
+}
+
+#pragma mark - Greys / Borders (routed through palette)
+
++ (UIColor *)sil_lineGreyColor {
+    return [UIColor appLineGrey];
+}
+
++ (UIColor *)sil_lightGreyColor {
+    return [UIColor appLightGrey];
+}
+
++ (UIColor *)sil_refreshGreyColor {
+    return [UIColor appRefreshGrey];
 }
 
 + (UIColor *)sil_silverColor {
-    return [UIColor colorNamed: @"sil_silverColor"];
+    return [UIColor appSilver];
 }
 
-+ (UIColor *)sil_yellowColor {
-    return [UIColor colorNamed: @"sil_yellowColor"];
++ (UIColor *)sil_silverChaliceColor {
+    return [UIColor appSilverChalice];
 }
+
++ (UIColor *)sil_boulderColor {
+    return [UIColor appBoulder];
+}
+
+#pragma mark - Status
+
++ (UIColor *)sil_yellowColor {
+    return [UIColor appWarning];
+}
+
 + (UIColor *)sil_greenColor {
-    return [UIColor colorNamed: @"sil_regularGreenColor"];
+    return [UIColor appSuccess];
 }
 
 @end

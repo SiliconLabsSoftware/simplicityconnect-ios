@@ -17,6 +17,8 @@ class SILWifiSensorsHomeView: UIViewController, SILWiFiSensorsViewModelProtocol 
     @IBOutlet weak var sensorePopupViewTitle: UILabel!
     @IBOutlet weak var sensorePopupView: UIView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var refreshBtn: UIButton!
     @IBOutlet weak var noDataView: UIView!
     
     //var timer = Timer()
@@ -37,6 +39,7 @@ class SILWifiSensorsHomeView: UIViewController, SILWiFiSensorsViewModelProtocol 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
 //        SVProgressHUD.show(withStatus: "Connecting")
         SVProgressHUD.show(withStatus: "Connecting")
         let networkOb = SILNetworkCheck()
@@ -99,6 +102,15 @@ class SILWifiSensorsHomeView: UIViewController, SILWiFiSensorsViewModelProtocol 
         collectionView.backgroundColor = UIColor.clear
         collectionView.delegate = self
         sensorePopupView.isHidden = true
+        
+        closeBtn.layer.cornerRadius = 8
+        closeBtn.setupOutlineButton()
+        closeBtn.layer.borderWidth = 2.0
+        closeBtn.layer.borderColor = UIColor.appPrimaryBrand.cgColor
+        closeBtn.layer.masksToBounds = true
+        refreshBtn.layer.cornerRadius = 8
+        refreshBtn.backgroundColor = .appPrimaryBrand
+        refreshBtn.setTitleColor(.white, for: .normal)
     }
     
     //MARK: @IBAction
@@ -198,7 +210,9 @@ extension SILWifiSensorsHomeView {
             if APIClientError == nil{
                 if let ledDic: Dictionary = sensorsData {
                     DispatchQueue.main.async {
-                        self.setPopUpData(sensorePopupViewTitle: SensorePopupViewName.temperaturePopupViewTitle.rawValue, sensoreTitleLbl: SensorTitle.temperatureTitle.rawValue, sensoreImg: SensorImage.temp ?? UIImage(), sensoreValueLbl: "\(ledDic["temperature_celcius"] ?? "")°C")
+                        let tempText = "\(ledDic["temperature_celcius"] ?? "")°C"
+                        self.setPopUpData(sensorePopupViewTitle: SensorePopupViewName.temperaturePopupViewTitle.rawValue, sensoreTitleLbl: SensorTitle.temperatureTitle.rawValue, sensoreImg: SensorImage.temp ?? UIImage(), sensoreValueLbl: tempText)
+                        self.applyTemperatureStyling(to: tempText)
                     }
                 }
             }
@@ -235,6 +249,30 @@ extension SILWifiSensorsHomeView {
         self.sensoreValueLbl.text = sensoreValueLbl
     }
     
+    // Renders a temperature value (e.g. "34.19°C") with the integer part at the
+    // label's full font size and the fractional + unit portion at ~40% size, with
+    // the "°" lifted slightly to read as a superscript. Foreground color is left
+    // unset so the label's own textColor is preserved.
+    func applyTemperatureStyling(to raw: String) {
+        let baseFont = sensoreValueLbl.font ?? UIFont.systemFont(ofSize: 50)
+        let smallFont = baseFont.withSize(baseFont.pointSize * 0.55)
+        
+        let splitIdx: String.Index = raw.firstIndex(of: ".")
+            ?? raw.firstIndex(where: { !$0.isNumber })
+            ?? raw.endIndex
+        let bigPart = String(raw[..<splitIdx])
+        let smallPart = String(raw[splitIdx...])
+        
+        let attributed = NSMutableAttributedString(string: bigPart, attributes: [.font: baseFont])
+        let smallAttr = NSMutableAttributedString(string: smallPart, attributes: [.font: smallFont])
+        if let degreeRange = smallPart.range(of: "°") {
+            let nsRange = NSRange(degreeRange, in: smallPart)
+            smallAttr.addAttribute(.baselineOffset, value: smallFont.pointSize * 0.4, range: nsRange)
+        }
+        attributed.append(smallAttr)
+        sensoreValueLbl.attributedText = attributed
+    }
+    
     func selectedSensor(cellIndex: Int) {
         let storyboard = UIStoryboard(name: "SILWifiSensors", bundle: .main)
         if let sensorsDataDic: Dictionary = sensorsData[cellIndex] as? Dictionary<String, Any>{
@@ -242,7 +280,9 @@ extension SILWifiSensorsHomeView {
             case SensorType.temp.rawValue:
                 sensorePopupView.isHidden = false
                 self.sensorTypeStr = SensorType.temp.rawValue
-                self.setPopUpData(sensorePopupViewTitle: SensorePopupViewName.temperaturePopupViewTitle.rawValue, sensoreTitleLbl: SensorTitle.temperatureTitle.rawValue, sensoreImg: SensorImage.temp ?? UIImage(), sensoreValueLbl: "\(sensorsDataDic["value"] ?? "")°C")
+                let tempText = "\(sensorsDataDic["value"] ?? "")°C"
+                self.setPopUpData(sensorePopupViewTitle: SensorePopupViewName.temperaturePopupViewTitle.rawValue, sensoreTitleLbl: SensorTitle.temperatureTitle.rawValue, sensoreImg: SensorImage.temp ?? UIImage(), sensoreValueLbl: tempText)
+                self.applyTemperatureStyling(to: tempText)
                self.setTimer(apiType: SensorType.temp.rawValue)
              case SensorType.humudity.rawValue:
                 sensorePopupView.isHidden = false

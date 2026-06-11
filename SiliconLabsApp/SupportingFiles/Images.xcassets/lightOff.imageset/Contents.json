@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "graphic - light_demo - light - off.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "graphic - light_demo - light - off@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "graphic - light_demo - light - off@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_bulbOff.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

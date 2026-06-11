@@ -15,7 +15,7 @@ NSMutableDictionary *deviceDict;
 - (void)awakeFromNib {
     [super awakeFromNib];
     //    self.deviceBGView.layer.cornerRadius = 14;
-    self.deviceIconImage.tintColor = UIColor.sil_regularBlueColor;
+    self.deviceIconImage.tintColor = UIColor.appPrimaryBrand;
     //[self.deviceNameLabel setHidden: TRUE];
 }
 
@@ -36,7 +36,7 @@ NSMutableDictionary *deviceDict;
     }
     
     if ([connectedDevice isEqual:@"1"]){
-        self.deviceNameLabel.tintColor = UIColor.sil_regularBlueColor;
+        self.deviceNameLabel.tintColor = UIColor.appPrimaryBrand;
         self.deviceIconImage.tintColor = UIColor.sil_yellowColor;
     }else{
         self.deviceNameLabel.tintColor = UIColor.sil_lineGreyColor;

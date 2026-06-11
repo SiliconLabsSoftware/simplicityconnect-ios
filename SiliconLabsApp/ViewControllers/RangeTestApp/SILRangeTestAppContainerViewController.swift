@@ -32,12 +32,15 @@ class SILRangeTestAppContainerViewController: UIViewController, UITabBarControll
     override func viewDidLoad() {
         super.viewDidLoad()
         setLeftAlignedTitle("Range Test")
+        self.navigationController?.navigationBar.tintColor = .white
         manager = CBCentralManager()
         manager.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addLineBelowNavigationBar(color: .white)
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
     }
     

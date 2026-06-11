@@ -44,8 +44,11 @@ class SILAppSelectionViewController : UIViewController, UICollectionViewDataSour
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         self.navigationController?.tabBarController?.showTabBarAndUpdateFrames()
+        self.navigationController?.view.tintAdjustmentMode = .automatic
+        self.view.tintAdjustmentMode = .automatic
+        self.appCollectionView?.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,13 +79,16 @@ class SILAppSelectionViewController : UIViewController, UICollectionViewDataSour
     }
     
     private func setupAppCollectionViewAppearance() {
-        self.appCollectionView.backgroundColor = UIColor.sil_background()
+        self.appCollectionView.backgroundColor = .clear
         self.appCollectionView.alwaysBounceVertical = true
     }
     
     private func setupBackground() {
-        self.allSpace.backgroundColor = UIColor.sil_background()
-        self.appsView.backgroundColor = UIColor.sil_background()
+        // Make all views transparent so background image shows through
+        self.allSpace.backgroundColor = .clear
+        self.tilesSpace.backgroundColor = .clear
+        self.appsView.backgroundColor = .clear
+        self.appCollectionView.backgroundColor = .clear
     }
 
     private func addObserverForNonIntentionallyBackFromThermometer() {
@@ -504,7 +510,7 @@ class SILAppSelectionViewController : UIViewController, UICollectionViewDataSour
         self.devicePopoverController?.dismissPopover(animated: true) {
             switch appType {
             case .typeMotion:
-                if let motionConnection = connection as? MotionDemoConnection, motionConnection.device.model == .sense || motionConnection.device.model == .bobcat {
+                if let motionConnection = connection as? MotionDemoConnection {
                     self.displayMotion(connection: motionConnection, deviceConnector: deviceConnector)
                 }
             case .typeEnvironment:

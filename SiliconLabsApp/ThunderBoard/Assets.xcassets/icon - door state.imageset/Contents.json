@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "icon - door state.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "icon - door state@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "icon - door state@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_doorstate.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

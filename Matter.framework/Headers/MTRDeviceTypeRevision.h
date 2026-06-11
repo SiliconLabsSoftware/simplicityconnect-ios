@@ -17,6 +17,9 @@
 #import <Foundation/Foundation.h>
 #import <Matter/MTRDefines.h>
 
+@class MTRDescriptorClusterDeviceTypeStruct;
+@class MTRDeviceType;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -25,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 NS_SWIFT_SENDABLE
 MTR_AVAILABLE(ios(17.6), macos(14.6), watchos(10.6), tvos(17.6))
-@interface MTRDeviceTypeRevision : NSObject <NSCopying>
+@interface MTRDeviceTypeRevision : NSObject <NSCopying> /* <NSSecureCoding> (see below) */
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
@@ -38,9 +41,24 @@ MTR_AVAILABLE(ios(17.6), macos(14.6), watchos(10.6), tvos(17.6))
  */
 - (nullable instancetype)initWithDeviceTypeID:(NSNumber *)deviceTypeID revision:(NSNumber *)revision;
 
+/**
+ * Initializes the receiver based on the values in the specified struct.
+ */
+- (nullable instancetype)initWithDeviceTypeStruct:(MTRDescriptorClusterDeviceTypeStruct *)deviceTypeStruct MTR_AVAILABLE(ios(18.4), macos(15.4), watchos(11.4), tvos(18.4));
+
 @property (nonatomic, copy, readonly) NSNumber * deviceTypeID;
 @property (nonatomic, copy, readonly) NSNumber * deviceTypeRevision;
 
+/**
+ * Returns the MTRDeviceType corresponding to deviceTypeID,
+ * or nil if deviceTypeID does not represent a known device type.
+ */
+@property (nonatomic, copy, readonly, nullable) MTRDeviceType * typeInformation MTR_AVAILABLE(ios(18.4), macos(15.4), watchos(11.4), tvos(18.4));
+
+@end
+
+MTR_AVAILABLE(ios(18.4), macos(15.4), watchos(11.4), tvos(18.4))
+@interface MTRDeviceTypeRevision () <NSSecureCoding>
 @end
 
 NS_ASSUME_NONNULL_END

@@ -92,12 +92,12 @@
 }
 
 - (void)setupNavigationBarBackgroundColor {
-    _aboveSpaceAreaView.backgroundColor = [UIColor sil_siliconLabsRedColor];
-    _navigationBarView.backgroundColor = [UIColor sil_siliconLabsRedColor];
+    _aboveSpaceAreaView.backgroundColor = [UIColor appNavigationPrimary];
+    _navigationBarView.backgroundColor = [UIColor appNavigationPrimary];
 }
 
 - (void)setupNavigatioBarTitleLabel {
-    _navigationBarTitleLabel.font = [UIFont robotoMediumWithSize:SILNavigationBarTitleFontSize];
+    _navigationBarTitleLabel.font = [UIFont stolzlBoldWithSize:SILNavigationBarTitleFontSize];
     _navigationBarTitleLabel.textColor = [UIColor sil_backgroundColor];
 }
 

@@ -16,11 +16,12 @@ class SILBrowserDetailsTabBarController: SILTabBarController {
         super.viewDidLoad()
         defaultIndex = RemoteTabIndex
         self.tabBar.isTranslucent = false
-        self.tabBar.tintColor = .sil_regularBlue()
+        self.tabBar.tintColor = .appPrimaryBrand
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
     }
     

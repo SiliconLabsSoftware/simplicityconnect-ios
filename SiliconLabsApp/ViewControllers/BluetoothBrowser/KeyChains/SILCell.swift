@@ -28,13 +28,12 @@ class SILCell: UITableViewCell {
         } else {
             isRounded = true
         }
-        layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.main.scale
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         self.layer.cornerRadius = CornerRadiusStandardValue
+        SILTableViewWithShadowCells.invalidateCellShadowRole(self)
     }
 }
 

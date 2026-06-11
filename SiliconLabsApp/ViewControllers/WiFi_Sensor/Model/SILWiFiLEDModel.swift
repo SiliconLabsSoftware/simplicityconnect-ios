@@ -8,16 +8,8 @@
 
 import Foundation
 enum LedImage {
-    static let ledOnImage = UIImage(named: "lightOn")
-    static let ledOffImage = UIImage(named: "lightOff")
-    static let redLedOnImage = UIImage(named: "bulb_red")
-    static let greenLedOnImage = UIImage(named: "bulb_green")
-    static let blueLedOnImage = UIImage(named: "bulb_blue")
-    static let magentaLedImage = UIImage(named: "bulb_magenta")
-    static let cyanLedImage = UIImage(named: "bulb_cyan")
-    static let yellowLedImage = UIImage(named: "bulb_yellow")
-    static let checkBoxActiveImage = UIImage(named: "checkBoxActive")
-    static let checkBoxInactiveImage = UIImage(named: "checkBoxInactive")
+    static let ledOnImage = UIImage(named: "bulb_on_tint")
+    static let ledOffImage = UIImage(named: "blub_off_tint")
     static let blubOffTint = UIImage(named: "blub_off_tint")
 }
 enum LedType: String {

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
+        </array>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -40,9 +42,12 @@
                     <rect key="frame" x="0.0" y="110" width="375" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpl-QJ-E4Y" userLabel="Method Label">
-                            <rect key="frame" x="22" y="16.5" width="36" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="22" y="16.5" width="50" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="YCE-N8-wuF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
+                            <color key="textColor" name="sil_primaryTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkL-2c-Wje" customClass="SILRadioButton" customModule="BlueGecko" customModuleProvider="target">
@@ -57,8 +62,8 @@
                                     <state key="normal" image="radio_button_active"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partial" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFm-pa-XEB">
-                                    <rect key="frame" x="32" y="6.5" width="65" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="32" y="7" width="65" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -90,8 +95,8 @@
                                     <state key="normal" image="radio_button_active"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsR-OT-dqN">
-                                    <rect key="frame" x="32" y="6.5" width="50" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="32" y="7" width="50" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -128,9 +133,12 @@
                     <rect key="frame" x="0.0" y="161" width="375" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhO-HP-XGH" userLabel="Mode Label">
-                            <rect key="frame" x="22" y="16.5" width="41" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="22" y="16.5" width="48" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="lDX-FA-WZC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
+                            <color key="textColor" name="sil_primaryTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trC-sF-qQ2" customClass="SILRadioButton" customModule="BlueGecko" customModuleProvider="target">
@@ -145,8 +153,8 @@
                                     <state key="normal" image="radio_button_active"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reliability" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wX8-vf-0bS">
-                                    <rect key="frame" x="32" y="6.5" width="65" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="32" y="7" width="65" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -178,8 +186,8 @@
                                     <state key="normal" image="radio_button_active"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAF-Ow-Cua">
-                                    <rect key="frame" x="32" y="6.5" width="50" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="32" y="7" width="50" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -223,31 +231,44 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPR-T1-Sjq">
                     <rect key="frame" x="0.0" y="618" width="375" height="48"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAd-aO-xfC">
-                            <rect key="frame" x="135" y="9" width="80" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAd-aO-xfC" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
+                            <rect key="frame" x="135" y="9" width="100" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="B9p-Cm-Rdo"/>
-                                <constraint firstAttribute="width" constant="80" id="WFd-YG-G8e"/>
+                                <constraint firstAttribute="width" constant="100" id="WFd-YG-G8e"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
                             <state key="normal" title="Cancel">
-                                <color key="titleColor" name="sil_regularBlueColor"/>
+                                <color key="titleColor" name="sil_siliconLabsRedColor"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasBorder" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapCancelButton:" destination="-1" eventType="touchUpInside" id="8Q2-a2-tz0"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0r-z8-LOc" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                            <rect key="frame" x="235" y="9" width="80" height="30"/>
-                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <rect key="frame" x="255" y="9" width="100" height="30"/>
+                            <color key="backgroundColor" name="sil_siliconLabsRedColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="80" id="gmB-Hi-woT"/>
+                                <constraint firstAttribute="width" constant="100" id="gmB-Hi-woT"/>
                                 <constraint firstAttribute="height" constant="30" id="kcO-1p-kzP"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
                             <state key="normal" title="Upload">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapStartOTAButton:" destination="-1" eventType="touchUpInside" id="Dcn-Y1-bS2"/>
                             </connections>
@@ -257,7 +278,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="52y-rM-1N7"/>
                         <constraint firstItem="h0r-z8-LOc" firstAttribute="centerY" secondItem="SPR-T1-Sjq" secondAttribute="centerY" id="SMf-AL-8Nm"/>
-                        <constraint firstAttribute="trailing" secondItem="h0r-z8-LOc" secondAttribute="trailing" constant="60" id="TFs-4R-tHH"/>
+                        <constraint firstAttribute="trailing" secondItem="h0r-z8-LOc" secondAttribute="trailing" constant="20" id="TFs-4R-tHH"/>
                         <constraint firstItem="UAd-aO-xfC" firstAttribute="centerY" secondItem="SPR-T1-Sjq" secondAttribute="centerY" id="avQ-tB-hPH"/>
                         <constraint firstItem="h0r-z8-LOc" firstAttribute="leading" secondItem="UAd-aO-xfC" secondAttribute="trailing" constant="20" id="lOA-Wj-7mr"/>
                     </constraints>
@@ -285,19 +306,14 @@
             <point key="canvasLocation" x="32.799999999999997" y="52.623688155922046"/>
         </view>
     </objects>
-    <designables>
-        <designable name="h0r-z8-LOc">
-            <size key="intrinsicContentSize" width="58" height="34"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="radio_button_active" width="112.5" height="112.5"/>
-        <namedColor name="sil_regularBlueColor">
-            <color red="0.058823529411764705" green="0.3843137254901961" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="radio_button_active" width="24" height="24"/>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

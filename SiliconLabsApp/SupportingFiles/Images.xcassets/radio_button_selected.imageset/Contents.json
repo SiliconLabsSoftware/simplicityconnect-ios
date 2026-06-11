@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "radio_button_selected.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "radio_button_selected-1.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "radio_button_selected-2.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_radioButtonSelected.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

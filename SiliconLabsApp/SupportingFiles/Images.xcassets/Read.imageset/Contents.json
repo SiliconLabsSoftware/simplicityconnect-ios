@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Group 189.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Group 189@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Group 189@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_eyeview.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

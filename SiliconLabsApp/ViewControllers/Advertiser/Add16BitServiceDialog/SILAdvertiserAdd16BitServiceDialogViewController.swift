@@ -38,7 +38,7 @@ class SILAdvertiserAdd16BitServiceDialogViewController: UIViewController, SILAdv
         
         viewModel.isSaveButtonEnabled.observe { enabled in
             weakSelf?.saveButton.isEnabled = enabled
-            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.sil_regularBlue() : UIColor.lightGray
+            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.appPrimaryBrand : UIColor.lightGray
         }.putIn(bag: tokenBag)
     }
     

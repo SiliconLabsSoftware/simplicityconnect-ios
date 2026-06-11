@@ -16,6 +16,7 @@ class SILAWSIoTMotionViewController: UIViewController {
     @IBOutlet weak var orientationXLbl: StyledLabel!
     @IBOutlet weak var orientationYLbl: StyledLabel!
     @IBOutlet weak var orientationZLbl: StyledLabel!
+    @IBOutlet weak var cancelButton: UIButton!
     
     private var accelerationXStr: String = ""
     private var accelerationYStr: String = ""
@@ -32,6 +33,10 @@ class SILAWSIoTMotionViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         SILAWSIoTMotionViewModelObject = SILAWSIoTMotionViewModel()
+        cancelButton?.layer.cornerRadius = 10
+        cancelButton?.layer.borderWidth = 2
+        cancelButton?.layer.borderColor = UIColor.sil_siliconLabsRed().cgColor
+        cancelButton?.layer.masksToBounds = true
         
         // Register to receive notification in your class
         NotificationCenter.default.addObserver(self, selector: #selector(self.showMotionValue(_:)), name: NSNotification.Name(rawValue: notification_motion), object: nil)

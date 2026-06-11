@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Group 1040.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Group 1040@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Group 1040@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_bluetooth.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

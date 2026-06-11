@@ -46,6 +46,7 @@ class QRScannerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         if (captureSession.isRunning == false) {
             captureSession.startRunning()
         }

@@ -34,6 +34,7 @@ NSMutableArray * contactDeviceList;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     //[self readContactSensor];
     _deviceCurrentStatusLabel.hidden = YES;
 }

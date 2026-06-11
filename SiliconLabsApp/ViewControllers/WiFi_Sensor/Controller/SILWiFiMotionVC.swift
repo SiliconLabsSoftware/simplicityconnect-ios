@@ -73,6 +73,7 @@ class SILWiFiMotionVC: UIViewController, MotionDemoInteractionOutput, SILWiFiMot
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         apiCallTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
             self?.silWiFiMotionSensorsViewModel.getMotionData()
         })

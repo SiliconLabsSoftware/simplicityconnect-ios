@@ -7,6 +7,14 @@
 //
 
 import SwiftUI
+import UIKit
+
+private enum ViewWithFloatingButtonMetrics {
+    static let height: CGFloat = 50
+    static let cornerRadius: CGFloat = 10
+    static let horizontalPadding: CGFloat = 20
+    static let titleSize: CGFloat = 14
+}
 
 struct ViewWithFloatingButton<MainContent : View>: View {
     let buttonTitle : String
@@ -28,10 +36,15 @@ struct ViewWithFloatingButton<MainContent : View>: View {
     
     @ViewBuilder func ButtonView() -> some View {
         Button(action: buttonAction, label: {
-            Text(buttonTitle).font(.headline).foregroundColor(Color.white).padding(20)
-                .background(RoundedRectangle(cornerRadius: 20.0).foregroundColor(Color(buttonColor)))
-                
+            Text(buttonTitle)
+                .font(Font(UIFont(name: "Stolzl-Medium", size: ViewWithFloatingButtonMetrics.titleSize)
+                    ?? UIFont.systemFont(ofSize: ViewWithFloatingButtonMetrics.titleSize, weight: .medium)))
+                .foregroundColor(.white)
+                .padding(.horizontal, ViewWithFloatingButtonMetrics.horizontalPadding)
+                .frame(height: ViewWithFloatingButtonMetrics.height)
+                .background(RoundedRectangle(cornerRadius: ViewWithFloatingButtonMetrics.cornerRadius).fill(Color(buttonColor)))
         })
+        .buttonStyle(.plain)
     }
     
 }
@@ -40,7 +53,7 @@ struct ViewWithFloatingButton_Previews: PreviewProvider {
     static var previews: some View {
         ViewWithFloatingButton(buttonTitle: "Create new", buttonPresented: true, buttonAction: {
             print("Akcja")
-        }, buttonColor: .sil_regularBlue(), mainBody: {
+        }, buttonColor: .appPrimaryBrand, mainBody: {
             DemoView()
         })
     }

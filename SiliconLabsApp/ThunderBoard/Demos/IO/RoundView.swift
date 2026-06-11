@@ -12,7 +12,7 @@ import UIKit
 class RoundView: UIView {
     
     @IBInspectable var colorOff: UIColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
-    @IBInspectable var colorOn: UIColor = #colorLiteral(red: 0, green: 0.6030532122, blue: 0.8807592392, alpha: 1)
+    @IBInspectable var colorOn: UIColor = #colorLiteral(red: 0, green: 0.7254901961, blue: 0.4392156863, alpha: 1)
 
     @IBInspectable var isOn: Bool = false {
         didSet {

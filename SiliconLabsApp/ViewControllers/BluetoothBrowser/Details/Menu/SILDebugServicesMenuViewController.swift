@@ -28,7 +28,7 @@ class SILDebugServicesMenuViewController : UIViewController, UITableViewDataSour
             .map({ $0.keys.first! })
             .map({ title in
                 return title.size(withAttributes: [
-                    .font: UIFont(name: "Roboto-Regular", size: 17)!
+                    .font: UIFont(name: "Stolzl-Regular", size: 17)!
                     ]).width
             }).max() ?? 0
         let widthWithMargin = width + 48

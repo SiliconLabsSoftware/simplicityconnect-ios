@@ -53,6 +53,8 @@ NSDictionary *timeoutMapping = @{
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupBackgroundImage];
     [self setupViewModelAndTableManagers];
     [self setupRefreshControl];
     
@@ -61,8 +63,41 @@ NSDictionary *timeoutMapping = @{
     }
 }
 
+- (void)setupBackgroundImage {
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgView_image"]];
+    bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+    bgImageView.clipsToBounds = YES;
+    bgImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    bgImageView.tag = 9999;
+    [self.view insertSubview:bgImageView atIndex:0];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [bgImageView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+        [bgImageView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+        [bgImageView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+        [bgImageView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]
+    ]];
+    
+    [self clearBackgroundsRecursively:self.view];
+}
+
+- (void)clearBackgroundsRecursively:(UIView *)view {
+    if (view.tag == 9999) return;
+    
+    if (![view isKindOfClass:[UITableViewCell class]] && 
+        ![view isKindOfClass:[UICollectionViewCell class]]) {
+        view.backgroundColor = [UIColor clearColor];
+    }
+    
+    for (UIView *subview in view.subviews) {
+        [self clearBackgroundsRecursively:subview];
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    // Embedded inside PickerTabView (Scan tab) which already draws the red line below
+    // its picker. Do NOT add another one here, or it doubles into 2pt.
     self.browserViewModel.observing = YES;
     [self addObservers];
     if (!ScannerTabSettings.sharedInstance.scanningPausedByUser) {
@@ -160,10 +195,10 @@ NSDictionary *timeoutMapping = @{
     BOOL isScanning = self.browserViewModel.isScanning;
     
     NSString *buttonText = TitleForScanningButtonWhenIsNotScanning;
-    UIColor *buttonColor = UIColor.sil_regularBlueColor;
+    UIColor *buttonColor = UIColor.appPrimaryBrand;
     if (isScanning) {
         buttonText = TitleForScanningButtonDuringScanning;
-        buttonColor = UIColor.sil_siliconLabsRedColor;
+        buttonColor = UIColor.appPrimaryBrand;
     }
     
     [self.floatingButtonSettings setButtonText:buttonText];

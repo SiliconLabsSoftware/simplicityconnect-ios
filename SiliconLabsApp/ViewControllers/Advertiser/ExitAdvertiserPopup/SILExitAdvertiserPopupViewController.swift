@@ -12,12 +12,18 @@ class SILExitAdvertiserPopupViewController: UIViewController {
 
     @IBOutlet weak var confirmSwitch: SILSwitch!
     @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
     var viewModel: SILExitAdvertiserPopupViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         confirmSwitch.isOn = false
         yesButton.layer.cornerRadius = 4.0
+        // Red outlined "No" button, matching the cancel-button style used elsewhere in the app.
+        noButton.layer.cornerRadius = 4.0
+        noButton.layer.borderWidth = 2.0
+        noButton.layer.borderColor = UIColor.sil_siliconLabsRed().cgColor
+        noButton.layer.masksToBounds = true
     }
     
     override var preferredContentSize: CGSize {

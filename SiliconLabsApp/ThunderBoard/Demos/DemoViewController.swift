@@ -19,6 +19,8 @@ class DemoViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+        self.navigationController?.navigationBar.tintColor = .white
         registerForBluetoothDisabledNotification()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }

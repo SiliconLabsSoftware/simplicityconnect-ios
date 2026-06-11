@@ -9,9 +9,16 @@
 import UIKit
 
 class SILWifiUdpClientGaugeView: UIView {
-    private let startColor = (red: 0.0, green: 134.0, blue: 217.0)
-    private let middleColor = (red: 146.0, green: 16.0, blue: 132.0)
-    private let endColor = (red: 217.0, green: 30.0, blue: 42.0)
+    // Gauge-ring colour gradient: a clearly-red light red at index 0,
+    // ending at the app brand red (`UIColor.appPrimaryBrand`) on the
+    // last segment. Each segment's colour is interpolated between
+    // these two endpoints in `colorForNextSegment(index:)`.
+    // Matches the reference gradient defined in `SILThroughputGaugeView`.
+    private let segmentStartColor = UIColor(red: 255.0 / 255.0,
+                                            green:  99.0 / 255.0,
+                                            blue:   99.0 / 255.0,
+                                            alpha: 1.0)
+    private var segmentEndColor: UIColor { UIColor.appPrimaryBrand }
     
     private let inactiveSegmentColor = UIColor.lightGray
     private let numberOfSegments = 270
@@ -113,19 +120,24 @@ class SILWifiUdpClientGaugeView: UIView {
         }
     }
     
+    // Returns the colour of each ring segment, interpolated between
+    // `segmentStartColor` (at index 0) and `segmentEndColor` (at the
+    // last segment). Result: the gauge ring fades from a clearly-red
+    // light red on the left of the dial to the app's brand red on the
+    // right. Mirrors `SILThroughputGaugeView.colorForNextSegment(index:)`.
     fileprivate func colorForNextSegment(index: Int) -> UIColor {
-        let middleIndex = numberOfSegments / 2
-        if index < middleIndex {
-            let newValueRed = floor(((middleColor.red - startColor.red) / Double(middleIndex)) * Double(index)) + startColor.red
-            let newValueGreen = floor(((middleColor.green - startColor.green) / Double(middleIndex)) * Double(index)) + startColor.green
-            let newValueBlue = floor(((middleColor.blue - startColor.blue) / Double(middleIndex)) * Double(index)) + startColor.blue
-            return UIColor(red: CGFloat(newValueRed / 255.0), green: CGFloat(newValueGreen / 255.0), blue: CGFloat(newValueBlue / 255.0), alpha:1.0)
-        } else {
-            let newValueRed = floor(((endColor.red - middleColor.red) / Double(middleIndex)) * Double(index - middleIndex)) + middleColor.red
-            let newValueGreen = floor(((endColor.green - middleColor.green) / Double(middleIndex)) * Double(index - middleIndex)) + middleColor.green
-            let newValueBlue = floor(((endColor.blue - middleColor.blue) / Double(middleIndex)) * Double(index - middleIndex)) + middleColor.blue
-            return UIColor(red: CGFloat(newValueRed / 255.0), green: CGFloat(newValueGreen / 255.0), blue: CGFloat(newValueBlue / 255.0), alpha: 1.0)
-        }
+        let lastIndex = max(numberOfSegments - 1, 1)
+        let t = CGFloat(index) / CGFloat(lastIndex)
+
+        var rStart: CGFloat = 0, gStart: CGFloat = 0, bStart: CGFloat = 0, aStart: CGFloat = 0
+        var rEnd:   CGFloat = 0, gEnd:   CGFloat = 0, bEnd:   CGFloat = 0, aEnd:   CGFloat = 0
+        segmentStartColor.getRed(&rStart, green: &gStart, blue: &bStart, alpha: &aStart)
+        segmentEndColor.getRed(&rEnd,     green: &gEnd,   blue: &bEnd,   alpha: &aEnd)
+
+        return UIColor(red:   rStart + (rEnd - rStart) * t,
+                       green: gStart + (gEnd - gStart) * t,
+                       blue:  bStart + (bEnd - bStart) * t,
+                       alpha: 1.0)
     }
     
     private func drawLabels(center: CGPoint, radius: CGFloat) {
@@ -192,7 +204,7 @@ class SILWifiUdpClientGaugeView: UIView {
         addSubview(resultView)
         
         valueLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: width, height: 40)))
-        valueLabel.font = UIFont.robotoRegular(size: 34)
+        valueLabel.font = UIFont.stolzlRegular(size: 34)
         valueLabel.textColor = UIColor.sil_primaryText()
         valueLabel.text = "0.0"
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -210,7 +222,7 @@ class SILWifiUdpClientGaugeView: UIView {
         imageViewHost.addSubview(directionImageView)
                 
         throughputUnitLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 70, height: 40)))
-        throughputUnitLabel.font = UIFont.robotoRegular(size: 25)
+        throughputUnitLabel.font = UIFont.stolzlRegular(size: 25)
         throughputUnitLabel.textColor = UIColor.sil_primaryText()
         throughputUnitLabel.text = "Mbps"
         throughputUnitLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -7,6 +7,7 @@
 //
 
 #import "AirQualityViewController.h"
+#import "UIButton+SILMatterStyle.h"
 #import "CHIPUIViewUtils.h"
 #import "DefaultsUtils.h"
 #import "DeviceSelector.h"
@@ -43,6 +44,7 @@ NSMutableArray * deviceListAirQuality;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     
     _bgView.layer.cornerRadius = 10;
     _bgView.clipsToBounds = YES;
@@ -66,8 +68,7 @@ NSMutableArray * deviceListAirQuality;
 // MARK: UI Setup
 
 - (void)setupUIElements {
-    _refressButton.layer.cornerRadius = 5;
-    _refressButton.clipsToBounds = YES;
+    [_refressButton applySILMatterOutlinedStyleWithTitle:@"Refresh"];
 }
 
 - (void)updateTempInUI:(int)newTemp {
@@ -177,7 +178,7 @@ NSMutableArray * deviceListAirQuality;
 - (void) readDevice {
     NSInteger endpoint = 1;
     uint64_t _devId = nodeId.intValue;
-    
+    [SVProgressHUD showWithStatus:@"Connecting to device..."];
     if (MTRGetConnectedDeviceWithID(_devId, ^(MTRBaseDevice * _Nullable chipDevice, NSError * _Nullable error) {
         if (chipDevice) {
             MTRBaseClusterDescriptor * descriptorCluster =

@@ -64,7 +64,7 @@ class SILErrorDetailsViewController: UIViewController {
     }
     
     private func prerareAttributedText(boldText: String, normalText: String) -> NSMutableAttributedString {
-        let attrs = [NSAttributedString.Key.font : UIFont.robotoBold(size: 16)! ]
+        let attrs = [NSAttributedString.Key.font : UIFont.stolzlBold(size: 16)! ]
         let attributedString = NSMutableAttributedString(string:boldText, attributes: attrs)
         let normalString = NSMutableAttributedString(string:normalText)
         attributedString.append(normalString)

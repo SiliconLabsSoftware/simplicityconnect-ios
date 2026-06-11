@@ -7,6 +7,7 @@
 //
 
 #import "DoorLockViewController.h"
+#import "UIButton+SILMatterStyle.h"
 #import "CHIPUIViewUtils.h"
 #import "DefaultsUtils.h"
 #import "DeviceSelector.h"
@@ -33,6 +34,7 @@ MTRSubscribeParams * subParam;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     [self setupUIElements];
 }
 - (void)viewDidAppear:(BOOL)animated{
@@ -73,11 +75,10 @@ MTRSubscribeParams * subParam;
 // MARK: UI Setup
 
 - (void)setupUIElements {
-    _doorOpenButton.layer.cornerRadius = 10;
-    _doorOpenButton.clipsToBounds = YES;
-    
-    _doorLockButton.layer.cornerRadius = 10;
-    _doorLockButton.clipsToBounds = YES;
+    [_doorOpenButton applySILMatterOutlinedStyleWithTitle:@"Unlock" image:[UIImage imageNamed:@"icon_buttonlockOn"]];
+    [_doorLockButton applySILMatterOutlinedStyleWithTitle:@"Lock" image:[UIImage imageNamed:@"icon_buttonlockOff"]];
+    _titleLabel.font = [UIFont fontWithName:@"Stolzl-Medium" size:14.0];
+    _titleLabel.textColor = [UIColor colorNamed:@"sil_primaryTextColor"];
     _deviceCurrentStatusLabel.hidden = YES;
 }
 

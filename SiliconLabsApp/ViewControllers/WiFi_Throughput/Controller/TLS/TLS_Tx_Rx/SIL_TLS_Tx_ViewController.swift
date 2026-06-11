@@ -39,6 +39,7 @@ class SIL_TLS_Tx_ViewController: UIViewController,ITLS_TxServer, UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRedLineBelowNavigationBar()
       if TLS_TX_RX == "DOWNLOAD" {
           setLeftAlignedTitle("TLS Download")
       }else if TLS_TX_RX == "UPLOAD" {

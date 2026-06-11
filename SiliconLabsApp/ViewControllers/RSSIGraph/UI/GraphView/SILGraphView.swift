@@ -58,34 +58,37 @@ class SILGraphView: UIView {
     private func setupInput() {
         input.asObservable()
             .flatMap { Observable.from($0) }
+            .observe(on: MainScheduler.instance)
             .bind(with: self) { _self, cellData in
-                if let dataSet = _self.chartView.lineData?.dataSets.first(where: { $0.label == cellData.uuid }) as? LineChartDataSet {
-                    dataSet.setColor(cellData.color)
-                    dataSet.lineWidth = cellData.isSelected ? RSSIConstants.selectedLineWidth : RSSIConstants.unselectedLineWidth
-                    if cellData.isSelected {
-                        // set selected dataSet to be drawn on the top
-                        _self.chartView.lineData?.removeDataSet(dataSet)
-                        _self.chartView.lineData?.append(dataSet)
-                    }
-                }
+                guard _self.chartView != nil else { return }
+                _self.updateExistingDataSetAppearance(for: cellData)
             }
             .disposed(by: disposeBag)
         
-        input.asObservable().observe(on: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
+        input.asObservable()
             .flatMap { Observable.from($0) }
+            .observe(on: MainScheduler.instance)
             .filter { [weak self] (dataSet) in
-                guard let self = self else { return false }
+                guard let self = self, self.chartView != nil else { return false }
                 return self.chartView.checkIfDataSetExist(withLabel: dataSet.uuid)
             }
+            .do(onNext: { [weak self] data in
+                guard let self = self, self.chartView != nil else { return }
+                let historical = data.peripheral.rssiMeasurementTable.rssiMeasurements.value
+                self.bulkAddHistoricalDataForPeripheral(data.peripheral.identityKey,
+                                                       measurements: historical,
+                                                       color: data.color)
+            })
             .flatMap { data -> Observable<(String, SILRSSIMeasurement, UIColor)> in
-                return Observable.from(data.peripheral.rssiMeasurementTable.rssiMeasurements.value).map { (data.peripheral.identityKey, $0, data.color) }.concat(Observable.combineLatest(
-                    Observable.just(data.peripheral.identityKey),
-                    data.peripheral.rssiMeasurementTable.lastMeasurement.asObservable(),
-                    Observable.just(data.color)
-                ))
+                return data.peripheral.rssiMeasurementTable.rssiMeasurements.asObservable()
+                    .skip(1) // skip initial replay; already bulk-added
+                    .compactMap { $0.last }
+                    .map { (data.peripheral.identityKey, $0, data.color) }
             }
             .map { (id: $0, measurement: $1, color: $2) }
+            .observe(on: MainScheduler.instance)
             .bind(with: self) { _self, val in
+                guard _self.chartView != nil else { return }
                 let (id, measurement, color) = val
                 _self.addOrUpdateDataForPeripheral(id, measurement: measurement, withColor: color)
             }
@@ -93,10 +96,60 @@ class SILGraphView: UIView {
         
         refresh.asObservable()
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(with: self) { _self, _ in
+                guard _self.chartView != nil else { return }
                 _self.refreshGraph()
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func updateExistingDataSetAppearance(for cellData: SILRSSIGraphDiscoveredPeripheralData) {
+        guard let dataSet = chartView.lineData?.dataSets.first(where: { $0.label == cellData.uuid }) as? LineChartDataSet else {
+            return
+        }
+        let targetLineWidth = cellData.isSelected ? RSSIConstants.selectedLineWidth : RSSIConstants.unselectedLineWidth
+        let currentColor = dataSet.colors.first
+        if currentColor != cellData.color {
+            dataSet.setColor(cellData.color)
+        }
+        if dataSet.lineWidth != targetLineWidth {
+            dataSet.lineWidth = targetLineWidth
+        }
+        if cellData.isSelected {
+            // Reorder selected line on top only if not already last.
+            if let last = chartView.lineData?.dataSets.last as? LineChartDataSet,
+               last.label != dataSet.label {
+                chartView.lineData?.removeDataSet(dataSet)
+                chartView.lineData?.append(dataSet)
+            }
+        }
+    }
+    
+    private func bulkAddHistoricalDataForPeripheral(_ identifier: String,
+                                                    measurements: [SILRSSIMeasurement],
+                                                    color: UIColor) {
+        guard chartView != nil else { return }
+        guard !measurements.isEmpty else { return }
+        
+        var entries: [ChartDataEntry] = []
+        entries.reserveCapacity(measurements.count)
+        var localMax = maximumYValue
+        var localMin = minimumYValue
+        for m in measurements {
+            let yValue = m.rssi.doubleValue
+            entries.append(ChartDataEntry(x: m.date.timeIntervalSince(referenceDate), y: yValue))
+            if yValue > localMax { localMax = yValue }
+            if yValue < localMin { localMin = yValue }
+        }
+        maximumYValue = localMax
+        minimumYValue = localMin
+        
+        if let dataSet = chartView.lineData?.dataSets.first(where: { $0.label == identifier }) as? LineChartDataSet {
+            for entry in entries { dataSet.append(entry) }
+        } else {
+            chartView.addDataSetFor(entries, identifier: identifier, color: color)
+        }
     }
     
     func startChart() {
@@ -180,6 +233,8 @@ class SILGraphView: UIView {
     }
     
     func addOrUpdateDataForPeripheral(_ identifier: String, measurement: SILRSSIMeasurement, withColor color: UIColor) {
+        guard chartView != nil else { return }
+        
         let yValue = measurement.rssi.doubleValue
         let entry = ChartDataEntry(x: measurement.date.timeIntervalSince(referenceDate), y: yValue )
         
@@ -187,7 +242,7 @@ class SILGraphView: UIView {
         self.minimumYValue = yValue < minimumYValue ? yValue : minimumYValue
         if let dataSet = chartView.lineData?.dataSets.first(where: { $0.label == identifier }) as? LineChartDataSet {
             
-            print(" dataSet ==== \(dataSet)")
+            //print(" dataSet ==== \(dataSet)")
             
             dataSet.append(entry)
         } else {

@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SILOTAProgressViewController">
             <connections>
@@ -70,7 +74,7 @@
                                     <color key="value" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
-                                    <color key="value" name="sil_regularBlueColor"/>
+                                    <color key="value" name="sil_siliconLabsRedColor"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="endAngle">
                                     <real key="value" value="270"/>
@@ -90,7 +94,7 @@
                                                 <constraint firstAttribute="width" constant="88" id="JzG-hJ-cF2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="72"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="sil_primaryTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zy8-Z3-4nl" userLabel="Percent Sign Label">
@@ -100,7 +104,7 @@
                                                 <constraint firstAttribute="width" constant="26" id="d3A-12-WTc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="sil_primaryTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -134,7 +138,7 @@
                                                 <constraint firstAttribute="height" constant="17" id="S22-0x-IEL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="sil_primaryTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -178,6 +182,7 @@
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="updateCheckmark" translatesAutoresizingMaskIntoConstraints="NO" id="kCK-IB-JKn" userLabel="Update Checkmark Image">
                                     <rect key="frame" x="18.5" y="0.0" width="70" height="72"/>
+                                    <color key="tintColor" name="sil_regularGreenColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="72" id="ZlE-GB-h97"/>
                                         <constraint firstAttribute="width" constant="70" id="qlo-sH-mh0"/>
@@ -189,8 +194,8 @@
                                         <constraint firstAttribute="width" constant="107" id="gPp-z8-HZp"/>
                                         <constraint firstAttribute="height" constant="43" id="jww-ZQ-Tt1"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                    <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -218,17 +223,23 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-77-OsY">
                     <rect key="frame" x="0.0" y="619" width="375" height="48"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No9-RK-8vh" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                            <rect key="frame" x="245" y="9" width="70" height="30"/>
-                            <color key="backgroundColor" name="sil_regularBlueColor"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No9-RK-8vh" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
+                            <rect key="frame" x="137.5" y="7" width="100" height="34"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="70" id="3er-id-6nj"/>
-                                <constraint firstAttribute="height" constant="30" id="kyP-CQ-y8O"/>
+                                <constraint firstAttribute="height" constant="34" id="pMx-MG-8MC"/>
+                                <constraint firstAttribute="width" constant="100" id="rUN-ES-hPI"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="16"/>
                             <state key="normal" title="Done">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleColor" name="sil_primaryTextColor"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasBorder" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapDoneButton:" destination="-1" eventType="touchUpInside" id="HcA-ki-JJJ"/>
                             </connections>
@@ -237,8 +248,8 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="JSA-ZX-z4c"/>
-                        <constraint firstAttribute="trailing" secondItem="No9-RK-8vh" secondAttribute="trailing" constant="60" id="PcJ-gO-Cv9"/>
-                        <constraint firstItem="No9-RK-8vh" firstAttribute="centerY" secondItem="9gD-77-OsY" secondAttribute="centerY" id="WKr-sH-znZ"/>
+                        <constraint firstItem="No9-RK-8vh" firstAttribute="centerX" secondItem="9gD-77-OsY" secondAttribute="centerX" id="eGh-Bf-hce"/>
+                        <constraint firstItem="No9-RK-8vh" firstAttribute="centerY" secondItem="9gD-77-OsY" secondAttribute="centerY" id="iy5-nP-zKb"/>
                     </constraints>
                 </view>
             </subviews>
@@ -259,15 +270,16 @@
             <point key="canvasLocation" x="-440.80000000000001" y="22.938530734632685"/>
         </view>
     </objects>
-    <designables>
-        <designable name="No9-RK-8vh">
-            <size key="intrinsicContentSize" width="37" height="30"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="updateCheckmark" width="36" height="36"/>
-        <namedColor name="sil_regularBlueColor">
-            <color red="0.058823529411764705" green="0.3843137254901961" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="updateCheckmark" width="72" height="72"/>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_regularGreenColor">
+            <color red="0.0" green="0.72549019607843135" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

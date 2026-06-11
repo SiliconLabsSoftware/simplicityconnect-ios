@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Bold.ttf">
+            <string>Stolzl-Bold</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -30,10 +29,10 @@
                         <rect key="frame" x="10" y="10" width="567" height="73"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bna-rb-xAy">
-                                <rect key="frame" x="10" y="14.666666666666671" width="44" height="44"/>
+                                <rect key="frame" x="10" y="16.666666666666671" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="4ec-w2-hCu"/>
-                                    <constraint firstAttribute="height" constant="44" id="lOw-oD-JUm"/>
+                                    <constraint firstAttribute="width" constant="40" id="4ec-w2-hCu"/>
+                                    <constraint firstAttribute="height" constant="40" id="lOw-oD-JUm"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_navbar_next" translatesAutoresizingMaskIntoConstraints="NO" id="Q43-Ku-aur">
@@ -45,21 +44,21 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SiLabs-Light" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rl1-GS-gEp">
-                                <rect key="frame" x="69" y="15.666666666666671" width="101" height="42"/>
+                                <rect key="frame" x="65" y="15.666666666666671" width="91.333333333333314" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="yCk-Vj-92W"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Stolzl-Bold" family="Stolzl" pointSize="14"/>
+                                <color key="textColor" name="sil_primaryTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID: 1335:380768- 1335:380768" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQp-1O-Z0m">
-                                <rect key="frame" x="63.999999999999986" y="40.666666666666664" width="164.66666666666663" height="20"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                <rect key="frame" x="60.000000000000014" y="40.666666666666664" width="178.33333333333337" height="20"/>
+                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="11"/>
                                 <color key="textColor" name="sil_subtleTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="18"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inactive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mJ-is-XP9">
@@ -68,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="21" id="0KI-dX-BzD"/>
                                     <constraint firstAttribute="width" constant="100" id="lrq-Je-17u"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="17"/>
                                 <color key="textColor" name="sil_boulderColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -110,13 +109,16 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btn_navbar_next" width="25" height="25"/>
-        <image name="light_icon" width="54" height="52"/>
+        <image name="btn_navbar_next" width="13" height="23"/>
+        <image name="light_icon" width="200" height="200"/>
         <namedColor name="sil_backgroundColor">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_boulderColor">
-            <color red="0.47843137254901963" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_subtleTextColor">
             <color red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

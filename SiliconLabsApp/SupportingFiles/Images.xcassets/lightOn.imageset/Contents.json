@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "graphic - light_demo - light - on.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "graphic - light_demo - light - on@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "graphic - light_demo - light - on@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_bulbOn.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

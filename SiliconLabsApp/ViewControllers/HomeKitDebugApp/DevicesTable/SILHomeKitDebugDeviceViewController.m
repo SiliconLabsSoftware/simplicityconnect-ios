@@ -81,6 +81,7 @@ static NSInteger const kTableViewEdgePaddingPrime = 36;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self addRedLineBelowNavigationBar];
     [self registerForHomeKitNotifications];
 }
 

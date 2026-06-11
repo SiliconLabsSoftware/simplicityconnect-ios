@@ -46,6 +46,7 @@ class SILESLDemoViewController: UIViewController, UIGestureRecognizerDelegate, U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         viewModel.viewWillAppear()
         subscribeToViewModel()
         showProgressView(with: "Initializing device...")
@@ -123,12 +124,7 @@ class SILESLDemoViewController: UIViewController, UIGestureRecognizerDelegate, U
             guard let self = self else { return }
             switch commandState {
             case .starting:
-                if UserDefaults.standard.bool(forKey: "isImageUploadStarted") {
-                    progressPopupBgView.isHidden = false
-                    progressLabel.text = "Image update progress: "
-                } else {
-                    self.showProgressView(with: "Command in progress")
-                }
+                self.showProgressView(with: "Command in progress")
             case .provisioningInProgressConfig:
                 SVProgressHUD.dismiss()
                 self.showProvisioningProgressPopup()
@@ -156,6 +152,7 @@ class SILESLDemoViewController: UIViewController, UIGestureRecognizerDelegate, U
                 
             case .completedWithPopup(text: let text):
                 SVProgressHUD.dismiss()
+                progressPopupBgView.isHidden = true
                 self.reloadTable()
                 self.alertWithOKButton(title: "Basic State Response", message: text)
                 
@@ -171,7 +168,7 @@ class SILESLDemoViewController: UIViewController, UIGestureRecognizerDelegate, U
         self.noSynchronizedTagsStackView.isHidden = areTagsAvailable
         self.tagsTableView.isHidden = !areTagsAvailable
         self.groupLedButton.isEnabled = areTagsAvailable
-        self.groupLedButton.imageView?.tintColor = areTagsAvailable ? (viewModel.areGroupLedsOn ? UIColor.sil_regularBlue() : UIColor.black) : UIColor.gray
+        self.groupLedButton.imageView?.tintColor = areTagsAvailable ? (viewModel.areGroupLedsOn ? UIColor.appPrimaryBrand : UIColor.black) : UIColor.gray
         self.groupDisplayImageButton.isEnabled = areTagsAvailable
         self.groupDisplayImageButton.imageView?.tintColor = areTagsAvailable ? UIColor.black : UIColor.gray
     }
@@ -241,13 +238,17 @@ class SILESLDemoViewController: UIViewController, UIGestureRecognizerDelegate, U
                                                                      imageSlot0: nil,
                                                                      imageSlot1: nil,
                                                                      onCancel: { [weak self] in
-            guard let self = self else { return }
-            self.popover?.dismissPopover(animated: true)
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.popover?.dismissPopover(animated: true)
+            }
         },
                                                                      onDisplayImage: { [weak self] imageIndex in
-            guard let self = self else { return }
-            self.popover?.dismissPopover(animated: true)
-            self.viewModel.displayImageAllTags(imageIndex: imageIndex, displayIndex: 0)
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.popover?.dismissPopover(animated: true)
+                self.viewModel.displayImageAllTags(imageIndex: imageIndex, displayIndex: 0)
+            }
         })
         displayImagePopup.viewModel = displayImageViewModel
         
@@ -280,15 +281,19 @@ class SILESLDemoViewController: UIViewController, UIGestureRecognizerDelegate, U
                                                                    imageSlot0: tag.knownImages[0],
                                                                    imageSlot1: tag.knownImages[1],
                                                                    onCancel: { [weak self] in
-            guard let self = self else { return }
-            self.popover?.dismissPopover(animated: true)
-            self.viewModel.disconnectConnectedTag()
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.popover?.dismissPopover(animated: true)
+                self.viewModel.disconnectConnectedTag()
+            }
         },
                                                                    onImageUpdate: { [weak self] imageIndex, url, showImageAfterUpdate in
-            guard let self = self else { return }
             guard let url = url else { return }
-            self.popover?.dismissPopover(animated: true)
-            self.viewModel.imageUpdateAtProvisioning(address: tag.eslId, imageIndex: imageIndex, imageFile: url, showImageAfterUpdate: showImageAfterUpdate)
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.popover?.dismissPopover(animated: true)
+                self.viewModel.imageUpdateAtProvisioning(address: tag.eslId, imageIndex: imageIndex, imageFile: url, showImageAfterUpdate: showImageAfterUpdate)
+            }
         })
         
         imageUpdatePopup.viewModel = imageUpdateViewModel

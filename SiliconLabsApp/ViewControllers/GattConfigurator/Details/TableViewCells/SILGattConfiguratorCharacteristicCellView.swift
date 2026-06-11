@@ -56,10 +56,10 @@ class SILGattConfiguratorCharacteristicCellView: SILCell, SILCellView {
     
     private func addAttributedTextToLabel(label: UILabel, boldText: String, regularText: String?) {
         let boldAttribute = [
-            NSAttributedString.Key.font: UIFont.robotoMedium(size: 12)!
+            NSAttributedString.Key.font: UIFont.stolzlMedium(size: 12)!
            ]
            let regularAttribute = [
-            NSAttributedString.Key.font: UIFont.robotoRegular(size: 12)!
+            NSAttributedString.Key.font: UIFont.helveticaNeue(size: 12)!
            ]
         
         let boldText = NSAttributedString(string: boldText, attributes: boldAttribute)

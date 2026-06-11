@@ -11,6 +11,12 @@ import Foundation
 class SILTextField: UITextField {
     let padding = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
     
+    @IBInspectable var borderUIColor: UIColor? {
+        didSet {
+            self.layer.borderColor = borderUIColor?.cgColor
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()

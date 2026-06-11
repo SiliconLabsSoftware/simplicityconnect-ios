@@ -39,13 +39,15 @@ class SILSmartLockViewController: UIViewController, SILThunderboardConnectedDevi
     @IBOutlet weak var pubContainerView: UIView!
     @IBOutlet weak var subTextField: UITextField!
     
-    @IBOutlet weak var controlViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var controlViewConstraint: NSLayoutConstraint?
     @IBOutlet weak var awsEndPointBGTextView: UIView!
     @IBOutlet weak var awsEndPointTextView: UITextView!
     
     @IBOutlet weak var notConfiguredWarningView: UIView!
     
     @IBOutlet weak var passwordEyeButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var connectButton: UIButton!
     var connectionType: SILSmartLockConnectionOption?
     var connectedPeripheral: CBPeripheral?
     
@@ -108,6 +110,7 @@ class SILSmartLockViewController: UIViewController, SILThunderboardConnectedDevi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addLineBelowNavigationBar(color: .white)
         setupBleView()
     }
     
@@ -167,21 +170,74 @@ class SILSmartLockViewController: UIViewController, SILThunderboardConnectedDevi
         awsEndPointBGTextView.layer.borderColor = UIColor.lightGray.cgColor
         awsEndPointBGTextView.layer.borderWidth = 1
         
+        awsCustomCommandTextFieldView.layer.borderColor = UIColor.lightGray.cgColor
+        awsCustomCommandTextFieldView.layer.borderWidth = 1
+        
         awsCustomButton.isEnabled = false
         awsCustomCommandTextField.text = ""
+        styleButtons()
         updateAwsCustomButtonAppearance()
         addDoneButtonOnKeyboard()
-        self.controlViewConstraint.constant = 84
+        self.controlViewConstraint?.constant = 84
         
         notConfiguredWarningView.isHidden = true
+        
+        setupCancelConnectButtonsAppearance()
     }
     
+    private func setupCancelConnectButtonsAppearance() {
+        cancelButton?.layer.cornerRadius = 10
+        cancelButton?.layer.borderWidth = 2
+        cancelButton?.layer.borderColor = UIColor.sil_siliconLabsRed().cgColor
+        cancelButton?.layer.masksToBounds = true
+        
+        connectButton?.layer.cornerRadius = 10
+        connectButton?.layer.masksToBounds = true
+    }
+    
+    private func resizedImage(named name: String, size: CGSize) -> UIImage? {
+        guard let image = UIImage(named: name) else { return nil }
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+
+    private func styleButtons() {
+        let redColor = UIColor.appPrimaryBrand
+        let iconSize = CGSize(width: 20, height: 20)
+
+        var lockConfig = UIButton.Configuration.plain()
+        lockConfig.title = "Lock"
+        lockConfig.image = resizedImage(named: "icon_buttonlockOff", size: iconSize)
+        lockConfig.imagePlacement = .leading
+        lockConfig.imagePadding = 6
+        lockConfig.baseForegroundColor = redColor
+        lockConfig.background.backgroundColor = .white
+        lockConfig.background.strokeColor = redColor
+        lockConfig.background.strokeWidth = 1.5
+        lockConfig.background.cornerRadius = 8
+        lockButton.configuration = lockConfig
+
+        var unlockConfig = UIButton.Configuration.plain()
+        unlockConfig.title = "Unlock"
+        unlockConfig.image = resizedImage(named: "icon_buttonlockOn", size: iconSize)
+        unlockConfig.imagePlacement = .leading
+        unlockConfig.imagePadding = 6
+        unlockConfig.baseForegroundColor = redColor
+        unlockConfig.background.backgroundColor = .white
+        unlockConfig.background.strokeColor = redColor
+        unlockConfig.background.strokeWidth = 1.5
+        unlockConfig.background.cornerRadius = 8
+        unLockButton.configuration = unlockConfig
+    }
+
     private func setupBleView() {
         self.lockStatusLabel.text = SmartLockConstants.bleStatus;
         connectionType = .ble
         
         UIView.animate(withDuration: 0.3) {
-            self.controlViewConstraint.constant = 84
+            self.controlViewConstraint?.constant = 84
             self.awsConfigureView.isHidden = true
             self.awsCustomCommandBgView.isHidden = true
             //self.view.layoutIfNeeded()
@@ -202,7 +258,7 @@ class SILSmartLockViewController: UIViewController, SILThunderboardConnectedDevi
         connectionType = .wifi
         
         UIView.animate(withDuration: 0.3) {
-            self.controlViewConstraint.constant = 180
+            self.controlViewConstraint?.constant = 180
             self.awsCustomCommandBgView.isHidden = false
         }
         awsCertificateFileTextField.text = ""
@@ -217,7 +273,7 @@ class SILSmartLockViewController: UIViewController, SILThunderboardConnectedDevi
         connectionType = .wifi
         
         UIView.animate(withDuration: 0.3) {
-            self.controlViewConstraint.constant = 180
+            self.controlViewConstraint?.constant = 180
             self.awsCustomCommandBgView.isHidden = false
             self.awsConfigureView.isHidden = false
         }
@@ -523,11 +579,20 @@ class SILSmartLockViewController: UIViewController, SILThunderboardConnectedDevi
     }
     
     func updateAwsCustomButtonAppearance() {
+        var config = UIButton.Configuration.plain()
+        config.title = "Send"
+        config.background.cornerRadius = 5
+        config.background.strokeWidth = 1.5
         if awsCustomButton.isEnabled {
-            awsCustomButton.backgroundColor =  UIColor.sil_regularBlue()
+            config.baseForegroundColor = UIColor.appPrimaryBrand
+            config.background.backgroundColor = .white
+            config.background.strokeColor = UIColor.appPrimaryBrand
         } else {
-            awsCustomButton.backgroundColor = UIColor.sil_silverChalice()
+            config.baseForegroundColor = UIColor.appSilverChalice
+            config.background.backgroundColor = .white
+            config.background.strokeColor = UIColor.appSilverChalice
         }
+        awsCustomButton.configuration = config
     }
     
     // MARK: - SILSmartLockAWSViewModelProtocol

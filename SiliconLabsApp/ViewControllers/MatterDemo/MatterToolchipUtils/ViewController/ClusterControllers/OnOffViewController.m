@@ -1,5 +1,6 @@
 
 #import "OnOffViewController.h"
+#import "UIButton+SILMatterStyle.h"
 #import "CHIPUIViewUtils.h"
 #import "DefaultsUtils.h"
 #import "DeviceSelector.h"
@@ -33,6 +34,7 @@ MTRSubscribeParams * subParamLight;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     [self setupUIElements];
     
 }
@@ -50,12 +52,11 @@ MTRSubscribeParams * subParamLight;
 // MARK: UI Setup
 
 - (void)setupUIElements {
-    _onButton.layer.cornerRadius = 5;
-    _onButton.clipsToBounds = YES;
-    _offButton.layer.cornerRadius = 5;
-    _offButton.clipsToBounds = YES;
-    _toggleButton.layer.cornerRadius = 5;
-    _toggleButton.clipsToBounds = YES;
+    [_onButton applySILMatterOutlinedStyleWithTitle:@"ON"];
+    [_offButton applySILMatterOutlinedStyleWithTitle:@"OFF"];
+    [_toggleButton applySILMatterOutlinedStyleWithTitle:@"Toggle"];
+    _titleLabel.font = [UIFont fontWithName:@"Stolzl-Medium" size:14.0];
+    _titleLabel.textColor = [UIColor colorNamed:@"sil_primaryTextColor"];
     _deviceCurrentStatusLabel.hidden = YES;
 }
 

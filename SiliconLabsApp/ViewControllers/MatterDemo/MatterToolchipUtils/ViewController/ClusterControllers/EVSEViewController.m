@@ -46,6 +46,7 @@ NSMutableArray * deviceListEVSE;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     [self readOnlineOfflineStatus];
 }
 
@@ -356,9 +357,8 @@ NSMutableArray * deviceListEVSE;
 // MARK: - readInitialDeviceStatus
 
 - (void) readOnlineOfflineStatus {
-    
     uint64_t _devId = nodeId.intValue;
-    
+    [SVProgressHUD showWithStatus:@"Connecting to device..."];
     if (MTRGetConnectedDeviceWithID(_devId, ^(MTRBaseDevice * _Nullable chipDevice, NSError * _Nullable error) {
         if (chipDevice) {
             

@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "icon - save.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "icon - save@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "icon - save@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_disk.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

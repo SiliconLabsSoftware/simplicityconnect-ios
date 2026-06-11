@@ -24,13 +24,13 @@
 }
 
 - (void)setFonts {
-    [self.deviceNameLabel setFont:[UIFont robotoMediumWithSize:[UIFont getLargeFontSize]]];
+    [self.deviceNameLabel setFont:[UIFont stolzlMediumWithSize:[UIFont getLargeFontSize]]];
     self.deviceNameLabel.textColor = [UIColor sil_primaryTextColor];
     self.deviceNameLabel.adjustsFontSizeToFitWidth = YES;
     
     self.disconnectButton.layer.cornerRadius = CornerRadiusForButtons;
-    self.disconnectButton.titleLabel.font = [UIFont robotoMediumWithSize:[UIFont getSmallFontSize]];
-    self.disconnectButton.backgroundColor = [UIColor sil_siliconLabsRedColor];
+    self.disconnectButton.titleLabel.font = [UIFont stolzlMediumWithSize:[UIFont getSmallFontSize]];
+    self.disconnectButton.backgroundColor = [UIColor appPrimaryBrand];
     self.disconnectButton.titleLabel.textColor = [UIColor sil_backgroundColor];
     self.disconnectButton.titleLabel.adjustsFontSizeToFitWidth = YES;
 }
@@ -56,7 +56,7 @@
 
 
 - (void)customizeSelectedAppearance {
-    self.deviceNameLabel.textColor = [UIColor sil_regularBlueColor];
+    self.deviceNameLabel.textColor = [UIColor appPrimaryBrand];
 }
 
 - (void)customizeUnselectedAppearance {

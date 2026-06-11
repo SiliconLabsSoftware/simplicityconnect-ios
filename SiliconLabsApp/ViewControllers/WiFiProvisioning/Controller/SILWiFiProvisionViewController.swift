@@ -22,6 +22,12 @@ class SILWiFiProvisionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bssidLbl: UILabel!
     @IBOutlet weak var rssiLbl: UILabel!
     @IBOutlet weak var passText: UITextField!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var provisionButton: UIButton!
+    
+    @IBOutlet weak var popupViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var cancelAndProBtnStackTop: NSLayoutConstraint!
+    @IBOutlet weak var passStack: NSLayoutConstraint!
     
     //let eyeButton = UIButton()
     var selectedCellData: ScanResult?
@@ -33,6 +39,22 @@ class SILWiFiProvisionViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if selectedCellData?.securityType == "Open" {
+            popupViewHeight.constant = 280.0
+            passStack.constant = 0.0
+            cancelAndProBtnStackTop.constant = 40.0
+            //self.view.setNeedsDisplay()
+            self.view.layoutIfNeeded()
+           // passText.isHidden = true
+        }else{
+            //passText.isHidden = false
+            popupViewHeight.constant = 340.0
+            passStack.constant = 34.0
+            cancelAndProBtnStackTop.constant = 79.0
+            //self.view.setNeedsDisplay()
+            self.view.layoutIfNeeded()
+        }
         setUpUI()
     }
 
@@ -59,11 +81,30 @@ class SILWiFiProvisionViewController: UIViewController, UITextFieldDelegate {
         eyeButton.frame = CGRect.init(x: 0, y: 0, width: 44, height: 34)
         eyeButton.tintColor = UIColor.black
         eyeButton.addTarget(self, action: #selector(self.passHide), for: .touchUpInside)
-        passText.rightView = eyeButton
+        if selectedCellData?.securityType != "Open" {
+                 passText.rightView = eyeButton
+        }
+       // passText.rightView = eyeButton
         passText.rightViewMode = .always
         passText.delegate = self
         passText.tag = 0 //Increment accordingly
         passText.enablesReturnKeyAutomatically = false
+
+        styleActionButtons()
+    }
+
+    private func styleActionButtons() {
+        let red = UIColor(named: "sil_siliconLabsRedColor") ?? .systemRed
+
+        cancelButton.layer.cornerRadius = 10
+        cancelButton.layer.masksToBounds = true
+        cancelButton.layer.borderWidth = 1.5
+        cancelButton.layer.borderColor = red.cgColor
+        cancelButton.backgroundColor = .white
+        cancelButton.setTitleColor(red, for: .normal)
+
+        provisionButton.layer.cornerRadius = 10
+        provisionButton.layer.masksToBounds = true
     }
 
     
@@ -74,13 +115,24 @@ class SILWiFiProvisionViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func provisionBtn(_ sender: UIButton) {
         passText.resignFirstResponder()
-        if wifiProvisionViewModelObj.passwordIsEmpty(textFieldTemp: passText){
-            print("true")
-            alertView(alertTitle: "Alert!", alertMsg: "Please enter the Wi-Fi password correctly.", alertType: "")
-        }else{
-            print("false")
+//        if wifiProvisionViewModelObj.passwordIsEmpty(textFieldTemp: passText){
+//            print("true")
+//            alertView(alertTitle: "Alert!", alertMsg: "Please enter the Wi-Fi password correctly.", alertType: "")
+//        }else{
+//            print("false")
+//            SVProgressHUD.show(withStatus: "Connecting")
+//            provision()
+//        }
+        if selectedCellData?.securityType == "Open" {
             SVProgressHUD.show(withStatus: "Connecting")
             provision()
+        }else{
+            if wifiProvisionViewModelObj.passwordIsEmpty(textFieldTemp: passText){
+                alertView(alertTitle: "Alert!", alertMsg: "Please enter the Wi-Fi password correctly.", alertType: "")
+            }else{
+                SVProgressHUD.show(withStatus: "Connecting")
+                provision()
+            }
         }
     }
     

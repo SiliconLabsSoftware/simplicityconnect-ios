@@ -129,21 +129,20 @@ CGFloat const SILDeviceSelectionViewModelRSSIThreshold = 1.0;
         case SILAppTypeThroughput:
             return @"A circuit board (SoC) must be connected and running \"Bluetooth - SoC Throughput\" firmware.";
         case SILAppIopTest:
-            return @"A circuit board (SoC) must be connected and running \"Bluetooth - SoC Interoperability Test\" firmware.";
+            return @"A circuit board (SoC) must be connected and running \"Bluetooth - SoC Interoperability Test FreeRTOS\" firmware.";
         case SILAppTypeBlinky:
-            return @"A circuit board (SoC) must be connected and running \"Bluetooth - SoC Blinky\" firmware or firmware with a title containing \"Bluetooth - SoC Dev Kit\" or \"Bluetooth - SoC Thunderboard\".";
+            return @"A circuit board (SoC) must be connected and running \"Bluetooth - SoC Blinky or Bluetooth - SoC EFR32xG26 Dev Kit or Bluetooth - SoC EFR32xG24 Dev Kit or Bluetooth - SoC Thunderboard EFR32BG22\" firmware.";
         case SILAppTypeWifiCommissioning:
             return @"A circuit board (SoC) and the evaluation board (EVK) must be connected and running proper firmwares. See the documentation, tutorial and GitHub for more information.";
         case SILAppTypeConnectedDevice:
-            //return @"A circuit board (SoC) must be connected and running \"Bluetooth RAIL DMP - SoC Light\" or \"Connect Bluetooth DMP - SoC Light\" firmware.";
-            return @"A circuit board (SoC) must be connected and running \"Bluetooth RAIL DMP - SoC Light\" or \"Connect Bluetooth DMP - SoC Light\" or \"Amazon Sidewalk - SoC Dynamic Multiprotocol Light (BLE)\" or \"Amazon Sidewalk - SoC Dynamic Multiprotocol Light (FSK)\" firmware.";
+            return @"A circuit board (SoC) must be connected and running \"RAIL - SoC Light\"  or \"Amazon Sidewalk - SoC Dynamic Multiprotocol Light (BLE)\" firmware.";
         case SILAppTypeRangeTest:
-            return @"A circuit board (SoC) must be connected and running \"RAIL Bluetooth DMP - SoC Range Test\" firmware.";
+            return @"A circuit board (SoC) must be connected and running \"RAIL - SoC Range Test\" firmware.";
         case SILAppTypeMotion:
         case SILAppTypeEnvironment:
-            return @"A circuit board (SoC) must be connected and running firmware with a title containing \"Bluetooth - SoC Dev Kit\" or \"Bluetooth - SoC Thunderboard\".";
+            return @"A circuit board (SoC) must be connected and running firmware with a title containing \"Bluetooth - SoC EFR32xG24 Dev Kit  or Bluetooth - SoC EFR32xG26 Dev Kit + AppLoader OTA DFU\" or \"Bluetooth - SoC Thunderboard EFR32BG22\"." ;
         case SILAppTypeESLDemo:
-            return @"A circuit board (SoC) must be connected and running firmware with a title containing \"Bluetooth - SoC NCP ESL Demo\".";
+            return @"A circuit board (SoC) must be connected and running firmware with a title containing \"Bluetooth - SoC ESL Demo Access point\".";
         case SILAppTypeWifiSensor:
             return @"1. The SoC and evaluation board (EVK) must be connected and running the correct firmware.\n2. The Wi-Fi network on your mobile device should match the Wi-Fi network used for the sensor device's commissioning.\n3. Enable your phone's local network to access sensor data.";
         case SILAppTypeAWSIOT:

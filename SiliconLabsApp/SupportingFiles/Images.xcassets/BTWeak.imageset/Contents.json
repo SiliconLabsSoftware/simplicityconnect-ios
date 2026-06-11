@@ -1,33 +1,12 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
-      "scale" : "1x",
-      "filename" : "BT_Weak~iphone.png"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "2x",
-      "filename" : "BT_Weak~iphone@2x.png"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "3x",
-      "filename" : "BT_Weak~iphone@3x.png"
-    },
-    {
-      "idiom" : "ipad",
-      "scale" : "1x",
-      "filename" : "BT_Weak~ipad.png"
-    },
-    {
-      "idiom" : "ipad",
-      "scale" : "2x",
-      "filename" : "BT_Weak~ipad@2x.png"
+      "filename" : "icon_bluetooth_week.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

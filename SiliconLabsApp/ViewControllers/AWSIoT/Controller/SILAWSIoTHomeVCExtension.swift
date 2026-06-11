@@ -76,7 +76,7 @@ extension SILAWSIoTHomeViewController: UITextFieldDelegate, UITextViewDelegate {
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
         // Set blue color and bold font for Done button text
-        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.systemBlue, .font: UIFont.boldSystemFont(ofSize: 15) ]
+        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.appPrimaryBrand, .font: UIFont.boldSystemFont(ofSize: 15) ]
         doneButton.setTitleTextAttributes(attributes, for: .normal)
         doneButton.setTitleTextAttributes(attributes, for: .highlighted)
         toolbar.items = [flexSpace, doneButton]
@@ -91,22 +91,66 @@ extension SILAWSIoTHomeViewController: UITextFieldDelegate, UITextViewDelegate {
         self.view.endEditing(true)
     }
     
+    // MARK: - Keyboard avoidance
+    
+    private static var keyboardLiftAnimatorKey: UInt8 = 0
+    private var keyboardLiftAnimator: UIViewPropertyAnimator? {
+        get {
+            return objc_getAssociatedObject(self, &SILAWSIoTHomeViewController.keyboardLiftAnimatorKey) as? UIViewPropertyAnimator
+        }
+        set {
+            objc_setAssociatedObject(self,
+                                     &SILAWSIoTHomeViewController.keyboardLiftAnimatorKey,
+                                     newValue,
+                                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
+    private func runKeyboardAnimation(targetTransform: CGAffineTransform,
+                                      userInfo: [AnyHashable: Any]?) {
+        let duration = (userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0.25
+        let curveRaw = (userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue ?? 0
+        let curve = UIView.AnimationCurve(rawValue: curveRaw) ?? .easeInOut
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+
+            // Cancel any prior animator so rapid show/hide cycles never overlap.
+            if let prior = self.keyboardLiftAnimator, prior.state != .inactive {
+                prior.stopAnimation(true)
+                prior.finishAnimation(at: .current)
+            }
+
+            let animator = UIViewPropertyAnimator(duration: duration, curve: curve) {
+                self.view.transform = targetTransform
+            }
+            animator.isUserInteractionEnabled = true
+            animator.addCompletion { [weak self] _ in
+                if targetTransform.isIdentity {
+                    self?.view.transform = .identity
+                }
+                self?.keyboardLiftAnimator = nil
+            }
+            self.keyboardLiftAnimator = animator
+            animator.startAnimation()
+        }
+    }
+
     @objc func keyboardWillShow(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-        let keyboardHeight = keyboardFrame.height
 
-        if awsEndPointTextView.isFirstResponder || pubTextField.isFirstResponder {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardHeight / 2
-            }
-        }
+        let isRelevantFirstResponder = awsEndPointTextView.isFirstResponder
+            || pubTextField.isFirstResponder
+        guard isRelevantFirstResponder else { return }
+
+        let targetY: CGFloat = -keyboardFrame.height / 2
+        runKeyboardAnimation(targetTransform: CGAffineTransform(translationX: 0, y: targetY),
+                             userInfo: userInfo)
     }
-    
+
     @objc func keyboardWillHide(_ notification: Notification) {
-        // Restore the view position
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
+        runKeyboardAnimation(targetTransform: .identity,
+                             userInfo: notification.userInfo)
     }
 }

@@ -19,7 +19,7 @@ class SILWifiCommissioningAPCellViewModel: SILCellViewModel {
     required init(accessPoint: SILWifiCommissioningAccessPoint, selectAction: @escaping () -> ()) {
         self.name = accessPoint.name
         self.securityType = accessPoint.securityType.name
-        self.dotColor = accessPoint.connected ? UIColor.systemGreen : UIColor.sil_siliconLabsRed()
+        self.dotColor = accessPoint.connected ? UIColor.systemGreen : UIColor.appPrimaryBrand
         self.selectAction = selectAction
     }
     

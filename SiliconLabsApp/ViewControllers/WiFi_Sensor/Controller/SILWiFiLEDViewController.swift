@@ -16,6 +16,8 @@ class SILWiFiLEDViewController: UIViewController {
     @IBOutlet weak var blueColorBtn: UIButton!
     @IBOutlet weak var onBtn: UIButton!
     @IBOutlet weak var offBtn: UIButton!
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var refreshBtn: UIButton!
 
 
 
@@ -31,8 +33,17 @@ class SILWiFiLEDViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //blubImg.image = LedImage.ledOnImage
-        self.onBtn.backgroundColor = UIColor(named: "sil_boulderColor")
-        self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+        self.onBtn.backgroundColor = UIColor.appBoulder
+        self.offBtn.backgroundColor = UIColor.appBoulder
+        
+        closeBtn.layer.cornerRadius = 8
+        closeBtn.setupOutlineButton()
+        closeBtn.layer.borderWidth = 2.0
+        closeBtn.layer.borderColor = UIColor.appPrimaryBrand.cgColor
+        closeBtn.layer.masksToBounds = true
+        refreshBtn.layer.cornerRadius = 8
+        refreshBtn.backgroundColor = .appPrimaryBrand
+        refreshBtn.setTitleColor(.white, for: .normal)
         
         //Comented: After BLE commissioning led status not to be check.
        // ledStatus()
@@ -113,32 +124,32 @@ class SILWiFiLEDViewController: UIViewController {
             ledImage = LedImage.ledOnImage ?? UIImage()
             DispatchQueue.main.async {
                 //self.redColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_siliconLabsRedColor")
+                self.redColorBtn.backgroundColor = UIColor.appPrimaryBrand
                 self.redColor = true
                 //self.greenColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_regularGreenColor")
+                self.greenColorBtn.backgroundColor = UIColor.appSuccess
                 self.greenColor = true
                 //self.blueColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_regularBlueColor")
+                self.blueColorBtn.backgroundColor = UIColor.systemBlue
                 self.blueColor = true
-                self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.onBtn.backgroundColor = UIColor.appPrimaryText
+                self.offBtn.backgroundColor = UIColor.appBoulder
             }
         case LedType.ledOff.rawValue:
             ledImage = LedImage.ledOffImage ?? UIImage()
             DispatchQueue.main.async {
                 //self.redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.redColorBtn.backgroundColor = UIColor.appBoulder
                 self.redColor = false
                 //self.greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.greenColorBtn.backgroundColor = UIColor.appBoulder
                 self.greenColor = false
                 //self.blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.blueColorBtn.backgroundColor = UIColor.appBoulder
                 self.blueColor = false
                 
-                self.onBtn.backgroundColor = UIColor(named: "sil_boulderColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
+                self.onBtn.backgroundColor = UIColor.appBoulder
+                self.offBtn.backgroundColor = UIColor.appPrimaryText
             }
         case LedType.redOn.rawValue:
             //ledImage = LedImage.redLedOnImage ?? UIImage()
@@ -146,16 +157,16 @@ class SILWiFiLEDViewController: UIViewController {
             ledColor = UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1)
             DispatchQueue.main.async {
                 //self.redColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_siliconLabsRedColor")
+                self.redColorBtn.backgroundColor = UIColor.appPrimaryBrand
                 self.redColor = true
                 //self.greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.greenColorBtn.backgroundColor = UIColor.appBoulder
                 self.greenColor = false
                 //self.blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.blueColorBtn.backgroundColor = UIColor.appBoulder
                 self.blueColor = false
-                self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.onBtn.backgroundColor = UIColor.appPrimaryText
+                self.offBtn.backgroundColor = UIColor.appBoulder
             }
         case LedType.greenOn.rawValue:
             //ledImage = LedImage.greenLedOnImage ?? UIImage()
@@ -163,16 +174,16 @@ class SILWiFiLEDViewController: UIViewController {
             ledColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1)
             DispatchQueue.main.async {
                 //self.greenColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_regularGreenColor")
+                self.greenColorBtn.backgroundColor = UIColor.appSuccess
                 self.greenColor = true
                 //self.redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.redColorBtn.backgroundColor = UIColor.appBoulder
                 self.redColor = false
                 //self.blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.blueColorBtn.backgroundColor = UIColor.appBoulder
                 self.blueColor = false
-                self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.onBtn.backgroundColor = UIColor.appPrimaryText
+                self.offBtn.backgroundColor = UIColor.appBoulder
             }
         case LedType.blueOn.rawValue:
             //ledImage = LedImage.blueLedOnImage ?? UIImage()
@@ -180,16 +191,16 @@ class SILWiFiLEDViewController: UIViewController {
             ledColor = UIColor(red: 0.0, green: 0.0, blue: 255.0, alpha: 1)
             DispatchQueue.main.async {
                 //self.blueColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_regularBlueColor")
+                self.blueColorBtn.backgroundColor = UIColor.systemBlue
                 self.blueColor = true
                 //self.redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.redColorBtn.backgroundColor = UIColor.appBoulder
                 self.redColor = false
                 //self.greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.greenColorBtn.backgroundColor = UIColor.appBoulder
                 self.greenColor = false
-                self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.onBtn.backgroundColor = UIColor.appPrimaryText
+                self.offBtn.backgroundColor = UIColor.appBoulder
             }
         case LedType.redGreenOn.rawValue:
             //ledImage = LedImage.yellowLedImage ?? UIImage()
@@ -197,16 +208,16 @@ class SILWiFiLEDViewController: UIViewController {
             ledColor = UIColor(red: 255.0, green: 255.0, blue: 0.0, alpha: 1)
             DispatchQueue.main.async {
                 //self.redColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_siliconLabsRedColor")
+                self.redColorBtn.backgroundColor = UIColor.appPrimaryBrand
                 self.redColor = true
                 //self.greenColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_regularGreenColor")
+                self.greenColorBtn.backgroundColor = UIColor.appSuccess
                 self.greenColor = true
                 //self.blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.blueColorBtn.backgroundColor = UIColor.appBoulder
                 self.blueColor = false
-                self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.onBtn.backgroundColor = UIColor.appPrimaryText
+                self.offBtn.backgroundColor = UIColor.appBoulder
             }
         case LedType.redBlueOn.rawValue:
             //ledImage = LedImage.magentaLedImage ?? UIImage()
@@ -214,16 +225,16 @@ class SILWiFiLEDViewController: UIViewController {
             ledColor = UIColor(red: 255.0, green: 0.0, blue: 255.0, alpha: 1)
             DispatchQueue.main.async {
                 //self.redColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_siliconLabsRedColor")
+                self.redColorBtn.backgroundColor = UIColor.appPrimaryBrand
                 self.redColor = true
                 //self.blueColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_regularBlueColor")
+                self.blueColorBtn.backgroundColor = UIColor.systemBlue
                 self.blueColor = true
                 //self.greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.greenColorBtn.backgroundColor = UIColor.appBoulder
                 self.greenColor = false
-                self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.onBtn.backgroundColor = UIColor.appPrimaryText
+                self.offBtn.backgroundColor = UIColor.appBoulder
             }
         case LedType.greenBuleOn.rawValue:
             //ledImage = LedImage.cyanLedImage ?? UIImage()
@@ -231,23 +242,27 @@ class SILWiFiLEDViewController: UIViewController {
             ledColor = UIColor(red: 0.0, green: 255.0, blue: 255.0, alpha: 1)
             DispatchQueue.main.async {
                 //self.greenColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_regularGreenColor")
+                self.greenColorBtn.backgroundColor = UIColor.appSuccess
                 self.greenColor = true
                 //self.blueColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_regularBlueColor")
+                self.blueColorBtn.backgroundColor = UIColor.systemBlue
                 self.blueColor = true
                 //self.redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.redColorBtn.backgroundColor = UIColor.appBoulder
                 self.redColor = false
-                self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-                self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.onBtn.backgroundColor = UIColor.appPrimaryText
+                self.offBtn.backgroundColor = UIColor.appBoulder
             }
         default:
             print("Have you done something new?")
         }
         DispatchQueue.main.async {
             self.blubImg.image = ledImage
-            if type != LedType.ledOn.rawValue && type != LedType.ledOff.rawValue {
+            if type == LedType.ledOff.rawValue {
+                self.blubImg.tintColor = UIColor.systemGray
+            } else if type == LedType.ledOn.rawValue {
+                self.blubImg.tintColor = UIColor.white
+            } else {
                 self.blubImg.tintColor = ledColor
             }
         }
@@ -256,8 +271,8 @@ class SILWiFiLEDViewController: UIViewController {
         redColorVlue = "on"
         greenColorVlue = "on"
         blueColorVlue = "on"
-        self.onBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
-        self.offBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+        self.onBtn.backgroundColor = UIColor.appPrimaryText
+        self.offBtn.backgroundColor = UIColor.appBoulder
         ledControll()
     }
     
@@ -285,8 +300,8 @@ class SILWiFiLEDViewController: UIViewController {
         redColorVlue = "off"
         greenColorVlue = "off"
         blueColorVlue = "off"
-        self.onBtn.backgroundColor = UIColor(named: "sil_boulderColor")
-        self.offBtn.backgroundColor = UIColor(named: "sil_primaryTextColor")
+        self.onBtn.backgroundColor = UIColor.appBoulder
+        self.offBtn.backgroundColor = UIColor.appPrimaryText
         ledControll()
 //        silWiFiLedSensorsViewModelObject.ledOnOf(ledType: LedType.ledOff.rawValue, parameter: """
 //                    {"red": "off", "green": "off", "blue": "off"}
@@ -358,7 +373,7 @@ class SILWiFiLEDViewController: UIViewController {
         if sender.tag == 1 {
             if redColor {
                 //redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                //redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                //redColorBtn.backgroundColor = UIColor.appBoulder
                 redColor = false
                 redColorVlue = "off"
                 if !greenColor {
@@ -370,7 +385,7 @@ class SILWiFiLEDViewController: UIViewController {
                 
             }else{
                 //redColorCheckImg.image = LedImage.checkBoxActiveImage
-                //redColorBtn.backgroundColor = UIColor(named: "sil_siliconLabsRedColor")
+                //redColorBtn.backgroundColor = UIColor.appPrimaryBrand
                 redColor = true
                 redColorVlue = "on"
                 if !greenColor {
@@ -383,7 +398,7 @@ class SILWiFiLEDViewController: UIViewController {
         }else if sender.tag == 2{
             if greenColor {
                 //greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                //greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                //greenColorBtn.backgroundColor = UIColor.appBoulder
                 greenColor = false
                 greenColorVlue = "off"
                 if !redColor {
@@ -395,7 +410,7 @@ class SILWiFiLEDViewController: UIViewController {
                 
             }else{
                 //greenColorCheckImg.image = LedImage.checkBoxActiveImage
-                //greenColorBtn.backgroundColor = UIColor(named: "sil_regularGreenColor")
+                //greenColorBtn.backgroundColor = UIColor.appSuccess
                 greenColor = true
                 greenColorVlue = "on"
                 if !redColor {
@@ -408,7 +423,7 @@ class SILWiFiLEDViewController: UIViewController {
         }else if sender.tag == 3{
             if blueColor {
                 //blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                //blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                //blueColorBtn.backgroundColor = UIColor.appBoulder
                 blueColor = false
                 blueColorVlue = "off"
                 if !redColor {
@@ -420,7 +435,7 @@ class SILWiFiLEDViewController: UIViewController {
                 
             }else{
                 //blueColorCheckImg.image = LedImage.checkBoxActiveImage
-                //blueColorBtn.backgroundColor = UIColor(named: "sil_regularBlueColor")
+                //blueColorBtn.backgroundColor = UIColor.appPrimaryBrand
                 blueColor = true
                 blueColorVlue = "on"
                 if !redColor {

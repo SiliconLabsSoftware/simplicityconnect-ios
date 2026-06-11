@@ -15,7 +15,7 @@ protocol Progressable: CALayer {
 public class ProgressAnimationLayer: CALayer, Progressable {
     @NSManaged var progress: CGFloat
     private static let keyName = "progress"
-    var progressColor: UIColor = UIColor.blue
+    var progressColor: UIColor = UIColor.appPrimaryBrand
     var showTriangle: Bool = false
 
     override init() {

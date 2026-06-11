@@ -28,7 +28,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhn-pV-8bc">
                             <rect key="frame" x="19.999999999999993" y="13.33333333333333" width="120.33333333333331" height="21.666666666666671"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="Stolzl-Bold" family="Stolzl" pointSize="16"/>
                             <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -48,7 +48,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="78" id="KOG-hd-ELy"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -82,7 +82,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUM-on-Ntt" userLabel="Note">
                             <rect key="frame" x="0.0" y="210" width="310" height="58"/>
                             <string key="text">Note: presented image info may be outdated if you controlled ESL Access Point outside of the app (e.g. through Command Line Interface)</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                             <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -91,11 +91,11 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXi-88-4yF">
                                     <rect key="frame" x="210" y="-1" width="100" height="36"/>
-                                    <color key="backgroundColor" name="sil_strongBlueColor"/>
+                                    <color key="backgroundColor" name="sil_siliconLabsRedColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="ftY-Xk-m6x"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                     <state key="normal" title="Display">
                                         <color key="titleColor" name="sil_bgWhiteColor"/>
                                     </state>
@@ -108,9 +108,9 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="iKs-24-f1S"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                     <state key="normal" title="Cancel">
-                                        <color key="titleColor" name="sil_strongBlueColor"/>
+                                        <color key="titleColor" name="sil_siliconLabsRedColor"/>
                                     </state>
                                     <connections>
                                         <action selector="cancelButtonWasTapped:" destination="-1" eventType="touchUpInside" id="YXu-Im-pQZ"/>
@@ -153,8 +153,8 @@
         <namedColor name="sil_bgWhiteColor">
             <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="sil_strongBlueColor">
-            <color red="0.0" green="0.45882352941176469" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

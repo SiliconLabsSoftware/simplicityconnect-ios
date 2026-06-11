@@ -30,6 +30,7 @@ NSMutableArray * occupancyDeviceList;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     _occupancyImg.image = [UIImage imageNamed:@"OccupencySensor_iconOff"];
     _deviceCurrentStatusLabel.hidden = YES;
 }
@@ -113,7 +114,7 @@ NSMutableArray * occupancyDeviceList;
 }
 - (void)updateTempInUI:(int)newTemp
 {
-    //    _selectedMatterImage.tintColor = UIColor.sil_regularBlueColor;
+    //    _selectedMatterImage.tintColor = UIColor.appPrimaryBrand;
     NSString *myString = [@(newTemp) stringValue];
     if ([myString isEqualToString:@"1"]){
         _occupancyImg.image = [UIImage imageNamed:@"OccupencySensor_iconOn"];

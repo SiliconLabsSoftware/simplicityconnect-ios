@@ -17,6 +17,8 @@ class SILWiFiMotionViewController: UIViewController, SILWiFiMotionSensorsViewMod
     @IBOutlet weak var orientationXLbl: StyledLabel!
     @IBOutlet weak var orientationYLbl: StyledLabel!
     @IBOutlet weak var orientationZLbl: StyledLabel!
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var refreshBtn: UIButton!
 
     var silWiFiMotionSensorsViewModel:SILWiFiMotionSensorsViewModel = SILWiFiMotionSensorsViewModel()
     var apiCallTimer: Timer?
@@ -34,6 +36,15 @@ class SILWiFiMotionViewController: UIViewController, SILWiFiMotionSensorsViewMod
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         silWiFiMotionSensorsViewModel.SILWiFiMotionSensorsViewModelDelegate = self
+        
+        closeBtn.layer.cornerRadius = 8
+        closeBtn.setupOutlineButton()
+        closeBtn.layer.borderWidth = 2.0
+        closeBtn.layer.borderColor = UIColor.appPrimaryBrand.cgColor
+        closeBtn.layer.masksToBounds = true
+        refreshBtn.layer.cornerRadius = 8
+        refreshBtn.backgroundColor = .appPrimaryBrand
+        refreshBtn.setTitleColor(.white, for: .normal)
         
         if let motionDataTemp = motionData?["value"] as? [String : Any] {
             orientationXStr = (motionDataTemp["gyroscope"] as! [String : Any])["x"] as! String

@@ -10,6 +10,7 @@ import UIKit
 
 class SILContextMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     static let CellHeight: CGFloat = 30.0
+    static let NoDataAvailableTitle = "No data types available to add"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,8 +20,19 @@ class SILContextMenuViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Replace a fully-disabled option list with a single "No data available" placeholder row.
+        // Keep it enabled so its label stays visible (tapping just dismisses, since the callback is empty).
+        if options.allSatisfy({ !$0.enabled }) {
+            options = [ContextMenuOption(title: Self.NoDataAvailableTitle, callback: {})]
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
+        // Round popup corners.
+        view.layer.cornerRadius = 5
+        view.layer.masksToBounds = true
+        tableView.layer.cornerRadius = 5
+        tableView.layer.masksToBounds = true
         
         updatePreferredContentSize()
     }
@@ -33,7 +45,7 @@ class SILContextMenuViewController: UIViewController, UITableViewDelegate, UITab
             let widthWithoutMargin = options
                 .map({ option in
                     return option.title.size(withAttributes: [
-                        .font: UIFont(name: "Roboto-Regular", size: 17)!
+                        .font: UIFont(name: "Stolzl-Regular", size: 17)!
                     ]).width
                 }).max() ?? 0
             width = widthWithoutMargin + 48

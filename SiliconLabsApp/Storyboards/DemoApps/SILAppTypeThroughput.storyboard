@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1sB-xZ-xVV">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1sB-xZ-xVV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Bold.ttf">
-            <string>Roboto-Bold</string>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -23,21 +22,24 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="1sB-xZ-xVV" customClass="SILThroughputViewController" customModule="BlueGecko" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Nyy-a5-HmJ">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView_image" translatesAutoresizingMaskIntoConstraints="NO" id="bgImg-throughput-001" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-07-NJW">
-                                <rect key="frame" x="0.0" y="24" width="1024" height="1342"/>
+                                <rect key="frame" x="0.0" y="96" width="414" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wk-Fi-Ulo">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1272"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="730"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3d-NM-iAq" userLabel="Speed Gauge View">
-                                                <rect key="frame" x="32" y="32" width="976" height="450"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="320"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lG6-yC-SZE" userLabel="Speed Gauge" customClass="SILThroughputGaugeView" customModule="BlueGecko" customModuleProvider="target">
-                                                        <rect key="frame" x="263" y="0.0" width="450" height="450"/>
-                                                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                                                        <rect key="frame" x="31" y="0.0" width="320" height="320"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="ARR-BD-fXU">
                                                                 <variation key="heightClass=regular-widthClass=regular" constant="450"/>
@@ -62,15 +64,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljJ-oJ-VRz" userLabel="Options View">
-                                                <rect key="frame" x="16" y="514" width="992" height="310"/>
+                                                <rect key="frame" x="16" y="352" width="382" height="310"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAb-Nu-R2H" userLabel="Type">
-                                                        <rect key="frame" x="0.0" y="8" width="992" height="35"/>
+                                                        <rect key="frame" x="0.0" y="8" width="382" height="35"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0To-7L-ZrR">
-                                                                <rect key="frame" x="8" y="5.5" width="397" height="24"/>
-                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                                <state key="normal" title="Notifications" image="checkBoxInactive">
+                                                                <rect key="frame" x="8" y="3" width="153" height="29"/>
+                                                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
+                                                                <color key="tintColor" name="sil_siliconLabsRedColor"/>
+                                                                <state key="normal" title="Notifications">
                                                                     <color key="titleColor" name="sil_primaryTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -78,7 +81,7 @@
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQg-Og-5X9" userLabel="SeparatorView">
-                                                                <rect key="frame" x="405" y="4" width="1" height="27"/>
+                                                                <rect key="frame" x="161" y="4" width="1" height="27"/>
                                                                 <color key="backgroundColor" name="sil_secondaryBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="27" id="2gN-YK-Hfu"/>
@@ -86,9 +89,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8N-3g-Fsh" userLabel="Indications">
-                                                                <rect key="frame" x="414" y="5.5" width="396.5" height="24"/>
-                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                                <state key="normal" title="Indications" image="checkBoxActive">
+                                                                <rect key="frame" x="182" y="3" width="152.5" height="29"/>
+                                                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
+                                                                <color key="tintColor" name="sil_siliconLabsRedColor"/>
+                                                                <state key="normal" title="Indications">
                                                                     <color key="titleColor" name="sil_primaryTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -98,7 +102,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="Gbn-Ur-YXU"/>
-                                                            <constraint firstItem="a8N-3g-Fsh" firstAttribute="leading" secondItem="zQg-Og-5X9" secondAttribute="trailing" constant="8" id="GdS-QR-eLQ"/>
+                                                            <constraint firstItem="a8N-3g-Fsh" firstAttribute="leading" secondItem="zQg-Og-5X9" secondAttribute="trailing" constant="20" id="GdS-QR-eLQ"/>
                                                             <constraint firstItem="0To-7L-ZrR" firstAttribute="leading" secondItem="TAb-Nu-R2H" secondAttribute="leading" constant="8" id="NHB-bX-BiW"/>
                                                             <constraint firstItem="zQg-Og-5X9" firstAttribute="centerY" secondItem="TAb-Nu-R2H" secondAttribute="centerY" id="Xgt-H3-f5e"/>
                                                             <constraint firstItem="0To-7L-ZrR" firstAttribute="centerY" secondItem="TAb-Nu-R2H" secondAttribute="centerY" id="bdA-ty-1ag"/>
@@ -109,96 +113,103 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YR-pN-kfL" userLabel="Separator ">
-                                                        <rect key="frame" x="0.0" y="47" width="992" height="2"/>
+                                                        <rect key="frame" x="0.0" y="47" width="382" height="2"/>
                                                         <color key="backgroundColor" name="sil_secondaryBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="c8u-wF-4MK"/>
                                                         </constraints>
                                                     </view>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sxr-q0-Qoe" userLabel="Connection Parameters">
-                                                        <rect key="frame" x="8" y="57" width="976" height="245"/>
+                                                        <rect key="frame" x="8" y="57" width="366" height="245"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-oH-mL5" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="976" height="244"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="244"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection Parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lx-WQ-zr5" userLabel="Title">
-                                                                        <rect key="frame" x="16" y="8" width="191" height="30"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection Parameters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lx-WQ-zr5" userLabel="Title">
+                                                                        <rect key="frame" x="5" y="8" width="345" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="4nE-TP-vR4"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
+                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
                                                                         <color key="textColor" name="sil_primaryTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHY: 2M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-cv-g6M" userLabel="PHY" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="46" width="65.5" height="25"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHY: 2M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-cv-g6M" userLabel="PHY" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="46" width="356" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="1Aq-wn-6Vi"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval: 15ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBK-yU-vw5" userLabel="Interval" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="79" width="105.5" height="25"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval: 15ms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBK-yU-vw5" userLabel="Interval" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="79" width="356" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="yKJ-HD-9lF"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latency: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1U-sJ-oxp" userLabel="Latency" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="112" width="80" height="25"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latency: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1U-sJ-oxp" userLabel="Latency" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="112" width="356" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="eT2-pO-WaW"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervision Timeout: 100ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-SU-xyN" userLabel="Supervision Timeout" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="145" width="216" height="25"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervis. Timeout: 100ms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-SU-xyN" userLabel="Supervision Timeout" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="145" width="356" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="oXx-aG-PAb"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDU: 255 bytes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-L7-35c" userLabel="PDU" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="178" width="120" height="25"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDU: 255 bytes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-L7-35c" userLabel="PDU" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="178" width="356" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="QRf-LQ-zSr"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTU: 255 bytes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0C-90-IMV" userLabel="MTU" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="211" width="122.5" height="25"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTU: 255 bytes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0C-90-IMV" userLabel="MTU" customClass="SILConnectionParameterLabel" customModule="BlueGecko" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="211" width="356" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="FNu-3E-pU3"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="vBK-yU-vw5" firstAttribute="leading" secondItem="gZX-cv-g6M" secondAttribute="leading" id="5cY-Pr-gXY"/>
+                                                                    <constraint firstItem="vBK-yU-vw5" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="5" id="5cY-Pr-gXY"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="vBK-yU-vw5" secondAttribute="trailing" constant="5" id="5cY-Pr-gXZ"/>
                                                                     <constraint firstItem="Y1U-sJ-oxp" firstAttribute="top" secondItem="vBK-yU-vw5" secondAttribute="bottom" constant="8" id="922-IG-fA4"/>
-                                                                    <constraint firstItem="J91-SU-xyN" firstAttribute="leading" secondItem="Y1U-sJ-oxp" secondAttribute="leading" id="FR9-iA-6tj"/>
-                                                                    <constraint firstItem="1Lx-WQ-zr5" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="16" id="NCL-Zs-oWe"/>
+                                                                    <constraint firstItem="J91-SU-xyN" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="5" id="FR9-iA-6tj"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="J91-SU-xyN" secondAttribute="trailing" constant="5" id="FR9-iA-6tk"/>
+                                                                    <constraint firstItem="1Lx-WQ-zr5" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="5" id="NCL-Zs-oWe"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="1Lx-WQ-zr5" secondAttribute="trailing" constant="16" id="NCL-Zs-oWf"/>
                                                                     <constraint firstItem="M0C-90-IMV" firstAttribute="top" secondItem="gLi-L7-35c" secondAttribute="bottom" constant="8" id="Oui-0w-eBk"/>
                                                                     <constraint firstItem="J91-SU-xyN" firstAttribute="top" secondItem="Y1U-sJ-oxp" secondAttribute="bottom" constant="8" id="T8n-aR-GdS"/>
-                                                                    <constraint firstItem="Y1U-sJ-oxp" firstAttribute="leading" secondItem="vBK-yU-vw5" secondAttribute="leading" id="ZAM-gk-xhm"/>
+                                                                    <constraint firstItem="Y1U-sJ-oxp" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="5" id="ZAM-gk-xhm"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Y1U-sJ-oxp" secondAttribute="trailing" constant="5" id="ZAM-gk-xhn"/>
                                                                     <constraint firstItem="gZX-cv-g6M" firstAttribute="top" secondItem="1Lx-WQ-zr5" secondAttribute="bottom" constant="8" id="eax-KR-Dux"/>
-                                                                    <constraint firstItem="gLi-L7-35c" firstAttribute="leading" secondItem="J91-SU-xyN" secondAttribute="leading" id="gQO-pv-gWP"/>
+                                                                    <constraint firstItem="gLi-L7-35c" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="5" id="gQO-pv-gWP"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gLi-L7-35c" secondAttribute="trailing" constant="5" id="gQO-pv-gWQ"/>
                                                                     <constraint firstItem="gLi-L7-35c" firstAttribute="top" secondItem="J91-SU-xyN" secondAttribute="bottom" constant="8" id="hQE-Dw-12G"/>
-                                                                    <constraint firstItem="gZX-cv-g6M" firstAttribute="leading" secondItem="1Lx-WQ-zr5" secondAttribute="leading" id="hhh-cB-abi"/>
+                                                                    <constraint firstItem="gZX-cv-g6M" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="5" id="hhh-cB-abi"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gZX-cv-g6M" secondAttribute="trailing" constant="5" id="hhh-cB-abj"/>
                                                                     <constraint firstItem="1Lx-WQ-zr5" firstAttribute="top" secondItem="e1o-oH-mL5" secondAttribute="top" constant="8" id="ijx-Yr-Z2A"/>
-                                                                    <constraint firstItem="M0C-90-IMV" firstAttribute="leading" secondItem="gLi-L7-35c" secondAttribute="leading" id="mDw-Qy-4gj"/>
+                                                                    <constraint firstItem="M0C-90-IMV" firstAttribute="leading" secondItem="e1o-oH-mL5" secondAttribute="leading" constant="5" id="mDw-Qy-4gj"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="M0C-90-IMV" secondAttribute="trailing" constant="5" id="mDw-Qy-4gk"/>
                                                                     <constraint firstAttribute="bottom" secondItem="M0C-90-IMV" secondAttribute="bottom" constant="8" id="q20-JO-feF"/>
                                                                     <constraint firstItem="vBK-yU-vw5" firstAttribute="top" secondItem="gZX-cv-g6M" secondAttribute="bottom" constant="8" id="ugZ-lh-IwP"/>
                                                                 </constraints>
@@ -231,7 +242,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ljJ-oJ-VRz" firstAttribute="leading" secondItem="0Wk-Fi-Ulo" secondAttribute="leading" constant="16" id="7fG-o3-yvP"/>
                                             <constraint firstAttribute="trailing" secondItem="ljJ-oJ-VRz" secondAttribute="trailing" constant="16" id="FqN-tn-Uwc"/>
@@ -249,16 +260,20 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIe-sZ-0Qb" userLabel="ButtonsView">
-                                        <rect key="frame" x="0.0" y="1272" width="1024" height="70"/>
+                                        <rect key="frame" x="0.0" y="730" width="414" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSg-qd-JNm" userLabel="Start/Stop" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                                                <rect key="frame" x="477" y="19" width="70" height="32"/>
+                                                <rect key="frame" x="157" y="19" width="100" height="32"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="70" id="Amd-2c-Vs3"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Amd-2c-Vs3"/>
                                                     <constraint firstAttribute="height" constant="32" id="EEP-r4-txd"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="16"/>
                                                 <state key="normal" title="Start"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasBorder" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="startStopButtonWasTapped:" destination="1sB-xZ-xVV" eventType="touchUpInside" id="VVm-2A-xeY"/>
                                                 </connections>
@@ -278,6 +293,10 @@
                         <constraints>
                             <constraint firstItem="Y9g-U2-Hxx" firstAttribute="trailing" secondItem="gsf-07-NJW" secondAttribute="trailing" id="7tX-xe-2dS"/>
                             <constraint firstItem="gsf-07-NJW" firstAttribute="leading" secondItem="Y9g-U2-Hxx" secondAttribute="leading" id="9qj-Gh-xMb"/>
+                            <constraint firstAttribute="bottom" secondItem="bgImg-throughput-001" secondAttribute="bottom" id="bgImg-throughput-bot"/>
+                            <constraint firstItem="bgImg-throughput-001" firstAttribute="leading" secondItem="Nyy-a5-HmJ" secondAttribute="leading" id="bgImg-throughput-lead"/>
+                            <constraint firstItem="bgImg-throughput-001" firstAttribute="top" secondItem="Nyy-a5-HmJ" secondAttribute="top" id="bgImg-throughput-top"/>
+                            <constraint firstAttribute="trailing" secondItem="bgImg-throughput-001" secondAttribute="trailing" id="bgImg-throughput-trail"/>
                             <constraint firstAttribute="bottom" secondItem="gsf-07-NJW" secondAttribute="bottom" id="rqa-J9-r6V"/>
                             <constraint firstItem="gsf-07-NJW" firstAttribute="top" secondItem="Y9g-U2-Hxx" secondAttribute="top" id="unI-qI-CrQ"/>
                         </constraints>
@@ -302,40 +321,16 @@
             <point key="canvasLocation" x="173.59999999999999" y="120.98950524737631"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="J91-SU-xyN">
-            <size key="intrinsicContentSize" width="216" height="20.5"/>
-        </designable>
-        <designable name="M0C-90-IMV">
-            <size key="intrinsicContentSize" width="122.5" height="20.5"/>
-        </designable>
-        <designable name="Y1U-sJ-oxp">
-            <size key="intrinsicContentSize" width="80" height="20.5"/>
-        </designable>
-        <designable name="gLi-L7-35c">
-            <size key="intrinsicContentSize" width="120" height="20.5"/>
-        </designable>
-        <designable name="gZX-cv-g6M">
-            <size key="intrinsicContentSize" width="65.5" height="20.5"/>
-        </designable>
-        <designable name="vBK-yU-vw5">
-            <size key="intrinsicContentSize" width="105.5" height="20.5"/>
-        </designable>
-        <designable name="zSg-qd-JNm">
-            <size key="intrinsicContentSize" width="37" height="32"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="checkBoxActive" width="24" height="24"/>
-        <image name="checkBoxInactive" width="24" height="24"/>
-        <namedColor name="sil_backgroundColor">
-            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="bgView_image" width="360" height="700"/>
         <namedColor name="sil_primaryTextColor">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_secondaryBackgroundColor">
             <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

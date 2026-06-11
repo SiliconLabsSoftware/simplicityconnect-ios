@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Group 1052.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Group 1052@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Group 1052@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_editLine.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

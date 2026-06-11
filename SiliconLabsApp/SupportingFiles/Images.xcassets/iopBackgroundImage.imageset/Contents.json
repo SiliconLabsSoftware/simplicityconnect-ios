@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Group(2).svg",
+      "filename" : "icon_settings.pdf",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }

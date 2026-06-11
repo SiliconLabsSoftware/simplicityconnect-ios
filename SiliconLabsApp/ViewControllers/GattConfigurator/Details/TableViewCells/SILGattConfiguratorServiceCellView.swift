@@ -38,7 +38,7 @@ class SILGattConfiguratorServiceCellView: SILCell, SILCellView {
             self.serviceTypeLabel.text = viewModel.serviceType
             let imageName = viewModel.isExpanded ? "chevron_up" : "chevron_down"
             self.moreInfoButton.setImage(UIImage(named: imageName), for: .normal)
-            self.moreInfoButton.tintColor = UIColor.sil_regularBlue()
+            self.moreInfoButton.tintColor = UIColor.appPrimaryBrand
         }
     }
     

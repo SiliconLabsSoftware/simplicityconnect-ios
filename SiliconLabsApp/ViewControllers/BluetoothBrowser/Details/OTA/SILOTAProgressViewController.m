@@ -61,7 +61,6 @@ const CGFloat kAngleAtTopWrapAround = 270.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.doneButton.enabled = NO;
-    self.doneButton.layer.cornerRadius = 4.0;
     self.timerLabel = [[MZTimerLabel alloc] initWithLabel:self.timerDisplayLabel];
     self.timerLabel.timeFormat = kSILTimerFormat;
     self.hudView.otaInfoLabel.text = @"";

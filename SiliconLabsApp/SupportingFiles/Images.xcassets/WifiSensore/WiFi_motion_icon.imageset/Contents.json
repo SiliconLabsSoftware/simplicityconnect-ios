@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Group 12922.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Group 12922@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Group 12922@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_motion.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -16,7 +16,7 @@ class SILIOPTestDeviceSelectorController : UIViewController, SILDeviceSelectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.floatingButton.layer.cornerRadius = 20
+        self.floatingButton.layer.cornerRadius = 10
     }
     
     func deviceSelectionViewController(_ viewController: SILDeviceSelectionViewController!, didSelect peripheral: SILDiscoveredPeripheral!) {
@@ -26,7 +26,7 @@ class SILIOPTestDeviceSelectorController : UIViewController, SILDeviceSelectionV
                 let storyboard = UIStoryboard(name: "SILIOPTest", bundle: nil)
                 let viewController = (storyboard.instantiateInitialViewController() as! SILIOPTesterViewController)
                 viewController.deviceNameToSearch = deviceName
-                
+                UserDefaults.standard.setValue("\(peripheral.uuid.uuidString)", forKey: "deviceUUIDToConnect")
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }
@@ -35,10 +35,10 @@ class SILIOPTestDeviceSelectorController : UIViewController, SILDeviceSelectionV
     func didDismissDeviceSelectionViewController() {
         self.devicePopoverController?.dismissPopover(animated: true)
     }
-    
+    //IOP device name...
     @IBAction func showDeviceSelection() {
         self.presentDeviceSelectionViewController(app: SILApp.iopTest(), shouldConnectWithPeripheral: false, animated: true) {
-            $0?.advertisedLocalName?.contains("IOP") ?? false
+            $0?.advertisedLocalName?.contains("IOP_Test_1") ?? false
         }
     }
    

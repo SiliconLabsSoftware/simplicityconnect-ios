@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "aws_sidewalk.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "aws_sidewalk 1.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "aws_sidewalk 2.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_sidewalk.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

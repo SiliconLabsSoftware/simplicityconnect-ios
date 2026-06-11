@@ -464,7 +464,7 @@ class BleDevice : NSObject, Device, DemoConfiguration, CBPeripheralDelegate {
                     case "BRD4160A": fallthrough
                     case "BRD4166A", "BRD4184A", "BRD4184B":
                         self.model = .sense
-                    case "BRD2601A", "BRD2601B":
+                    case "BRD2601A", "BRD2601B", "BRD2608A":
                         self.model = .bobcat
                     default:
                         self.model = .unknown
