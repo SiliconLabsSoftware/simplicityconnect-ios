@@ -6,16 +6,20 @@
 //  Copyright © 2020 SiliconLabs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 @IBDesignable
 class SILPrimaryButton: UIButton {
-    private static let primaryColor = UIColor.sil_regularBlue()!
+    private static let primaryColor = UIColor.appPrimaryBrand
     private static let disabledColor = UIColor.lightGray
     
     private let shadowLayer = CAShapeLayer()
     
-    @IBInspectable var cornerRadius: CGFloat = CornerRadiusForButtons
+    @IBInspectable var cornerRadius: CGFloat = 10 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
     
     @IBInspectable var fontSize: CGFloat = 14.0 {
         didSet {
@@ -40,6 +44,7 @@ class SILPrimaryButton: UIButton {
         didSet {
             setupBackground()
             setupBorder()
+            setupTitleColor()
         }
     }
     
@@ -53,6 +58,7 @@ class SILPrimaryButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        layer.cornerRadius = cornerRadius
         setupShadow()
     }
     
@@ -66,6 +72,7 @@ class SILPrimaryButton: UIButton {
     
     private func setupStaticAppearance() {
         layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         layer.insertSublayer(shadowLayer, at: 0)
     }
@@ -74,14 +81,16 @@ class SILPrimaryButton: UIButton {
         if hasBackground {
             setTitleColor(UIColor.white, for: .normal)
             setTitleColor(UIColor.lightGray, for: .highlighted)
+            setTitleColor(UIColor.white, for: .disabled)
         } else {
             setTitleColor(Self.primaryColor, for: .normal)
             setTitleColor(UIColor.lightGray, for: .highlighted)
+            setTitleColor(Self.disabledColor, for: .disabled)
         }
     }
         
     private func setupTitleFont() {
-        titleLabel?.font = UIFont(name: "Roboto-Medium", size: fontSize)
+        titleLabel?.font = UIFont(name: "Stolzl-Medium", size: fontSize)
     }
     
     private func setupBackground() {
@@ -96,12 +105,18 @@ class SILPrimaryButton: UIButton {
     
     private func setupBorder() {
         if hasBorder {
-            layer.borderWidth = 1
-            layer.borderColor = Self.disabledColor.cgColor
+            layer.borderWidth = 2
+            layer.borderColor = isEnabled ? Self.primaryColor.cgColor : Self.disabledColor.cgColor
         } else {
             layer.borderWidth = 0
         }
     }
+    
+//    override var intrinsicContentSize: CGSize {
+//        var size = super.intrinsicContentSize
+//        size.height = max(size.height, 30)
+//        return size
+//    }
     
     private func setupShadow() {
         if hasBackground {
@@ -110,7 +125,9 @@ class SILPrimaryButton: UIButton {
             shadowLayer.shadowOffset = .zero
             shadowLayer.shadowColor = UIColor.black.cgColor
             shadowLayer.shadowRadius = isHighlighted ? 2 : 1
-            shadowLayer.shadowOpacity = 0.5
+            shadowLayer.shadowOpacity = 0
+        } else {
+            shadowLayer.shadowOpacity = 0
         }
     }
 }

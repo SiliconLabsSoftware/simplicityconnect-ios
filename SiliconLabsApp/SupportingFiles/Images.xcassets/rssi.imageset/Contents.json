@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Group 12913.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Group 12913@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Group 12913@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_wifi.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

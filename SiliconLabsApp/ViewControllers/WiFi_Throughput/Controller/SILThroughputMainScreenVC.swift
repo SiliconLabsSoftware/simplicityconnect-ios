@@ -19,19 +19,51 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
     var totalTime = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setLeftAlignedTitle("WiFi Throughput")
         setupBackground()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        applyDemoCardShadowToActionButtons()
+    }
+    
+    // Mirrors the Demo-screen card shadow used by SILAppSelectionCollectionViewCell:
+    // SILCellShadowOffset (1, 1), SILCellShadowRadius (1), black @ 0.5 opacity.
+    // masksToBounds is disabled so the shadow can render outside the rounded bounds;
+    // the button's white background and corner radius (set in the storyboard) are kept.
+    private func applyDemoCardShadowToActionButtons() {
+        for case let button as UIButton in view.subviews {
+            button.layer.masksToBounds = false
+            button.addShadow(withOffset: SILCellShadowOffset, radius: SILCellShadowRadius)
+        }
+    }
+    
+    func popoverControllerDidDismissPopover(_ popoverController: WYPopoverController!) {
+        self.devicePopoverController = nil
+        navigationController?.navigationBar.tintColor = .white
     }
     private func setupBackground() {
         self.view.backgroundColor = UIColor.sil_background()
         //self.appsView.backgroundColor = UIColor.sil_background()
     }
+    private func applyPopupTheme(_ popover: WYPopoverController?) {
+        popover?.theme.outerCornerRadius = 10
+        popover?.theme.innerCornerRadius = 10
+    }
+
     //MARK: TCP IBAction
     @IBAction func Button_Client(_ sender: Any) {
         let TCPClinetHelper = SILTCPClinetHelper()
         self.devicePopoverController = WYPopoverController(contentViewController: TCPClinetHelper)
         self.devicePopoverController?.delegate = self
+        applyPopupTheme(self.devicePopoverController)
         TCPClinetHelper.devicePopoverController = self.devicePopoverController
         TCPClinetHelper.delegate = self
         self.devicePopoverController?.presentPopoverAsDialog(animated: true)        
@@ -41,6 +73,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
         let TCPServerHelper = SILTCPServerHelper()
         self.devicePopoverController = WYPopoverController(contentViewController: TCPServerHelper)
         self.devicePopoverController?.delegate = self
+        applyPopupTheme(self.devicePopoverController)
         TCPServerHelper.devicePopoverController = self.devicePopoverController
         TCPServerHelper.delegate = self
         self.devicePopoverController?.presentPopoverAsDialog(animated: true)
@@ -51,6 +84,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
         let UDPClinetHelper = SILUdpClientHelper()
         self.devicePopoverController = WYPopoverController(contentViewController: UDPClinetHelper)
         self.devicePopoverController?.delegate = self
+        applyPopupTheme(self.devicePopoverController)
         UDPClinetHelper.devicePopoverController = self.devicePopoverController
         UDPClinetHelper.delegate = self
         self.devicePopoverController?.presentPopoverAsDialog(animated: true)
@@ -62,6 +96,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
         let UDPServerHelper = SILUdpServerHelper()
         self.devicePopoverController = WYPopoverController(contentViewController: UDPServerHelper)
         self.devicePopoverController?.delegate = self
+        applyPopupTheme(self.devicePopoverController)
         UDPServerHelper.devicePopoverController = self.devicePopoverController
         UDPServerHelper.delegate = self
         self.devicePopoverController?.presentPopoverAsDialog(animated: true)
@@ -74,6 +109,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
         let TCPServerHelper = SIL_TLS_Tx_Helper()
         self.devicePopoverController = WYPopoverController(contentViewController: TCPServerHelper)
         self.devicePopoverController?.delegate = self
+        applyPopupTheme(self.devicePopoverController)
         TCPServerHelper.devicePopoverController = self.devicePopoverController
         TCPServerHelper.heading = "TLS RX"
         TCPServerHelper.delegate = self
@@ -87,6 +123,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
         let TCPServerHelper = SIL_TLS_Tx_Helper()
         self.devicePopoverController = WYPopoverController(contentViewController: TCPServerHelper)
         self.devicePopoverController?.delegate = self
+        applyPopupTheme(self.devicePopoverController)
         TCPServerHelper.devicePopoverController = self.devicePopoverController
         TCPServerHelper.heading = "TLS TX"
         TCPServerHelper.delegate = self
@@ -96,6 +133,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
     // MARK: - SILTCPClinetHelperDelegate
     func didDismissSILTCPClinetHelper(ip: String, port: String){
         devicePopoverController?.dismissPopover(animated: true)
+        navigationController?.navigationBar.tintColor = .white
         let WifiThroughputVC = storyBoard.instantiateViewController(withIdentifier: "WifiThroughputVC") as! WifiThroughputVC
         WifiThroughputVC.ip_address = ip
         WifiThroughputVC.server_port = port
@@ -105,6 +143,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
     // MARK: - SILTCPServerHelperDelegate
     func didDismissSILTCPServerHelper(ip: String, port: String) {
         devicePopoverController?.dismissPopover(animated: true)
+        navigationController?.navigationBar.tintColor = .white
         let TCPServerViewController = storyBoard.instantiateViewController(withIdentifier: "SILTCPServerViewController") as! SILTCPServerViewController
         TCPServerViewController.ip_address = ip
         TCPServerViewController.server_port = port
@@ -125,8 +164,8 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
     
     
     func didDismissSIL_TLS_Tx_ServerHelper(ip: String, port: String) {
-        
         devicePopoverController?.dismissPopover(animated: true)
+        navigationController?.navigationBar.tintColor = .white
         let TCPServerViewController = storyBoard.instantiateViewController(withIdentifier: "SIL_TLS_Tx_ViewController") as! SIL_TLS_Tx_ViewController
         
         TCPServerViewController.ip_address = ip
@@ -149,6 +188,7 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
     //MARK: - SILUDPClinetHelperDelegate
     func didDismissSILUDPClinetHelper(ip: String, port: String) {
         devicePopoverController?.dismissPopover(animated: true)
+        navigationController?.navigationBar.tintColor = .white
         let UdpClientThroughputVC = storyBoard.instantiateViewController(withIdentifier: "SILUdpClientThroughputVC") as! SILUdpClientThroughputVC
         UdpClientThroughputVC.ip_address = ip
         UdpClientThroughputVC.server_port = port
@@ -156,8 +196,8 @@ class SILThroughputMainScreenVC: UIViewController, WYPopoverControllerDelegate, 
     }
     //MARK: - SILUDPServerHelperDelegate
     func didDismissSILUDPServerHelper(ip: String, port: String) {
-        //SILUDPServerViewController
         devicePopoverController?.dismissPopover(animated: true)
+        navigationController?.navigationBar.tintColor = .white
         let UDPServerThroughputVC = storyBoard.instantiateViewController(withIdentifier: "SILUDPServerViewController") as! SILUDPServerViewController
         UDPServerThroughputVC.ip_address = ip
         UDPServerThroughputVC.server_port = port

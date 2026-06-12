@@ -11,6 +11,7 @@ import UIKit
 class SILAdvertiserAdd128BitServiceDialogViewController: UIViewController, SILAdvertiserAdd128BitServiceDialogViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var uuidTextField: SILTextField!
     @IBOutlet weak var saveButton: SILPrimaryButton!
+    @IBOutlet weak var clearButton: SILPrimaryButton!
     
     var viewModel: SILAdvertiserAdd128BitServiceDialogViewModel!
     
@@ -26,6 +27,7 @@ class SILAdvertiserAdd128BitServiceDialogViewController: UIViewController, SILAd
     override func viewDidLoad() {
         uuidTextField.delegate = self
         uuidTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
+        clearButton.isEnabled = !(uuidTextField.text?.isEmpty ?? true)
     }
     
     @IBAction func onClear(_ sender: UIButton) {
@@ -44,6 +46,7 @@ class SILAdvertiserAdd128BitServiceDialogViewController: UIViewController, SILAd
     
     func clearUUID() {
         uuidTextField.text = nil
+        uuidTextField.sendActions(for: .editingChanged)
     }
     
     // MARK: UITextFieldDelegate
@@ -87,11 +90,9 @@ class SILAdvertiserAdd128BitServiceDialogViewController: UIViewController, SILAd
     }
     
     @objc func editingChanged(_ textField: UITextField) {
-        if let text = textField.text {
-            saveButton.isEnabled = isRightFormat(text)
-        } else {
-            saveButton.isEnabled = false
-        }
+        let text = textField.text ?? ""
+        saveButton.isEnabled = isRightFormat(text)
+        clearButton.isEnabled = !text.isEmpty
     }
     
     func isRightFormat(_ string: String) -> Bool {

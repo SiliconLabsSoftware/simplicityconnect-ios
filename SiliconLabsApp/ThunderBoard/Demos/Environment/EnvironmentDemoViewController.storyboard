@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TbO-9b-5tK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TbO-9b-5tK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -27,11 +26,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView_image" translatesAutoresizingMaskIntoConstraints="NO" id="bgImg-environment-001" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NPh-o8-819" userLabel="All space">
-                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
+                                <rect key="frame" x="0.0" y="96" width="414" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8o-fd-SQU">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="848"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-A3-34k">
                                                 <rect key="frame" x="0.0" y="-8" width="414" height="742"/>
@@ -67,13 +69,13 @@
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="24" id="73L-aZ-Oxf"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
-                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                            <color key="textColor" name="sil_primaryTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Pressure" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNH-Gr-ix2">
                                                                             <rect key="frame" x="8" y="62.5" width="93" height="14.5"/>
-                                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
                                                                             <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -164,7 +166,7 @@
                                                 </cells>
                                             </collectionView>
                                         </subviews>
-                                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="eDh-A3-34k" secondAttribute="trailing" id="3Yc-lX-KxY"/>
                                             <constraint firstItem="eDh-A3-34k" firstAttribute="top" secondItem="J8o-fd-SQU" secondAttribute="top" constant="-8" id="gTh-wn-VWC"/>
@@ -175,10 +177,14 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PVz-TG-CtK"/>
-                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NPh-o8-819" firstAttribute="width" secondItem="eQJ-Jg-Kg8" secondAttribute="width" id="BL3-Kd-0K6"/>
                             <constraint firstItem="PVz-TG-CtK" firstAttribute="top" secondItem="NPh-o8-819" secondAttribute="top" id="QP7-3z-bWq"/>
+                            <constraint firstAttribute="bottom" secondItem="bgImg-environment-001" secondAttribute="bottom" id="bgImg-environment-bot"/>
+                            <constraint firstItem="bgImg-environment-001" firstAttribute="leading" secondItem="eQJ-Jg-Kg8" secondAttribute="leading" id="bgImg-environment-lead"/>
+                            <constraint firstItem="bgImg-environment-001" firstAttribute="top" secondItem="eQJ-Jg-Kg8" secondAttribute="top" id="bgImg-environment-top"/>
+                            <constraint firstAttribute="trailing" secondItem="bgImg-environment-001" secondAttribute="trailing" id="bgImg-environment-trail"/>
                             <constraint firstItem="NPh-o8-819" firstAttribute="centerX" secondItem="PVz-TG-CtK" secondAttribute="centerX" id="owp-fW-KLe"/>
                             <constraint firstAttribute="bottom" secondItem="NPh-o8-819" secondAttribute="bottom" id="zaa-Fb-DhR"/>
                         </constraints>
@@ -193,9 +199,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bgView_image" width="360" height="700"/>
         <image name="icon - temp" width="40" height="40"/>
-        <namedColor name="sil_backgroundColor">
-            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

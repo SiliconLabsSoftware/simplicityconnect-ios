@@ -36,6 +36,8 @@ class SILAWSIoTHomeViewController: UIViewController, SILAWSIoTHomeViewModelProto
     @IBOutlet weak var connectView: UIView!
     
     @IBOutlet weak var passwordEyeButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var connectButton: UIButton!
 
     let storyboardAWSIoT = UIStoryboard(name: "SILAWSIoT", bundle: .main)
 
@@ -59,6 +61,7 @@ class SILAWSIoTHomeViewController: UIViewController, SILAWSIoTHomeViewModelProto
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRedLineBelowNavigationBar()
 
         // Do any additional setup after loading the view.
         SILAWSIoTHomeViewModelObj = SILAWSIoTHomeViewModel(SILAWSIoTHomeViewModelDelegate: self)
@@ -104,6 +107,8 @@ class SILAWSIoTHomeViewController: UIViewController, SILAWSIoTHomeViewModelProto
 
         awsEndPointBGTextView.layer.borderColor = UIColor.lightGray.cgColor
         awsEndPointBGTextView.layer.borderWidth = 1
+        
+        setupCancelConnectButtonsAppearance()
         addDoneButtonOnKeyboard()
         let nib = UINib(nibName: "SILAWSIoTValueCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "SILAWSIoTValueCell")
@@ -129,6 +134,16 @@ class SILAWSIoTHomeViewController: UIViewController, SILAWSIoTHomeViewModelProto
 //        pubTextField.addTarget(self,
 //                            action: #selector(self.textFieldDidChange(_:)),
 //                            for: UIControl.Event.editingChanged)
+    }
+    
+    private func setupCancelConnectButtonsAppearance() {
+        cancelButton?.layer.cornerRadius = 10
+        cancelButton?.layer.borderWidth = 2
+        cancelButton?.layer.borderColor = UIColor.sil_siliconLabsRed().cgColor
+        cancelButton?.layer.masksToBounds = true
+        
+        connectButton?.layer.cornerRadius = 10
+        connectButton?.layer.masksToBounds = true
     }
     
     private func unsubscribeTopic() {

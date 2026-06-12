@@ -45,6 +45,7 @@ class SILRangeTestModeSelectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         
         self.parse(modelNumber: nil)
         self.parse(txPower: nil)

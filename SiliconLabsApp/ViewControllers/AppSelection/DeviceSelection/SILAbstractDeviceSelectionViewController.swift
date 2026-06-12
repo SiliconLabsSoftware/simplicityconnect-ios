@@ -34,6 +34,9 @@ class SILAbstractDeviceSelectionViewController: UIViewController, UICollectionVi
         self.deviceCollectionView.register(UINib(nibName: String(describing: SILDeviceSelectionCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SILDeviceSelectionCollectionViewCellIdentifier)
         self.setupTextLabels()
         self.setupTextView()
+        
+        self.deviceCollectionView.backgroundColor = .clear
+        self.deviceCollectionView.backgroundView = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,13 +79,7 @@ class SILAbstractDeviceSelectionViewController: UIViewController, UICollectionVi
     // MARK: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellHeight: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 104.0 : 64.0
-        
-        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            let rowSpacing: CGFloat = flowLayout.minimumInteritemSpacing + flowLayout.sectionInset.left + flowLayout.sectionInset.right
-            return CGSize(width: collectionView.frame.size.width - rowSpacing, height: cellHeight)
-        } else {
-            return CGSize(width: collectionView.frame.size.width, height: cellHeight)
-        }
+        let cellHeight: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 80.0 : 60.0
+        return CGSize(width: collectionView.frame.size.width, height: cellHeight)
     }
 }

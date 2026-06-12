@@ -6,7 +6,7 @@
 //  Copyright © 2020 SiliconLabs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 @objc
 public enum ToastPosition: Int {
@@ -59,7 +59,7 @@ extension UIViewController {
         let toastTopSpacing = values.topSpacing
         let toastLabel = UILabel()
         if shouldHasSizeOfText {
-            let toastSize = countSizeOfText(message, withFont: UIFont.robotoMedium(size: 14.0)!)
+            let toastSize = countSizeOfText(message, withFont: UIFont.helveticaNeueMedium(size: 14.0)!)
             toastLabel.frame =  CGRect(x: (self.view.frame.width - toastSize.width - toastMargin) / 2, y: self.view.safeAreaInsets.top + toastTopSpacing, width: toastSize.width + toastMargin, height: toastSize.height + toastMargin)
         }
         else {
@@ -68,7 +68,7 @@ extension UIViewController {
         }
         toastLabel.backgroundColor = values.backgroundColor.withAlphaComponent(0.8)
         toastLabel.textColor = values.labelTextColor
-        toastLabel.font = UIFont.robotoMedium(size: 14.0)
+        toastLabel.font = UIFont.helveticaNeueMedium(size: 14.0)
         toastLabel.textAlignment = .center
         toastLabel.numberOfLines = 0
         toastLabel.text = message
@@ -110,14 +110,14 @@ extension UIViewController {
              yPosition = self.view.frame.height - toastHeight - toastMargin - self.view.safeAreaInsets.bottom
          }
          if shouldHasSizeOfText {
-             let toastSize = countSizeOfText(message, withFont: UIFont.robotoMedium(size: 14.0)!)
+             let toastSize = countSizeOfText(message, withFont: UIFont.helveticaNeueMedium(size: 14.0)!)
              toastLabel.frame = CGRect(x: (self.view.frame.width - toastSize.width - toastMargin) / 2, y: yPosition, width: toastSize.width + toastMargin, height: toastSize.height + toastMargin)
          } else {
              toastLabel.frame = CGRect(x: toastMargin, y: yPosition, width: self.view.frame.size.width - 2 * toastMargin, height: toastHeight)
          }
          toastLabel.backgroundColor = values.backgroundColor.withAlphaComponent(0.8)
          toastLabel.textColor = values.labelTextColor
-         toastLabel.font = UIFont.robotoMedium(size: 14.0)
+         toastLabel.font = UIFont.helveticaNeueMedium(size: 14.0)
          toastLabel.textAlignment = .center
          toastLabel.numberOfLines = 0
          toastLabel.text = message
@@ -135,17 +135,17 @@ extension UIViewController {
     private func displayParameters(for toastType: ToastType) -> (delay: Double, height: CGFloat, margin: CGFloat,  topSpacing: CGFloat, labelTextColor: UIColor, backgroundColor: UIColor) {
         switch toastType {
         case .disconnectionError:
-            return (3.0, 60.0, 16.0, 24.0, UIColor.white, UIColor.sil_siliconLabsRed())
+            return (3.0, 60.0, 16.0, 24.0, UIColor.white, UIColor.appPrimaryBrand)
         case .gattPropertiesError:
-            return (3.0, 60.0, 16.0, 24.0, UIColor.white, UIColor.sil_siliconLabsRed())
+            return (3.0, 60.0, 16.0, 24.0, UIColor.white, UIColor.appPrimaryBrand)
         case .info:
             return (3.0, 40.0, 32.0, 15.0, UIColor.black, UIColor.sil_bgGrey())
         case .characteristicPasteAlert:
-            return (3.0, 60.0, 32.0, 24.0, UIColor.white, UIColor.sil_siliconLabsRed())
+            return (3.0, 60.0, 32.0, 24.0, UIColor.white, UIColor.appPrimaryBrand)
         case .characteristicError:
-            return (3.0, 60.0, 16.0, 24.0, UIColor.white, UIColor.sil_siliconLabsRed())
+            return (3.0, 60.0, 16.0, 24.0, UIColor.white, UIColor.appPrimaryBrand)
         case .advertiserTimeLimitError:
-            return (3.0, 60.0, 32.0, 24.0, UIColor.white, UIColor.sil_siliconLabsRed())
+            return (3.0, 60.0, 32.0, 24.0, UIColor.white, UIColor.appPrimaryBrand)
         case .internetInfo:
             return (3.0, 60.0, 32.0, 24.0, UIColor.white, UIColor.sil_green())
         @unknown default:
@@ -153,6 +153,39 @@ extension UIViewController {
         }
     }
     
+    @objc
+    func addRedLineBelowNavigationBar() {
+        addLineBelowNavigationBar(color: UIColor.appPrimaryBrand)
+    }
+
+    @objc
+    func addWhiteLineBelowNavigationBar() {
+        addLineBelowNavigationBar(color: .white)
+    }
+
+    func addLineBelowNavigationBar(color: UIColor) {
+        let kRedLineTag = 99888
+
+        if let existing = self.view.viewWithTag(kRedLineTag) {
+            existing.backgroundColor = color
+            self.view.bringSubviewToFront(existing)
+            return
+        }
+
+        let line = UIView()
+        line.tag = kRedLineTag
+        line.backgroundColor = color
+        line.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(line)
+
+        NSLayoutConstraint.activate([
+            line.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            line.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            line.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            line.heightAnchor.constraint(equalToConstant: 1.0)
+        ])
+    }
+
     class func topViewController(controller: UIViewController? = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)

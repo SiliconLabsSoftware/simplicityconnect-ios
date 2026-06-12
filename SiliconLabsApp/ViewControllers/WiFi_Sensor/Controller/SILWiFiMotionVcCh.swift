@@ -20,6 +20,7 @@ class SILWiFiMotionVcCh: SILWiFiMotionVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
     }
     

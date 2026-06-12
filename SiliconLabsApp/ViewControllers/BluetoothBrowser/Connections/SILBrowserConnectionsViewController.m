@@ -28,11 +28,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupBackgroundImage];
     [self registerNibs];
     [self hideScrollIndicators];
     [self setupScrollViewBehaviour];
     _viewModel = [SILBrowserConnectionsViewModel sharedInstance];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:SILNotificationReloadConnectionsTableView object:nil];
+}
+
+- (void)setupBackgroundImage {
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgView_image"]];
+    bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+    bgImageView.clipsToBounds = YES;
+    bgImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    bgImageView.tag = 9999;
+    [self.view insertSubview:bgImageView atIndex:0];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [bgImageView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+        [bgImageView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+        [bgImageView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+        [bgImageView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]
+    ]];
+    
+    [self clearBackgroundsRecursively:self.view];
+}
+
+- (void)clearBackgroundsRecursively:(UIView *)view {
+    if (view.tag == 9999) return;
+    
+    if (![view isKindOfClass:[UITableViewCell class]] && 
+        ![view isKindOfClass:[UICollectionViewCell class]]) {
+        view.backgroundColor = [UIColor clearColor];
+    }
+    
+    for (UIView *subview in view.subviews) {
+        [self clearBackgroundsRecursively:subview];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -147,7 +180,7 @@
     self.floatingButtonSettings.controllerHeight = self.controllerHeight;
     [self.floatingButtonSettings setButtonText:@"Disconnect All"];
     [self.floatingButtonSettings setPresented:!self.viewModel.isActiveScrollingUp];
-    [self.floatingButtonSettings setColor:[UIColor sil_regularBlueColor]];
+    [self.floatingButtonSettings setColor:[UIColor appPrimaryBrand]];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

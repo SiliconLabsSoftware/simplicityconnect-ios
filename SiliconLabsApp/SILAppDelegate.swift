@@ -20,6 +20,7 @@ class SILAppDelegate : UIResponder, UIApplicationDelegate {
     static var supportsHaptics: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        ThemeManager.shared.apply(theme: .red)
         SILAppearance.setupAppearance()
         
         let hapticCapability = CHHapticEngine.capabilitiesForHardware()
@@ -32,6 +33,7 @@ class SILAppDelegate : UIResponder, UIApplicationDelegate {
         SILBrowserLogViewModel.sharedInstance().clearLogs()
         SILBrowserConnectionsViewModel.sharedInstance().centralManager = SILCentralManager(serviceUUIDs: [])
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.tintColor = UIColor.appPrimaryBrand
         window?.rootViewController = UIHostingController(rootView: MainNavigationView())
         window?.makeKeyAndVisible()
         

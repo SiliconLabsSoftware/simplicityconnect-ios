@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Simplicity@1x.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Simplicity@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Simplicity@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "silabText.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -132,7 +132,7 @@ typedef NS_ENUM(NSInteger, SILThermometerUnitControlType) {
 
         self.typeControl.selectedTextColor = [UIColor whiteColor];
         self.typeControl.unselectedTextColor = [UIColor whiteColor];
-        self.typeControl.selectedIndicatorColor = [UIColor sil_siliconLabsRedColor];
+        self.typeControl.selectedIndicatorColor = [UIColor appPrimaryBrand];
         self.typeControl.unselectedIndicatorColor = [UIColor sil_silverColor];
 
         self.typeControl.firstSegmentIndicatorView.layer.cornerRadius = self.typeControl.firstSegmentIndicatorView.frame.size.width * 0.5;
@@ -141,9 +141,9 @@ typedef NS_ENUM(NSInteger, SILThermometerUnitControlType) {
         self.typeControl.firstSegmentLabel.text = @"ºF";
         self.typeControl.secondSegmentLabel.text = @"ºC";
 
-        self.typeControl.selectedTextColor = [UIColor sil_regularBlueColor];
+        self.typeControl.selectedTextColor = [UIColor appPrimaryBrand];
         self.typeControl.unselectedTextColor = [UIColor sil_silverColor];
-        self.typeControl.selectedIndicatorColor = [UIColor sil_regularBlueColor];
+        self.typeControl.selectedIndicatorColor = [UIColor appPrimaryBrand];
         self.typeControl.unselectedIndicatorColor = [UIColor sil_silverColor];
     }
 }
@@ -210,10 +210,9 @@ typedef NS_ENUM(NSInteger, SILThermometerUnitControlType) {
 }
 
 - (void)setupCustomBackButton {
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    [button setTitle:@"     " forState:UIControlStateNormal];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
     [button setImage:[UIImage imageNamed:SILImageNameBackIcon] forState:UIControlStateNormal];
-    [button sizeToFit];
+    button.contentEdgeInsets = UIEdgeInsetsMake(8, 0, 8, 16);
     [button addTarget:self action:@selector(disconnectedAndPop) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
@@ -267,6 +266,7 @@ typedef NS_ENUM(NSInteger, SILThermometerUnitControlType) {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self addRedLineBelowNavigationBar];
     [self.navigationController.tabBarController hideTabBarAndUpdateFrames];
 }
 

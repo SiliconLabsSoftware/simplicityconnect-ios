@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZpH-W2-d6U">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZpH-W2-d6U">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -19,17 +18,20 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="ZpH-W2-d6U" customClass="SILAppTypeBlinkyViewController" customModule="BlueGecko" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qc2-w0-G2H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView_image" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-m7-jki" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Hb-FV-mZM" userLabel="All space">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="96" width="414" height="732"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93h-Rs-8hK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="732"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lrm-VJ-0bl">
-                                                <rect key="frame" x="8" y="8" width="398" height="720"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="716"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIf-QR-IsH" userLabel="lightButton">
                                                         <rect key="frame" x="8" y="50" width="382" height="250"/>
@@ -43,27 +45,27 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Tap the light to toggle the LED on the kit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTH-HB-awB">
-                                                        <rect key="frame" x="8" y="316" width="382" height="19"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <rect key="frame" x="8" y="316" width="382" height="17"/>
+                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
                                                         <color key="textColor" name="sil_subtleTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphic - blinky - button -  off" translatesAutoresizingMaskIntoConstraints="NO" id="cfl-gg-GM6" userLabel="virtualButtonImage">
-                                                        <rect key="frame" x="8" y="351" width="382" height="60"/>
+                                                        <rect key="frame" x="8" y="349" width="382" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="kYx-bX-2cv"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twn-bh-TtB">
-                                                        <rect key="frame" x="8" y="427" width="382" height="37.666666666666686"/>
+                                                        <rect key="frame" x="8" y="425" width="382" height="34"/>
                                                         <string key="text">Press the button on the kit to see the virtual 
 button state changing in sync</string>
-                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
                                                         <color key="textColor" name="sil_subtleTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTd-0w-k4H">
-                                                        <rect key="frame" x="8" y="480.66666666666669" width="382" height="231.33333333333331"/>
+                                                        <rect key="frame" x="8" y="475" width="382" height="233"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -74,7 +76,7 @@ button state changing in sync</string>
                                                 <variation key="heightClass=regular-widthClass=regular" spacing="32"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="lrm-VJ-0bl" firstAttribute="width" secondItem="93h-Rs-8hK" secondAttribute="width" constant="-16" id="0AU-au-Vq4">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="-32"/>
@@ -87,6 +89,7 @@ button state changing in sync</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NI-IZ-6Cs" userLabel="Above Safe Area">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -94,7 +97,7 @@ button state changing in sync</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RAl-3r-sK4"/>
-                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                        <color key="backgroundColor" name="sil_navigationPrimaryColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="0NI-IZ-6Cs" secondAttribute="width" id="3fw-CC-sPc"/>
                             <constraint firstItem="0NI-IZ-6Cs" firstAttribute="leading" secondItem="RAl-3r-sK4" secondAttribute="leading" id="6GX-2y-V6S"/>
@@ -105,8 +108,11 @@ button state changing in sync</string>
                             <constraint firstItem="0NI-IZ-6Cs" firstAttribute="bottom" secondItem="Qc2-w0-G2H" secondAttribute="top" id="RfQ-6C-V0k"/>
                             <constraint firstItem="0Hb-FV-mZM" firstAttribute="centerY" secondItem="RAl-3r-sK4" secondAttribute="centerY" id="SPj-7y-erf"/>
                             <constraint firstItem="0NI-IZ-6Cs" firstAttribute="top" secondItem="Qc2-w0-G2H" secondAttribute="top" id="X8k-ra-hYX"/>
-                            <constraint firstItem="0Hb-FV-mZM" firstAttribute="top" secondItem="0NI-IZ-6Cs" secondAttribute="bottom" id="Ypq-md-aDv"/>
+                            <constraint firstItem="c3C-m7-jki" firstAttribute="leading" secondItem="RAl-3r-sK4" secondAttribute="leading" id="b1P-xE-jwd"/>
+                            <constraint firstItem="c3C-m7-jki" firstAttribute="top" secondItem="Qc2-w0-G2H" secondAttribute="top" id="bff-dV-yi9"/>
+                            <constraint firstItem="c3C-m7-jki" firstAttribute="trailing" secondItem="RAl-3r-sK4" secondAttribute="trailing" id="bs7-Yh-rAM"/>
                             <constraint firstItem="0Hb-FV-mZM" firstAttribute="centerX" secondItem="RAl-3r-sK4" secondAttribute="centerX" id="eeH-2N-uIc"/>
+                            <constraint firstAttribute="bottom" secondItem="c3C-m7-jki" secondAttribute="bottom" id="prh-nQ-RLe"/>
                             <constraint firstItem="RAl-3r-sK4" firstAttribute="top" secondItem="0Hb-FV-mZM" secondAttribute="top" id="q0U-NX-eo9"/>
                         </constraints>
                     </view>
@@ -117,14 +123,15 @@ button state changing in sync</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHC-Gv-SDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151.875" y="61.25"/>
+            <point key="canvasLocation" x="-152.17391304347828" y="60.9375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="graphic - blinky - button -  off" width="60" height="60"/>
-        <image name="lightOff" width="241" height="251.33332824707031"/>
-        <namedColor name="sil_backgroundColor">
-            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="bgView_image" width="360" height="700"/>
+        <image name="graphic - blinky - button -  off" width="120" height="120"/>
+        <image name="lightOff" width="200" height="200"/>
+        <namedColor name="sil_navigationPrimaryColor">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_siliconLabsRedColor">
             <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

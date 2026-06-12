@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -25,7 +25,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz3-CI-oVl">
                         <rect key="frame" x="8" y="0.0" width="304" height="44"/>
-                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
                         <color key="textColor" name="sil_primaryTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>

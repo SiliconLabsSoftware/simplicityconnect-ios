@@ -94,6 +94,7 @@ static float kTableRefreshInterval = 1;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self addRedLineBelowNavigationBar];
     [self setupRefreshControl];
     self.peripheral.delegate = self;
     [self registerForNotifications];
@@ -161,7 +162,7 @@ static float kTableRefreshInterval = 1;
         
     self.disconnectButton.clipsToBounds = true;
     self.disconnectButton.layer.cornerRadius = 10;
-    self.disconnectButton.backgroundColor = UIColor.sil_siliconLabsRedColor;
+    self.disconnectButton.backgroundColor = UIColor.appPrimaryBrand;
 }
 
 - (void)setIsUpdatingFirmware:(BOOL)isUpdatingFirmware {

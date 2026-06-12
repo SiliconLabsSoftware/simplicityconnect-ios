@@ -15,7 +15,18 @@
                     <view key="view" contentMode="scaleToFill" id="PLK-zX-zEM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView_image" translatesAutoresizingMaskIntoConstraints="NO" id="bgImg-homekit-001" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bgImg-homekit-001" firstAttribute="top" secondItem="PLK-zX-zEM" secondAttribute="top" id="bgImg-homekit-top"/>
+                            <constraint firstItem="bgImg-homekit-001" firstAttribute="leading" secondItem="PLK-zX-zEM" secondAttribute="leading" id="bgImg-homekit-lead"/>
+                            <constraint firstAttribute="trailing" secondItem="bgImg-homekit-001" secondAttribute="trailing" id="bgImg-homekit-trail"/>
+                            <constraint firstAttribute="bottom" secondItem="bgImg-homekit-001" secondAttribute="bottom" id="bgImg-homekit-bot"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uk2-1C-GVd"/>
                     </view>
                 </viewController>
@@ -24,4 +35,7 @@
             <point key="canvasLocation" x="426" y="-106"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bgView_image" width="400" height="900"/>
+    </resources>
 </document>

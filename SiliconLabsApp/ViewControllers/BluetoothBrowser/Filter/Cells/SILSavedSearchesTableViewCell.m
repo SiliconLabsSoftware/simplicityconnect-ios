@@ -29,7 +29,7 @@
 }
 
 - (void)setAppearance {
-    [_savedSearchDetailsLabel setFont:[UIFont robotoMediumWithSize:[UIFont getMiddleFontSize]]];
+    [_savedSearchDetailsLabel setFont:[UIFont stolzlMediumWithSize:[UIFont getMiddleFontSize]]];
     [self customizeAppearanceForUnselectedState];
     [_savedSearchDetailsLabel sizeToFit];
 }
@@ -41,11 +41,11 @@
 }
 
 - (void)customizeAppearanceForSelectedState {
-    _savedSearchDetailsLabel.textColor = [UIColor sil_regularBlueColor];
+    _savedSearchDetailsLabel.textColor = [UIColor appPrimaryBrand];
 }
 
 - (void)customizeAppearanceForUnselectedState {
-    _savedSearchDetailsLabel.textColor = [UIColor sil_subtleTextColor];
+    _savedSearchDetailsLabel.textColor = [UIColor sil_subtitleTextColor];
 }
 
 - (IBAction)deleteButtonWasTapped:(id)sender {

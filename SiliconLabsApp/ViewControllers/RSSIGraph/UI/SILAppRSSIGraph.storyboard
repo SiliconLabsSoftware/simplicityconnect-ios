@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C7a-HB-0l1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C7a-HB-0l1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -27,17 +26,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView_image" translatesAutoresizingMaskIntoConstraints="NO" id="4sZ-4d-J9S" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RiE-f9-t7J" userLabel="All space">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="96" width="414" height="732"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHq-uT-Yld">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="732"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OW9-X3-Hxv">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="652"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h6b-a6-2qI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="652"/>
                                                         <subviews>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xQa-gg-xx0">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -86,14 +88,14 @@
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="12" id="Lqz-Fn-gUe"/>
                                                                                             </constraints>
-                                                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
-                                                                                            <nil key="textColor"/>
+                                                                                            <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="10"/>
+                                                                                            <color key="textColor" name="sil_primaryTextColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="pzB-Pv-D1T" userLabel="UUID Label">
                                                                                             <rect key="frame" x="0.0" y="71.5" width="100" height="8.5"/>
                                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="7"/>
+                                                                                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="7"/>
                                                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
@@ -130,7 +132,7 @@
                                                                 </cells>
                                                             </collectionView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsA-52-Al1" customClass="SILGraphView" customModule="BlueGecko" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="88" width="414" height="646"/>
+                                                                <rect key="frame" x="0.0" y="88" width="414" height="564"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </view>
                                                         </subviews>
@@ -152,12 +154,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="gEo-e5-RAc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" name="sil_boulderColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="WyH-o1-deh" firstAttribute="top" secondItem="iHq-uT-Yld" secondAttribute="top" constant="15" id="3Ou-2p-O8w"/>
                                             <constraint firstItem="OW9-X3-Hxv" firstAttribute="leading" secondItem="iHq-uT-Yld" secondAttribute="leading" id="3gP-MB-VD2"/>
@@ -169,15 +171,20 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-XD-UNh"/>
                         <color key="backgroundColor" name="sil_backgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4sZ-4d-J9S" secondAttribute="bottom" id="96I-FH-Jg0"/>
+                            <constraint firstItem="4sZ-4d-J9S" firstAttribute="top" secondItem="OO9-gp-kSs" secondAttribute="top" id="BtD-px-ZuC"/>
                             <constraint firstItem="RiE-f9-t7J" firstAttribute="width" secondItem="OO9-gp-kSs" secondAttribute="width" id="G3N-F3-jVh"/>
                             <constraint firstItem="4qk-XD-UNh" firstAttribute="top" secondItem="RiE-f9-t7J" secondAttribute="top" id="bRN-lu-sYO"/>
                             <constraint firstItem="RiE-f9-t7J" firstAttribute="centerX" secondItem="4qk-XD-UNh" secondAttribute="centerX" id="f4C-0P-Xr3"/>
                             <constraint firstItem="RiE-f9-t7J" firstAttribute="centerY" secondItem="4qk-XD-UNh" secondAttribute="centerY" id="g1i-Ku-IGv"/>
+                            <constraint firstItem="4sZ-4d-J9S" firstAttribute="trailing" secondItem="4qk-XD-UNh" secondAttribute="trailing" id="i5c-KZ-mbW"/>
+                            <constraint firstItem="4sZ-4d-J9S" firstAttribute="leading" secondItem="4qk-XD-UNh" secondAttribute="leading" id="kca-Eo-Jcu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -193,11 +200,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bgView_image" width="360" height="700"/>
         <namedColor name="sil_backgroundColor">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_boulderColor">
-            <color red="0.47843137254901963" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

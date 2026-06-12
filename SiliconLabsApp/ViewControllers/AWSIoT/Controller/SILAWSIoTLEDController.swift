@@ -17,6 +17,7 @@ class SILAWSIoTLEDController: UIViewController {
     @IBOutlet weak var redColorBtn: UIButton!
     @IBOutlet weak var greenColorBtn: UIButton!
     @IBOutlet weak var blueColorBtn: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
 
     var SILAWSIoTLEDControllerDelegate: SILAWSIoTLEDControllerProtocol?
 
@@ -34,6 +35,10 @@ class SILAWSIoTLEDController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        cancelButton?.layer.cornerRadius = 10
+        cancelButton?.layer.borderWidth = 2
+        cancelButton?.layer.borderColor = UIColor.sil_siliconLabsRed().cgColor
+        cancelButton?.layer.masksToBounds = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -118,31 +123,33 @@ class SILAWSIoTLEDController: UIViewController {
         case LedType.redOn.rawValue:
             //ledImage = LedImage.redLedOnImage ?? UIImage()
             ledImage = LedImage.blubOffTint ?? UIImage()
-            ledColor = UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1)
+            // Match the LED tint to the red button's color (appPrimaryBrand).
+            ledColor = UIColor.appPrimaryBrand
             DispatchQueue.main.async {
                 //self.redColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_siliconLabsRedColor")
+                self.redColorBtn.backgroundColor = UIColor.appPrimaryBrand
                 self.redColor = true
                 //self.greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.greenColorBtn.backgroundColor = UIColor.appBoulder
                 self.greenColor = false
                 //self.blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.blueColorBtn.backgroundColor = UIColor.appBoulder
                 self.blueColor = false
             }
         case LedType.greenOn.rawValue:
             //ledImage = LedImage.greenLedOnImage ?? UIImage()
             ledImage = LedImage.blubOffTint ?? UIImage()
-            ledColor = UIColor(red: 0.0, green: 255.0, blue: 0.0, alpha: 1)
+            // Match the LED tint to the green button's color (appSuccess).
+            ledColor = UIColor.appSuccess
             DispatchQueue.main.async {
                 //self.greenColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_regularGreenColor")
+                self.greenColorBtn.backgroundColor = UIColor.appSuccess
                 self.greenColor = true
                 //self.redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.redColorBtn.backgroundColor = UIColor.appBoulder
                 self.redColor = false
                 //self.blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.blueColorBtn.backgroundColor = UIColor.appBoulder
                 self.blueColor = false
             }
         case LedType.blueOn.rawValue:
@@ -151,26 +158,26 @@ class SILAWSIoTLEDController: UIViewController {
             ledColor = UIColor(red: 0.0, green: 0.0, blue: 255.0, alpha: 1)
             DispatchQueue.main.async {
                 //self.blueColorCheckImg.image = LedImage.checkBoxActiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_regularBlueColor")
+                self.blueColorBtn.backgroundColor = UIColor.blue
                 self.blueColor = true
                 //self.redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.redColorBtn.backgroundColor = UIColor.appBoulder
                 self.redColor = false
                 //self.greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.greenColorBtn.backgroundColor = UIColor.appBoulder
                 self.greenColor = false
             }
         case LedType.ledOff.rawValue:
             ledImage = LedImage.ledOffImage ?? UIImage()
             DispatchQueue.main.async {
                 //self.redColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.redColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.redColorBtn.backgroundColor = UIColor.appBoulder
                 self.redColor = false
                 //self.greenColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.greenColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.greenColorBtn.backgroundColor = UIColor.appBoulder
                 self.greenColor = false
                 //self.blueColorCheckImg.image = LedImage.checkBoxInactiveImage
-                self.blueColorBtn.backgroundColor = UIColor(named: "sil_boulderColor")
+                self.blueColorBtn.backgroundColor = UIColor.appBoulder
                 self.blueColor = false
             }
         default:
@@ -191,31 +198,12 @@ class SILAWSIoTLEDController: UIViewController {
         
         //iotDataManager.publishString("red", onTopic: "aws_status", qoS: .messageDeliveryAttemptedAtMostOnce)
         
-        
-//        {
-//          "red": "off",
-//          "green": "off",
-//          "blue": "off"
-//        }
-        
-        
-        //SARAVAN
-        //aws_status
-        
-        //Silabs
-        //aws_status_sagar
-        
         let jsonObject = ["red": "\(redColorVlue)", "green": "\(greenColorVlue)", "blue": "\(blueColorVlue)"]
         
 //        let valid = JSONSerialization.isValidJSONObject(jsonObject)
 //        print(valid)
 //        iotDataManager.publishString("\(jsonObject)", onTopic: "\(pubTopic.text!)", qoS: .messageDeliveryAttemptedAtMostOnce)
 
-//        {
-//          "red": "off",
-//          "green": "off",
-//          "blue": "off"
-//        }
         do {
                 let data1 =  try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
                 let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string

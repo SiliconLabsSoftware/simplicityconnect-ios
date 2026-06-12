@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Bold.ttf">
-            <string>Roboto-Bold</string>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
         </array>
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
-        </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -26,39 +22,43 @@
             <objects>
                 <viewController storyboardIdentifier="AdvertiserDetails" id="BQp-FC-hhJ" customClass="SILAdvertiserDetailsViewController" customModule="BlueGecko" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aI0-7f-Q0E">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView_image" translatesAutoresizingMaskIntoConstraints="NO" id="bgImg-adv-details-001" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ccc-wl-xes" userLabel="All Space">
-                                <rect key="frame" x="0.0" y="59" width="430" height="873"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eR9-XK-wZI">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="873"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="734"/>
                                         <subviews>
                                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56k-E9-euz">
-                                                <rect key="frame" x="0.0" y="0.0" width="430" height="873"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="734"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A39-ee-sJd" userLabel="shadowView">
-                                                        <rect key="frame" x="16" y="16" width="398" height="1345.6666666666667"/>
+                                                        <rect key="frame" x="16" y="16" width="361" height="1355.6666666666667"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VH4-br-uEk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="1345.6666666666667"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="1355.6666666666667"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghF-GU-qxt" userLabel="Advertising Set Name">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="94"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="94.333333333333329"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertising Set Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsQ-sy-JqQ">
-                                                                                <rect key="frame" x="16" y="16" width="157.33333333333334" height="19"/>
-                                                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                                                                <nil key="textColor"/>
+                                                                                <rect key="frame" x="16" y="15.999999999999998" width="160" height="19.333333333333329"/>
+                                                                                <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                                <color key="textColor" name="sil_primaryTextColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qJq-m4-74m" customClass="SILTextField" customModule="BlueGecko" customModuleProvider="target">
-                                                                                <rect key="frame" x="16" y="43" width="366" height="34"/>
+                                                                                <rect key="frame" x="16" y="43.333333333333343" width="329" height="34"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="34" id="AGy-LP-Rwt"/>
                                                                                 </constraints>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" name="sil_subtitleTextColor"/>
+                                                                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                 <connections>
                                                                                     <action selector="didChangeAdvertisingSetName:" destination="BQp-FC-hhJ" eventType="editingChanged" id="qn1-Gr-7Zd"/>
@@ -76,25 +76,25 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="c0i-nv-avW" userLabel="Advertising Data">
-                                                                        <rect key="frame" x="0.0" y="95" width="398" height="522"/>
+                                                                        <rect key="frame" x="0.0" y="95.333333333333371" width="361" height="522"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-IJ-clY" userLabel="Separator View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="1"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="1"/>
                                                                                 <color key="backgroundColor" name="sil_secondaryBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="1" id="Lo8-AC-w8J"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbu-Kc-2M6" userLabel="Title">
-                                                                                <rect key="frame" x="0.0" y="1" width="398" height="44"/>
+                                                                                <rect key="frame" x="0.0" y="1" width="361" height="44"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertising Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpU-HQ-iaF">
-                                                                                        <rect key="frame" x="16" y="16" width="366" height="20"/>
+                                                                                        <rect key="frame" x="16" y="16" width="329" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="eIt-5L-G1g"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                                                                        <nil key="textColor"/>
+                                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -107,33 +107,33 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mj-eo-wgg" userLabel="Data">
-                                                                                <rect key="frame" x="0.0" y="45" width="398" height="380"/>
+                                                                                <rect key="frame" x="0.0" y="44.999999999999972" width="361" height="380"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzk-pu-ihp">
-                                                                                        <rect key="frame" x="0.0" y="4" width="398" height="372"/>
+                                                                                        <rect key="frame" x="0.0" y="4" width="361" height="372"/>
                                                                                         <subviews>
                                                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="300" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="12" sectionFooterHeight="12" translatesAutoresizingMaskIntoConstraints="NO" id="m6F-lZ-s8z" customClass="SILIntrinsicTableView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="364"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="364"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                                 <prototypes>
                                                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SILAdvertisingDataTitleCellView" id="ePD-gt-Tqg" customClass="SILAdvertisingDataTitleCellView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="50" width="398" height="44"/>
+                                                                                                        <rect key="frame" x="0.0" y="50" width="361" height="52"/>
                                                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ePD-gt-Tqg" id="C8r-6n-rB4">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="44"/>
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="52"/>
                                                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                                                             <subviews>
                                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20T-yS-dZM">
-                                                                                                                    <rect key="frame" x="16" y="2" width="349" height="38"/>
+                                                                                                                    <rect key="frame" x="16" y="10" width="312" height="38"/>
                                                                                                                     <constraints>
                                                                                                                         <constraint firstAttribute="height" constant="38" id="MXa-D6-Jq6"/>
                                                                                                                     </constraints>
-                                                                                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
-                                                                                                                    <nil key="textColor"/>
+                                                                                                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                                                                    <color key="textColor" name="sil_primaryTextColor"/>
                                                                                                                     <nil key="highlightedColor"/>
                                                                                                                 </label>
                                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-8K-q50">
-                                                                                                                    <rect key="frame" x="365" y="8.6666666666666643" width="25" height="25"/>
+                                                                                                                    <rect key="frame" x="328" y="16.666666666666668" width="25" height="25.000000000000004"/>
                                                                                                                     <constraints>
                                                                                                                         <constraint firstAttribute="width" constant="25" id="3Ce-gs-uRg"/>
                                                                                                                         <constraint firstAttribute="height" constant="25" id="aPT-qI-1wF"/>
@@ -160,23 +160,23 @@
                                                                                                         </connections>
                                                                                                     </tableViewCell>
                                                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SILAdvertisingDataValueCellView" id="ihH-68-xl7" customClass="SILAdvertisingDataValueCellView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="94" width="398" height="48"/>
+                                                                                                        <rect key="frame" x="0.0" y="102" width="361" height="48"/>
                                                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihH-68-xl7" id="WwP-DW-iB3">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="48"/>
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
                                                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                                                             <subviews>
                                                                                                                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hu0-MP-OU1">
-                                                                                                                    <rect key="frame" x="16" y="8" width="374" height="32"/>
+                                                                                                                    <rect key="frame" x="16" y="8" width="337" height="32"/>
                                                                                                                     <subviews>
                                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unb-2C-lSc">
-                                                                                                                            <rect key="frame" x="16" y="9" width="333" height="14.333333333333336"/>
-                                                                                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                                                                                            <nil key="textColor"/>
+                                                                                                                            <rect key="frame" x="16" y="8.6666666666666679" width="296" height="14.666666666666668"/>
+                                                                                                                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
+                                                                                                                            <color key="textColor" name="sil_subtitleTextColor"/>
                                                                                                                             <nil key="highlightedColor"/>
                                                                                                                         </label>
                                                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvo-Uc-sBq">
-                                                                                                                            <rect key="frame" x="349" y="3.6666666666666643" width="25" height="25"/>
+                                                                                                                            <rect key="frame" x="312" y="3.6666666666666643" width="25" height="25"/>
                                                                                                                             <constraints>
                                                                                                                                 <constraint firstAttribute="width" constant="25" id="KgK-hp-Qbn"/>
                                                                                                                                 <constraint firstAttribute="height" constant="25" id="kqb-tb-0ou"/>
@@ -215,18 +215,18 @@
                                                                                                         </connections>
                                                                                                     </tableViewCell>
                                                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SILAdvertisingDataButtonCellView" id="BS6-7W-FZN" customClass="SILAdvertisingDataButtonCellView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="142" width="398" height="40"/>
+                                                                                                        <rect key="frame" x="0.0" y="150" width="361" height="40"/>
                                                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BS6-7W-FZN" id="HtZ-7F-wCJ">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="40"/>
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
                                                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                                                             <subviews>
                                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPa-ka-zwS" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                                    <rect key="frame" x="180" y="8" width="38" height="24"/>
+                                                                                                                    <rect key="frame" x="162" y="8" width="37" height="24"/>
                                                                                                                     <constraints>
                                                                                                                         <constraint firstAttribute="height" constant="24" id="Nhp-Ih-Rni"/>
                                                                                                                     </constraints>
-                                                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                                                                                     <state key="normal" title="Button"/>
                                                                                                                     <userDefinedRuntimeAttributes>
                                                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
@@ -271,14 +271,14 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHM-VR-5AZ" userLabel="Button">
-                                                                                <rect key="frame" x="0.0" y="425" width="398" height="47"/>
+                                                                                <rect key="frame" x="0.0" y="425" width="361" height="47"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUK-88-VsB" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                                                                                        <rect key="frame" x="151.66666666666666" y="12" width="95" height="27"/>
+                                                                                        <rect key="frame" x="134" y="12" width="93" height="27"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="27" id="MHm-p7-Nl8"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                                         <state key="normal" title="Add Data Type"/>
                                                                                         <connections>
                                                                                             <action selector="addDataType:" destination="BQp-FC-hhJ" eventType="touchUpInside" id="ap8-Is-lKv"/>
@@ -293,12 +293,12 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTB-Mx-bkX" userLabel="Info">
-                                                                                <rect key="frame" x="0.0" y="472" width="398" height="50"/>
+                                                                                <rect key="frame" x="0.0" y="472" width="361" height="50"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yce-0m-kab">
-                                                                                        <rect key="frame" x="16" y="0.0" width="366" height="34"/>
-                                                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
-                                                                                        <color key="textColor" name="sil_primaryTextColor"/>
+                                                                                        <rect key="frame" x="16" y="0.0" width="329" height="34"/>
+                                                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
+                                                                                        <color key="textColor" name="sil_subtitleTextColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -321,25 +321,25 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LMF-oN-N7x" userLabel="Scan Response">
-                                                                        <rect key="frame" x="0.0" y="618" width="398" height="518"/>
+                                                                        <rect key="frame" x="0.0" y="618.33333333333337" width="361" height="518.00000000000011"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCJ-iv-EQp" userLabel="Separator View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="1"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="1"/>
                                                                                 <color key="backgroundColor" name="sil_secondaryBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="1" id="aa6-BR-Ofk"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFn-jQ-8Ld" userLabel="Title">
-                                                                                <rect key="frame" x="0.0" y="1" width="398" height="40"/>
+                                                                                <rect key="frame" x="0.0" y="1" width="361" height="40"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Response Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IF-UW-IEf">
-                                                                                        <rect key="frame" x="16" y="16" width="366" height="16"/>
+                                                                                        <rect key="frame" x="16" y="16" width="329" height="16"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="16" id="7FK-aH-97F"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                                                                        <nil key="textColor"/>
+                                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -352,33 +352,33 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-sx-9Ow" userLabel="Data">
-                                                                                <rect key="frame" x="0.0" y="41" width="398" height="380"/>
+                                                                                <rect key="frame" x="0.0" y="41" width="361" height="380"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CV7-0B-vgK">
-                                                                                        <rect key="frame" x="0.0" y="4" width="398" height="372"/>
+                                                                                        <rect key="frame" x="0.0" y="4" width="361" height="372"/>
                                                                                         <subviews>
                                                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="300" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dcc-nH-kis" customClass="SILIntrinsicTableView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="364"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="364"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                                 <prototypes>
                                                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SILScanResponseTitleCellView" id="hXe-V0-ics" customClass="SILScanResponseTitleCellView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="50" width="398" height="44"/>
+                                                                                                        <rect key="frame" x="0.0" y="50" width="361" height="52"/>
                                                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hXe-V0-ics" id="SZo-QT-YNe">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="44"/>
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="52"/>
                                                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                                                             <subviews>
                                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-Dl-mNH">
-                                                                                                                    <rect key="frame" x="16" y="2" width="349" height="38"/>
+                                                                                                                    <rect key="frame" x="16" y="10" width="312" height="38"/>
                                                                                                                     <constraints>
                                                                                                                         <constraint firstAttribute="height" constant="38" id="u9P-Jy-Yfo"/>
                                                                                                                     </constraints>
-                                                                                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
-                                                                                                                    <nil key="textColor"/>
+                                                                                                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                                                                    <color key="textColor" name="sil_primaryTextColor"/>
                                                                                                                     <nil key="highlightedColor"/>
                                                                                                                 </label>
                                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAe-fp-HZq">
-                                                                                                                    <rect key="frame" x="365" y="8.6666666666666643" width="25" height="25"/>
+                                                                                                                    <rect key="frame" x="328" y="16.666666666666668" width="25" height="25.000000000000004"/>
                                                                                                                     <constraints>
                                                                                                                         <constraint firstAttribute="width" constant="25" id="S40-E6-dvJ"/>
                                                                                                                         <constraint firstAttribute="height" constant="25" id="l4z-ae-MOI"/>
@@ -405,19 +405,19 @@
                                                                                                         </connections>
                                                                                                     </tableViewCell>
                                                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SILScanResponseValueCellView" id="hTZ-nU-XPD" customClass="SILScanResponseValueCellView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="94" width="398" height="64"/>
+                                                                                                        <rect key="frame" x="0.0" y="102" width="361" height="64"/>
                                                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hTZ-nU-XPD" id="L4f-ua-Brz">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="64"/>
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="64"/>
                                                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                                                             <subviews>
                                                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lG1-Aj-EHN">
-                                                                                                                    <rect key="frame" x="16" y="8" width="366" height="48"/>
+                                                                                                                    <rect key="frame" x="16" y="8" width="329" height="48"/>
                                                                                                                     <subviews>
                                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faj-hA-djQ">
-                                                                                                                            <rect key="frame" x="16" y="17" width="30" height="14.333333333333336"/>
-                                                                                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                                                                                            <nil key="textColor"/>
+                                                                                                                            <rect key="frame" x="15.999999999999996" y="16.666666666666668" width="33.666666666666657" height="14.666666666666668"/>
+                                                                                                                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
+                                                                                                                            <color key="textColor" name="sil_subtitleTextColor"/>
                                                                                                                             <nil key="highlightedColor"/>
                                                                                                                         </label>
                                                                                                                     </subviews>
@@ -443,18 +443,18 @@
                                                                                                         </connections>
                                                                                                     </tableViewCell>
                                                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SILAdvertisingDataButtonCellView" id="d6u-yC-pTg" customClass="SILAdvertisingDataButtonCellView" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="158" width="398" height="40"/>
+                                                                                                        <rect key="frame" x="0.0" y="166" width="361" height="40"/>
                                                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d6u-yC-pTg" id="Hez-aJ-Su1">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="40"/>
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
                                                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                                                             <subviews>
                                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbR-Rp-YUC" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                                    <rect key="frame" x="180" y="8" width="38" height="24"/>
+                                                                                                                    <rect key="frame" x="162" y="8" width="37" height="24"/>
                                                                                                                     <constraints>
                                                                                                                         <constraint firstAttribute="height" constant="24" id="10E-u7-koG"/>
                                                                                                                     </constraints>
-                                                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                                                                                     <state key="normal" title="Button"/>
                                                                                                                     <userDefinedRuntimeAttributes>
                                                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
@@ -499,14 +499,14 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgp-s3-lPS" userLabel="Button">
-                                                                                <rect key="frame" x="0.0" y="421" width="398" height="47"/>
+                                                                                <rect key="frame" x="0.0" y="420.99999999999989" width="361" height="47"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVG-Rn-ha4" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                                                                                        <rect key="frame" x="151.66666666666666" y="12" width="95" height="27"/>
+                                                                                        <rect key="frame" x="134" y="12" width="93" height="27"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="27" id="wLv-e6-yZU"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                                         <state key="normal" title="Add Data Type"/>
                                                                                         <connections>
                                                                                             <action selector="addScanResponseDataType:" destination="BQp-FC-hhJ" eventType="touchUpInside" id="2bp-oB-Qtg"/>
@@ -521,12 +521,12 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40u-sE-NPw" userLabel="Info">
-                                                                                <rect key="frame" x="0.0" y="468" width="398" height="50"/>
+                                                                                <rect key="frame" x="0.0" y="467.99999999999989" width="361" height="50"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNM-he-Mgl">
-                                                                                        <rect key="frame" x="16" y="0.0" width="366" height="34"/>
-                                                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
-                                                                                        <color key="textColor" name="sil_primaryTextColor"/>
+                                                                                        <rect key="frame" x="16" y="0.0" width="329" height="34"/>
+                                                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="11"/>
+                                                                                        <color key="textColor" name="sil_subtitleTextColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -549,10 +549,10 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VU-3T-hQL" userLabel="Advertising Parameters">
-                                                                        <rect key="frame" x="0.0" y="1137" width="398" height="208.66666666666674"/>
+                                                                        <rect key="frame" x="0.0" y="1137.3333333333333" width="361" height="218.33333333333326"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrJ-Hl-0r5" userLabel="Separator View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="1"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="1"/>
                                                                                 <color key="backgroundColor" name="sil_secondaryBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="1" id="OpK-IM-UGP"/>
@@ -560,48 +560,48 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ig4-vO-8Si">
-                                                                                <rect key="frame" x="16" y="17" width="366" height="183.66666666666666"/>
+                                                                                <rect key="frame" x="16" y="17" width="329" height="193.33333333333334"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Advertising Parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJi-o7-jfB">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="25"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="174.33333333333334" height="25"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="25" id="Ck0-QK-uoi"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                                                                        <nil key="textColor"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiS-mo-fmw">
-                                                                                        <rect key="frame" x="0.0" y="35" width="361.66666666666669" height="33.666666666666657"/>
-                                                                                        <string key="text">iOS advertises on a "best effort" basis and does not provide access to any additional advertising parameters except of advertising time.</string>
-                                                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
                                                                                         <color key="textColor" name="sil_primaryTextColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiS-mo-fmw">
+                                                                                        <rect key="frame" x="0.0" y="35" width="310.33333333333331" height="43.333333333333343"/>
+                                                                                        <string key="text">iOS advertises on a "best effort" basis and does not provide access to any additional advertising parameters except of advertising time.</string>
+                                                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
+                                                                                        <color key="textColor" name="sil_subtitleTextColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Advertising Time Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7b5-CV-IwT">
-                                                                                        <rect key="frame" x="0.0" y="78.666666666666742" width="163.66666666666666" height="25"/>
+                                                                                        <rect key="frame" x="0.0" y="88.333333333333485" width="162.33333333333334" height="25"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="25" id="0jX-Yr-BZq"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                                                                        <nil key="textColor"/>
+                                                                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
+                                                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkV-9v-bQ2" customClass="SILRadioButton" customModule="BlueGecko" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="113.66666666666674" width="226.33333333333334" height="30"/>
+                                                                                        <rect key="frame" x="0.0" y="123.33333333333348" width="263" height="30"/>
                                                                                         <subviews>
                                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-CO-fFU">
-                                                                                                <rect key="frame" x="8" y="7" width="16" height="16"/>
+                                                                                                <rect key="frame" x="8" y="5" width="20" height="20"/>
                                                                                                 <constraints>
-                                                                                                    <constraint firstAttribute="width" constant="16" id="4tR-qS-QdI"/>
+                                                                                                    <constraint firstAttribute="width" constant="20" id="4tR-qS-QdI"/>
                                                                                                     <constraint firstAttribute="width" secondItem="3Nq-CO-fFU" secondAttribute="height" multiplier="1:1" id="BeX-c5-pxY"/>
                                                                                                 </constraints>
                                                                                                 <state key="normal" image="radio_button_inactive"/>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Limit (until manually turned off)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXv-SH-XIC">
-                                                                                                <rect key="frame" x="32" y="8" width="186.33333333333334" height="14.333333333333336"/>
-                                                                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                                                                <color key="textColor" name="sil_primaryTextColor"/>
+                                                                                                <rect key="frame" x="36" y="7.6666666666665142" width="219" height="14.666666666666661"/>
+                                                                                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
+                                                                                                <color key="textColor" name="sil_subtitleTextColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                         </subviews>
@@ -620,27 +620,27 @@
                                                                                         </connections>
                                                                                     </view>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jE5-wb-n5O">
-                                                                                        <rect key="frame" x="0.0" y="153.66666666666674" width="220" height="30"/>
+                                                                                        <rect key="frame" x="0.0" y="163.33333333333348" width="220" height="30"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lm0-9U-Njl" customClass="SILRadioButton" customModule="BlueGecko" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="154" height="30"/>
                                                                                                 <subviews>
                                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAD-th-QQm">
-                                                                                                        <rect key="frame" x="8" y="7" width="16" height="16"/>
+                                                                                                        <rect key="frame" x="8" y="5" width="20" height="20"/>
                                                                                                         <constraints>
                                                                                                             <constraint firstAttribute="width" secondItem="oAD-th-QQm" secondAttribute="height" multiplier="1:1" id="RAb-DT-ltn"/>
-                                                                                                            <constraint firstAttribute="width" constant="16" id="zvZ-mK-itP"/>
+                                                                                                            <constraint firstAttribute="width" constant="20" id="zvZ-mK-itP"/>
                                                                                                         </constraints>
                                                                                                         <state key="normal" image="radio_button_inactive"/>
                                                                                                     </button>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Limit (ms) [10 - 65350]" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cme-KM-qnc">
-                                                                                                        <rect key="frame" x="32" y="0.0" width="90" height="30"/>
+                                                                                                        <rect key="frame" x="36" y="0.0" width="110" height="30"/>
                                                                                                         <constraints>
-                                                                                                            <constraint firstAttribute="width" constant="90" id="Kxr-DA-7ic"/>
+                                                                                                            <constraint firstAttribute="width" constant="110" id="Kxr-DA-7ic"/>
                                                                                                             <constraint firstAttribute="height" constant="30" id="vZL-4g-33y"/>
                                                                                                         </constraints>
-                                                                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                                                                        <color key="textColor" name="sil_primaryTextColor"/>
+                                                                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
+                                                                                                        <color key="textColor" name="sil_subtitleTextColor"/>
                                                                                                         <nil key="highlightedColor"/>
                                                                                                     </label>
                                                                                                 </subviews>
@@ -659,9 +659,9 @@
                                                                                                 </connections>
                                                                                             </view>
                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10000" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ah0-db-iP4">
-                                                                                                <rect key="frame" x="138" y="0.0" width="82" height="30"/>
+                                                                                                <rect key="frame" x="162" y="0.0" width="58" height="30"/>
                                                                                                 <color key="textColor" name="sil_primaryTextColor"/>
-                                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                                                <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
                                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                                 <connections>
                                                                                                     <action selector="didChangeExecutionTime:" destination="BQp-FC-hhJ" eventType="editingChanged" id="Sq4-tr-Kqt"/>
@@ -699,6 +699,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="A39-ee-sJd" secondAttribute="trailing" constant="16" id="6Bq-eE-lXl"/>
                                                     <constraint firstItem="A39-ee-sJd" firstAttribute="width" secondItem="56k-E9-euz" secondAttribute="width" constant="-32" id="9MS-9S-vjx"/>
@@ -708,7 +709,7 @@
                                                 </constraints>
                                             </scrollView>
                                         </subviews>
-                                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="56k-E9-euz" secondAttribute="trailing" id="OBq-ql-m9C"/>
                                             <constraint firstAttribute="bottom" secondItem="56k-E9-euz" secondAttribute="bottom" id="PdG-LF-SE0"/>
@@ -717,14 +718,19 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EkE-8K-zsC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ccc-wl-xes" firstAttribute="top" secondItem="EkE-8K-zsC" secondAttribute="top" id="JDy-p3-7cG"/>
                             <constraint firstItem="ccc-wl-xes" firstAttribute="leading" secondItem="EkE-8K-zsC" secondAttribute="leading" id="X7x-qg-G56"/>
                             <constraint firstItem="EkE-8K-zsC" firstAttribute="trailing" secondItem="ccc-wl-xes" secondAttribute="trailing" id="bWT-oa-35O"/>
+                            <constraint firstAttribute="bottom" secondItem="bgImg-adv-details-001" secondAttribute="bottom" id="bgImg-adv-details-bot"/>
+                            <constraint firstItem="bgImg-adv-details-001" firstAttribute="leading" secondItem="aI0-7f-Q0E" secondAttribute="leading" id="bgImg-adv-details-lead"/>
+                            <constraint firstItem="bgImg-adv-details-001" firstAttribute="top" secondItem="aI0-7f-Q0E" secondAttribute="top" id="bgImg-adv-details-top"/>
+                            <constraint firstAttribute="trailing" secondItem="bgImg-adv-details-001" secondAttribute="trailing" id="bgImg-adv-details-trail"/>
                             <constraint firstAttribute="bottom" secondItem="ccc-wl-xes" secondAttribute="bottom" id="mVd-Hb-QoT"/>
                         </constraints>
                     </view>
@@ -753,31 +759,21 @@
             <point key="canvasLocation" x="760.15625" y="8.203125"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="BPa-ka-zwS">
-            <size key="intrinsicContentSize" width="38" height="27"/>
-        </designable>
-        <designable name="DbR-Rp-YUC">
-            <size key="intrinsicContentSize" width="38" height="27"/>
-        </designable>
-        <designable name="EVG-Rn-ha4">
-            <size key="intrinsicContentSize" width="95" height="29"/>
-        </designable>
-        <designable name="zUK-88-VsB">
-            <size key="intrinsicContentSize" width="95" height="29"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="delete_trash" width="14" height="16"/>
-        <image name="radio_button_inactive" width="75" height="75"/>
+        <image name="bgView_image" width="360" height="700"/>
+        <image name="delete_trash" width="18" height="18"/>
+        <image name="radio_button_inactive" width="24" height="24"/>
         <namedColor name="sil_backgroundColor">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_primaryTextColor">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_secondaryBackgroundColor">
             <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_subtitleTextColor">
+            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

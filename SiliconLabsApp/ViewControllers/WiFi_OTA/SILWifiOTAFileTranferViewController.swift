@@ -47,9 +47,9 @@ class SILWifiOTAFileTranferViewController: UIViewController, NetTestDelegate, WY
     override var preferredContentSize: CGSize {
         get {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                return CGSize(width: 540, height: 606)
+                return CGSize(width: 540, height: 560)
             } else {
-                return CGSize(width: 346, height: 547)
+                return CGSize(width: 346, height: 505)
             }
         }
         set {
@@ -129,11 +129,11 @@ class SILWifiOTAFileTranferViewController: UIViewController, NetTestDelegate, WY
                     self.btn_cancel.setTitle("Done", for: .normal)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self.lbl_status.textColor = UIColor.green
+                        self.lbl_status.textColor = UIColor.appSuccess
                         self.lbl_status.text = "Firmware updated successfully!"
                         
                     }
-                    self.btn_cancel.backgroundColor = UIColor.systemBlue
+                    self.btn_cancel.backgroundColor = UIColor.appPrimaryBrand
                 }
             }else{
                 
@@ -163,7 +163,9 @@ class SILWifiOTAFileTranferViewController: UIViewController, NetTestDelegate, WY
     
     func setupTextLabels() {
         
-        btn_cancel.layer.cornerRadius = 8
+        btn_cancel.layer.cornerRadius = 10
+        btn_cancel.layer.masksToBounds = true
+        btn_cancel.backgroundColor = UIColor.appPrimaryBrand
         let totalFileLenth = Float(self.file_length/1024).rounded(.up)
         self.lbl_fileName.text =   ": \(file_name ?? "0.0.0.0")"
         self.lbl_serverPort.text = ": \(server_port ?? "0000")"

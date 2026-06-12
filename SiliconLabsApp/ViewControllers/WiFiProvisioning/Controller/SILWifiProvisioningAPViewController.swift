@@ -27,7 +27,8 @@ class SILWifiProvisioningAPViewController: UIViewController, UITableViewDelegate
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        addRedLineBelowNavigationBar()
+
         SVProgressHUD.show(withStatus: "Connecting")
         wifiProvisioningAPViewModelObje.apiCallForIntialLoad()
         

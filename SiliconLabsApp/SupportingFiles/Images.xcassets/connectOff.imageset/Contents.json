@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "icon - connect_2 - off.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "icon - connect_2 - off@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
       "filename" : "icon - connect_2 - off@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     }
   ],
   "info" : {

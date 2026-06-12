@@ -64,7 +64,7 @@ class SILWifiOTAConfigViewController: UIViewController, WYPopoverControllerDeleg
         NotificationCenter.default.addObserver(self, selector: #selector(SILWifiOTAConfigViewController.networkStatusChanged(_:)), name: Notification.Name(rawValue: ReachabilityStatusChangedNotification), object: nil)
         Reachability().monitorReachabilityChanges()
     }
-    
+
     @objc func dismissKeyboard() {
         txtFld_ServerPort.resignFirstResponder()
     }
@@ -72,9 +72,9 @@ class SILWifiOTAConfigViewController: UIViewController, WYPopoverControllerDeleg
     override var preferredContentSize: CGSize {
         get {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                return CGSize(width: 540, height: 606)
+                return CGSize(width: 540, height: 450)
             } else {
-                return CGSize(width: 346, height: 547)
+                return CGSize(width: 346, height: 390)
             }
         }
         set {
@@ -87,12 +87,27 @@ class SILWifiOTAConfigViewController: UIViewController, WYPopoverControllerDeleg
     func setupTextLabels() {
         
         btn_cancel.layer.cornerRadius = 8
+        btn_cancel.setupOutlineButton()
+        btn_cancel.layer.borderWidth = 2.0
+        btn_cancel.layer.borderColor = UIColor.appPrimaryBrand.cgColor
+        btn_cancel.layer.masksToBounds = true
         btn_StartUpdate.layer.cornerRadius = 8
         
         btn_FilePicker.backgroundColor = .clear
-        btn_FilePicker.layer.cornerRadius = 5
-        btn_FilePicker.layer.borderWidth = 0.5
-        btn_FilePicker.layer.borderColor = UIColor.lightGray.cgColor
+        btn_FilePicker.layer.cornerRadius = 6
+        btn_FilePicker.layer.borderWidth = 1.0
+        btn_FilePicker.layer.borderColor = UIColor.sil_boulder().cgColor
+        btn_FilePicker.layer.masksToBounds = true
+        btn_FilePicker.contentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        
+        txtFld_ServerPort.borderStyle = .none
+        txtFld_ServerPort.layer.cornerRadius = 6
+        txtFld_ServerPort.layer.borderWidth = 1.0
+        txtFld_ServerPort.layer.borderColor = UIColor.sil_boulder().cgColor
+        txtFld_ServerPort.layer.masksToBounds = true
+        let portLeftPadding = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 1))
+        txtFld_ServerPort.leftView = portLeftPadding
+        txtFld_ServerPort.leftViewMode = .always
         
         let ip = ipAddress
         if ip == "0.0.0.0"{

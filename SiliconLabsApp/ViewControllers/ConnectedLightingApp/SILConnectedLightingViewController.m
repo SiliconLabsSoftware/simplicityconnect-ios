@@ -311,6 +311,7 @@ NSString * const SILLockEventOff = @"Unlock";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self addRedLineBelowNavigationBar];
     [self.navigationController.tabBarController hideTabBarAndUpdateFrames];
 }
 

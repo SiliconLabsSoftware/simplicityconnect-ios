@@ -26,24 +26,31 @@ struct PickerTabView: View {
     }
     
     var body: some View {
-        NavBarViewWithButtons(title: title, innerView: {
+        NavBarViewWithButtons(title: title, lineColor: .white, innerView: {
             ViewWithFloatingButton(buttonTitle: floatingButtonSetting.text, buttonPresented: floatingButtonSetting.isPresented, buttonAction:
                                     chosenSubview.floatingButtonAction, buttonColor: floatingButtonSetting.color
             , mainBody: {
-                VStack {
-                    Picker("Picker", selection: $pickerTagChosen) {
-                        ForEach(0..<pickableViews.count, id: \.self) { i in
-                            Text(pickableViews[i].title.uppercased()).tag(i)
+                VStack(spacing: 0) {
+                    VStack(spacing: 0) {
+                        Picker("Picker", selection: $pickerTagChosen) {
+                            ForEach(0..<pickableViews.count, id: \.self) { i in
+                                Text(pickableViews[i].title.uppercased()).tag(i)
+                            }
                         }
+                        .padding()
+                        .pickerStyle(SegmentedPickerStyle())
+                        .onReceive(Just(pickerTagChosen)) { x in
+                            chosenSubview.setFloatingButton(settings: floatingButtonSetting)
+                        }
+                        
+                        Rectangle()
+                            .fill(Color.appPrimaryBrand)
+                            .frame(height: 1)
                     }
-                    .padding()
-                    .pickerStyle(SegmentedPickerStyle())
-                    .onReceive(Just(pickerTagChosen)) { x in
-                        chosenSubview.setFloatingButton(settings: floatingButtonSetting)
-                    }
+                    .background(Color.appNavigationPrimary)
                     
                     chosenView
-                }.background(Color(.sil_regularBlue()))
+                }
             })
         }, trailingInNavBar: {
             HStack {
@@ -86,7 +93,7 @@ protocol PickerTabSubview : View {
 @objc public class FloatingButtonSettings : NSObject, ObservableObject {
     var text: String = ""
     var isPresented: Bool = false
-    var color : UIColor = .sil_regularBlue()
+    var color : UIColor = .appPrimaryBrand
     @IBOutlet weak var controllerHeight: NSLayoutConstraint?
     
     @objc func setButtonText(_ text: String) {

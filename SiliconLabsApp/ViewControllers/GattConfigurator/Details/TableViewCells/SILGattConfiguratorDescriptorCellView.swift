@@ -52,7 +52,7 @@ class SILGattConfiguratorDescriptorCellView: SILCell, SILCellView {
                 self.descriptorNameLabel.textColor = labelColor
                 self.descriptorUUIDLabel.textColor = labelColor
                 self.descriptorValueLabel.textColor = labelColor
-                self.propertyStackView.propertyColor =  UIColor.sil_regularBlue()!
+                self.propertyStackView.propertyColor =  UIColor.appPrimaryBrand
                 self.descriptorNameLabel.text = self.viewModel?.name == "" ? "Unknown descriptor" : canBeModified ?  self.viewModel?.name : "\(self.viewModel?.name ?? "") (predefined)"
             }
         }
@@ -72,10 +72,10 @@ class SILGattConfiguratorDescriptorCellView: SILCell, SILCellView {
     
     private func addAttributedTextToLabel(label: UILabel, boldText: String, regularText: String?) {
         let boldAttribute = [
-            NSAttributedString.Key.font: UIFont.robotoMedium(size: 12)!
+            NSAttributedString.Key.font: UIFont.stolzlMedium(size: 12)!
            ]
            let regularAttribute = [
-            NSAttributedString.Key.font: UIFont.robotoRegular(size: 12)!
+            NSAttributedString.Key.font: UIFont.helveticaNeue(size: 12)!
            ]
         
         let boldText = NSAttributedString(string: boldText, attributes: boldAttribute)

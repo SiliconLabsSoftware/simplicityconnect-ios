@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C4A-b7-qrY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C4A-b7-qrY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -26,14 +25,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgView_image" translatesAutoresizingMaskIntoConstraints="NO" id="bgImg-adv-home-001" userLabel="Background Image">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MCj-k0-yA1" userLabel="All Space">
-                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
+                                <rect key="frame" x="0.0" y="96" width="414" height="800"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A08-5C-Fjd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="848"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                         <subviews>
                                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3XP-N5-L7f">
-                                                <rect key="frame" x="16" y="0.0" width="382" height="848"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="800"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,9 +76,9 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5R-S1-Xn6">
-                                                                    <rect key="frame" x="86" y="25" width="44" height="29.5"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="86" y="25" width="45" height="29.5"/>
+                                                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="16"/>
+                                                                    <color key="textColor" name="sil_primaryTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1JR-jz-HFo">
@@ -97,7 +99,7 @@
                                                                                 <constraint firstAttribute="width" constant="40" id="MbZ-2S-DSp"/>
                                                                             </constraints>
                                                                             <color key="tintColor" name="sil_primaryTextColor"/>
-                                                                            <inset key="contentEdgeInsets" minX="9" minY="9" maxX="9" maxY="9"/>
+                                                                            <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
                                                                             <state key="normal" image="EditDisabled"/>
                                                                             <connections>
                                                                                 <action selector="editAdvertiser:" destination="t9v-lt-KGN" eventType="touchUpInside" id="wWW-5L-Y0T"/>
@@ -123,7 +125,7 @@
                                                                                 <constraint firstAttribute="width" constant="40" id="Ili-e4-l1e"/>
                                                                             </constraints>
                                                                             <color key="tintColor" name="sil_primaryTextColor"/>
-                                                                            <inset key="contentEdgeInsets" minX="11" minY="11" maxX="11" maxY="11"/>
+                                                                            <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
                                                                             <state key="normal" image="sil_trash"/>
                                                                             <connections>
                                                                                 <action selector="removeAdvertiser:" destination="t9v-lt-KGN" eventType="touchUpInside" id="arU-9R-oP5"/>
@@ -157,10 +159,10 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SILAdvertiserAdTypeCellView" id="Z8k-V3-rPj" userLabel="SILAdvertiserAdTypeCellView" customClass="SILAdvertiserAdTypeCellView" customModule="BlueGecko" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="170" width="382" height="80.5"/>
+                                                        <rect key="frame" x="0.0" y="170" width="382" height="81"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z8k-V3-rPj" id="RNY-8T-LOa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="80.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="81"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="un5-DC-GPP" userLabel="Separator View">
@@ -171,18 +173,18 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertiser Type " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-0R-Aie">
-                                                                    <rect key="frame" x="16" y="22" width="101.5" height="18"/>
+                                                                    <rect key="frame" x="16" y="22" width="121" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="kdC-dl-4pH"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
                                                                     <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertiser value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrS-JT-dfz" userLabel="Value Label">
-                                                                    <rect key="frame" x="16" y="48" width="100" height="16.5"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="16" y="48" width="119" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
+                                                                    <color key="textColor" name="sil_primaryTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -208,30 +210,31 @@
                                                 </prototypes>
                                             </tableView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1CB-5i-lbu">
-                                                <rect key="frame" x="16" y="350" width="382" height="148"/>
+                                                <rect key="frame" x="16" y="330.5" width="382" height="139"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="advertiser-no-devices-image" translatesAutoresizingMaskIntoConstraints="NO" id="rtt-c3-ffB">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
+                                                        <color key="tintColor" name="sil_siliconLabsRedColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="n0t-qL-phV"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utilize this device as a Bluetooth Low Energy peripheral" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcD-ed-SNV">
-                                                        <rect key="frame" x="0.0" y="72" width="382" height="40"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
-                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="0.0" y="72" width="382" height="34"/>
+                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
+                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No configured advertisers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9N-Jp-49B">
-                                                        <rect key="frame" x="0.0" y="128" width="382" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="0.0" y="122" width="382" height="17"/>
+                                                        <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
+                                                        <color key="textColor" name="sil_primaryTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="sil_backgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="1CB-5i-lbu" firstAttribute="centerY" secondItem="A08-5C-Fjd" secondAttribute="centerY" id="BvS-vZ-Nb6"/>
                                             <constraint firstAttribute="trailing" secondItem="1CB-5i-lbu" secondAttribute="trailing" constant="16" id="CNI-CK-NwU"/>
@@ -249,6 +252,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="MCj-k0-yA1" secondAttribute="bottom" id="St8-Lu-oDN"/>
+                            <constraint firstAttribute="bottom" secondItem="bgImg-adv-home-001" secondAttribute="bottom" id="bgImg-adv-home-bot"/>
+                            <constraint firstItem="bgImg-adv-home-001" firstAttribute="leading" secondItem="HSZ-rj-3cd" secondAttribute="leading" id="bgImg-adv-home-lead"/>
+                            <constraint firstItem="bgImg-adv-home-001" firstAttribute="top" secondItem="HSZ-rj-3cd" secondAttribute="top" id="bgImg-adv-home-top"/>
+                            <constraint firstAttribute="trailing" secondItem="bgImg-adv-home-001" secondAttribute="trailing" id="bgImg-adv-home-trail"/>
                             <constraint firstItem="dZU-WE-pjU" firstAttribute="trailing" secondItem="MCj-k0-yA1" secondAttribute="trailing" id="hO7-ST-4RK"/>
                             <constraint firstItem="MCj-k0-yA1" firstAttribute="top" secondItem="dZU-WE-pjU" secondAttribute="top" id="iYF-5J-3bg"/>
                             <constraint firstItem="MCj-k0-yA1" firstAttribute="leading" secondItem="dZU-WE-pjU" secondAttribute="leading" id="nrb-g2-HxJ"/>
@@ -267,23 +274,24 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EditDisabled" width="16" height="15"/>
-        <image name="advertiser-no-devices-image" width="38" height="48"/>
+        <image name="EditDisabled" width="24" height="22"/>
+        <image name="advertiser-no-devices-image" width="93" height="118"/>
+        <image name="bgView_image" width="360" height="700"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
-        <image name="icon - bluetooth" width="35" height="35"/>
-        <image name="icon - copy" width="13" height="15"/>
-        <image name="sil_trash" width="30" height="30"/>
-        <namedColor name="sil_backgroundColor">
-            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="icon - bluetooth" width="30" height="30"/>
+        <image name="icon - copy" width="24" height="24"/>
+        <image name="sil_trash" width="24" height="24"/>
         <namedColor name="sil_boulderColor">
-            <color red="0.47843137254901963" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_primaryTextColor">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sil_secondaryBackgroundColor">
             <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

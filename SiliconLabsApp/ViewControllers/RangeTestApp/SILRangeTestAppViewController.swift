@@ -15,10 +15,10 @@ import SVProgressHUD
 fileprivate struct Constants {
     static let sliderGrey = UIColor(red:0.85, green:0.84, blue:0.84, alpha:1.00)
     static let sliderRed = UIColor(red:0.84, green:0.14, blue:0.19, alpha:1.00)
-    static let sliderBlue = UIColor.sil_regularBlue()!
+    static let sliderBlue = UIColor.appPrimaryBrand
     
     static let buttonEnabledStopBackgroundColor = UIColor(hexString: "#D0021B")!
-    static let buttonEnabledStartBackgroundColor = UIColor.sil_regularBlue()!
+    static let buttonEnabledStartBackgroundColor = UIColor.appPrimaryBrand
     static let buttonDisabledBackgroundColor = UIColor(hexString: "#CCCBCB")!
     
     static let demoName = "Range Test Demo"
@@ -85,6 +85,7 @@ class SILRangeTestAppViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addLineBelowNavigationBar(color: .white)
     }
     
     deinit {

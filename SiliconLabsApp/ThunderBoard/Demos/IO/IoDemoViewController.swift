@@ -81,6 +81,8 @@ class IoDemoViewController: DemoViewController, IoDemoInteractionOutput, Connect
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+        self.navigationController?.navigationBar.tintColor = .white
         interaction?.checkMissingSensors()
         interaction?.updateView()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()

@@ -31,7 +31,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0c-2s-GG5">
                             <rect key="frame" x="539" y="9.5" width="39" height="27"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="12"/>
                             <state key="normal" title="RESET">
                                 <color key="titleColor" red="0.84473735090000002" green="0.1228592172" blue="0.16659769420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -58,7 +58,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dq-HW-Xh2">
                                     <rect key="frame" x="0.0" y="0.0" width="299.5" height="48"/>
                                     <color key="backgroundColor" red="0.84473735090000002" green="0.1228592172" blue="0.16659769420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="15"/>
                                     <state key="normal" title="CANCEL">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,7 +70,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAo-b6-njk">
                                     <rect key="frame" x="300.5" y="0.0" width="299.5" height="48"/>
                                     <color key="backgroundColor" red="0.84473735090000002" green="0.1228592172" blue="0.16659769420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="15"/>
                                     <state key="normal" title="APPLY">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

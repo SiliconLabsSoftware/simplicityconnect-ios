@@ -30,18 +30,28 @@ class SILIOPTesterViewController: UIViewController, UITableViewDataSource, UITab
     private var currentTestState: SILIOPTesterViewModel.TestState?
     private var currentTestScenarioIndex: Int = 0
     
+    private static let descriptionFont = UIFont(name: "Stolzl-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12)
+    private static let cellVerticalPadding: CGFloat = 48
+    private static let minCellHeight: CGFloat = 80
+    // Horizontal overhead between the screen edge and the description label (table margins + cell paddings + status view).
+    private static let descriptionWidthOverhead: CGFloat = 127
+    private var heightCache: [String: CGFloat] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRedLineBelowNavigationBar()
         self.disposeBag = SILObservableTokenBag()
         self.setupViewModel()
         self.setupFloatingButton()
         self.subscribeToUpdateUINotifications()
-        self.floatingButton.layer.cornerRadius = 20
+        self.floatingButton.layer.cornerRadius = 10
         infoView.addShadow()
+        // Bottom inset so the last cell's shadow + rounded corner aren't clipped by the table edge.
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0)
         if let deviceNameToSearch = deviceNameToSearch {
-            firmwareNameLabel.text = "Firmware Name: \(deviceNameToSearch)"
+            firmwareNameLabel.text = "  \(deviceNameToSearch)"
         }
-        deviceNameLabel.text = "Device Name: \(viewModel?.deviceModelName ?? "Unknown")"
+        deviceNameLabel.text = "  \(viewModel?.deviceModelName ?? "  Unknown")"
         self.setLeftAlignedTitle("Interoperability Test")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shareWhite"),
                                                                  style: .plain,
@@ -98,32 +108,45 @@ class SILIOPTesterViewController: UIViewController, UITableViewDataSource, UITab
         weak var weakSelf = self
         let updateTableViewSubscription = viewModel.updateTableViewWithCurrentTestScenarioIndex.observe( { index in
             guard let weakSelf = weakSelf else { return }
-            if weakSelf.currentTestScenarioIndex != index {
-                if index < 2 {
-                    weakSelf.currentTestScenarioIndex = 0
-                } else {
-                    weakSelf.currentTestScenarioIndex = index
-                }
-                let indexPath = IndexPath(row: 0, section: weakSelf.currentTestScenarioIndex)
-                if #available(iOS 13, *) {
-                    weakSelf.tableView.layoutIfNeeded()
-                }
-                weakSelf.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            let sections = weakSelf.viewModel?.cellViewModels.count ?? 0
+            // Clamp Scan/Connect to row 0 so the auto-scroll doesn't chase short-lived early scenarios.
+            let targetIndex = index < 2 ? 0 : index
+            let activeChanged = weakSelf.currentTestScenarioIndex != targetIndex
+            if activeChanged {
+                weakSelf.currentTestScenarioIndex = targetIndex
             }
-            weakSelf.tableView.reloadData()
+            // Update the visible cell in place — reloadSections() detaches/re-attaches the row and makes it visibly jump.
+            if index >= 0 && index < sections,
+               let scenarioVM = weakSelf.viewModel?.cellViewModels[index] as? SILIOPTestScenarioCellViewModel,
+               scenarioVM.shouldUpdateView,
+               let cell = weakSelf.tableView.cellForRow(at: IndexPath(row: 0, section: index)) as? SILIOPTestScenarioCellView {
+                UIView.performWithoutAnimation {
+                    cell.setViewModel(scenarioVM)
+                }
+            }
+            // Scroll once per scenario transition with .none so already-visible rows stay put.
+            if activeChanged && targetIndex >= 0 && targetIndex < sections {
+                let indexPath = IndexPath(row: 0, section: targetIndex)
+                weakSelf.tableView.scrollToRow(at: indexPath, at: .none, animated: true)
+            }
         })
         disposeBag.add(token: updateTableViewSubscription)
         
         let testCasesInProgressSubscription = viewModel.testCasesInProgress.observe( { testCasesInProgress in
             guard let weakSelf = weakSelf else { return }
-            weakSelf.totalTestCases.text = "Total: \(testCasesInProgress) Test Cases"
+            weakSelf.totalTestCases.text = "  \(testCasesInProgress) Test Cases"
         })
         disposeBag.add(token: testCasesInProgressSubscription)
         
         let testStateStatusSubscription = viewModel.testStateStatus.observe( { status in
             guard let weakSelf = weakSelf else { return }
+            let previousState = weakSelf.currentTestState
             weakSelf.currentTestState = status
             weakSelf.setupFloatingButton()
+            // On Run Test, reset visible cells in place to clear stale Pass/Fail badges from a previous run.
+            if status == .running && previousState != .running {
+                weakSelf.refreshAllVisibleScenarioCells()
+            }
         })
         disposeBag.add(token: testStateStatusSubscription)
         
@@ -134,6 +157,16 @@ class SILIOPTesterViewController: UIViewController, UITableViewDataSource, UITab
             }
         })
         disposeBag.add(token: bluetoothStateSubscription)
+    }
+    
+    private func refreshAllVisibleScenarioCells() {
+        UIView.performWithoutAnimation {
+            for indexPath in tableView.indexPathsForVisibleRows ?? [] {
+                guard let cell = tableView.cellForRow(at: indexPath) as? SILIOPTestScenarioCellView,
+                      let scenarioVM = viewModel?.cellViewModels[indexPath.section] as? SILIOPTestScenarioCellViewModel else { continue }
+                cell.setViewModel(scenarioVM)
+            }
+        }
     }
     
     private func showPopupAlert() {
@@ -258,7 +291,25 @@ class SILIOPTesterViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-        
+    
+    // Use screen width as a stable source so multi-line cell heights don't change between layout passes.
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let cellViewModel = self.viewModel?.cellViewModels[indexPath.section] as? SILIOPTestScenarioCellViewModel else {
+            return Self.minCellHeight
+        }
+        let availableWidth = max(50, UIScreen.main.bounds.width - Self.descriptionWidthOverhead)
+        if let cached = heightCache[cellViewModel.description] { return cached }
+        let descRect = (cellViewModel.description as NSString).boundingRect(
+            with: CGSize(width: availableWidth, height: .greatestFiniteMagnitude),
+            options: [.usesLineFragmentOrigin, .usesFontLeading],
+            attributes: [.font: Self.descriptionFont],
+            context: nil
+        )
+        let height = max(Self.minCellHeight, ceil(descRect.height) + Self.cellVerticalPadding)
+        heightCache[cellViewModel.description] = height
+        return height
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         SILTableViewWithShadowCells.tableView(tableView, willDisplay: cell, forRowAt: indexPath)
     }

@@ -46,9 +46,6 @@ target 'BlueGeckoWithHomeKit' do
    shared_pods
 end
 
-target 'WirelessGecko' do
-   shared_pods
-end
 
 target 'BlueGeckoTests' do
   shared_pods

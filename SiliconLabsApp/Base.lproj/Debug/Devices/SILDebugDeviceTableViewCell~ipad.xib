@@ -116,7 +116,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.34000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-m3-aPv">
                                         <rect key="frame" x="30" y="0.0" width="80" height="76"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -39,11 +39,11 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcL-Ho-mZo">
                                     <rect key="frame" x="241.5" y="13.5" width="90.5" height="21.5"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="20"/>
+                                    <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="widthClass=compact">
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="16"/>
                                     </variation>
                                 </label>
                             </subviews>
@@ -62,7 +62,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to disconnect?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5X2-0N-H1O" userLabel="Description">
                                             <rect key="frame" x="0.0" y="0.0" width="541" height="74"/>
-                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="14"/>
                                             <color key="textColor" name="sil_subtleTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -156,6 +156,9 @@
         </designable>
     </designables>
     <resources>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="sil_bgGreyColor">
             <color red="0.94509803921568625" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

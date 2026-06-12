@@ -37,10 +37,6 @@
 
 - (void)setupNavigationBar {
     [self setLeftAlignedTitle:@"Activity Log"];
-    UIBarButtonItem *backBarButton = [UIBarButtonItem.alloc initWithImage:[UIImage systemImageNamed:@"chevron.left"] style:UIBarButtonItemStyleDone target:self action:@selector(backButtonTapped)];
-    self.navigationItem.leftBarButtonItems = @[backBarButton, self.navigationItem.leftBarButtonItem];
-    self.navigationItem.leftItemsSupplementBackButton = NO;
-    
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage systemImageNamed:@"clear"] style:UIBarButtonItemStyleDone target:self action:@selector(clearButtonTapped)];
 }
 
@@ -52,6 +48,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self addRedLineBelowNavigationBar];
     [self.navigationController.tabBarController hideTabBarAndUpdateFrames];
 }
 
@@ -83,7 +80,7 @@
 
 - (void)setAppearanceForShareButton {
     _shareButton.layer.cornerRadius = _shareButton.bounds.size.width / 2;
-    [_shareButton.titleLabel setFont:[UIFont robotoMediumWithSize:[UIFont getMiddleFontSize]]];
+    [_shareButton.titleLabel setFont:[UIFont stolzlMediumWithSize:[UIFont getMiddleFontSize]]];
     _shareButton.titleLabel.textColor = [UIColor sil_backgroundColor];
 }
 

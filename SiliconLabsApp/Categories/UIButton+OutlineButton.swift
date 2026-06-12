@@ -6,13 +6,14 @@
 //  Copyright © 2023 SiliconLabs. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 extension UIButton {
     func setupOutlineButton() {
-        self.layer.borderColor = UIColor.sil_regularBlue().cgColor
+        self.layer.borderColor = UIColor.appPrimaryBrand.cgColor
         self.layer.borderWidth = 1
         self.backgroundColor = .white
-        self.setTitleColor(.sil_regularBlue(), for: .normal)
+        self.setTitleColor(.appPrimaryBrand, for: .normal)
     }
 }

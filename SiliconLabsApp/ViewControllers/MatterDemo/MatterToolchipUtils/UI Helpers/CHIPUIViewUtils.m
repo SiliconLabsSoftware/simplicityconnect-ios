@@ -1,5 +1,6 @@
 
 #import "CHIPUIViewUtils.h"
+#import "UIColor+SILColors.h"
 
 @implementation CHIPUIViewUtils
 
@@ -28,8 +29,8 @@
     stackView.alignment = UIStackViewAlignmentLeading;
     stackView.spacing = 3;
 
-    label.textColor = UIColor.systemBlueColor;
-    result.textColor = UIColor.systemBlueColor;
+    label.textColor = [UIColor appPrimaryBrand];
+    result.textColor = [UIColor appPrimaryBrand];
     label.font = [UIFont systemFontOfSize:17];
     result.font = [UIFont italicSystemFontOfSize:17];
 
@@ -111,7 +112,7 @@
     button.titleLabel.textColor = [UIColor blackColor];
     button.layer.cornerRadius = 5;
     button.clipsToBounds = YES;
-    button.backgroundColor = UIColor.systemBlueColor;
+    button.backgroundColor = [UIColor appPrimaryBrand];
     [containingView addSubview:button];
 
     button.translatesAutoresizingMaskIntoConstraints = false;
@@ -134,7 +135,7 @@
 
     for (int i = 0; i < buttons.count; i++) {
         UIButton * buttonForStack = [buttons objectAtIndex:i];
-        buttonForStack.backgroundColor = UIColor.systemBlueColor;
+        buttonForStack.backgroundColor = [UIColor appPrimaryBrand];
         buttonForStack.titleLabel.font = [UIFont systemFontOfSize:17];
         buttonForStack.titleLabel.textColor = [UIColor whiteColor];
         buttonForStack.layer.cornerRadius = 5;
@@ -166,7 +167,7 @@
     stackViewButtons.translatesAutoresizingMaskIntoConstraints = false;
     for (int i = 0; i < buttons.count; i++) {
         UIButton * buttonForStack = [buttons objectAtIndex:i];
-        buttonForStack.backgroundColor = UIColor.systemBlueColor;
+        buttonForStack.backgroundColor = [UIColor appPrimaryBrand];
         buttonForStack.titleLabel.font = [UIFont systemFontOfSize:17];
         buttonForStack.titleLabel.textColor = [UIColor whiteColor];
         buttonForStack.layer.cornerRadius = 5;
@@ -207,10 +208,37 @@
         deviceTitle = [NSMutableString stringWithFormat:@"Dishwasher"];
     } else if ([deviceType isEqualToString:AirQuality]) {
         deviceTitle = [NSMutableString stringWithFormat:@"Air Quality"];
-    } else if ([deviceType isEqualToString:ElectricVehicles]) {
+    } else if ([deviceType isEqualToString:ElectricVehicles] || [deviceType isEqualToString:@"1292"]) {
         deviceTitle = [NSMutableString stringWithFormat:@"Electric Vehicles"];
+    } else if ([deviceType isEqualToString:RangeHood]) {
+        deviceTitle = [NSMutableString stringWithFormat:@"Range Hood"];
+    } else if ([deviceType isEqualToString:Oven]) {
+        deviceTitle = [NSMutableString stringWithFormat:@"Oven"];
     }
     return  deviceTitle;
+}
+
++ (void)addRedLineBelowNavigationBarTo:(UIViewController *)viewController {
+    static const NSInteger kSILMatterRedNavLineTag = 99888;
+
+    UIView *existingLine = [viewController.view viewWithTag:kSILMatterRedNavLineTag];
+    if (existingLine != nil) {
+        [viewController.view bringSubviewToFront:existingLine];
+        return;
+    }
+
+    UIView *redLine = [[UIView alloc] init];
+    redLine.tag = kSILMatterRedNavLineTag;
+    redLine.backgroundColor = [UIColor appPrimaryBrand];
+    redLine.translatesAutoresizingMaskIntoConstraints = NO;
+    [viewController.view addSubview:redLine];
+
+    [NSLayoutConstraint activateConstraints:@[
+        [redLine.topAnchor constraintEqualToAnchor:viewController.view.safeAreaLayoutGuide.topAnchor],
+        [redLine.leadingAnchor constraintEqualToAnchor:viewController.view.leadingAnchor],
+        [redLine.trailingAnchor constraintEqualToAnchor:viewController.view.trailingAnchor],
+        [redLine.heightAnchor constraintEqualToConstant:1.0]
+    ]];
 }
 
 @end

@@ -153,7 +153,12 @@ class SettingsViewController: UITableViewController, SILAppSelectionHelpViewCont
         
         tableView.contentInsetAdjustmentBehavior = .automatic
         view.backgroundColor = StyleColor.lightGray
-        tableView?.backgroundColor = StyleColor.lightGray
+        tableView?.backgroundColor = .clear
+
+        let backgroundImageView = UIImageView(image: UIImage(named: "bgView_image"))
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.clipsToBounds = true
+        tableView.backgroundView = backgroundImageView
 
         temperatureLabel.tb_setText(temperatureLabelText, style: StyleText.main1)
     }

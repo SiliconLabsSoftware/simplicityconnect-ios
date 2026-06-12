@@ -148,7 +148,7 @@ public class ProgressStyleKit : NSObject {
         textStyle.alignment = .center
         let textFontAttributes = [
             .font: UIFont.systemFont(ofSize: 31),
-            .foregroundColor: UIColor.black,
+            .foregroundColor: UIColor.appPrimaryText,
             .paragraphStyle: textStyle,
         ] as [NSAttributedString.Key: Any]
 

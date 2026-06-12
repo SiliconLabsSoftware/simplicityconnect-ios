@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "icon - TX_Mode.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "icon - TX_Mode@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "icon - TX_Mode@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_TXmode.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

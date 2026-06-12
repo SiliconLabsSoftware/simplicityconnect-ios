@@ -29,12 +29,12 @@ class SILESLDisplayImagePopup: UIViewController {
         slot0ImageView.addGestureRecognizer(tapSlot0)
         let tapSlot1 = UITapGestureRecognizer(target: self, action: #selector(slot1WasTapped))
         slot1ImageView.addGestureRecognizer(tapSlot1)
-        slot0ImageView.layer.borderColor = UIColor.sil_regularBlue().cgColor
+        slot0ImageView.layer.borderColor = UIColor.appPrimaryBrand.cgColor
         slot0ImageView.layer.masksToBounds = true
         slot0ImageView.contentMode = .scaleToFill
         
         if viewModel.maxImageIndex == 1 {
-            slot1ImageView.layer.borderColor = UIColor.sil_regularBlue().cgColor
+            slot1ImageView.layer.borderColor = UIColor.appPrimaryBrand.cgColor
             slot1ImageView.layer.masksToBounds = true
             slot1ImageView.contentMode = .scaleToFill
         }

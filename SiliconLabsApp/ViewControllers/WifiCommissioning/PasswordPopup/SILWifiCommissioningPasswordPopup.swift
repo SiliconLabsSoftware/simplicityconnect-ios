@@ -45,6 +45,19 @@ class SILWifiCommissioningPasswordPopup: UIViewController {
         self.accessPointNameLabel.text = accessPoint.name
         isPassSecureText = false
 
+        setupPasswordTextFieldBorder()
+    }
+
+    private func setupPasswordTextFieldBorder() {
+        passwordTextField.borderStyle = .none
+        passwordTextField.layer.borderColor = UIColor.sil_boulder().cgColor
+        passwordTextField.layer.borderWidth = 1.0
+        passwordTextField.layer.cornerRadius = 6.0
+        passwordTextField.layer.masksToBounds = true
+
+        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: passwordTextField.frame.height))
+        passwordTextField.leftView = leftPaddingView
+        passwordTextField.leftViewMode = .always
     }
     
     func showWrongPasswordAlert() {

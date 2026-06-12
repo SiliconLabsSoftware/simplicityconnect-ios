@@ -22,7 +22,7 @@ import UIKit
 @IBDesignable 
     public class CircleProgressView: UIView, AnimatedUIView {
     @IBInspectable public var progress: CGFloat = 0.5 { didSet { updateValue() } }
-    @IBInspectable public var progressColor: UIColor = UIColor.blue { didSet { updateValue() } }
+    @IBInspectable public var progressColor: UIColor = UIColor.appPrimaryBrand { didSet { updateValue() } }
     @IBInspectable public var showTriangle: Bool = false { didSet { updateValue() } }
 
     var animatedLayer: Progressable = CircleProgressAnimationLayer()

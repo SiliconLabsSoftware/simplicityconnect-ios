@@ -43,7 +43,7 @@ const NSTimeInterval duration = 0.5;
     self.clipsToBounds = FALSE;
     
     _border = [[UILabel alloc] init];
-    _border.backgroundColor = UIColor.sil_subtleTextColor;
+    _border.backgroundColor = UIColor.sil_subtitleTextColor;
     [_border setUserInteractionEnabled:NO];
     [self addSubview:_border];
     
@@ -51,7 +51,7 @@ const NSTimeInterval duration = 0.5;
 }
 
 -(void)updateBorder {
-    UIColor *borderColor = self.isFirstResponder ? UIColor.sil_siliconLabsRedColor : UIColor.sil_subtleTextColor;
+    UIColor *borderColor = self.isFirstResponder ? UIColor.appPrimaryBrand : UIColor.sil_subtitleTextColor;
     [UIView animateWithDuration:duration animations:^{
         self.border.backgroundColor = borderColor;
     }];

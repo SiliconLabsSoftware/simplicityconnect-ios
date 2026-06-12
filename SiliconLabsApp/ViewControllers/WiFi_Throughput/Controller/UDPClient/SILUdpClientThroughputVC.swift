@@ -28,6 +28,7 @@ class SILUdpClientThroughputVC: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRedLineBelowNavigationBar()
         
         // Do any additional setup after loading the view.
         setLeftAlignedTitle("UDP Upload")

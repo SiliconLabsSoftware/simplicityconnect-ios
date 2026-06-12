@@ -1,69 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Bold.ttf">
+            <string>Stolzl-Bold</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="KGk-i7-Jjw" customClass="SILLightSwitchTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="587" height="55"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="SILLightSwitchTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="575" height="62"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="587" height="55"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="575" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA0-Ws-BOG">
-                        <rect key="frame" x="0.0" y="8" width="587" height="47"/>
+                        <rect key="frame" x="0.0" y="0.0" width="575" height="60"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_icon" translatesAutoresizingMaskIntoConstraints="NO" id="417-hR-ioE">
-                                <rect key="frame" x="10" y="8.6666666666666679" width="30" height="30.000000000000004"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_listbulb" translatesAutoresizingMaskIntoConstraints="NO" id="417-hR-ioE">
+                                <rect key="frame" x="20" y="10" width="40" height="40"/>
+                                <color key="tintColor" name="sil_siliconLabsRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Wot-xb-unP"/>
-                                    <constraint firstAttribute="width" constant="30" id="s2Q-1Y-mQZ"/>
+                                    <constraint firstAttribute="width" constant="40" id="a5H-Lz-a7R"/>
+                                    <constraint firstAttribute="height" constant="40" id="nyF-iG-i6j"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SiLabs-Switch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etl-5T-cHW">
-                                <rect key="frame" x="54.999999999999993" y="2.6666666666666643" width="89.333333333333314" height="42"/>
+                                <rect key="frame" x="70" y="9" width="415" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="rC2-44-gh6"/>
+                                    <constraint firstAttribute="height" constant="42" id="Diw-EV-ye1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Stolzl-Bold" family="Stolzl" pointSize="14"/>
+                                <color key="textColor" name="sil_primaryTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beaconCheckmark" translatesAutoresizingMaskIntoConstraints="NO" id="xkb-YG-XxT">
-                                <rect key="frame" x="547" y="13.666666666666668" width="20" height="20.000000000000004"/>
+                                <rect key="frame" x="535" y="20" width="20" height="20"/>
+                                <color key="tintColor" name="sil_regularGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="16o-op-fsv"/>
-                                    <constraint firstAttribute="width" constant="20" id="23p-5m-ooO"/>
+                                    <constraint firstAttribute="width" constant="20" id="1D7-SM-3Am"/>
+                                    <constraint firstAttribute="height" constant="20" id="HsM-O9-jZe"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xkb-YG-XxT" secondAttribute="trailing" constant="20" symbolic="YES" id="5yP-0v-DBN"/>
-                            <constraint firstAttribute="height" constant="47" id="6bH-KK-oC2"/>
-                            <constraint firstItem="xkb-YG-XxT" firstAttribute="centerY" secondItem="Etl-5T-cHW" secondAttribute="centerY" id="Bdt-n5-9GY"/>
-                            <constraint firstItem="417-hR-ioE" firstAttribute="centerY" secondItem="CA0-Ws-BOG" secondAttribute="centerY" id="TE9-6Q-zFp"/>
-                            <constraint firstItem="Etl-5T-cHW" firstAttribute="leading" secondItem="417-hR-ioE" secondAttribute="trailing" constant="15" id="W4X-H1-9ca"/>
-                            <constraint firstItem="Etl-5T-cHW" firstAttribute="centerY" secondItem="417-hR-ioE" secondAttribute="centerY" id="xXU-FW-UVo"/>
-                            <constraint firstItem="417-hR-ioE" firstAttribute="leading" secondItem="CA0-Ws-BOG" secondAttribute="leading" constant="10" id="zbY-qB-nfh"/>
+                            <constraint firstItem="Etl-5T-cHW" firstAttribute="leading" secondItem="417-hR-ioE" secondAttribute="trailing" constant="10" id="7jy-HI-iQh"/>
+                            <constraint firstItem="xkb-YG-XxT" firstAttribute="centerY" secondItem="Etl-5T-cHW" secondAttribute="centerY" id="D67-ZC-yMI"/>
+                            <constraint firstItem="417-hR-ioE" firstAttribute="centerY" secondItem="CA0-Ws-BOG" secondAttribute="centerY" id="Mdd-qT-moz"/>
+                            <constraint firstAttribute="trailing" secondItem="xkb-YG-XxT" secondAttribute="trailing" constant="20" symbolic="YES" id="Ofh-tD-IyM"/>
+                            <constraint firstItem="xkb-YG-XxT" firstAttribute="centerY" secondItem="417-hR-ioE" secondAttribute="centerY" id="dSq-H2-h9s"/>
+                            <constraint firstItem="417-hR-ioE" firstAttribute="leading" secondItem="CA0-Ws-BOG" secondAttribute="leading" constant="20" id="lod-j2-pJO"/>
+                            <constraint firstAttribute="height" constant="60" id="n7r-k5-nae"/>
+                            <constraint firstItem="xkb-YG-XxT" firstAttribute="leading" secondItem="Etl-5T-cHW" secondAttribute="trailing" constant="50" id="nEI-PM-Bko"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="CA0-Ws-BOG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="531-Qr-0jz"/>
-                    <constraint firstAttribute="bottom" secondItem="CA0-Ws-BOG" secondAttribute="bottom" id="7Bo-ya-HkL"/>
-                    <constraint firstAttribute="trailing" secondItem="CA0-Ws-BOG" secondAttribute="trailing" id="xdL-bv-Mmb"/>
+                    <constraint firstAttribute="bottom" secondItem="CA0-Ws-BOG" secondAttribute="bottom" id="1ym-kc-3je"/>
+                    <constraint firstAttribute="trailing" secondItem="CA0-Ws-BOG" secondAttribute="trailing" id="Dep-VJ-doh"/>
+                    <constraint firstItem="CA0-Ws-BOG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EGR-6t-i59"/>
+                    <constraint firstItem="CA0-Ws-BOG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jbl-ta-9Ls"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
@@ -73,11 +77,20 @@
                 <outlet property="deviceNameLabel" destination="Etl-5T-cHW" id="7Tj-Ab-Rff"/>
                 <outlet property="tickMarkImage" destination="xkb-YG-XxT" id="tzx-Sx-O5p"/>
             </connections>
-            <point key="canvasLocation" x="-996.18320610687022" y="3.8732394366197185"/>
+            <point key="canvasLocation" x="-1005.3435114503816" y="-42.95774647887324"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="beaconCheckmark" width="17" height="12.666666984558105"/>
-        <image name="light_icon" width="54" height="52"/>
+        <image name="beaconCheckmark" width="14" height="10"/>
+        <image name="icon_listbulb" width="25" height="36"/>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_regularGreenColor">
+            <color red="0.0" green="0.72549019607843135" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

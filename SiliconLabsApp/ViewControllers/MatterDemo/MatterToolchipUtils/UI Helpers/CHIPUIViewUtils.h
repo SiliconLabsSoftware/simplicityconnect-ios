@@ -24,6 +24,8 @@ static NSString * _Nullable const DimmerSwitch = @"260";
 static NSString * _Nullable const Dishwasher = @"117";
 static NSString * _Nullable const AirQuality = @"44";
 static NSString * _Nullable const ElectricVehicles = @"1293";
+static NSString * _Nullable const RangeHood = @"122";
+static NSString * _Nullable const Oven = @"123";
 
 @interface CHIPUIViewUtils : NSObject
 + (UIView *)viewWithUITextField:(UITextField *)textField button:(UIButton *)button;
@@ -37,6 +39,8 @@ static NSString * _Nullable const ElectricVehicles = @"1293";
 + (UILabel *)addTitle:(NSString *)title toView:(UIView *)view;
 
 + (NSString *)addDeviceTitle:(NSString *)deviceType;
+
++ (void)addRedLineBelowNavigationBarTo:(UIViewController *)viewController;
 
 @end
 

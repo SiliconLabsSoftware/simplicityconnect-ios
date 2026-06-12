@@ -26,6 +26,11 @@ class SILRangeTestSelectDeviceViewController: UIViewController, SILDeviceSelecti
         manager = CBCentralManager()
         manager.delegate = self
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -72,7 +77,10 @@ class SILRangeTestSelectDeviceViewController: UIViewController, SILDeviceSelecti
     }
     
     func didDismissDeviceSelectionViewController() {
-        popoverController = nil
+        popoverController?.dismissPopover(animated: true) { [weak self] in
+            self?.popoverController = nil
+            self?.navigationController?.navigationBar.tintColor = .white
+        }
         connectButton.isEnabled = true
     }
     
@@ -83,6 +91,8 @@ class SILRangeTestSelectDeviceViewController: UIViewController, SILDeviceSelecti
                                   andBoardInfo boardInfo: SILRangeTestBoardInfo?,
                                   selectedMode mode: SILRangeTestMode) {
         self.popoverController?.dismissPopover(animated: true) {
+            self.popoverController = nil
+            self.navigationController?.navigationBar.tintColor = .white
             let storyboard = UIStoryboard(name: "SILAppTypeRangeTest", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "SILRangeTestAppViewController") as! SILRangeTestAppViewController
             let viewModel = SILRangeTestAppViewModel(withMode: mode,
@@ -99,7 +109,10 @@ class SILRangeTestSelectDeviceViewController: UIViewController, SILDeviceSelecti
     }
     
     func didDismissRangeTestModeSelectionViewController() {
-        popoverController = nil
+        popoverController?.dismissPopover(animated: true) { [weak self] in
+            self?.popoverController = nil
+            self?.navigationController?.navigationBar.tintColor = .white
+        }
         connectButton.isEnabled = true
     }
     
@@ -107,6 +120,7 @@ class SILRangeTestSelectDeviceViewController: UIViewController, SILDeviceSelecti
     
     func popoverControllerDidDismissPopover(_ popoverController: WYPopoverController!) {
         self.popoverController = nil
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     // MARK: - centralManagerDidUpdateState delegate

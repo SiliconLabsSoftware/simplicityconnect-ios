@@ -30,7 +30,7 @@ static CGFloat const kSILBigRedButtonDisabledHighlightedOpacity = 0.26;
 }
 
 - (void)commonInit {
-    self.backgroundColor = [UIColor sil_regularBlueColor];
+    self.backgroundColor = [UIColor appPrimaryBrand];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self setTitleColor:[UIColor colorWithWhite:0 alpha:kSILBigRedButtonDisabledHighlightedOpacity]
                forState:UIControlStateDisabled];

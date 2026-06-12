@@ -58,6 +58,8 @@ class EnvironmentDemoViewController: DemoViewController, EnvironmentDemoInteract
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+        self.navigationController?.navigationBar.tintColor = .white
         self.interaction?.checkMissingSensors()
         self.interaction?.updateView()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()

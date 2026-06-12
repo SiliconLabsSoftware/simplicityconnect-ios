@@ -34,6 +34,21 @@ class SILTabBar: UITabBar {
         height = DefaultHeight
         setupIndicatorView()
         addShadow()
+        addTopRedLine()
+    }
+    
+    private func addTopRedLine() {
+        let topLine = UIView()
+        topLine.backgroundColor = UIColor.appPrimaryBrand
+        topLine.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(topLine)
+        
+        NSLayoutConstraint.activate([
+            topLine.topAnchor.constraint(equalTo: topAnchor),
+            topLine.leadingAnchor.constraint(equalTo: leadingAnchor),
+            topLine.trailingAnchor.constraint(equalTo: trailingAnchor),
+            topLine.heightAnchor.constraint(equalToConstant: 0.5)
+        ])
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -62,7 +77,7 @@ class SILTabBar: UITabBar {
             attribute: .centerX,
             multiplier: 1,
             constant: 0)
-        indicatorView?.backgroundColor = UIColor.sil_strongBlue()
+        indicatorView?.backgroundColor = UIColor.appPrimaryBrand
         addConstraint(indicatorCenter!)
     }
 

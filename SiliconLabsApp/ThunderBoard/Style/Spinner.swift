@@ -43,7 +43,7 @@ class Spinner: UIView {
         }
     }
     
-    var lineColor: UIColor = UIColor.blue {
+    var lineColor: UIColor = UIColor.appPrimaryBrand {
         didSet {
             colorPathLayer.strokeColor = lineColor.cgColor
         }

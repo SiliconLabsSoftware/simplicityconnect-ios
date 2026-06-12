@@ -28,7 +28,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENCODING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="225" translatesAutoresizingMaskIntoConstraints="NO" id="FUC-ff-wmA">
                                 <rect key="frame" x="0.0" y="0.0" width="209" height="6"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="12"/>
                                 <color key="textColor" red="0.47843137254901957" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,7 +44,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="WlA-8r-tfR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="12"/>
                                 <color key="textColor" red="0.84313725490196079" green="0.12156862745098039" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

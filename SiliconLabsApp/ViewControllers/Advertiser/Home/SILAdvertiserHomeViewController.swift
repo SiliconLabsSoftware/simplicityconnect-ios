@@ -31,15 +31,48 @@ class SILAdvertiserHomeViewController: UIViewController, SILAdvertiserHomeViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBackgroundImage()
         setupTableView()
         viewModel.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Embedded inside PickerTabView (Configure tab) which already draws the red line
+        // below its picker. Do NOT add another one here, or it doubles into 2pt.
         self.floatingButtonSettings?.setPresented(true)
         self.floatingButtonSettings?.controllerHeight = self.controllerHeight
         self.viewModel.isActiveScrollingUp = false
+    }
+    
+    private func setupBackgroundImage() {
+        let bgImageView = UIImageView(image: UIImage(named: "bgView_image"))
+        bgImageView.contentMode = .scaleAspectFill
+        bgImageView.clipsToBounds = true
+        bgImageView.translatesAutoresizingMaskIntoConstraints = false
+        bgImageView.tag = 9999
+        view.insertSubview(bgImageView, at: 0)
+        
+        NSLayoutConstraint.activate([
+            bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            bgImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bgImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bgImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        clearBackgroundsRecursively(view)
+    }
+    
+    private func clearBackgroundsRecursively(_ view: UIView) {
+        if view.tag == 9999 { return }
+        
+        if !(view is UITableViewCell) && !(view is UICollectionViewCell) {
+            view.backgroundColor = .clear
+        }
+        
+        for subview in view.subviews {
+            clearBackgroundsRecursively(subview)
+        }
     }
     
     fileprivate func setupTableView() {

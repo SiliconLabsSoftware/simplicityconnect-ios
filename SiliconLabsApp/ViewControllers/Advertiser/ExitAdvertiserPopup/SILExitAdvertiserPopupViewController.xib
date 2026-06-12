@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Stolzl-Bold.ttf">
+            <string>Stolzl-Bold</string>
+        </array>
+        <array key="Stolzl-Medium.ttf">
+            <string>Stolzl-Medium</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SILExitAdvertiserPopupViewController" customModule="BlueGecko" customModuleProvider="target">
             <connections>
                 <outlet property="confirmSwitch" destination="gir-cQ-qSM" id="L7m-YX-hce"/>
+                <outlet property="noButton" destination="f4T-gp-XZd" id="N0B-Tn-Ut1"/>
                 <outlet property="view" destination="uMU-yK-zIT" id="sF9-od-3L8"/>
                 <outlet property="yesButton" destination="b2p-1G-LCd" id="N3D-MV-Cq2"/>
             </connections>
@@ -28,54 +31,54 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-hV-6Y4" userLabel="headerView">
-                    <rect key="frame" x="0.0" y="0.0" width="500" height="72"/>
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unsaved changes" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5M-0T-UZH">
-                            <rect key="frame" x="20" y="25.5" width="152.5" height="21.5"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="20" y="20.5" width="148" height="19.5"/>
+                            <fontDescription key="fontDescription" name="Stolzl-Bold" family="Stolzl" pointSize="16"/>
+                            <color key="textColor" name="sil_primaryTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <constraints>
                         <constraint firstItem="V5M-0T-UZH" firstAttribute="leading" secondItem="dAm-hV-6Y4" secondAttribute="leading" constant="20" id="8AK-Yi-sbm"/>
-                        <constraint firstAttribute="height" constant="72" id="F6d-4T-eHf">
+                        <constraint firstAttribute="height" constant="60" id="F6d-4T-eHf">
                             <variation key="widthClass=compact" constant="48"/>
                         </constraint>
                         <constraint firstItem="V5M-0T-UZH" firstAttribute="centerY" secondItem="dAm-hV-6Y4" secondAttribute="centerY" id="TFq-GW-vzC"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0u-2i-dnX">
-                    <rect key="frame" x="40" y="72" width="420" height="140"/>
+                    <rect key="frame" x="40" y="60" width="420" height="152"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MV7-yX-0Px">
-                            <rect key="frame" x="0.0" y="10" width="420" height="65"/>
+                            <rect key="frame" x="0.0" y="10" width="420" height="71"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your advertisement set has unsaved changes. Do you wish to save them?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAl-g8-r7S" userLabel="descLabel">
-                                    <rect key="frame" x="0.0" y="16" width="420" height="33.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="0.0" y="-1" width="420" height="33"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="mAl-g8-r7S" firstAttribute="centerY" secondItem="MV7-yX-0Px" secondAttribute="centerY" id="I81-6n-fjd"/>
+                                <constraint firstItem="mAl-g8-r7S" firstAttribute="centerY" secondItem="MV7-yX-0Px" secondAttribute="centerY" constant="-20" id="I81-6n-fjd"/>
                                 <constraint firstItem="mAl-g8-r7S" firstAttribute="leading" secondItem="MV7-yX-0Px" secondAttribute="leading" id="bFh-Hr-Eh6"/>
                                 <constraint firstAttribute="trailing" secondItem="mAl-g8-r7S" secondAttribute="trailing" id="x7W-qX-USg"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3N-oD-ecg" userLabel="SwitchView">
-                            <rect key="frame" x="0.0" y="75" width="420" height="65"/>
+                            <rect key="frame" x="0.0" y="81" width="420" height="71"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not give this warning again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3k-7T-GRs">
-                                    <rect key="frame" x="64" y="24" width="194.5" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="64" y="7.5" width="189.5" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gir-cQ-qSM" customClass="SILSwitch" customModule="BlueGecko" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="20.5" width="44" height="24"/>
+                                    <rect key="frame" x="0.0" y="3.5" width="44" height="24"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="mXl-KL-2f0"/>
@@ -89,9 +92,9 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="t3k-7T-GRs" firstAttribute="leading" secondItem="gir-cQ-qSM" secondAttribute="trailing" constant="20" id="9tZ-wR-4W9"/>
-                                <constraint firstItem="gir-cQ-qSM" firstAttribute="centerY" secondItem="y3N-oD-ecg" secondAttribute="centerY" id="RvM-N0-oE9"/>
+                                <constraint firstItem="gir-cQ-qSM" firstAttribute="centerY" secondItem="y3N-oD-ecg" secondAttribute="centerY" constant="-20" id="RvM-N0-oE9"/>
                                 <constraint firstItem="gir-cQ-qSM" firstAttribute="leading" secondItem="y3N-oD-ecg" secondAttribute="leading" id="sKQ-Wb-VoJ"/>
-                                <constraint firstItem="t3k-7T-GRs" firstAttribute="centerY" secondItem="y3N-oD-ecg" secondAttribute="centerY" id="xUg-oG-cfa"/>
+                                <constraint firstItem="t3k-7T-GRs" firstAttribute="centerY" secondItem="y3N-oD-ecg" secondAttribute="centerY" constant="-20" id="xUg-oG-cfa"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -111,41 +114,42 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXs-zW-4yA" userLabel="buttonView">
-                    <rect key="frame" x="150" y="217" width="250" height="48"/>
+                    <rect key="frame" x="40" y="217" width="420" height="48"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2p-1G-LCd">
-                            <rect key="frame" x="130" y="8" width="120" height="32"/>
-                            <color key="backgroundColor" name="sil_regularBlueColor"/>
-                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
-                            <state key="normal" title="Yes">
-                                <color key="titleColor" name="sil_bgWhiteColor"/>
-                            </state>
-                            <connections>
-                                <action selector="onYes:" destination="-1" eventType="touchUpInside" id="h2H-WC-S2E"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4T-gp-XZd">
-                            <rect key="frame" x="0.0" y="8" width="120" height="32"/>
-                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
-                            <state key="normal" title="No">
-                                <color key="titleColor" name="sil_masalaColor"/>
-                            </state>
-                            <connections>
-                                <action selector="onNo:" destination="-1" eventType="touchUpInside" id="J4R-pz-xuI"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LUr-wo-kqv">
+                            <rect key="frame" x="0.0" y="7" width="420" height="34"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4T-gp-XZd">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="16"/>
+                                    <state key="normal" title="No">
+                                        <color key="titleColor" name="sil_masalaColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onNo:" destination="-1" eventType="touchUpInside" id="J4R-pz-xuI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2p-1G-LCd">
+                                    <rect key="frame" x="220" y="0.0" width="200" height="34"/>
+                                    <color key="backgroundColor" name="sil_siliconLabsRedColor"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Medium" family="Stolzl" pointSize="16"/>
+                                    <state key="normal" title="Yes">
+                                        <color key="titleColor" name="sil_bgWhiteColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onYes:" destination="-1" eventType="touchUpInside" id="h2H-WC-S2E"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="b2p-1G-LCd" firstAttribute="leading" secondItem="f4T-gp-XZd" secondAttribute="trailing" constant="10" id="3lr-A8-45l"/>
-                        <constraint firstItem="f4T-gp-XZd" firstAttribute="leading" secondItem="qXs-zW-4yA" secondAttribute="leading" id="QJb-5E-iGl"/>
-                        <constraint firstAttribute="trailing" secondItem="b2p-1G-LCd" secondAttribute="trailing" id="XpA-x3-pCE"/>
-                        <constraint firstItem="f4T-gp-XZd" firstAttribute="centerY" secondItem="qXs-zW-4yA" secondAttribute="centerY" id="ocj-J9-BFx"/>
-                        <constraint firstAttribute="height" constant="48" id="r8d-OG-075">
-                            <variation key="widthClass=compact" constant="36"/>
-                        </constraint>
-                        <constraint firstItem="b2p-1G-LCd" firstAttribute="width" secondItem="f4T-gp-XZd" secondAttribute="width" id="wE5-gp-28N"/>
-                        <constraint firstItem="b2p-1G-LCd" firstAttribute="centerY" secondItem="qXs-zW-4yA" secondAttribute="centerY" id="wrF-bU-5OU"/>
+                        <constraint firstItem="LUr-wo-kqv" firstAttribute="leading" secondItem="qXs-zW-4yA" secondAttribute="leading" id="IVR-zc-hbv"/>
+                        <constraint firstAttribute="bottom" secondItem="LUr-wo-kqv" secondAttribute="bottom" constant="7" id="a8x-CH-NFk"/>
+                        <constraint firstItem="LUr-wo-kqv" firstAttribute="top" secondItem="qXs-zW-4yA" secondAttribute="top" constant="7" id="dE7-gm-lti"/>
+                        <constraint firstAttribute="trailing" secondItem="LUr-wo-kqv" secondAttribute="trailing" id="p2s-WJ-qI6"/>
+                        <constraint firstAttribute="height" constant="48" id="r8d-OG-075"/>
                     </constraints>
                 </view>
             </subviews>
@@ -162,12 +166,8 @@
                 <constraint firstAttribute="trailing" secondItem="Z0u-2i-dnX" secondAttribute="trailing" constant="40" id="art-8O-XRY">
                     <variation key="widthClass=compact" constant="20"/>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="qXs-zW-4yA" secondAttribute="trailing" constant="100" id="gnp-3f-MQk">
-                    <variation key="widthClass=compact" constant="60"/>
-                </constraint>
-                <constraint firstItem="qXs-zW-4yA" firstAttribute="leading" secondItem="uMU-yK-zIT" secondAttribute="leading" constant="150" id="l8i-oE-HpR">
-                    <variation key="widthClass=compact" constant="200"/>
-                </constraint>
+                <constraint firstAttribute="trailing" secondItem="qXs-zW-4yA" secondAttribute="trailing" constant="40" id="gnp-3f-MQk"/>
+                <constraint firstItem="qXs-zW-4yA" firstAttribute="leading" secondItem="uMU-yK-zIT" secondAttribute="leading" constant="40" id="l8i-oE-HpR"/>
                 <constraint firstAttribute="trailing" secondItem="dAm-hV-6Y4" secondAttribute="trailing" id="vGZ-kh-IdY"/>
                 <constraint firstItem="dAm-hV-6Y4" firstAttribute="leading" secondItem="uMU-yK-zIT" secondAttribute="leading" id="yz3-OX-ZIv"/>
             </constraints>
@@ -182,8 +182,11 @@
         <namedColor name="sil_masalaColor">
             <color red="0.31372549019607843" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="sil_regularBlueColor">
-            <color red="0.058823529411764705" green="0.3843137254901961" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

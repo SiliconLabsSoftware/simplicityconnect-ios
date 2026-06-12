@@ -93,7 +93,14 @@ enum SILIOPTesterCentralManagerConnectionStatus {
         
         IOPLog().iopLogSwiftFunction(message: "CONNECTING PERIPHERAL \(String(describing: peripheral))")
         
-        self.centralManager.connect(peripheral)
+        //self.centralManager.connect(peripheral)
+        let deviceUUID = UserDefaults.standard.value(forKey: "deviceUUIDToConnect")
+        guard let peripheralUUID: String = deviceUUID as? String else {
+            return
+        }
+        if peripheral.identifier.uuidString  == peripheralUUID{
+            self.centralManager.connect(peripheral)
+        }
     }
     
     func disconnect(peripheral: CBPeripheral) {
@@ -153,8 +160,16 @@ enum SILIOPTesterCentralManagerConnectionStatus {
         if let discoveredPeripheral = self.discoveredPeripherals.first(where: { discoveredPeripheral in discoveredPeripheral.peripheral == peripheral }) {
             discoveredPeripheral.update(withAdvertisementData: advertisementData, rssi: RSSI, andDiscoveringTimestamp: Date.timeIntervalBetween1970AndReferenceDate)
         } else {
-            let newDiscoveredPeripheral = SILDiscoveredPeripheral(peripheral: peripheral, advertisementData: advertisementData, rssi: RSSI, andDiscoveringTimestamp: Date.timeIntervalBetween1970AndReferenceDate)
-            self.discoveredPeripherals.append(newDiscoveredPeripheral)
+            //let newDiscoveredPeripheral = SILDiscoveredPeripheral(peripheral: peripheral, advertisementData: advertisementData, rssi: RSSI, andDiscoveringTimestamp: Date.timeIntervalBetween1970AndReferenceDate)
+            //self.discoveredPeripherals.append(newDiscoveredPeripheral)
+            let deviceUUID = UserDefaults.standard.value(forKey: "deviceUUIDToConnect")
+            guard let peripheralUUID: String = deviceUUID as? String else {
+                return
+            }
+            if peripheral.identifier.uuidString  == peripheralUUID {
+                let newDiscoveredPeripheral = SILDiscoveredPeripheral(peripheral: peripheral, advertisementData: advertisementData, rssi: RSSI, andDiscoveringTimestamp: Date.timeIntervalBetween1970AndReferenceDate)
+                self.discoveredPeripherals.append(newDiscoveredPeripheral)
+            }
         }
     }
     

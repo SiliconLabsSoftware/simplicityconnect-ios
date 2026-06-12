@@ -26,6 +26,7 @@ class SILGattConfiguratorDetailsViewController: UIViewController, UITableViewDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }

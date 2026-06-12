@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Silab_logo@1x.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Silab_logo@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Silab_logo@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "logo_silabText.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

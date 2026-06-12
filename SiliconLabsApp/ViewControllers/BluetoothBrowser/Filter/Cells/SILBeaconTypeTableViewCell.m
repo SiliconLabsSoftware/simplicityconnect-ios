@@ -32,7 +32,7 @@
 }
 
 - (void)setFontForBeaconTypeName {
-    [_beaconTypeName setFont:[UIFont robotoMediumWithSize:[UIFont getMiddleFontSize]]];
+    [_beaconTypeName setFont:[UIFont stolzlMediumWithSize:[UIFont getMiddleFontSize]]];
 }
 
 - (void)setValuesForBeaconTypeName:(NSString *)beaconTypeName andCheckmarkImage:(BOOL)isSelected {
@@ -49,12 +49,12 @@
 
 - (void)customizeAppearanceForSelectedState {
     [_checkmarkImage setHidden:NO];
-    _beaconTypeName.textColor = [UIColor sil_regularBlueColor];
+    _beaconTypeName.textColor = [UIColor appPrimaryBrand];
 }
 
 - (void)customizeAppearanceForUnselectedState {
     [_checkmarkImage setHidden:YES];
-    _beaconTypeName.textColor = [UIColor sil_subtleTextColor];
+    _beaconTypeName.textColor = [UIColor sil_subtitleTextColor];
 }
 
 @end

@@ -15,7 +15,8 @@ class SILAppSelectionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView?
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var descriptionLabel: UILabel?
-
+    @IBOutlet weak var demoBannerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCellAppearence()
@@ -24,6 +25,7 @@ class SILAppSelectionCollectionViewCell: UICollectionViewCell {
     private func setupCellAppearence() {
         setupIconImageView()
         setupCellRoundedAppearance()
+        setupDemoBanner()
     }
 
     override func layoutSubviews() {
@@ -36,12 +38,20 @@ class SILAppSelectionCollectionViewCell: UICollectionViewCell {
     private func setupIconImageView() {
         iconImageView?.layer.masksToBounds = true
         iconImageView?.backgroundColor = .white
-        iconImageView?.tintColor = .sil_regularBlue()
+        iconImageView?.tintColor = .appPrimaryBrand
     }
 
     private func setupCellRoundedAppearance() {
         roundedView?.layer.masksToBounds = true
         roundedView?.layer.cornerRadius = CGFloat(CornerRadiusStandardValue)
+    }
+
+    private func setupDemoBanner() {
+        guard let banner = demoBannerView else { return }
+        banner.layer.cornerRadius = 4
+        banner.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner]
+        banner.layer.masksToBounds = true
+        banner.superview?.bringSubviewToFront(banner)
     }
 
     override func prepareForReuse() {
@@ -54,8 +64,9 @@ class SILAppSelectionCollectionViewCell: UICollectionViewCell {
 
     func setFieldsIn(_ appData: SILApp?) {
         titleLabel?.text = appData?.title
-        titleLabel?.textColor = .sil_regularBlue()
+        titleLabel?.textColor = .appPrimaryText
         descriptionLabel?.text = appData?.appDescription
-        iconImageView?.image = UIImage(named: appData?.imageName ?? "")
+        iconImageView?.image = UIImage(named: appData?.imageName ?? "")?.withRenderingMode(.alwaysTemplate)
+        iconImageView?.tintColor = .appPrimaryBrand
     }
 }

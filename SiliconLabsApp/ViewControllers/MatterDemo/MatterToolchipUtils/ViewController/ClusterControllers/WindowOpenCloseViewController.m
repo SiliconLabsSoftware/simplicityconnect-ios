@@ -7,6 +7,7 @@
 //
 
 #import "WindowOpenCloseViewController.h"
+#import "UIButton+SILMatterStyle.h"
 #import "CHIPUIViewUtils.h"
 #import "DefaultsUtils.h"
 #import "DeviceSelector.h"
@@ -38,9 +39,11 @@ NSString *liftValue;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     [self setupUIElements];
     
     // Get intial value from board
+    [SVProgressHUD showWithStatus:@"Connecting to device..."];
     [self readLiftDeviceStatus];
     [self readTildDeviceStatus];
 
@@ -55,19 +58,31 @@ NSString *liftValue;
 // MARK: UI Setup
 
 - (void)setupUIElements {
-    _openButton.layer.cornerRadius = 10;
-    _openButton.clipsToBounds = YES;
-    
-    _closeButton.layer.cornerRadius = 10;
-    _closeButton.clipsToBounds = YES;
-    
-    _liftButton.layer.cornerRadius = 10;
-    _liftButton.clipsToBounds = YES;
-    
-    _tiltButton.layer.cornerRadius = 10;
-    _tiltButton.clipsToBounds = YES;
-    
+    [_openButton applySILMatterOutlinedStyleWithTitle:@"Open"];
+    [_closeButton applySILMatterOutlinedStyleWithTitle:@"Close"];
+    [_liftButton applySILMatterOutlinedStyleWithTitle:@"Lift"];
+    [_tiltButton applySILMatterOutlinedStyleWithTitle:@"Tilt"];
+    _titleLabel.font = [UIFont fontWithName:@"Stolzl-Medium" size:14.0];
+    _titleLabel.textColor = [UIColor colorNamed:@"sil_primaryTextColor"];
     _deviceCurrentStatusLabel.hidden = YES;
+
+    [self applyMatterTextFieldStyle:_liftInputTextField];
+    [self applyMatterTextFieldStyle:_tiltInputTextField];
+}
+
+- (void)applyMatterTextFieldStyle:(UITextField *)textField {
+    textField.borderStyle = UITextBorderStyleNone;
+    textField.layer.borderWidth = 1.0;
+    textField.layer.borderColor = [UIColor systemGray4Color].CGColor;
+    textField.layer.cornerRadius = 8.0;
+    textField.layer.masksToBounds = YES;
+    textField.backgroundColor = [UIColor whiteColor];
+    UIFont *font = [UIFont fontWithName:@"Stolzl-Regular" size:14.0];
+    textField.font = font ?: [UIFont systemFontOfSize:14.0];
+
+    UIView *leftPad = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 1)];
+    textField.leftView = leftPad;
+    textField.leftViewMode = UITextFieldViewModeAlways;
 }
 
 - (void)updateResult:(NSString *)result {
@@ -364,11 +379,11 @@ NSString *liftValue;
 - (void) updateImageStatus: (BOOL) status {
     if (status == TRUE) {
         self.liftInputTextField.text = @"";
-        self.liftInputTextField.text = @"";
+        self.tiltInputTextField.text = @"";
         self.clusterImage.image = [UIImage imageNamed:@"window_0"];
     } else {
         self.liftInputTextField.text = @"";
-        self.liftInputTextField.text = @"";
+        self.tiltInputTextField.text = @"";
         self.clusterImage.image = [UIImage imageNamed:@"window_10"];
     }
     self.clusterImage.alpha = 1;
@@ -393,8 +408,10 @@ NSString *liftValue;
                     [self setDeviceStatus:@"0" nodeId:self->nodeId];
                     return;
                 }
+                [SVProgressHUD dismiss];
             }];
         } else {
+            [self setDeviceStatus:@"0" nodeId:self->nodeId];
         }
     })) {
         [self updateResult:[NSString stringWithFormat:@"Waiting for connection with the device"]];
@@ -422,15 +439,14 @@ NSString *liftValue;
                     [self setDeviceStatus:@"0" nodeId:self->nodeId];
                     return;
                 }
+                [SVProgressHUD dismiss];
             }];
         } else {
-            [self updateResult:[NSString stringWithFormat:@"Failed to establish a connection with the device"]];
+            [self setDeviceStatus:@"0" nodeId:self->nodeId];
         }
     })) {
         [self updateResult:[NSString stringWithFormat:@"Waiting for connection with the device"]];
     } else {
-        //[self setDeviceStatus:@"0" nodeId:self->nodeId];
-        // [self updateResult:[NSString stringWithFormat:@"Failed to trigger the connection with the device"]];
     }
 }
 

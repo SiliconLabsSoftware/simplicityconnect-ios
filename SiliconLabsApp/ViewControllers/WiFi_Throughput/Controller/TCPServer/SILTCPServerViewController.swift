@@ -36,6 +36,7 @@ class SILTCPServerViewController: UIViewController,ITcpServer, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRedLineBelowNavigationBar()
         setLeftAlignedTitle("TCP Download")
 
         tcpServer.setDelegateI(self)

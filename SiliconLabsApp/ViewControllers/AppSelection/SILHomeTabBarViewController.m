@@ -50,12 +50,12 @@ NSUInteger const DevelopTabIndex = 1;
 - (void)setupTabBarItemFont {
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{
               NSForegroundColorAttributeName: [UIColor sil_backgroundColor],
-              NSFontAttributeName: [UIFont robotoRegularWithSize:[UIFont getMiddleFontSize]],
+              NSFontAttributeName: [UIFont stolzlRegularWithSize:[UIFont getMiddleFontSize]],
               }
     forState:UIControlStateNormal];
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{
               NSForegroundColorAttributeName: [UIColor sil_backgroundColor],
-              NSFontAttributeName: [UIFont robotoRegularWithSize:[UIFont getMiddleFontSize]],
+              NSFontAttributeName: [UIFont stolzlRegularWithSize:[UIFont getMiddleFontSize]],
               }
     forState:UIControlStateSelected];
 }

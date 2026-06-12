@@ -40,14 +40,14 @@ import Foundation
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let sectionViewModel = self.browserViewModel.peripheralViewModel(at: indexPath.section) else { return }
-        
+
         sectionViewModel.isExpanded.toggle()
-        
-        let sectionsToReload = IndexSet(integer: indexPath.section)
-        tableView.beginUpdates()
+        tableView.deselectRow(at: indexPath, animated: false)
+
+        UIView.performWithoutAnimation {
+            tableView.reloadData()
+        }
         tableView.fixCellBounds()
-        tableView.reloadSections(sectionsToReload, with: .none)
-        tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -33,6 +33,8 @@ class SILEnergyHarvestingViewController: UIViewController, UIGestureRecognizerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
         // Full reset each appearance
         resetGraphState()

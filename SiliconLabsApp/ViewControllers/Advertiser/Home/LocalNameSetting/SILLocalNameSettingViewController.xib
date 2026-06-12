@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Stolzl-Bold.ttf">
+            <string>Stolzl-Bold</string>
+        </array>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SILLocalNameSettingViewController" customModule="BlueGecko" customModuleProvider="target">
             <connections>
@@ -30,9 +37,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="573" height="48"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aF-lM-yrq">
-                                    <rect key="frame" x="20" y="13.5" width="112.5" height="21.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="20" y="15.5" width="95.5" height="17"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Bold" family="Stolzl" pointSize="14"/>
+                                    <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -50,14 +57,14 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="z2h-f0-SeL"/>
                                     </constraints>
-                                    <color key="textColor" name="sil_regularBlueColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" name="sil_primaryTextColor"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkD-Xr-aIm">
-                                    <rect key="frame" x="20" y="12" width="39.5" height="21.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="20" y="12" width="33.5" height="21.5"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="12"/>
+                                    <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -74,26 +81,27 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOY-rG-5gu" userLabel="buttonView">
                             <rect key="frame" x="0.0" y="174" width="573" height="46"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0q0-Ky-6Vu">
-                                    <rect key="frame" x="10" y="0.0" width="553" height="36"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0q0-Ky-6Vu">
+                                    <rect key="frame" x="30" y="0.0" width="513" height="36"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oag-bI-UaD" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="271.5" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="246.5" height="36"/>
                                             <state key="normal" title="Cancel">
-                                                <color key="titleColor" red="0.0" green="0.45882352941176469" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" name="sil_siliconLabsRedColor"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                                     <integer key="value" value="14"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasBorder" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="onCancel:" destination="-1" eventType="touchUpInside" id="tJ5-Ma-1X2"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ti9-Ja-AfU" customClass="SILPrimaryButton" customModule="BlueGecko" customModuleProvider="target">
-                                            <rect key="frame" x="281.5" y="0.0" width="271.5" height="36"/>
+                                            <rect key="frame" x="266.5" y="0.0" width="246.5" height="36"/>
                                             <state key="normal" title="Save"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="hasBackground" value="YES"/>
@@ -115,9 +123,9 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="0q0-Ky-6Vu" secondAttribute="bottom" constant="10" id="C05-kF-34C"/>
-                                <constraint firstAttribute="trailing" secondItem="0q0-Ky-6Vu" secondAttribute="trailing" constant="10" id="TgY-DF-vpV"/>
+                                <constraint firstAttribute="trailing" secondItem="0q0-Ky-6Vu" secondAttribute="trailing" constant="30" id="TgY-DF-vpV"/>
                                 <constraint firstItem="0q0-Ky-6Vu" firstAttribute="top" secondItem="fOY-rG-5gu" secondAttribute="top" id="WDt-JS-LDG"/>
-                                <constraint firstItem="0q0-Ky-6Vu" firstAttribute="leading" secondItem="fOY-rG-5gu" secondAttribute="leading" constant="10" id="su4-ua-I5o"/>
+                                <constraint firstItem="0q0-Ky-6Vu" firstAttribute="leading" secondItem="fOY-rG-5gu" secondAttribute="leading" constant="30" id="su4-ua-I5o"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -135,17 +143,12 @@
             <point key="canvasLocation" x="252.89855072463769" y="174.77678571428569"/>
         </view>
     </objects>
-    <designables>
-        <designable name="oag-bI-UaD">
-            <size key="intrinsicContentSize" width="48" height="30"/>
-        </designable>
-        <designable name="ti9-Ja-AfU">
-            <size key="intrinsicContentSize" width="34" height="30"/>
-        </designable>
-    </designables>
     <resources>
-        <namedColor name="sil_regularBlueColor">
-            <color red="0.058823529411764705" green="0.3843137254901961" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="sil_primaryTextColor">
+            <color red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sil_siliconLabsRedColor">
+            <color red="0.85098039215686272" green="0.11764705882352941" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

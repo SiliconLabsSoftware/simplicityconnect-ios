@@ -80,7 +80,7 @@ class SILWifiCommissioningViewModel {
         self.readCharacteristicTimer = SILTimeoutTimer(action: { self.peripheralDelegate.readCharacteristic(characteristic: self.readCharacteristic) },
                                                        timeoutExceedAction: { self.wifiCommissioningState.value = .failure(reason: "Timeout expired!") },
                                                        interval: 1,
-                                                       timeout: 20)
+                                                       timeout: 60)
     }
     
     private func registerCentralManagerNotifications() {

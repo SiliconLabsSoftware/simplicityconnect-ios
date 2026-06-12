@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "sort--ascending 1.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "sort--ascending 1@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "sort--ascending 1@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_sort.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

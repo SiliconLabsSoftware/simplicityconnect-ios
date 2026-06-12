@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Bold.ttf">
-            <string>Roboto-Bold</string>
+        <array key="Stolzl-Bold.ttf">
+            <string>Stolzl-Bold</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Stolzl-Regular.ttf">
+            <string>Stolzl-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -39,7 +39,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error 0x00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uU1-bW-ISx">
                                     <rect key="frame" x="165.5" y="13.5" width="83.5" height="21"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Bold" family="Stolzl" pointSize="18"/>
                                     <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -58,7 +58,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="AN ERROR OCCURED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-xz-4LM">
                                     <rect key="frame" x="16" y="16" width="164.5" height="19"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Bold" family="Stolzl" pointSize="16"/>
                                     <color key="textColor" name="sil_siliconLabsRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -73,13 +73,13 @@
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: xxx" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boc-fb-BWU" userLabel="Error">
                                     <rect key="frame" x="16" y="51" width="382" height="19"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="16"/>
                                     <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description: xxx" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vib-l4-K1g" userLabel="Description">
                                     <rect key="frame" x="16" y="78" width="382" height="19"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="16"/>
                                     <color key="textColor" name="sil_primaryTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -105,7 +105,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6D-PM-Nlo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="Stolzl-Regular" family="Stolzl" pointSize="18"/>
                                     <state key="normal" title="OK">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CircularProgressView.h"
+#import "UIColor+SILColors.h"
 
 @interface CircularProgressView ()
 @property (nonatomic, strong) CAShapeLayer *trackLayer;
@@ -46,7 +47,7 @@
 
     self.progressLayer = [CAShapeLayer layer];
     self.progressLayer.path = circularPath.CGPath;
-    self.progressLayer.strokeColor = [UIColor systemBlueColor].CGColor;
+    self.progressLayer.strokeColor = [UIColor appPrimaryBrand].CGColor;
     self.progressLayer.lineWidth = 10.0;
     self.progressLayer.fillColor = [UIColor clearColor].CGColor;
     self.progressLayer.strokeEnd = 0.0;

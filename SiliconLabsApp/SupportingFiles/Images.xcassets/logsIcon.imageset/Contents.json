@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "event--schedule 1.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "event--schedule 1@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "event--schedule 1@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_log.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -38,16 +38,32 @@ class SILUdpClientHelper: UIViewController, WYPopoverControllerDelegate, UITextF
         txtFld_ServerPort.delegate = self
         //ipAddress = getIPAddressObj.getIPAddresses(toDo: true)
         btn_cancel.layer.cornerRadius = 8
+        btn_cancel.setupOutlineButton()
+        btn_cancel.layer.borderWidth = 2
         btn_StartUpdate.layer.cornerRadius = 8
+        
+        applyBoulderBorder(to: lbl_IP_Address)
+        applyBoulderBorder(to: txtFld_ServerPort)
         //lbl_IP_Address.text = ipAddress
+    }
+    
+    private func applyBoulderBorder(to textField: UITextField) {
+        textField.borderStyle = .none
+        textField.layer.cornerRadius = 6
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.sil_boulder().cgColor
+        textField.layer.masksToBounds = true
+        let padding = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 1))
+        textField.leftView = padding
+        textField.leftViewMode = .always
     }
 
     override var preferredContentSize: CGSize {
         get {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                return CGSize(width: 540, height: 556)
+                return CGSize(width: 540, height: 390)
             } else {
-                return CGSize(width: 346, height: 350)
+                return CGSize(width: 346, height: 320)
             }
         }
         set {

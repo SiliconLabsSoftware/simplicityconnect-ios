@@ -23,7 +23,7 @@ class SILPropertyStackView: UIStackView {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var labels: [UILabel]!
     
-    var propertyColor: UIColor = UIColor.sil_regularBlue() {
+    var propertyColor: UIColor = UIColor.appPrimaryBrand {
         didSet {
             for button in buttons {
                 button.setTitleColor(propertyColor, for: .normal)

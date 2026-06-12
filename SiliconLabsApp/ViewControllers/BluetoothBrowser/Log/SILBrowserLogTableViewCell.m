@@ -27,12 +27,12 @@
 }
 
 - (void)setAppearanceForLogDataTimeInformationLabel {
-    [self.logDataTimeInformationLabel setFont:[UIFont robotoBoldWithSize:[UIFont getMiddleFontSize]]];
+    [self.logDataTimeInformationLabel setFont:[UIFont stolzlBoldWithSize:[UIFont getMiddleFontSize]]];
     self.logDataTimeInformationLabel.textColor = [UIColor sil_primaryTextColor];
 }
 
 - (void)setAppearanceForLogDescriptionLabel {
-    [self.logDescriptionLabel setFont:[UIFont robotoRegularWithSize:[UIFont getMiddleFontSize]]];
+    [self.logDescriptionLabel setFont:[UIFont helveticaNeueWithSize:[UIFont getMiddleFontSize]]];
     self.logDescriptionLabel.textColor = [UIColor sil_primaryTextColor];
     self.logDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.logDescriptionLabel.numberOfLines = 0;

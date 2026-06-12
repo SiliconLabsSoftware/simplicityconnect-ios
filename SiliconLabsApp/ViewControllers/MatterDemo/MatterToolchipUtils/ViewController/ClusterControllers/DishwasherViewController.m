@@ -7,6 +7,7 @@
 //
 
 #import "DishwasherViewController.h"
+#import "UIButton+SILMatterStyle.h"
 #import "CHIPUIViewUtils.h"
 #import "DefaultsUtils.h"
 #import "DeviceSelector.h"
@@ -59,6 +60,7 @@ bool isBackButtonFlow = false;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     [self setupUIElements];
     [self readDWCurrentStatus];
 }
@@ -73,35 +75,30 @@ bool isBackButtonFlow = false;
 // MARK: UI Setup
 
 - (void)setupUIElements {
-    _startButton.layer.cornerRadius = 10;
-    _startButton.clipsToBounds = YES;
-    
-    _stopButton.layer.cornerRadius = 10;
-    _stopButton.clipsToBounds = YES;
-    
-    _pauseResumeButton.layer.cornerRadius = 10;
-    _pauseResumeButton.clipsToBounds = YES;
-    
+    [_startButton applySILMatterOutlinedStyleWithTitle:@"START"];
+    [_stopButton applySILMatterOutlinedStyleWithTitle:@"STOP"];
+    [_pauseResumeButton applySILMatterOutlinedStyleWithTitle:@"PAUSE"];
+
     _energyView.layer.cornerRadius = 10;
     _energyView.clipsToBounds = YES;
     
     _powerImage.layer.cornerRadius = 4;
     _powerImage.clipsToBounds = YES;
     _powerImage.layer.borderWidth = 1.5;
-    _powerImage.layer.borderColor = UIColor.sil_regularBlueColor.CGColor;
+    _powerImage.layer.borderColor = UIColor.appPrimaryBrand.CGColor;
     
     [self customBackButton];
 }
 
 - (void) customBackButton {
-    // Create a custom back button
+    // Create a custom back button with larger hit area
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setImage:[UIImage imageNamed:@"BackIcon"] forState:UIControlStateNormal];
-    //    [backButton setTitle:@"Dishwasher" forState: UIControlStateNormal];
-    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; // Adjust color as needed
+    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     backButton.titleLabel.font = [UIFont systemFontOfSize:16];
-    backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0); // Moves the image left
-    backButton.frame = CGRectMake(0, 0, 80, 30);
+    backButton.frame = CGRectMake(0, 0, 80, 44);
+    backButton.contentEdgeInsets = UIEdgeInsetsMake(8, 0, 8, 16);
+    backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -8, 0, 0);
     
     // Add target action for the button
     [backButton addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
@@ -145,7 +142,7 @@ bool isBackButtonFlow = false;
     if([result isEqual: @"On"]) {
         self.dishwasherImage.image = [UIImage imageNamed:@"dishwasher"];
         self.currentStatusLabel.text = @"ON";
-        self.dishwasherImage.tintColor = UIColor.sil_regularBlueColor;
+        self.dishwasherImage.tintColor = UIColor.appPrimaryBrand;
     } else if ([result  isEqual: @"Off"]) {
         self.dishwasherImage.image = [UIImage imageNamed:@"dishwasher_pause"];
         self.currentStatusLabel.text = @"OFF";
@@ -153,7 +150,7 @@ bool isBackButtonFlow = false;
     }else if ([result  isEqual: @"Pause"]) {
         self.dishwasherImage.image = [UIImage imageNamed:@"dishwasher_pause"];
         self.currentStatusLabel.text = @"PAUSE";
-        self.dishwasherImage.tintColor = UIColor.sil_regularBlueColor;
+        self.dishwasherImage.tintColor = UIColor.appPrimaryBrand;
     } else {
         // Do nothing
     }
@@ -226,7 +223,7 @@ bool isBackButtonFlow = false;
 - (void) readDWCurrentStatus {
     NSInteger endpoint = 1;
     uint64_t _devId = nodeId.intValue;
-    
+    [SVProgressHUD showWithStatus:@"Connecting to device..."];
     if (MTRGetConnectedDeviceWithID(_devId, ^(MTRBaseDevice * _Nullable chipDevice, NSError * _Nullable error) {
         if (chipDevice) {
             
@@ -602,10 +599,10 @@ bool isBackButtonFlow = false;
         self.startButton.backgroundColor = UIColor.sil_silverChaliceColor;
         
         self.stopButton.enabled = YES;
-        self.stopButton.backgroundColor = UIColor.sil_regularBlueColor;
+        self.stopButton.backgroundColor = UIColor.appPrimaryBrand;
         
         self.pauseResumeButton.enabled = YES;
-        self.pauseResumeButton.backgroundColor = UIColor.sil_regularBlueColor;
+        self.pauseResumeButton.backgroundColor = UIColor.appPrimaryBrand;
         
         [self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
         
@@ -614,15 +611,15 @@ bool isBackButtonFlow = false;
         self.startButton.backgroundColor = UIColor.sil_silverChaliceColor;
         
         self.stopButton.enabled = YES;
-        self.stopButton.backgroundColor = UIColor.sil_regularBlueColor;
+        self.stopButton.backgroundColor = UIColor.appPrimaryBrand;
         
         self.pauseResumeButton.enabled = YES;
-        self.pauseResumeButton.backgroundColor = UIColor.sil_regularBlueColor;
+        self.pauseResumeButton.backgroundColor = UIColor.appPrimaryBrand;
         
         [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
     } else {
         self.startButton.enabled = YES;
-        self.startButton.backgroundColor = UIColor.sil_regularBlueColor;
+        self.startButton.backgroundColor = UIColor.appPrimaryBrand;
         
         self.stopButton.enabled = NO;
         self.stopButton.backgroundColor = UIColor.sil_silverChaliceColor;

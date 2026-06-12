@@ -46,13 +46,18 @@ class SILCreateGattDescriptorViewController: UIViewController, UITextViewDelegat
         setupLogic()
         viewModel.updateView()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+    }
     
     func setupAppearance() {
         typeValuePicker.layer.borderWidth = 1
         typeValuePicker.layer.borderColor = UIColor.sil_masala()?.cgColor
         typeValuePicker.layer.cornerRadius = CornerRadiusForButtons
         titleLabel.text = viewModel.isEditing ? "Edit the Gatt Descriptor" : "Add a GATT Descriptor"
-        [descriptorNameField, descriptorUUIDField, initialTextValueTextField, initialHexValueTextField].forEach { $0?.tintColor = UIColor.sil_regularBlue() }
+        [descriptorNameField, descriptorUUIDField, initialTextValueTextField, initialHexValueTextField].forEach { $0?.tintColor = UIColor.appPrimaryBrand }
     }
     
     func setupLogic() {
@@ -73,7 +78,7 @@ class SILCreateGattDescriptorViewController: UIViewController, UITextViewDelegat
         
         viewModel.isSaveButtonEnabled.observe { enabled in
             weakSelf?.saveButton.isEnabled = enabled
-            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.sil_regularBlue() : UIColor.lightGray
+            weakSelf?.saveButton.backgroundColor = enabled ? UIColor.appPrimaryBrand : UIColor.lightGray
         }.putIn(bag: tokenBag)
         
         viewModel.descriptorTypeObservable.observe { descriptorUuidType in

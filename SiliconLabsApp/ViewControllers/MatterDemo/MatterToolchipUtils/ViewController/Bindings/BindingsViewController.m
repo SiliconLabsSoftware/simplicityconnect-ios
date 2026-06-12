@@ -21,6 +21,12 @@
     [self.view addGestureRecognizer:tap];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
+}
+
 - (void)dismissKeyboard
 {
     [_nodeIDTextField resignFirstResponder];

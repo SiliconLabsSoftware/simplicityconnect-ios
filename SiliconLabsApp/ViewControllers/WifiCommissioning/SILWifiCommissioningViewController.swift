@@ -41,11 +41,38 @@ class SILWifiCommissioningViewController: UIViewController, SILWifiCommissioning
         viewModel.delegate = self
         viewModel.viewDidLoad()
         setupTableRefreshControl()
-        setLeftAlignedTitle("Wifi Commissioning")
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        self.navigationItem.hidesBackButton = true
+
+        let backImage = UIImage(systemName: "chevron.backward")?
+            .withConfiguration(UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold))
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        let backButton = UIBarButtonItem(image: backImage,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(backButtonTapped))
+
+        let titleLabel = UILabel()
+        titleLabel.text = "Wifi Commissioning"
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.font = .systemFont(ofSize: 21)
+        let titleItem = UIBarButtonItem(customView: titleLabel)
+
+        self.navigationItem.leftBarButtonItems = [backButton, titleItem]
+        self.navigationItem.title = ""
+    }
+    
+    @objc private func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         setupShadows()
         subscribeToViewModel()
         viewModel.viewWillAppear()
@@ -248,12 +275,14 @@ class SILWifiCommissioningViewController: UIViewController, SILWifiCommissioning
     
     func didTappedYesButton() {
         self.popover?.dismissPopover(animated: true)
+        self.navigationController?.navigationBar.tintColor = .white
         self.hideOnStartDisconnectView()
         self.viewModel.disconnectCurrentAp()
     }
     
     func didTappedNoButton() {
         self.popover?.dismissPopover(animated: true)
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     // MARK: SILWifiCommissioningViewModelDelegate
@@ -276,12 +305,19 @@ class SILWifiCommissioningViewController: UIViewController, SILWifiCommissioning
     
     func didTappedOKButton(accessPoint: SILWifiCommissioningAccessPoint, password: String) {
         popover?.dismissPopover(animated: true) {
+            self.navigationController?.navigationBar.tintColor = .white
             self.viewModel.joinAP(accessPoint, password: password)
         }
     }
     
     func didTappedCancelButton() {
         popover?.dismissPopover(animated: true)
+        self.navigationController?.navigationBar.tintColor = .white
+    }
+    
+    func popoverControllerDidDismissPopover(_ popoverController: WYPopoverController!) {
+        self.popover = nil
+        self.navigationController?.navigationBar.tintColor = .white
     }
 }
 
@@ -327,10 +363,18 @@ extension SILWifiCommissioningViewController: UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return SILTableViewWithShadowCells.tableView(tableView, viewForHeaderInSection: section, withHeight: 10.0)
+        return SILTableViewWithShadowCells.tableView(tableView, viewForHeaderInSection: section, withHeight: 4.0)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return SILTableViewWithShadowCells.tableView(tableView, viewForFooterInSection: section, withHeight: 10.0)
+        return SILTableViewWithShadowCells.tableView(tableView, viewForFooterInSection: section, withHeight: 4.0)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 4.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 4.0
     }
 }

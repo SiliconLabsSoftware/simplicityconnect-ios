@@ -67,7 +67,7 @@ SILOTAFirmwareUpdateViewModelDelegate, UIDocumentPickerDelegate>
     [self configureUIForFirmwareUpdateViewModel:self.firmwareUpdateViewModel];
     [_hudView stateDependentHidden:YES];
     _hudView.otaStatusLabel.text = @"OTA Device Firmware Update";
-    _startOTAButton.layer.cornerRadius = 4.0;
+    _startOTAButton.layer.cornerRadius = 10.0;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

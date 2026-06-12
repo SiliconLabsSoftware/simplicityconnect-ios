@@ -199,7 +199,7 @@ class SILEHGraphView: UIView {
         self.minimumYValue = yValue < minimumYValue ? yValue : minimumYValue
         if let dataSet = chartView.lineData?.dataSets.first(where: { $0.label == identifier }) as? LineChartDataSet {
             
-            print(" dataSet ==== \(dataSet)")
+            //print(" dataSet ==== \(dataSet)")
             
             dataSet.append(entry)
         } else {
@@ -214,7 +214,7 @@ struct EHRSSIConstants {
     static let graphLineDisabled = UIColor.lightGray
     
     static func lineColor() -> UIColor {
-        return UIColor.systemBlue
+        return UIColor.appPrimaryBrand
     }
     
     static let minNumberOfVisibleXValues: Double = xAxisGranularity
@@ -242,7 +242,7 @@ struct EHRSSIConstants {
 }
 
 extension SILEHGraphView {
-    func addRandomVoltagePoint(identifier: String = "Voltage", color: UIColor = .systemBlue, voltageValue: Double) {
+    func addRandomVoltagePoint(identifier: String = "Voltage", color: UIColor = UIColor.appPrimaryBrand, voltageValue: Double) {
         DispatchQueue.main.async { [weak self] in guard let self = self else { return }
             
             if self.chartView.data == nil {

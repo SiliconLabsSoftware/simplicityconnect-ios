@@ -19,6 +19,8 @@ class MotionSenseBoardDemoViewController : MotionDemoViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
     }
     

@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "graphic - GATT.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
       "filename" : "graphic - GATT@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "graphic - GATT@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     }
   ],
   "info" : {

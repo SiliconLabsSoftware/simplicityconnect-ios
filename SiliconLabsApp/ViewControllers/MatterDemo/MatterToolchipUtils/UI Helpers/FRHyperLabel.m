@@ -5,6 +5,7 @@
 
 #import "FRHyperLabel.h"
 #import <CoreText/CoreText.h>
+#import "UIColor+SILColors.h"
 
 @interface FRHyperLabel ()
 
@@ -24,7 +25,7 @@ static UIColor *FRHyperLabelLinkColorHighlight;
 
 + (void)initialize {
 	if (self == [FRHyperLabel class]) {
-		FRHyperLabelLinkColorDefault = [UIColor colorWithRed:28/255.0 green:135/255.0 blue:199/255.0 alpha:1];
+		FRHyperLabelLinkColorDefault = [UIColor appPrimaryBrand];
 		FRHyperLabelLinkColorHighlight = [UIColor colorWithRed:242/255.0 green:183/255.0 blue:73/255.0 alpha:1];
 	}
 }

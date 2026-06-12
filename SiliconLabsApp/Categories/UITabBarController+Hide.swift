@@ -23,6 +23,7 @@ extension UITabBarController {
                             y: view.frame.origin.y,
                             width: view.frame.size.width,
                             height: view.frame.height - tabBar.frame.size.height)
+        tabBar.tintColor = UIColor.appPrimaryBrand
         tabBar.layoutIfNeeded()
     }
     

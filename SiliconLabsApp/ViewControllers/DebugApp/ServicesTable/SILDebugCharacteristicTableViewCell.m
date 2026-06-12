@@ -154,7 +154,7 @@
     NSString *writeImageString = SILImageNamePropertyWriteDisabled;
     self.writePropertyButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.writePropertyButton setImage:[UIImage imageNamed:writeImageString] forState:UIControlStateNormal];
-    [self.writePropertyButton setTintColor:[UIColor sil_boulderColor]];
+    [self.writePropertyButton setTintColor:[UIColor sil_primaryTextColor]];
 }
 
 
@@ -163,7 +163,7 @@
     self.indicatePropertyButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.indicatePropertyButton setImage:[UIImage imageNamed:indicateImageString] forState:UIControlStateNormal];
     if (condition) {
-        [self.indicatePropertyButton setTintColor:[UIColor sil_regularBlueColor]];
+        [self.indicatePropertyButton setTintColor:[UIColor appPrimaryBrand]];
     } else {
         [self.indicatePropertyButton setTintColor:[UIColor sil_boulderColor]];
     }
@@ -174,7 +174,7 @@
     self.notifyPropertyButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.notifyPropertyButton setImage:[UIImage imageNamed:notifyImageString] forState:UIControlStateNormal];
     if (condition) {
-        [self.notifyPropertyButton setTintColor:[UIColor sil_regularBlueColor]];
+        [self.notifyPropertyButton setTintColor:[UIColor appPrimaryBrand]];
     } else {
         [self.notifyPropertyButton setTintColor:[UIColor sil_boulderColor]];
     }

@@ -14,7 +14,7 @@ import Foundation
 
         let toolbar: UIToolbar = UIToolbar()
         let doneButtonItem = UIBarButtonItem(title: "Done", style: .done, target: onDone.target, action: onDone.action)
-        doneButtonItem.setTitleTextAttributes([.foregroundColor: UIColor.sil_regularBlue()], for: .normal)
+        doneButtonItem.setTitleTextAttributes([.foregroundColor: UIColor.appPrimaryBrand], for: .normal)
         
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),

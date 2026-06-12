@@ -55,6 +55,7 @@ class SILAdvertiserDetailsViewController: UIViewController, UITableViewDataSourc
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addRedLineBelowNavigationBar()
         self.navigationController?.tabBarController?.hideTabBarAndUpdateFrames()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
@@ -152,13 +153,13 @@ class SILAdvertiserDetailsViewController: UIViewController, UITableViewDataSourc
         
         advertisingDataBytesAvailableToken = viewModel.advertisingDataBytesAvailable.observe { bytesAvailable in
             if bytesAvailable >= 3 {
-                weakSelf?.availableBytesCountLabel.textColor = UIColor.sil_primaryText()
+                weakSelf?.availableBytesCountLabel.textColor = UIColor.sil_subtitleText()
                 weakSelf?.availableBytesCountLabel.text = "\(bytesAvailable) bytes available.\nFlags and TX Power will be added automatically, their values are managed internally by the system."
             } else if bytesAvailable >= 0 && bytesAvailable < 3 {
-                weakSelf?.availableBytesCountLabel.textColor = UIColor.sil_primaryText()
+                weakSelf?.availableBytesCountLabel.textColor = UIColor.sil_subtitleText()
                 weakSelf?.availableBytesCountLabel.text = "\(bytesAvailable) bytes available.\nFlags will be added automatically\nTX Power won't be added due to out of space in the packet."
             } else {
-                weakSelf?.availableBytesCountLabel.textColor = UIColor.sil_siliconLabsRed()
+                weakSelf?.availableBytesCountLabel.textColor = UIColor.sil_subtitleText()
                 weakSelf?.availableBytesCountLabel.text = "\(-1 * bytesAvailable) byte(s) beyond payload limit.\nIf goes beyond advertising capacity some of it will be dropped. This is managed internally by the iOS stack."
             }
         }
@@ -171,13 +172,13 @@ class SILAdvertiserDetailsViewController: UIViewController, UITableViewDataSourc
         
         scanResponseBytesAvailableToken = viewModel.scanResponseBytesAvailable.observe { bytesAvailable in
             if bytesAvailable == 28 {
-                weakSelf?.scanResponseBytesCountLabel.textColor = UIColor.sil_primaryText()
+                weakSelf?.scanResponseBytesCountLabel.textColor = UIColor.sil_subtitleText()
                 weakSelf?.scanResponseBytesCountLabel.text = "28 bytes available."
             } else if bytesAvailable >= 0 && bytesAvailable < 28 {
-                weakSelf?.scanResponseBytesCountLabel.textColor = UIColor.sil_primaryText()
+                weakSelf?.scanResponseBytesCountLabel.textColor = UIColor.sil_subtitleText()
                 weakSelf?.scanResponseBytesCountLabel.text = "\(bytesAvailable) bytes available.\nIf you exceed the Advertising Data capacity not all bytes from the Complete Local Name will be advertised."
             } else {
-                weakSelf?.scanResponseBytesCountLabel.textColor = UIColor.sil_siliconLabsRed()
+                weakSelf?.scanResponseBytesCountLabel.textColor = UIColor.sil_subtitleText()
                 weakSelf?.scanResponseBytesCountLabel.text = "\(-1 * bytesAvailable) byte(s) beyond payload limit.\nComplete Local Name won't advertise all bytes."
             }
         }

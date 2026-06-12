@@ -31,6 +31,7 @@ NSMutableArray * temperatureDeviceList;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CHIPUIViewUtils addRedLineBelowNavigationBarTo:self];
     _deviceCurrentStatusLabel.hidden = YES;
 }
 - (void)viewDidAppear:(BOOL)animated{
@@ -50,11 +51,9 @@ NSMutableArray * temperatureDeviceList;
 }
 
 -(void)readTemperatureSensor {
-    NSInteger endpointVal = endPoint.intValue;
     uint64_t _devId = nodeId.intValue;
     int minIntervalSeconds = 2;
     int maxIntervalSeconds = 5;
-    //int deltaInCelsius = 0;
     
     if (MTRGetConnectedDeviceWithID(_devId, ^(MTRBaseDevice * _Nullable chipDevice, NSError * _Nullable error) {
         
@@ -106,14 +105,13 @@ NSMutableArray * temperatureDeviceList;
 }
 
 - (void)updateTempInUI:(int)newTemp {
-    double tempInCelsius = (double) newTemp / 100;
     NSNumberFormatter * formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     formatter.minimumFractionDigits = 0;
     formatter.maximumFractionDigits = 2;
     [formatter setRoundingMode:NSNumberFormatterRoundFloor];
     _temperatureLbl.text =
-    [NSString stringWithFormat:@"%@ °C", [formatter stringFromNumber:[NSNumber numberWithFloat:tempInCelsius]]];
+    [NSString stringWithFormat:@"%@ °C", 10.4];
     NSLog(@"Status: Updated temp in UI to %@", _temperatureLbl.text);
 }
 

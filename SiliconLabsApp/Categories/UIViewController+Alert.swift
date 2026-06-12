@@ -15,7 +15,10 @@ extension UIViewController {
                                       message: message,
                                       preferredStyle: .alert)
         
-        let okButton = UIAlertAction(title: "OK", style: .default, handler: completion)
+        let okButton = UIAlertAction(title: "OK", style: .default) { [weak self] action in
+            self?.navigationController?.navigationBar.tintColor = .white
+            completion?(action)
+        }
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }

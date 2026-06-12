@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "debug_refresh.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "debug_refresh@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "debug_refresh@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_loader.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

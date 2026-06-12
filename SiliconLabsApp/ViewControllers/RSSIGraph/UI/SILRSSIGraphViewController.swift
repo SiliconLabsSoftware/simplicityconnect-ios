@@ -158,6 +158,8 @@ class SILRSSIGraphViewController: UIViewController, UIGestureRecognizerDelegate 
         let filterVC = storyboard.instantiateViewController(withIdentifier: SILSceneFilter) as! SILBrowserFilterViewController
         
         filterVC.delegate = self
+        // Match the Scanner path's presentation so the system sheet header doesn't clip the Search field at the top.
+        filterVC.modalPresentationStyle = .fullScreen
         
         self.present(filterVC, animated: true)
     }
@@ -165,10 +167,10 @@ class SILRSSIGraphViewController: UIViewController, UIGestureRecognizerDelegate 
     fileprivate func setupButtonText() {
         if self.viewModel.isScanning.value {
             floatingButtonSettings?.setButtonText(TitleForScanningButtonDuringScanning)
-            floatingButtonSettings?.setColor(.sil_siliconLabsRed())
+            floatingButtonSettings?.setColor(.appPrimaryBrand)
         } else {
             floatingButtonSettings?.setButtonText(TitleForScanningButtonWhenIsNotScanning)
-            floatingButtonSettings?.setColor(.sil_regularBlue())
+            floatingButtonSettings?.setColor(.appPrimaryBrand)
         }
     }
     

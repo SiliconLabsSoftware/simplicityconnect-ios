@@ -30,6 +30,7 @@ class SILUDPServerViewController: UIViewController, IUdpServer, UITableViewDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRedLineBelowNavigationBar()
 
         // Do any additional setup after loading the view.
         setLeftAlignedTitle("UDP Download")

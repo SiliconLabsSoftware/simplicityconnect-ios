@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "view_more.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "view_more@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "view_more@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_downArrow.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

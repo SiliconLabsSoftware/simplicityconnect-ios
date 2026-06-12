@@ -7,27 +7,53 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct NavBarViewWithButtons<Content : View, Buttons : View>: View {
     let title : String
     let innerView: Content
     let trailingInNavBar : Buttons
+    let lineColor: Color
     
-    init(title : String, @ViewBuilder innerView: () -> Content, @ViewBuilder trailingInNavBar : () -> Buttons ){
+    init(title : String, lineColor: Color = Color.appPrimaryBrand, @ViewBuilder innerView: () -> Content, @ViewBuilder trailingInNavBar : () -> Buttons ){
         self.title = title
+        self.lineColor = lineColor
         self.innerView = innerView()
         self.trailingInNavBar = trailingInNavBar()
     }
     
     var body: some View {
         NavigationView {
-            innerView
-                .navigationBarTitle(Text(""), displayMode: .inline)
-                .navigationBarItems(leading: Text(title).font(.system(size: 21)).foregroundColor(.white) ,trailing:
-                    trailingInNavBar
-                )
+            VStack(spacing: 0) {
+                if lineColor != .clear {
+                    Rectangle()
+                        .fill(lineColor)
+                        .frame(height: 1)
+                }
+                innerView
+            }
+            .navigationBarTitle(Text(""), displayMode: .inline)
+            .navigationBarItems(leading: Text(title).font(.custom("Stolzl-Medium", size: 17)).foregroundColor(.white) ,trailing:
+                trailingInNavBar
+            )
         }.navigationViewStyle(.stack)
             .accentColor(.white)
+            .introspectNavigationController { navigationController in
+                let appearance = UINavigationBarAppearance()
+                appearance.configureWithOpaqueBackground()
+                appearance.backgroundColor = UIColor.appNavigationPrimary
+                appearance.titleTextAttributes = [
+                    .foregroundColor: UIColor.white,
+                    .font: UIFont.stolzlMedium(size: 17) as Any
+                ]
+                appearance.shadowColor = .clear
+                appearance.shadowImage = UIImage()
+                
+                navigationController.navigationBar.standardAppearance = appearance
+                navigationController.navigationBar.compactAppearance = appearance
+                navigationController.navigationBar.scrollEdgeAppearance = appearance
+                navigationController.navigationBar.tintColor = .white
+            }
     }
 }
 
